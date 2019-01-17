@@ -76,6 +76,8 @@
                 include 'home.php';
               else if ($content=='documentation')
                 include 'documentation.php';
+              else if ($content=='helpdesk')
+                include 'helpdesk.php';
   ?>
   </div>
      
