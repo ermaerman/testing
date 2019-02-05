@@ -1,3 +1,5 @@
+ <script src="index.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
  <!-- Form Modal -->
       <div class="modal fade modal-black" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -57,27 +59,33 @@
       <div class="squares square6"></div>
       <div class="squares square7"></div>
       <div class="container">
-        <div class="content-center brand" id="images">
-          <h1 class="h1-seo"><img width="450" src="./assets/img/logo7.png"></h1>
+
+        <div id="images">
+            <div class="row">
+              <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+            <div class="row">
+              <center>
+              <div class="col-sm-5">
+                <img src="./assets/img/logo7.png">
+              </div>
+            </center>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+          <center>
+          <div class="col-sm-8">
+          <div id="welcome">
+          <center>
+            <h5>
+            {{ message }}
+          </h5>
+          </center>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-          <h5><center>Welcome to the website <a rel="tooltip" title="Driver System V 1.1.0" data-placement="top" href="#">driver.simadamri.com</a> for analyzing the poor goodness of the DAMRI driver, <br>on this website you can find out the character of the DAMRI bus driver for each person. Please login to see. Enjoy!</center></h5>
+        <script src="index.js"></script>
+      </center>
+        </div>
+        </div>
       </div>
     </div>
