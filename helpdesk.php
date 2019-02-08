@@ -1,69 +1,82 @@
-     <div class="section section-signup">
-        <div class="container">
-          <div class="squares square-1"></div>
-          <div class="squares square-2"></div>
-          <div class="squares square-3"></div>
-          <div class="squares square-4"></div>
-          <div class="row row-grid justify-content-between align-items-center">
-            <div class="col-lg-6">
-              <h3 class="display-3 text-white">Helpdesk
-              </h3>
-              <p class="text-white mb-3">The Design System comes with four pre-built pages to help you get started faster. You can change the text and images and you're good to go. More importantly, looking at them will give you a picture of what you can built with this powerful Bootstrap 4 Design System.</p>
-              <div class="btn-wrapper">
-                <a href="examples/register-page.html" class="btn btn-info">Documentation</a>
-              </div>
+<body class="landing-page">
+  <div class="wrapper">
+    <div class="page-header">
+      <img src="assets/img/blob.png" class="path">
+      <div class="content-center">
+        <div class="row row-grid justify-content-between align-items-center text-left">
+          <div class="col-lg-6 col-md-6">
+            <h1 class="text-white">Helpdesk —
+            </h1>
+            <p class="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am confused, and feel wanna ask question. And here i am.</p>
+            <div class="btn-wrapper mb-3">
+              <p class="text-success d-inline">Let's check it up with scroll down</p>
+              <a href="#blk" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-down"></i></a>
             </div>
-            <div class="col-lg-6 mb-lg-auto">
-              <div class="card card-register">
-                <div class="card-header">
-                  <img class="card-img" src="assets/img/square1.png" alt="Card image">
-                  <h5 class="card-title">&nbsp;&nbsp;Hello!</h5>
-                </div>
-                <div class="card-body">
-                  <form class="form">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="tim-icons icon-single-02"></i>
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" placeholder="Full Name">
-                    </div>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="tim-icons icon-email-85"></i>
-                        </div>
-                      </div>
-                      <input type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="tim-icons icon-lock-circle"></i>
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-check text-left">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox">
-                        <span class="form-check-sign"></span>
-                        I agree to the
-                        <a href="javascript:void(0)">terms and conditions</a>.
-                      </label>
-                    </div>
-                  </form>
-                </div>
-                <div class="card-footer">
-                  <a href="javascript:void(0)" class="btn btn-info btn-round btn-lg">Get Started</a>
-                </div>
+            <div class="btn-wrapper">
+              <div class="button-container">
+                <button href="#" class="btn btn-icon btn-simple btn-round btn-neutral">
+                </button>
+                <button href="#" class="btn btn-icon btn-simple btn-round btn-neutral">
+                </button>
+                <button href="#" class="btn btn-icon btn-simple btn-round btn-neutral">
+                </button>
               </div>
             </div>
           </div>
+          <div class="col-lg-4 col-md-5">
+            <img src="assets/img/etherum2.png" alt="Circle image" class="img-fluid">
+          </div>
         </div>
       </div>
-<!-- Form Modal -->
+    </div>
+  </div>
+  <div class="section section-tabs">
+        <div class="container">
+          <div class="title">
+            <h3 class="mb-3">Helpdesk Tabs</h3>
+          </div>
+          <div class="row">
+            <div class="col-md-12 ml-auto col-xl-12 mr-auto">
+              <div class="mb-3">
+                <small class="text-uppercase font-weight-bold">Frequently Answer Question</small>
+              </div>
+              <!-- Nav tabs -->
+              <div class="card">
+                <div class="card-header">
+                  <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist">
+                        <i class="tim-icons icon-paper"></i> Question
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#link2" role="tablist">
+                        <i class="tim-icons icon-pencil"></i> Answer
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <!-- Tab panes -->
+                  <div class="tab-content tab-space">
+                    <div class="tab-pane active" id="link1">
+                      <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
+                        <br />
+                        <br/> Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                    </div>
+                    <div class="tab-pane" id="link2">
+                      <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
+                        <br />
+                        <br/>Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+                    </div>        
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+      </div>
+      <!-- End Section Tabs -->
+   <!-- Form Modal -->
       <div class="modal fade modal-black" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
