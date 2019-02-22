@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="" sizes="76x76" href="./assets/img/icon.png">
   <link rel="icon" type="image/png" href="./assets/img/logo3.png">
-  <title>DAMRI ‣ Driver System V 1.0.0</title>
+  <title>DAMRI ‣ Logistics System V 1.0.0</title>
   <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="./assets/css/blk-design-system.css?v=1.0.0" rel="stylesheet" />
   <link href="./assets/demo/demo.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="index.php" rel="tooltip" title="Takes you everywhere" data-placement="top">
-          <span><img width="150" src="./assets/img/logo1.png"></span></a><font color="gray">Driver System V 1.0.0</font>
+          <span><img width="150" src="./assets/img/logo1.png"></span></a><font color="gray">Logistics System V 1.0.0</font>
           <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
           <span class="navbar-toggler-bar bar2"></span>

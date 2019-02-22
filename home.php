@@ -82,7 +82,7 @@
           </h5>
           </center>
         </div>
-        <script src="index.js"></script>
+        <script src="vue/index.js"></script>
       </center>
         </div>
         </div>
