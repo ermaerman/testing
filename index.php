@@ -84,8 +84,8 @@
      
    
     <footer class="footer">
-      <div class="container" align="right">
-          <p style="color: grey; font-size: 13px;">© 2019, Made with <img width="20" src="./assets/img/love.png"> by Erma Noviana for a better DAMRI.</p>
+      <div class="container" align="center">
+          <p style="color: grey; font-size: 13px;">© 2019, Made with <img width="20" src="./assets/img/love1.png"> by Erma Noviana </p>
       </div>
     </footer>
 

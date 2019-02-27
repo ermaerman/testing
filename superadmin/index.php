@@ -1,7 +1,9 @@
 <?php
   
+  
   //menyambungkan koneksi
   include '../config/koneksi.php';
+  session_start();
 
   if(isset($_GET['content'])) $content = $_GET['content']; 
       else $content = "index";
@@ -15,7 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="../assets/img/logo3.png">
-    <title>DAMRI ‣ Driver System V 1.0.0</title>
+    <title>DAMRI ‣ Logistics System V 1.0.0</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Fonts
@@ -214,7 +216,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="index.php?content=index"><img width="200" src="../assets/img/logo1.png"></span></a><font color="gray">Driver System V 1.0.0</font>
+                        <a href="index.php?content=index"><img width="200" src="../assets/img/logo1.png"></span></a><font color="gray">Logistics System V 1.0.0</font>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -376,8 +378,10 @@
                                                     <img src="../assets/img/icon.png" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
-                                                    <h3>Erma Noviana</h3>
-                                                    <p>You are login as Superadmin now. </p>
+                                                    <h3>
+                                                        <?php echo "<b>".$_SESSION['nama']."</b>"?>
+                                                    </h3>
+                                                    <p>You are login as <?php echo "".$_SESSION['id_level'].""?> now. </p>
                                                 </div>
                                             </div>
                                         </a>
@@ -385,12 +389,15 @@
                                             <div class="hd-message-sn">
                                                 <div class="hd-mg-ctn">
                                                     <h3>Last Login</h3>
-                                                    <p>Kamis, 7 Februari 2019, 16:53:36</p>
+                                                    <p><?php
+                                                date_default_timezone_set('Asia/Jakarta');
+                                                echo "Hari ini " . date("d/m/Y | h:i:s");
+                                                ?></p>
                                                 </div>
                                             </div>
                                         </a>
                                         <hr>
-                                         <a href="../config/logout.php">
+                                         <a href="../config/proses_logout.php">
                                             <div class="" align="right">
                                                 <div class="hd-mg-ctn">
                                                      <button class="btn notika-btn-indigo btn-reco-mg btn-button-mg">Logout</button> &nbsp;&nbsp;
@@ -544,15 +551,13 @@
     	            if ($content=='index')
     	              include 'home.php';
     	?>
-
     <!-- Start Footer area-->
     <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-copy-right">
-                         <p style="color: grey; font-size: 13px;">© 2019, Made with <img width="20" src="../assets/img/love.png"> by Erma Noviana for a better DAMRI.</p>
-                    </div>
+                         <p style="color: grey; font-size: 13px;">© 2019, Made with <img width="20" src="../assets/img/love1.png"> by Erma Noviana
                 </div>
             </div>
         </div>
