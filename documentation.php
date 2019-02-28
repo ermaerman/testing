@@ -10,7 +10,7 @@
               <div class="text-center text-muted mb-4 mt-3">
                 <small>Login with your email corporate please! <a href="#">Don't have an access?</a></small>
               </div>
-              <form role="form">
+              <form role="form" action="config/proses_login.php" method="POST">
                 <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
@@ -18,7 +18,7 @@
                         <i class="tim-icons icon-email-85"></i>
                       </span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email">
+                    <input class="form-control" placeholder="Email" type="email" name="email" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -28,7 +28,7 @@
                         <i class="tim-icons icon-key-25"></i>
                       </span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password">
+                    <input class="form-control" placeholder="Password" type="password" name="password" required>
                   </div>
                 </div>
                 <div class="form-check mt-3">
@@ -39,8 +39,9 @@
                   </label>
                 </div>
                 <div align="right">
-                  <button type="button" class="nav-link btn btn-default d-none d-lg-block">Login</button>
+                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Login</button>
                 </div>
+              </div>
               </form>
             </div>
           </div>

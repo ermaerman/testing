@@ -42,6 +42,7 @@
                 <div align="right">
                   <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Login</button>
                 </div>
+              </div>
               </form>
             </div>
           </div>
