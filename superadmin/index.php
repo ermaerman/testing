@@ -375,13 +375,13 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
-                                                    <img src="../assets/img/icon.png" alt="" />
+                                                    <a href="index.php?content=account"><img src="../assets/img/icon.png" alt="" /></a>
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>
                                                         <?php echo "<b>".$_SESSION['nama']."</b>"?>
                                                     </h3>
-                                                    <p>You are login as <?php echo "".$_SESSION['id_level'].""?> now. </p>
+                                                    <p>You are login as superadmin <?php echo "".$_SESSION['id_level'].""?> now. </p>
                                                 </div>
                                             </div>
                                         </a>
@@ -550,6 +550,8 @@
         <?php
                     if ($content=='index')
                       include 'home.php';
+                    elseif ($content=='account')
+                      include 'account.php';
         ?>
     <!-- Start Footer area-->
     <div class="footer-copyright-area">

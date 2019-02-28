@@ -42,7 +42,7 @@ if($jlhrecord > 0){
 }
 
 else{
-	echo "<br><br><center><img  src='../assets/gif/loading.gif'><strong><center><i>Maaf anda gagal login. Mungkin Email atau Password yang anda masukkan salah.<br>Silahkan masukkan Email atau Password dengan benar!</center>";
+	echo "<center><img  src='../assets/gif/loading.gif'><strong><center><i>Maaf anda gagal login. Mungkin Email atau Password yang anda masukkan salah.<br>Silahkan masukkan Email atau Password dengan benar!</center>";
 	echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../index.php">';  
 }
 
