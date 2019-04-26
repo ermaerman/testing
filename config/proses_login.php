@@ -34,7 +34,7 @@ if($jlhrecord > 0){
 			header('Location:../superadmin/index.php?content=index');
 		}
 		elseif ($id_level == 2){
-			header('Location:');
+			header('Location:../admin/index.php?content=index');
 		}
 		elseif($id_level == 3){
 			header('Location:');
