@@ -381,15 +381,15 @@
                                                     <h3>
                                                         <?php echo "<b>".$_SESSION['nama']."</b>"?>
                                                     </h3>
-                                                    <!-- <p>You are login as superadmin <?php echo "".$_SESSION['id_level'].""?> now. </p> -->
                                                     <?php
                                                         $level      = $_SESSION['id_level'];
-                                                        $qlevel     = "SELECT * FROM tbl_level WHERE id_level='$level'";
+
+                                                        $qlevel 	= "SELECT * FROM tbl_level WHERE id_level='$level'";
                                                         $record     = mysqli_query($konek, $qlevel)or die(mysqli_error($konek));
                                                         $show       = mysqli_fetch_array($record);
                                                     
                                                     ?>
-                                                    <p>Anda login sebagai <?php echo $show['level']; ?>. </p>
+                                                    <p>You are login as <?php echo $show['level']; ?> now. </p>
                                                 </div>
                                             </div>
                                         </a>
