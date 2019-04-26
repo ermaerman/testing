@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="../assets/img/logo3.png">
-    <title>DAMRI ‣ Logistics System V 1.0.0</title>
+    <title>DAMRI ‣ Analysis System V 1.0.0</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Fonts
@@ -216,7 +216,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="index.php?content=index"><img width="200" src="../assets/img/logo1.png"></span></a><font color="gray">Logistics System V 1.0.0</font>
+                        <a href="index.php?content=index"><img width="200" src="../assets/img/logo1.png"></span></a><font color="gray">Analysis System V 1.0.0</font>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -235,7 +235,7 @@
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Helpdesk</h2>
+                                        <h2>Bantuan</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -302,7 +302,7 @@
                             <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Notification</h2>
+                                        <h2>Notifikasi</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -369,7 +369,7 @@
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>User Account</h2>
+                                        <h2>Akun Pengguna</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -381,7 +381,15 @@
                                                     <h3>
                                                         <?php echo "<b>".$_SESSION['nama']."</b>"?>
                                                     </h3>
-                                                    <p>You are login as superadmin <?php echo "".$_SESSION['id_level'].""?> now. </p>
+                                                    <!-- <p>You are login as superadmin <?php echo "".$_SESSION['id_level'].""?> now. </p> -->
+                                                    <?php
+                                                        $level      = $_SESSION['id_level'];
+                                                        $qlevel     = "SELECT * FROM tbl_level WHERE id_level='$level'";
+                                                        $record     = mysqli_query($konek, $qlevel)or die(mysqli_error($konek));
+                                                        $show       = mysqli_fetch_array($record);
+                                                    
+                                                    ?>
+                                                    <p>Anda login sebagai <?php echo $show['level']; ?>. </p>
                                                 </div>
                                             </div>
                                         </a>
@@ -400,7 +408,7 @@
                                          <a href="../config/proses_logout.php">
                                             <div class="" align="right">
                                                 <div class="hd-mg-ctn">
-                                                     <button class="btn notika-btn-indigo btn-reco-mg btn-button-mg">Logout</button> &nbsp;&nbsp;
+                                                     <button class="btn notika-btn-indigo btn-reco-mg btn-button-mg">Keluar</button> &nbsp;&nbsp;
                                                 </div>
                                             </div>
                                         </a>
@@ -420,19 +428,17 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Helpdesk</a>
+                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Bantuan</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
+                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Analisis</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
+                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Grafik</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
+                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
+                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> Pengaturan</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
+                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Manajemen User</a>
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
@@ -440,18 +446,18 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.php?content=index">Dashboard</a>
                                 </li>
-                                <li><a href="index.php?content=analytics">Analytics</a>
+                                <li><a href="index.php?content=info">Info</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="inbox.html">Inbox</a>
+                                <li><a href="inbox.html">List Masuk</a>
                                 </li>
-                                <li><a href="view-email.html">View Email</a>
+                                <li><a href="view-email.html">List Pertanyaan</a>
                                 </li>
-                                <li><a href="compose-email.html">Compose Email</a>
-                                </li>
+                                <!-- <li><a href="compose-email.html">Compose Email</a>
+                                </li> -->
                             </ul>
                         </div>
                         <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
@@ -479,14 +485,6 @@
                                 <li><a href="line-charts.html">Line Charts</a>
                                 </li>
                                 <li><a href="area-charts.html">Area Charts</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href="normal-table.html">Normal Table</a>
-                                </li>
-                                <li><a href="data-table.html">Data Table</a>
                                 </li>
                             </ul>
                         </div>

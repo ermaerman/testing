@@ -29,7 +29,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="index.php" rel="tooltip" title="Takes you everywhere" data-placement="top">
-          <span><img width="150" src="./assets/img/logo1.png"></span></a><font color="gray">Analysis System V 1.0.0</font>
+          <span><img width="150" src="./assets/img/logo1.png"></span></a><font color="gray">Analysis System Cabang Bandar Lampung V 1.0.0</font>
           <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
           <span class="navbar-toggler-bar bar2"></span>
@@ -52,20 +52,20 @@
         <ul class="navbar-nav">
           <li class="dropdown nav-item">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <i class="fa fa-cogs d-lg-none d-xl-none"></i> Getting started
+              <i class="fa fa-cogs d-lg-none d-xl-none"></i> Lainnya
             </a>
             <div class="dropdown-menu dropdown-with-icons">
               <a href="index.php?content=documentation" class="dropdown-item">
-                <i class="tim-icons icon-paper"></i>Documentation
+                <i class="tim-icons icon-paper"></i>Dokumentasi
               </a>
               <a href="index.php?content=helpdesk" class="dropdown-item">
-                <i class="tim-icons icon-single-02"></i>Helpdesk
+                <i class="tim-icons icon-single-02"></i>Bantuan
               </a>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link btn btn-default d-none d-lg-block" href="" data-toggle="modal" data-target="#myModal2">
-              <i class="tim-icons icon-user-run"></i> Login
+              <i class="tim-icons icon-user-run"></i> Masuk
             </a>
           </li>
         </ul>

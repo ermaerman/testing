@@ -5,11 +5,11 @@
       <div class="content-center">
         <div class="row row-grid justify-content-between align-items-center text-left">
           <div class="col-lg-6 col-md-6">
-            <h1 class="text-white">Helpdesk —
+            <h1 class="text-white">Bantuan —
             </h1>
-            <p class="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am confused, and feel wanna ask question. And here i am.</p>
+            <p class="text-white mb-3">Ketenangan yang luar biasa telah menguasai seluruh jiwa, seperti pagi hari musim semi yang manis ini yang kita nikmati dengan sepenuh hati. Anda bingung, dan merasa ingin bertanya. Dan disinilah anda.</p>
             <div class="btn-wrapper mb-3">
-              <p class="text-success d-inline">Let's check it up with scroll down</p>
+              <p class="text-success d-inline">Silahkan gulir kebawah</p>
               <a href="#blk" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-down"></i></a>
             </div>
             <div class="btn-wrapper">
@@ -33,7 +33,7 @@
   <div class="section section-tabs">
         <div class="container">
           <div class="title">
-            <h3 class="mb-3">Helpdesk Tabs</h3>
+            <h3 class="mb-3">Bantuan Tabs</h3>
           </div>
           <div class="row">
             <div class="col-md-12 ml-auto col-xl-12 mr-auto">
@@ -46,12 +46,12 @@
                   <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
                     <li class="nav-item">
                       <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist">
-                        <i class="tim-icons icon-paper"></i> Question
+                        <i class="tim-icons icon-paper"></i> Pertanyaan
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-toggle="tab" href="#link2" role="tablist">
-                        <i class="tim-icons icon-pencil"></i> Answer
+                        <i class="tim-icons icon-pencil"></i> Jawaban
                       </a>
                     </li>
                   </ul>
@@ -60,14 +60,10 @@
                   <!-- Tab panes -->
                   <div class="tab-content tab-space">
                     <div class="tab-pane active" id="link1">
-                      <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
-                        <br />
-                        <br/> Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                      <p>&nbsp;&nbsp;&nbsp;Saya tidak memiliki akses untuk masuk atau login, apa yang harus saya lakukan?</p>
                     </div>
                     <div class="tab-pane" id="link2">
-                      <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
-                        <br />
-                        <br/>Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+                      <p>&nbsp;&nbsp;&nbsp;Silahkan hubungi IT DAMRI Pusat.</p>
                     </div>        
                   </div>
                 </div>
@@ -86,7 +82,7 @@
                 <img width="250" src="./assets/img/logo1.png">
               </div>
               <div class="text-center text-muted mb-4 mt-3">
-                <small>Login with your email corporate please! <a href="#">Don't have an access?</a></small>
+                <small>Silahkan login menggunakan email corporate! <a href="index.php?content=helpdesk">Tidak mempunyai akses?</a></small>
               </div>
               <form role="form" action="config/proses_login.php" method="POST">
                 <div class="form-group mb-3">
@@ -109,15 +105,15 @@
                     <input class="form-control" placeholder="Password" type="password" name="password" required>
                   </div>
                 </div>
-                <div class="form-check mt-3">
+                <!-- <div class="form-check mt-3">
                   <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" checked>
                     <span class="form-check-sign"></span>
                     Remember me!
                   </label>
-                </div>
+                </div> -->
                 <div align="right">
-                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Login</button>
+                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Masuk</button>
                 </div>
               </div>
               </form>

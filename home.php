@@ -9,7 +9,7 @@
                 <img width="250" src="./assets/img/logo1.png">
               </div>
               <div class="text-center text-muted mb-4 mt-3">
-                <small>Silahkan login menggunakan email corporate! <a href="#">Tidak mempunyai akses?</a></small>
+                <small>Silahkan login menggunakan email corporate! <a href="index.php?content=helpdesk">Tidak mempunyai akses?</a></small>
               </div>
               <form role="form" action="config/proses_login.php" method="POST">
                 <div class="form-group mb-3">
@@ -40,7 +40,7 @@
                   </label>
                 </div> -->
                 <div align="right">
-                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Login</button>
+                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Masuk</button>
                 </div>
               </div>
               </form>
