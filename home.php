@@ -9,7 +9,7 @@
                 <img width="250" src="./assets/img/logo1.png">
               </div>
               <div class="text-center text-muted mb-4 mt-3">
-                <small>Login with your email corporate please! <a href="#">Don't have an access?</a></small>
+                <small>Silahkan login menggunakan email corporate! <a href="#">Tidak mempunyai akses?</a></small>
               </div>
               <form role="form" action="config/proses_login.php" method="POST">
                 <div class="form-group mb-3">
@@ -32,13 +32,13 @@
                     <input class="form-control" placeholder="Password" type="password" name="password" required>
                   </div>
                 </div>
-                <div class="form-check mt-3">
+                <!-- <div class="form-check mt-3">
                   <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" checked>
                     <span class="form-check-sign"></span>
                     Remember me!
                   </label>
-                </div>
+                </div> -->
                 <div align="right">
                   <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Login</button>
                 </div>
@@ -62,11 +62,20 @@
 
         <div id="images">
             <div class="row">
-              <br><br><br><br><br><br><br><br><br><br><br><br>
-            </div>
-            <div class="row">
               <center>
               <div class="col-sm-5">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                 <img src="./assets/img/logo7.png">
               </div>
             </center>
@@ -76,15 +85,13 @@
           <div class="row">
           <center>
           <div class="col-sm-8">
-          <div id="welcome">
           <center>
             <h5>
-            {{ message }}
+            Selamat datang di <a href="index.php">analysis.damri.co.id</a>,
+        pada aplikasi ini anda dapat melakukan analisis terhadap penjualan e-ticketing bus DAMRI segmen antar kota Cabang Bandar Lampung.
+        Anda dapat mengakses halaman tersebut setelah login menggunakan email corporate DAMRI yang telah valid. Terimakasih!
           </h5>
           </center>
-        </div>
-        <script src="vue/index.js"></script>
-      </center>
         </div>
         </div>
       </div>
