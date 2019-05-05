@@ -11,7 +11,7 @@
                                         <i class="notika-icon notika-form"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Tambah User</h2>
+                                        <h2>Tambah Data Penjualan</h2>
                                         <p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
                                     </div>
                                 </div>
@@ -34,30 +34,27 @@
                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-star"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="NIK" required>
+                                        <input type="text" class="form-control" data-mask="99/99/9999" placeholder="Tanggal Keberangkatan" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Nama Lengkap" required>
+                                        <input type="text" class="form-control" placeholder="Jam Berangkat" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-mail"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Alamat Email" required>
+                                        <input type="text" class="form-control" placeholder="Jam Sampai" required>
                                     </div>
                                 </div>
                             </div>
@@ -66,30 +63,27 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-dollar"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="password" class="form-control" placeholder="Password" required>
+                                        <input type="password" class="form-control" placeholder="Armada" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-phone"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Nomor Telepon" required>
+                                        <input type="text" class="form-control" placeholder="Trayek" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-next"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Divisi Regional" required>
+                                        <input type="text" class="form-control" placeholder="Jenis Layanan" required>
                                     </div>
                                 </div>
                             </div>
@@ -98,40 +92,27 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-next"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Cabang" required>
+                                        <input type="text" class="form-control" placeholder="Jumlah Penumpang" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Foto" required>
+                                        <input type="text" class="form-control" placeholder="Biaya Keluar" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="form-group ic-cmp-int">
                                     <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-map"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Alamat" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="form-group ic-cmp-int">
-                                    <div class="form-ic-cmp">
-                                        <i class="notika-icon notika-travel"></i>
-                                    </div>
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Level" required>
+                                        <input type="text" class="form-control" placeholder="Status" required>
                                     </div>
                                 </div>
                             </div>

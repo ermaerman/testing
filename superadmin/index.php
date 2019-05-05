@@ -251,7 +251,7 @@
                                             </div>
                                         </a>
                                     <div class="hd-mg-va">
-                                        <a href="#">Lihat Semua</a>
+                                        <a href="index.php?content=list_masuk">Lihat Semua</a>
                                     </div>
                                 </div>
                             </li>
@@ -273,7 +273,7 @@
                                             </div>
                                         </a>
                                     <div class="hd-mg-va">
-                                        <a href="#">Lihat Semua</a>
+                                        <a href="index.php?content=pemberitahuan">Lihat Semua</a>
                                     </div>
                                 </div>
                             </li>
@@ -304,7 +304,6 @@
                                                 </div>
                                             </div>
                                         </a>
-                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-mg-ctn">
                                                     <h3>Last Login</h3>
@@ -314,7 +313,6 @@
                                                 ?></p>
                                                 </div>
                                             </div>
-                                        </a>
                                         <hr>
                                          <a href="../config/proses_logout.php">
                                             <div class="" align="right">
@@ -377,17 +375,17 @@
                         </div>
                         <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="animations.html">Lakukan Analisis</a>
+                                <li><a href="index.php?content=analisis">Lakukan Analisis</a>
                                 </li>
-                                <li><a href="google-map.html">Hasil Analisis</a>
+                                <li><a href="index.php?content=hasil_analisis">Hasil Analisis</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="flot-charts.html">Grafik penjualan</a>
+                                <li><a href="index.php?content=grafik_penjualan">Grafik penjualan</a>
                                 </li>
-                                <li><a href="bar-charts.html">Grafik <i>K-Means</i></a>
+                                <li><a href="index.php?content=grafik-k-means">Grafik <i>K-Means</i></a>
                                 </li>
                             </ul>
                         </div>
@@ -404,6 +402,7 @@
                                 <li><a href="index.php?content=data_penjualan">Data Penjualan</a>
                                 </li>
                                 <li><a href="index.php?content=tambah_data_penjualan">Tambah Data Penjualan</a>
+                                </li>
                             </ul>
                         </div>
                         <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
@@ -427,8 +426,13 @@
             // Home
             if ($content=='index')
               include 'home.php';
+            elseif ($content=='info')
+              include 'info.php';
+
 
             // Notifikasi Bar
+            elseif ($content=='pemberitahuan')
+              include 'pemberitahuan.php';
             elseif ($content=='account')
               include 'account.php';
 
@@ -438,11 +442,23 @@
             elseif ($content=='tambah_data_penjualan')
               include 'tambah_data_penjualan.php';
 
-          // Laporan 
+            // Laporan 
             elseif ($content=='laporan_penjualan')
               include 'laporan_penjualan.php';
             elseif ($content=='laporan_analisis')
               include 'laporan_analisis.php';
+
+            // Analisis 
+            elseif ($content=='analisis')
+              include 'analisis.php';
+            elseif ($content=='hasil_analisis')
+              include 'hasil_analisis.php';
+
+            // Grafik 
+            elseif ($content=='grafik_penjualan')
+              include 'grafik_penjualan.php';
+            elseif ($content=='grafik-k-means')
+              include 'grafik-k-means.php';
 
             // Bantuan
             elseif ($content=='list_masuk')

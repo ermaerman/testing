@@ -232,30 +232,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
-                                <div role="menu" class="dropdown-menu message-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Bantuan</h2>
-                                    </div>
-                                    <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    <div class="hd-mg-va">
-                                        <a href="index.php?content=list_masuk">Lihat Semua</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Pemberitahuan</h2>
@@ -295,12 +272,12 @@
                                                     <?php
                                                         $level      = $_SESSION['id_level'];
 
-                                                        $qlevel     = "SELECT * FROM tbl_level WHERE id_level='$level'";
+                                                        $qlevel 	= "SELECT * FROM tbl_level WHERE id_level='$level'";
                                                         $record     = mysqli_query($konek, $qlevel)or die(mysqli_error($konek));
                                                         $show       = mysqli_fetch_array($record);
                                                     
                                                     ?>
-                                                    <p>Anda telah login sebagai <?php echo $show['level']; ?>.</p>
+                                                    <p>Anda login sebagai <?php echo $show['level']; ?>. </p>
                                                 </div>
                                             </div>
                                         </a>
@@ -341,7 +318,9 @@
                         </li>
                         <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
-                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Bantuan</a>
+                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Analisis</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Grafik</a>
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
@@ -353,23 +332,27 @@
                                 </li>
                             </ul>
                         </div>
-                        <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="index.php?content=list_masuk">Pertanyaan Masuk</a>
+                                <li><a href="index.php?content=analisis">Lakukan Analisis</a>
                                 </li>
-                                <li><a href="index.php?content=belum_dibalas">Belum Dibalas</a>
+                                <li><a href="index.php?content=hasil_analisis">Hasil Analisis</a>
                                 </li>
-                                <li><a href="index.php?content=sudah_dibalas">Sudah Dibalas</a>
+                            </ul>
+                        </div>
+                        <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="index.php?content=grafik_penjualan">Grafik penjualan</a>
                                 </li>
-                                <li><a href="index.php?content=trash">Trash</a>
+                                <li><a href="index.php?content=grafik-k-means">Grafik <i>K-Means</i></a>
                                 </li>
-                                <!-- <li><a href="compose-email.html">Compose Email</a>
-                                </li> -->
                             </ul>
                         </div>
                         <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.php?content=laporan_penjualan">Laporan Penjualan</a>
+                                </li>
+                                <li><a href="index.php?content=laporan_analisis">Laporan Analisis</a>
                                 </li>
                             </ul>
                         </div>
@@ -377,7 +360,6 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.php?content=data_penjualan">Data Penjualan</a>
                                 </li>
-                                <li><a href="index.php?content=tambah_data_penjualan">Tambah Data Penjualan</a>
                             </ul>
                         </div>
                     </div>
@@ -396,31 +378,34 @@
             elseif ($content=='info')
               include 'info.php';
 
+
             // Notifikasi Bar
             elseif ($content=='pemberitahuan')
               include 'pemberitahuan.php';
             elseif ($content=='account')
               include 'account.php';
 
-           // Penjualan
+            // Penjualan
             elseif ($content=='data_penjualan')
               include 'data_penjualan.php';
-            elseif ($content=='tambah_data_penjualan')
-              include 'tambah_data_penjualan.php';
 
-          // Laporan 
+            // Laporan 
             elseif ($content=='laporan_penjualan')
               include 'laporan_penjualan.php';
-            
-            // Bantuan
-            elseif ($content=='list_masuk')
-              include 'list_masuk.php';
-            elseif ($content=='belum_dibalas') 
-              include 'belum_dibalas.php';
-            elseif ($content=='sudah_dibalas') 
-              include 'sudah_dibalas.php';
-            elseif ($content=='trash') 
-              include 'trash.php';  
+            elseif ($content=='laporan_analisis')
+              include 'laporan_analisis.php';
+
+            // Analisis 
+            elseif ($content=='analisis')
+              include 'analisis.php';
+            elseif ($content=='hasil_analisis')
+              include 'hasil_analisis.php';
+
+            // Grafik 
+            elseif ($content=='grafik_penjualan')
+              include 'grafik_penjualan.php';
+            elseif ($content=='grafik-k-means')
+              include 'grafik-k-means.php'; 
 
         ?>
 
