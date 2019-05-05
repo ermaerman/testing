@@ -37,6 +37,9 @@
         <div class="container">
           <div class="title">
             <h3 class="mb-3">Bantuan Tabs</h3>
+             <a class="nav-link btn btn-default d-none d-lg-block" href="" data-toggle="modal" data-target="#myModal3">
+              <i class="tim-icons icon-pin"></i> Masukan Pertanyaan
+            </a>
           </div>
           <div class="row">
             <div class="col-md-12 ml-auto col-xl-12 mr-auto">
@@ -117,6 +120,67 @@
                 </div> -->
                 <div align="right">
                   <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Masuk</button>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  End Modal -->
+
+      <!-- Form Modal -->
+      <div class="modal fade modal-black" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center"></div>
+            <div class="modal-body">
+              <div class="text-center">
+                <img width="250" src="./assets/img/logo1.png">
+              </div>
+              <div class="text-center text-muted mb-4 mt-3">
+                <small>Silahkan tulis pertanyaan pada form dibawah ini.</small>
+              </div>
+              <form role="form" action="config/tambah_pertanyaan.php" method="POST">
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="tim-icons icon-planet"></i>
+                      </span>
+                    </div>
+                    <input class="form-control" placeholder="Nama" type="text" name="nama" required>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="tim-icons icon-email-85"></i>
+                      </span>
+                    </div>
+                    <input class="form-control" placeholder="Email" type="email" name="email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="tim-icons icon-pin"></i>
+                      </span>
+                    </div>
+                    <input class="form-control" placeholder="Pertanyaan" type="text" name="pertanyaan" required>
+                  </div>
+                </div>
+                <!-- <div class="form-check mt-3">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <span class="form-check-sign"></span>
+                    Remember me!
+                  </label>
+                </div> -->
+                <div align="right">
+                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Tambah</button>
                 </div>
               </div>
               </form>
