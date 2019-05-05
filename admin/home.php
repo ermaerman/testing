@@ -11,7 +11,7 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Dasboard</h2>
-                                        <p><i>Hello, you did a great job today!</i></p>
+                                        <p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
                                     </div>
                                 </div>
                             </div>

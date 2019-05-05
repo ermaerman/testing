@@ -438,6 +438,12 @@
             elseif ($content=='tambah_data_penjualan')
               include 'tambah_data_penjualan.php';
 
+          // Laporan 
+            elseif ($content=='laporan_penjualan')
+              include 'laporan_penjualan.php';
+            elseif ($content=='laporan_analisis')
+              include 'laporan_analisis.php';
+
             // Bantuan
             elseif ($content=='list_masuk')
               include 'list_masuk.php';

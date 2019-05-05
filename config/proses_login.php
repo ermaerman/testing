@@ -37,12 +37,12 @@ if($jlhrecord > 0){
 			header('Location:../admin/index.php?content=index');
 		}
 		elseif($id_level == 3){
-			header('Location:../general_manager	/index.php?content=index');
+			header('Location:../general_manager/index.php?content=index');
 		}
 }
 
 else{
-	echo "<center><img  src='../assets/gif/loader-alt.gif'><strong><center><i>Maaf anda gagal login. Mungkin Email atau Password yang anda masukkan salah.<br>Silahkan masukkan Email atau Password dengan benar!</center>";
+	echo "<center><img  src='../assets/gif/loadingp.gif'><strong><center><i>Maaf anda gagal login. Mungkin Email atau Password yang anda masukkan salah.<br>Silahkan masukkan Email atau Password dengan benar!</center>";
 	echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../index.php">';  
 }
 
