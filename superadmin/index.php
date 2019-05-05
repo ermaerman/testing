@@ -1,17 +1,17 @@
 <?php
   
-  
   //menyambungkan koneksi
   include '../config/koneksi.php';
   session_start();
 
   if(isset($_GET['content'])) $content = $_GET['content']; 
-      else $content = "index";
+    else $content = "index";
 
 ?>
 
-<!doctype html>
+
 <html class="no-js" lang="">
+
 
 <head>
     <meta charset="utf-8">
@@ -210,6 +210,7 @@
     </style>
 </head>
 
+
 <body>
     <div class="header-top-area">
         <div class="container">
@@ -249,60 +250,15 @@
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/4.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">Lihat Semua</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Notifikasi</h2>
+                                        <h2>Pemberitahuan</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
@@ -316,53 +272,8 @@
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/4.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="#">Lihat Semua</a>
                                     </div>
                                 </div>
                             </li>
@@ -389,7 +300,7 @@
                                                         $show       = mysqli_fetch_array($record);
                                                     
                                                     ?>
-                                                    <p>You are login as <?php echo $show['level']; ?> now. </p>
+                                                    <p>Anda login sebagai <?php echo $show['level']; ?>. </p>
                                                 </div>
                                             </div>
                                         </a>
@@ -428,17 +339,17 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Bantuan</a>
+                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
                         <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Analisis</a>
                         </li>
                         <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Grafik</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> Pengaturan</a>
+                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Bantuan</a>
                         </li>
                         <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Manajemen User</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> Pengaturan</a>
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
@@ -452,9 +363,13 @@
                         </div>
                         <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="inbox.html">List Masuk</a>
+                                <li><a href="index.php?content=list_masuk">Pertanyaan Masuk</a>
                                 </li>
-                                <li><a href="view-email.html">List Pertanyaan</a>
+                                <li><a href="index.php?content=belum_dibalas">Belum Dibalas</a>
+                                </li>
+                                <li><a href="index.php?content=sudah_dibalas">Sudah Dibalas</a>
+                                </li>
+                                <li><a href="index.php?content=trash">Trash</a>
                                 </li>
                                 <!-- <li><a href="compose-email.html">Compose Email</a>
                                 </li> -->
@@ -462,39 +377,25 @@
                         </div>
                         <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="animations.html">Animations</a>
+                                <li><a href="animations.html">Lakukan Analisis</a>
                                 </li>
-                                <li><a href="google-map.html">Google Map</a>
-                                </li>
-                                <li><a href="data-map.html">Data Maps</a>
-                                </li>
-                                <li><a href="code-editor.html">Code Editor</a>
-                                </li>
-                                <li><a href="image-cropper.html">Images Cropper</a>
-                                </li>
-                                <li><a href="wizard.html">Wizard</a>
+                                <li><a href="google-map.html">Hasil Analisis</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="flot-charts.html">Flot Charts</a>
+                                <li><a href="flot-charts.html">Grafik penjualan</a>
                                 </li>
-                                <li><a href="bar-charts.html">Bar Charts</a>
-                                </li>
-                                <li><a href="line-charts.html">Line Charts</a>
-                                </li>
-                                <li><a href="area-charts.html">Area Charts</a>
+                                <li><a href="bar-charts.html">Grafik <i>K-Means</i></a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="form-elements.html">Form Elements</a>
+                                <li><a href="index.php?content=laporan_penjualan">Laporan Penjualan</a>
                                 </li>
-                                <li><a href="form-components.html">Form Components</a>
-                                </li>
-                                <li><a href="form-examples.html">Form Examples</a>
+                                <li><a href="index.php?content=laporan_analisis">Laporan Analisis</a>
                                 </li>
                             </ul>
                         </div>
@@ -524,17 +425,9 @@
                         </div>
                         <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="contact.html">Contact</a>
+                                <li><a href="index.php?content=data_user">Data User</a>
                                 </li>
-                                <li><a href="invoice.html">Invoice</a>
-                                </li>
-                                <li><a href="typography.html">Typography</a>
-                                </li>
-                                <li><a href="color.html">Color</a>
-                                </li>
-                                <li><a href="login-register.html">Login Register</a>
-                                </li>
-                                <li><a href="404.html">404 Page</a>
+                                <li><a href="index.php?content=tambah_user">Tambah User</a>
                                 </li>
                             </ul>
                         </div>
@@ -543,14 +436,38 @@
             </div>
         </div>
     </div>
-    <!-- Main Menu area End-->
 
+
+    <!-- Main Menu area End-->
         <?php
-                    if ($content=='index')
-                      include 'home.php';
-                    elseif ($content=='account')
-                      include 'account.php';
+
+            // Home
+            if ($content=='index')
+              include 'home.php';
+
+            // Notifikasi Bar
+            elseif ($content=='account')
+              include 'account.php';
+
+            // Manajemen User
+            elseif ($content=='data_user')
+              include 'data_user.php';
+            elseif ($content=='tambah_user')
+              include 'tambah_user.php';
+
+            // Bantuan
+            elseif ($content=='list_masuk')
+              include 'list_masuk.php';
+            elseif ($content=='belum_dibalas') 
+              include 'belum_dibalas.php';
+            elseif ($content=='sudah_dibalas') 
+              include 'sudah_dibalas.php';
+            elseif ($content=='trash') 
+              include 'trash.php';      
+
         ?>
+
+
     <!-- Start Footer area-->
     <div class="footer-copyright-area">
         <div class="container">
@@ -563,6 +480,8 @@
         </div>
     </div>
     <!-- End Footer area-->
+
+
     <!-- jquery
         ============================================ -->
     <script src="../assets_be/js/vendor/jquery-1.12.4.min.js"></script>

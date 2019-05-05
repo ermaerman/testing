@@ -7,7 +7,10 @@
           <div class="col-lg-6 col-md-6">
             <h1 class="text-white">Bantuan —
             </h1>
-            <p class="text-white mb-3">Ketenangan yang luar biasa telah menguasai seluruh jiwa, seperti pagi hari musim semi yang manis ini yang kita nikmati dengan sepenuh hati. Anda bingung, dan merasa ingin bertanya. Dan disinilah anda.</p>
+            <p class="text-white mb-3">Jl. Matraman Raya No. 25 Jakarta Timur 13140
+            	<br>Telp : (021)8583131 (Hunting) Fax : (021)8583732, 8504876<br>
+					Contact Center Hello DAMRI 1500825
+					<br><a href="https://www.damri.co.id">https://www.damri.co.id</a></p>
             <div class="btn-wrapper mb-3">
               <p class="text-success d-inline">Silahkan gulir kebawah</p>
               <a href="#blk" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-down"></i></a>
