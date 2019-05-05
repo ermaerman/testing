@@ -11,8 +11,8 @@
 										<i class="notika-icon notika-edit"></i>
 									</div>
 									<div class="breadcomb-ctn">
-										<h2>User Account</h2>
-										<p>Welcome to Notika <span class="bread-ntd">Admin Template</span></p>
+										<h2>Akun Pengguna</h2>
+										<p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
 									</div>
 								</div>
 							</div>

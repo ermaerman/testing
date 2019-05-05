@@ -339,6 +339,8 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
+                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> Penjualan</a>
+                        </li>
                         <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
                         <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Analisis</a>
@@ -348,8 +350,6 @@
                         <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Bantuan</a>
                         </li>
                         <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Manajemen User</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> Pengaturan</a>
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
@@ -401,26 +401,9 @@
                         </div>
                         <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="notification.html">Notifications</a>
+                                <li><a href="index.php?content=data_penjualan">Data Penjualan</a>
                                 </li>
-                                <li><a href="alert.html">Alerts</a>
-                                </li>
-                                <li><a href="modals.html">Modals</a>
-                                </li>
-                                <li><a href="buttons.html">Buttons</a>
-                                </li>
-                                <li><a href="tabs.html">Tabs</a>
-                                </li>
-                                <li><a href="accordion.html">Accordion</a>
-                                </li>
-                                <li><a href="dialog.html">Dialogs</a>
-                                </li>
-                                <li><a href="popovers.html">Popovers</a>
-                                </li>
-                                <li><a href="tooltips.html">Tooltips</a>
-                                </li>
-                                <li><a href="dropdown.html">Dropdowns</a>
-                                </li>
+                                <li><a href="index.php?content=tambah_data_penjualan">Tambah Data Penjualan</a>
                             </ul>
                         </div>
                         <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
@@ -449,11 +432,11 @@
             elseif ($content=='account')
               include 'account.php';
 
-            // Manajemen User
-            elseif ($content=='data_user')
-              include 'data_user.php';
-            elseif ($content=='tambah_user')
-              include 'tambah_user.php';
+            // Penjualan
+            elseif ($content=='data_penjualan')
+              include 'data_penjualan.php';
+            elseif ($content=='tambah_data_penjualan')
+              include 'tambah_data_penjualan.php';
 
             // Bantuan
             elseif ($content=='list_masuk')
@@ -463,7 +446,13 @@
             elseif ($content=='sudah_dibalas') 
               include 'sudah_dibalas.php';
             elseif ($content=='trash') 
-              include 'trash.php';      
+              include 'trash.php';  
+
+            // Manajemen User
+            elseif ($content=='data_user')
+              include 'data_user.php';
+            elseif ($content=='tambah_user')
+              include 'tambah_user.php';
 
         ?>
 
