@@ -1,12 +1,14 @@
-<?php
-  
-  //menyambungkan koneksi
-  include '../config/koneksi.php';
-  session_start();
+<?php session_start();
 
-  if(isset($_GET['content'])) $content = $_GET['content']; 
-    else $content = "index";
+  if(isset($_SESSION['email']))
 
+    {
+    
+    include "../config/koneksi.php";
+
+
+    if(isset($_GET['content'])) $content = $_GET['content']; 
+      else $content = "home";
 ?>
 
 
@@ -565,3 +567,11 @@
 </body>
 
 </html>
+
+<?php
+}
+else
+  {
+    header("location:../index.php");
+  }
+?>

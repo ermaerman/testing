@@ -138,7 +138,7 @@
                     <li><a href="#">Bootstrap 4</a> - Open source front end framework</li>
                     <li><a href="#">BLK Design System</a> - Open source CSS Library</li>
                     <li><a href="#">Notika</a> - Open source CSS Library</li>
-                    <li>a href="#">Creative Tim</a> - Open source design web</li>
+                    <li><a href="#">Creative Tim</a> - Open source design web</li>
                  </ul>
                   <p class="text-white mt-4">Ikuti perkembangan perjalanan pengembangan dan terhubung dengan kami di:<br>
                  <ul>

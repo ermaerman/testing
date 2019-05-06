@@ -2,6 +2,9 @@
   
   //menyambungkan koneksi
   include 'config/koneksi.php';
+  session_start();
+  if(isset($_SESSION['email']) ){
+  header("Location: 404.php");}
 
   if(isset($_GET['content'])) $content = $_GET['content']; 
       else $content = "index";
