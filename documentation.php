@@ -1,5 +1,5 @@
 <div class="section">
-  <img src="assets/img/path1.png" class="path">
+  <img src="assets/img/path2.png" class="path">
           <div class="container">
             <div class="title">
               <br>
@@ -41,11 +41,7 @@
             </div>
           </div>
         </div>
-    
-
-
-
-        
+ 
         <div class="container">
           <div class="row row-grid justify-content-between">
             <div class="col-md-5 mt-lg-5">
@@ -139,22 +135,15 @@
                 <h3 class="text font-weight-light mb-2">Sumber daya dan kredit</h3>
                <p class="text-white mt-4">Sistem Desain ini sepenuhnya dikodekan dan dibangun di atas Open Source, lebih detail di sini:<br>
                  <ul>
-          <li>
-            <a href="#">Bootstrap 4</a> - Open source front end framework</li>
-          <li>
-            <a href="#">BLK Design System</a> - Open source CSS Library</li>
-          <li>
-            <a href="#">Notika</a> - Open source CSS Library</li>
-            <li>
-            <a href="#">Creative Tim</a> - Open source design web</li>
-        </ul>
-
-        <p class="text-white mt-4">Ikuti perkembangan perjalanan pengembangan dan terhubung dengan kami di:<br>
+                    <li><a href="#">Bootstrap 4</a> - Open source front end framework</li>
+                    <li><a href="#">BLK Design System</a> - Open source CSS Library</li>
+                    <li><a href="#">Notika</a> - Open source CSS Library</li>
+                    <li>a href="#">Creative Tim</a> - Open source design web</li>
+                 </ul>
+                  <p class="text-white mt-4">Ikuti perkembangan perjalanan pengembangan dan terhubung dengan kami di:<br>
                  <ul>
-          <li>
-            <a href="http://www.damri.co.id">www.damri.co.id</a> - Website Perum DAMRI</li>
-        </ul>
-               </p>
+                    <li><a href="http://www.damri.co.id">www.damri.co.id</a> - Website Perum DAMRI</li>
+                 </ul>
                </p>
               </div>
             </div>
@@ -202,6 +191,13 @@
         </div>
       </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <!-- Form Modal -->
       <div class="modal fade modal-black" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -235,13 +231,6 @@
                     <input class="form-control" placeholder="Password" type="password" name="password" required>
                   </div>
                 </div>
-               <!--  <div class="form-check mt-3">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" checked>
-                    <span class="form-check-sign"></span>
-                    Remember me!
-                  </label>
-                </div> -->
                 <div align="right">
                   <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Masuk</button>
                 </div>
