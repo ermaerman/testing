@@ -1,13 +1,16 @@
-<?php
-  
-  //menyambungkan koneksi
-  include '../config/koneksi.php';
-  session_start();
+<?php session_start();
 
-  if(isset($_GET['content'])) $content = $_GET['content']; 
-    else $content = "index";
+  if(isset($_SESSION['email']))
 
+    {
+    
+    include "../config/koneksi.php";
+
+
+    if(isset($_GET['content'])) $content = $_GET['content']; 
+      else $content = "home";
 ?>
+
 
 
 <html class="no-js" lang="">
@@ -314,8 +317,6 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> Penjualan</a>
-                        </li>
                         <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
                         <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Analisis</a>
@@ -356,12 +357,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href="index.php?content=data_penjualan">Data Penjualan</a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -384,10 +379,6 @@
               include 'pemberitahuan.php';
             elseif ($content=='account')
               include 'account.php';
-
-            // Penjualan
-            elseif ($content=='data_penjualan')
-              include 'data_penjualan.php';
 
             // Laporan 
             elseif ($content=='laporan_penjualan')

@@ -27,7 +27,7 @@
     <div class="form-element-area">
         <div class="container">
             <div class="row">
-                <form action="" method="POST">
+                <form action="../config/tambah_penjualan.php" class="form-horizontal" method="POST">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="row">
@@ -36,7 +36,7 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" data-mask="99/99/9999" placeholder="Tanggal Keberangkatan" required>
+                                        <input type="text" name="tgl_berangkat" class="form-control" data-mask="99/99/9999" placeholder="Tanggal Keberangkatan" required>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Jam Berangkat" required>
+                                        <input type="text" name="jam_berangkat" class="form-control" placeholder="Jam Berangkat" required>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Jam Sampai" required>
+                                        <input type="text" name="jam_sampai" class="form-control" placeholder="Jam Sampai" required>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="password" class="form-control" placeholder="Armada" required>
+                                        <input type="text" name="id_armada" class="form-control" placeholder="Armada" required>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Trayek" required>
+                                        <input type="text" name="id_trayek" class="form-control" placeholder="Trayek" required>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Jenis Layanan" required>
+                                        <input type="text" name="id_layanan" class="form-control" placeholder="Jenis Layanan" required>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Jumlah Penumpang" required>
+                                        <input type="text" name="jml_penumpang" class="form-control" placeholder="Jumlah Penumpang" required>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Biaya Keluar" required>
+                                        <input type="text" name="load_factor" class="form-control" placeholder="Load Factor" required>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,16 @@
                                     <div class="form-ic-cmp">
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" class="form-control" placeholder="Status" required>
+                                        <input type="hidden" name="status" class="form-control" placeholder="Status">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="hidden" name="hasil_analisis" class="form-control" placeholder="Hasil Analisis">
                                     </div>
                                 </div>
                             </div>

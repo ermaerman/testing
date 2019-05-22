@@ -443,6 +443,8 @@
               include 'data_penjualan.php';
             elseif ($content=='tambah_data_penjualan')
               include 'tambah_data_penjualan.php';
+            elseif ($content=='edit_penjualan')
+              include 'edit_penjualan.php';
 
             // Laporan 
             elseif ($content=='laporan_penjualan')
@@ -477,6 +479,8 @@
               include 'data_user.php';
             elseif ($content=='tambah_user')
               include 'tambah_user.php';
+            elseif ($content=='edit_user')
+              include 'edit_user.php';
 
         ?>
 
