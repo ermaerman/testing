@@ -37,9 +37,9 @@
                         </div>
                         <div class="inbox-status">
                             <ul class="inbox-st-nav">
-                                <li><a href="index.php?content=list_masuk"><i class="notika-icon notika-mail"></i> Pertanyaan Masuk<span class="pull-right">12</span></a></li>
-                                <li><a href="index.php?content=belum_dibalas"><i class="notika-icon notika-draft"></i>Belum Dibalas</a></li>
-                                <li><a href="index.php?content=sudah_dibalas"><i class="notika-icon notika-sent"></i>Sudah Dibalas</a></li>
+                               <!--  <li><a href="index.php?content=list_masuk"><i class="notika-icon notika-mail"></i> Pertanyaan Masuk<span class="pull-right">12</span></a></li> -->
+                                <li><a href="index.php?content=belum_dibalas"><i class="notika-icon notika-draft"></i> Belum Dibalas</a></li>
+                                <li><a href="index.php?content=sudah_dibalas"><i class="notika-icon notika-sent"></i> Sudah Dibalas</a></li>
                                 <li><a href="index.php?content=trash"><i class="notika-icon notika-trash"></i> <b>Trash</b></a></li>
                             </ul>
                         </div>
@@ -71,6 +71,8 @@
                                                   <thead>
                                                     <tr>
                                                       <th>No</th>
+                                                      <th>Nama</th>
+                                                      <th>Email</th>
                                                       <th>List Masuk</th>
                                                       <th>Balasan</th>
                                                       <th>Action</th>
@@ -93,23 +95,23 @@
                                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                                    if ($pencarian != '') {
-                                                                     $sql = "SELECT id_helpdesk, inbox, outbox FROM tbl_helpdesk WHERE trash='1' AND inbox LIKE '%$pencarian%'";
+                                                                     $sql = "SELECT * FROM tbl_helpdesk WHERE trash='1' AND nama LIKE '%$pencarian%' OR email LIKE '%$pencarian%' OR inbox LIKE '%$pencarian%' OR outbox LIKE '%$pencarian%' ORDER BY id_helpdesk DESC";
                                                                      $query = $sql;
                                                                      $queryJml = $sql;
                                                                    } else {
-                                                                     $query = "SELECT id_helpdesk, inbox, outbox FROM tbl_helpdesk WHERE trash='1' LIMIT $posisi, $batas ";
-                                                                     $queryJml = "SELECT id_helpdesk, inbox, outbox FROM tbl_helpdesk WHERE trash='1'";
+                                                                     $query = "SELECT * FROM tbl_helpdesk WHERE trash='1' ORDER BY id_helpdesk DESC LIMIT $posisi, $batas ";
+                                                                     $queryJml = "SELECT * FROM tbl_helpdesk WHERE trash='1' ORDER BY id_helpdesk DESC";
                                                                      $no = $posisi + 1;
                                                                    }
                                                                  } else {
-                                                                   $query = "SELECT id_helpdesk, inbox, outbox FROM tbl_helpdesk WHERE trash='1' LIMIT $posisi, $batas ";
-                                                                   $queryJml = "SELECT id_helpdesk, inbox, outbox FROM tbl_helpdesk WHERE trash='1'";
+                                                                   $query = "SELECT * FROM tbl_helpdesk WHERE trash='1' ORDER BY id_helpdesk DESC LIMIT $posisi, $batas ";
+                                                                   $queryJml = "SELECT * FROM tbl_helpdesk WHERE trash='1' ORDER BY id_helpdesk DESC";
                                                                    $no = $posisi + 1;
                                                                  }
 
                                                       $querydata = mysqli_query($konek, $query)or die(mysqli_error());
                                                               if(mysqli_num_rows($querydata) == 0){ 
-                                                                echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';    
+                                                                echo '<tr><td colspan="6" align="center">Tidak ada data!</td></tr>';    
                                                               }
                                                                 else
                                                               { 
@@ -117,6 +119,8 @@
                                                                 while($data = mysqli_fetch_array($querydata)){  
                                                                   echo '<tr>';
                                                                   echo '<td>'.$no.'</td>';
+                                                                  echo '<td>'.$data['nama'].'</td>';
+                                                                  echo '<td>'.$data['email'].'</td>';
                                                                   echo '<td>'.$data['inbox'].'</td>';
                                                                   echo '<td>'.$data['outbox'].'</td>';
                                                                   echo '<td align="center"  width="20"><a data-toggle="tooltip" data-placement="left" title="Hapus Permanent" href=../config/delete_helpdesk.php?id_helpdesk='.$data['id_helpdesk'].'><i class="fa fa-trash fa-fw"></i></a></td>';

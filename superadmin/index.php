@@ -241,23 +241,39 @@
                                         <h2>Bantuan</h2>
                                     </div>
                                     <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
+                                        
+                                                    <?php
+
+                                                      include '../config/koneksi.php';
+
+                                                      $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE outbox='0' AND trash='0' AND status='0' ORDER BY id_helpdesk DESC LIMIT 5")or die(mysqli_error());
+                                                      if(mysqli_num_rows($query) == 0){ 
+                                                        echo '<div class="hd-mg-ctn">Tidak ada pemberitahuan</div>';    
+                                                      }
+                                                        else
+                                                      { 
+                                                       $no = 1;        
+                                                       while($data = mysqli_fetch_array($query)){
+                                                        echo '<a href="index.php?content=belum_dibalas">';
+                                                        echo '<div class="hd-message-sn">';
+                                                        echo '<div class="hd-mg-ctn">';
+                                                        echo '<h3 align="left">'.$data['nama'].'</h3>';
+                                                        echo '<p align="left">'.$data['inbox'].'</p>';
+                                                        echo '</div>';
+                                                        echo '</div>';
+                                                        echo '</a>';
+                                                          }
+                                                        }
+                                                    ?>
+                                        
                                     <div class="hd-mg-va">
-                                        <a href="index.php?content=list_masuk">Lihat Semua</a>
+                                        <a href="index.php?content=belum_dibalas">Lihat Semua</a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>
+                                10
+                            </span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Pemberitahuan</h2>
@@ -363,8 +379,8 @@
                         </div>
                         <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="index.php?content=list_masuk">Pertanyaan Masuk</a>
-                                </li>
+                                <!-- <li><a href="index.php?content=list_masuk">Pertanyaan Masuk</a>
+                                </li> -->
                                 <li><a href="index.php?content=belum_dibalas">Belum Dibalas</a>
                                 </li>
                                 <li><a href="index.php?content=sudah_dibalas">Sudah Dibalas</a>
@@ -472,7 +488,9 @@
             elseif ($content=='sudah_dibalas') 
               include 'sudah_dibalas.php';
             elseif ($content=='trash') 
-              include 'trash.php';  
+              include 'trash.php'; 
+            elseif ($content=='balas') 
+              include 'balas.php';  
 
             // Manajemen User
             elseif ($content=='data_user')

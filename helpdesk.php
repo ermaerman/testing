@@ -47,36 +47,47 @@
                 <small class="text-uppercase font-weight-bold">Frequently Answer Question</small>
               </div>
               <!-- Nav tabs -->
-              <div class="card">
-                <div class="card-header">
-                  <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist">
-                        <i class="tim-icons icon-paper"></i> Pertanyaan
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#link2" role="tablist">
-                        <i class="tim-icons icon-pencil"></i> Jawaban
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="card-body">
-                  <!-- Tab panes -->
-                  <div class="tab-content tab-space">
-                    <div class="tab-pane active" id="link1">
-                      <p>&nbsp;&nbsp;&nbsp;Saya tidak memiliki akses untuk masuk atau login, apa yang harus saya lakukan?</p>
-                    </div>
-                    <div class="tab-pane" id="link2">
-                      <p>&nbsp;&nbsp;&nbsp;Silahkan hubungi IT DAMRI Pusat.</p>
-                    </div>        
-                  </div>
-                </div>
+              
+               <form class="form-horizontal" method="POST">
+                    <?php
+
+                      include 'config/koneksi.php';
+
+                      $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE trash='0' ORDER BY id_helpdesk DESC")or die(mysqli_error());
+                              if(mysqli_num_rows($query) == 0){ 
+                                echo '<tr><td colspan="4" align="center"><i>Belum ada pertanyaan / komentar!</i></td></tr>';    
+                              }
+                                else
+                              { 
+                                $no = 1;        
+                                while($data = mysqli_fetch_array($query)){ 
+                                   echo '<div class="container">';
+                                   echo '<table width="100%">';
+                                   echo '<tr>';
+                                   echo '<td><font color="white"><b>'.$data['nama'].'</b></font></td>';
+                                   echo '<td align="right" colspan="2"><i>'.$data['tanggal'].'<?i></td>';
+                                   echo '</tr>';
+                                    echo '<tr>';
+                                   echo '<td colspan="2">'.$data['inbox'].'</td>';
+                                   echo '</tr>';
+                                   echo '<tr>';
+                                   echo '<td width=""><img src="assets/img/logo2.png" class="media-object" style="width:40px"></td>';
+                                   echo '<td width="86%"><font color="white">Balasan</font><br>'.$data['outbox'].'</td>';
+                                   echo '</tr>';
+                                   echo '</table>';
+                                  echo '</div>';
+                                  echo '<hr>';
+                                }
+                              }
+                        
+                          ?>
+
+              </form>
               </div>
             </div>
            </div>
       </div>
+
       <!-- End Section Tabs -->
    <!-- Form Modal -->
       <div class="modal fade modal-black" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -141,7 +152,7 @@
               <div class="text-center text-muted mb-4 mt-3">
                 <small>Silahkan tulis pertanyaan pada form dibawah ini.</small>
               </div>
-              <form role="form" action="config/tambah_pertanyaan.php" method="POST">
+              <form action="config/tambah_pertanyaan.php" class="form-horizontal" method="POST">
                 <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
@@ -169,16 +180,10 @@
                         <i class="tim-icons icon-pin"></i>
                       </span>
                     </div>
-                    <input class="form-control" placeholder="Pertanyaan" type="text" name="pertanyaan" required>
+                    <input class="form-control" placeholder="Pertanyaan" type="text" name="inbox" required>
                   </div>
                 </div>
-                <!-- <div class="form-check mt-3">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" checked>
-                    <span class="form-check-sign"></span>
-                    Remember me!
-                  </label>
-                </div> -->
+                <input type="hidden" name="tanggal" value="<?php $tgl=date('d-m-Y:h:i:s'); echo $tgl; ?>">
                 <div align="right">
                   <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Tambah</button>
                 </div>

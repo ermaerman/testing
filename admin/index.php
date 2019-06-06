@@ -239,20 +239,33 @@
                                     <div class="hd-mg-tt">
                                         <h2>Bantuan</h2>
                                     </div>
-                                    <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
+                                   <div class="hd-message-info">
+                                        
+                                                    <?php
+
+                                                      include '../config/koneksi.php';
+
+                                                      $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE outbox='0' AND trash='0' AND status='0' ORDER BY id_helpdesk DESC LIMIT 5")or die(mysqli_error());
+                                                      if(mysqli_num_rows($query) == 0){ 
+                                                        echo '<div class="hd-mg-ctn">Tidak ada pemberitahuan</div>';    
+                                                      }
+                                                        else
+                                                      { 
+                                                       $no = 1;        
+                                                       while($data = mysqli_fetch_array($query)){
+                                                        echo '<a href="index.php?content=belum_dibalas">';
+                                                        echo '<div class="hd-message-sn">';
+                                                        echo '<div class="hd-mg-ctn">';
+                                                        echo '<h3 align="left">'.$data['nama'].'</h3>';
+                                                        echo '<p align="left">'.$data['inbox'].'</p>';
+                                                        echo '</div>';
+                                                        echo '</div>';
+                                                        echo '</a>';
+                                                          }
+                                                        }
+                                                    ?>
                                     <div class="hd-mg-va">
-                                        <a href="index.php?content=list_masuk">Lihat Semua</a>
+                                        <a href="index.php?content=belum_dibalas">Lihat Semua</a>
                                     </div>
                                 </div>
                             </li>
