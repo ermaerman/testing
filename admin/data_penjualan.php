@@ -1,32 +1,32 @@
-    <div class="breadcomb-area">
-        <div class="container">
+  <div class="breadcomb-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="breadcomb-list">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-windows"></i>
-                                    </div>
-                                    <div class="breadcomb-ctn">
-                                        <h2>Data Penjualan</h2>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="breadcomb-wp">
+                  <div class="breadcomb-icon">
+                    <i class="notika-icon notika-windows"></i>
+                  </div>
+                  <div class="breadcomb-ctn">
+                    <h2>Data Penjualan</h2>
                     <p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
-                                    </div>
-                                </div>
-                            </div>
+                  </div>
+                </div>
+              </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
                                     <a href="index.php?content=tambah_data_penjualan"><button data-toggle="tooltip" data-placement="left" title="Tambah Data Penjualan" class="btn"><i class="notika-icon notika-plus-symbol"></i></button></a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Breadcomb area End-->
+  </div>
+  <!-- Breadcomb area End-->
     <!-- Data Table area Start-->
     <div class="data-table-area">
         <div class="container">
@@ -80,17 +80,17 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR jam_berangkat LIKE '%$pencarian%' OR jam_sampai LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%'";
+                                                     $sql = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR jam_berangkat LIKE '%$pencarian%' OR jam_sampai LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan";
+                                                     $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan";
+                                                   $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC";
                                                    $no = $posisi + 1;
                                                  }
 

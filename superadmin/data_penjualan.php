@@ -80,17 +80,17 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR jam_berangkat LIKE '%$pencarian%' OR jam_sampai LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%'";
+                                                     $sql = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR jam_berangkat LIKE '%$pencarian%' OR jam_sampai LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan";
+                                                     $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan";
+                                                   $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC";
                                                    $no = $posisi + 1;
                                                  }
 

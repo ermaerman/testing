@@ -27,7 +27,7 @@
     <div class="form-element-area">
         <div class="container">
             <div class="row">
-                <form action="../config/tambah_user.php" class="form-horizontal" method="POST">
+                <form action="../config/tambah_user.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="row">
@@ -112,7 +112,7 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" name="foto" class="form-control" placeholder="Foto" required>
+                                        <input type="file" name="fileToUploadFoto" id="fileToUploadFoto">
                                     </div>
                                 </div>
                             </div>

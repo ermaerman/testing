@@ -369,8 +369,8 @@
                         </div>
                         <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="index.php?content=list_masuk">Pertanyaan Masuk</a>
-                                </li>
+                                <!-- <li><a href="index.php?content=list_masuk">Pertanyaan Masuk</a>
+                                </li> -->
                                 <li><a href="index.php?content=belum_dibalas">Belum Dibalas</a>
                                 </li>
                                 <li><a href="index.php?content=sudah_dibalas">Sudah Dibalas</a>
@@ -434,7 +434,9 @@
             elseif ($content=='sudah_dibalas') 
               include 'sudah_dibalas.php';
             elseif ($content=='trash') 
-              include 'trash.php';  
+              include 'trash.php'; 
+            elseif ($content=='balas') 
+              include 'balas.php';  
 
         ?>
 

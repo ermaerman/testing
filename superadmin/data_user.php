@@ -111,7 +111,9 @@
                                                   echo '<td>'.$data['no_telp'].'</td>';
                                                   echo '<td>'.$data['id_divre'].'</td>';
                                                   echo '<td>'.$data['id_cabang'].'</td>';
-                                                  echo '<td>'.$data['foto'].'</td>';
+                                                  ?>
+                                                  <td><i><a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['foto'] ?>" target="_blank"><?php echo $data['foto'] ?></a></i></td>
+                                                  <?php
                                                   echo '<td>'.$data['alamat'].'</td>';
                                                   echo '<td>'.$data['id_level'].'</td>';
                                                   echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Edit" href=index.php?content=edit_user&&id_user='.$data['id_user'].'><i class="fa fa-edit fa-fw"></i></a></td>';

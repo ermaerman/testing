@@ -66,6 +66,7 @@
     <!-- responsive CSS
         ============================================ -->
     <link rel="stylesheet" href="../assets_be/css/responsive.css">
+    
     <!-- modernizr JS
         ============================================ -->
     <script src="../assets_be/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -304,7 +305,9 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
-                                                    <a href="index.php?content=account"><img src="../assets/img/icon.png" alt="" /></a>
+                                                    <?php
+                                                    echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$data['id_user'].'><img src="../assets/img/icon.png"></a>';
+                                                    ?>
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>
