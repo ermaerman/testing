@@ -22,6 +22,7 @@
 if($jlhrecord > 0){
 
 	session_start();
+	
 	$_SESSION['id_user']=$id_user;
 	$_SESSION['nama']=$nama;
 	$_SESSION['jabatan']=$jabatan;

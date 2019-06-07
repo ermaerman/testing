@@ -67,6 +67,9 @@
         ============================================ -->
     <link rel="stylesheet" href="../assets_be/css/responsive.css">
     
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <!-- modernizr JS
         ============================================ -->
     <script src="../assets_be/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -249,7 +252,7 @@
 
                                                       $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE outbox='0' AND trash='0' AND status='0' ORDER BY id_helpdesk DESC LIMIT 5")or die(mysqli_error());
                                                       if(mysqli_num_rows($query) == 0){ 
-                                                        echo '<div class="hd-mg-ctn">Tidak ada pemberitahuan</div>';    
+                                                        echo '<div"><p align="center"><i>Tidak ada pemberitahuan</i></p></div>';    
                                                       }
                                                         else
                                                       { 
@@ -306,12 +309,14 @@
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
                                                     <?php
-                                                    echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$data['id_user'].'><img src="../assets/img/icon.png"></a>';
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src="../assets/img/icon.png"></a>';
                                                     ?>
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>
                                                         <?php echo "<b>".$_SESSION['nama']."</b>"?>
+                                                        <br>
+                                                        <?php echo "<b>".$_SESSION['id_user']."</b>"?>
                                                     </h3>
                                                     <?php
                                                         $level      = $_SESSION['id_level'];
@@ -321,7 +326,7 @@
                                                         $show       = mysqli_fetch_array($record);
                                                     
                                                     ?>
-                                                    <p>Anda login sebagai <?php echo $show['level']; ?>. </p>
+                                                    <p>Anda login sebagai <?php echo $show['level']; ?> </p>
                                                 </div>
                                             </div>
                                         </a>
@@ -519,7 +524,7 @@
     </div>
     <!-- End Footer area-->
 
-
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
     <!-- jquery
         ============================================ -->
     <script src="../assets_be/js/vendor/jquery-1.12.4.min.js"></script>
