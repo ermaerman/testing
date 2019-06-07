@@ -12,23 +12,26 @@
 
 	$data      = mysqli_fetch_array($login,MYSQLI_BOTH);
 
+	$id_user   = $data['id_user'];
 	$nama      = $data['nama'];
 	$jabatan   = $data['jabatan'];
 	$email     = $data['email'];
 	$password  = $data['password'];
+	$foto      = $data['foto'];
 	$id_level  = $data['id_level'];
 
 
 if($jlhrecord > 0){
 
 	session_start();
-	
-	$_SESSION['id_user']=$id_user;
-	$_SESSION['nama']=$nama;
-	$_SESSION['jabatan']=$jabatan;
-	$_SESSION['email']=$email;
-	$_SESSION['password']=$password;
-	$_SESSION['id_level']=$id_level;
+
+	$_SESSION['id_user'] 	=$id_user;
+	$_SESSION['nama']		=$nama;
+	$_SESSION['jabatan']	=$jabatan;
+	$_SESSION['email']		=$email;
+	$_SESSION['foto']		=$foto;
+	$_SESSION['password']	=$password;
+	$_SESSION['id_level']	=$id_level;
 
 	//redirect level
 		if($id_level == 1){

@@ -178,7 +178,8 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                               <input type="text" class="form-control" name="id_level" placeholder="ID Level" value="<?php echo $data['id_level']; ?>" required>
+                                                
+                                               <input type="text" class="form-control" name="id_level" placeholder="ID Level" value="<?php echo $show['level']; ?>" readonly>
                                         </div>
                                     </div>
                                 </div>

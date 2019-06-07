@@ -276,7 +276,14 @@
                                 </div>
                             </li>
                             <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>
-                                10
+                                <?php 
+                                    $qhelp      = "SELECT COUNT(*) AS COUNT FROM tbl_helpdesk WHERE outbox=0 AND trash=0 AND status=0";
+                                    $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $count      = $result['COUNT'];
+                                    
+                                    echo $count;
+                                ?>
                             </span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -309,15 +316,15 @@
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
                                                     <?php
-                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src="../assets/img/icon.png"></a>';
+
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src='.$_SESSION['foto'].'></a>';
                                                     ?>
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>
                                                         <?php echo "<b>".$_SESSION['nama']."</b>"?>
-                                                        <br>
-                                                        <?php echo "<b>".$_SESSION['id_user']."</b>"?>
                                                     </h3>
+
                                                     <?php
                                                         $level      = $_SESSION['id_level'];
 
