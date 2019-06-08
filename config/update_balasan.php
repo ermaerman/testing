@@ -13,11 +13,14 @@
 
 	if ($updatehelp)
     	{
-    		echo "<br><br><br><strong><center><i>Berhasil Dibalas!";
-    		print
-            "<script>
-                history.back(-2);
-            </script>"; 
+    		 if ($_SESSION['id_level']==1){
+                echo "<br><br><br><strong><center><i>Berhasil menambahkan balasan!";
+                echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../superadmin/index.php?content=sudah_dibalas">';
+            }
+            else {
+                echo "<br><br><br><strong><center><i>Berhasil menambahkan balasan!";
+                echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../admin/index.php?content=sudah_dibalas">';
+            }
     	}
 	else {
     		print"

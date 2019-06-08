@@ -269,7 +269,16 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>
+                                <?php 
+                                    $qhelp      = "SELECT COUNT(*) AS COUNT FROM tbl_helpdesk WHERE outbox=0 AND trash=0 AND status=0";
+                                    $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $count      = $result['COUNT'];
+                                    
+                                    echo $count;
+                                ?>
+                            </span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Pemberitahuan</h2>
@@ -300,7 +309,10 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
-                                                    <a href="index.php?content=account"><img src="../assets/img/icon.png" alt="" /></a>
+                                                    <?php
+
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src='.$_SESSION['foto'].'></a>';
+                                                    ?>
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>
@@ -415,6 +427,8 @@
               include 'pemberitahuan.php';
             elseif ($content=='account')
               include 'account.php';
+            elseif ($content=='edit_user')
+              include '../superadmin/edit_user.php';
 
            // Penjualan
             elseif ($content=='data_penjualan')

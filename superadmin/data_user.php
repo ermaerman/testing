@@ -56,8 +56,8 @@
                                       <th>Nama</th>
                                       <th>Email</th>
                                       <th>No. Telp</th>
-                                      <th>ID Divre</th>
-                                      <th>ID Cabang</th>
+                                      <th>Divre</th>
+                                      <th>Cabang</th>
                                       <th>Foto</th>
                                       <th>Alamat</th>
                                       <th>ID Level</th>
@@ -109,13 +109,49 @@
                                                   echo '<td>'.$data['nama'].'</td>';
                                                   echo '<td>'.$data['email'].'</td>';
                                                   echo '<td>'.$data['no_telp'].'</td>';
-                                                  echo '<td>'.$data['id_divre'].'</td>';
-                                                  echo '<td>'.$data['id_cabang'].'</td>';
                                                   ?>
+                                                   <!-- echo '<td>'.$data['id_divre'].'</td>'; -->
+                                                   <!-- echo '<td>'.$data['id_cabang'].'</td>'; -->
+                                                  <td>
+                                                    <?php
+                                                      $divre  = $data['id_divre'];
+                                                      $dquery = "SELECT * FROM tbl_divre WHERE id_divre=$divre";
+                                                      $query  = mysqli_query($konek,$dquery)or die(mysqli_error($konek));
+                                                      $dshow  = mysqli_fetch_array($query);
+
+                                                      echo $dshow['nama'];
+                                                      // echo $divre;
+                                                    ?>  
+                                                  </td>
+                                                  <td>
+                                                    <?php
+                                                      $cabang   = $data['id_cabang'];
+                                                      $cquery   = "SELECT * FROM tbl_cabang WHERE id_cabang=$cabang";
+                                                      $query    = mysqli_query($konek,$cquery)or die(mysqli_error($konek));
+                                                      $cshow    = mysqli_fetch_array($query);
+
+
+                                                      echo $cshow['nama'];
+                                                    ?>  
+                                                  </td>
                                                   <td><i><a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['foto'] ?>" target="_blank"><?php echo $data['foto'] ?></a></i></td>
                                                   <?php
                                                   echo '<td>'.$data['alamat'].'</td>';
-                                                  echo '<td>'.$data['id_level'].'</td>';
+                                                  ?>
+                                                  <td>
+                                                    <?php
+                                                      $level   = $data['id_level'];
+
+                                                      $uquery   = "SELECT * FROM tbl_level WHERE id_level=$level";
+                                                      $query    = mysqli_query($konek,$uquery)or die(mysqli_error($konek));
+                                                      $ushow    = mysqli_fetch_array($query);
+
+
+                                                      echo $ushow['level'];
+                                                    ?>  
+                                                  </td>
+                                                   <!-- echo '<td>'.$data['id_level'].'</td>'; -->
+                                                  <?php
                                                   echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Edit" href=index.php?content=edit_user&&id_user='.$data['id_user'].'><i class="fa fa-edit fa-fw"></i></a></td>';
                                                   echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Delete" href=../config/delete_user.php?id_user='.$data['id_user'].'><i class="fa fa-trash fa-fw"></i></a></td>';
                                                   echo '</tr>';

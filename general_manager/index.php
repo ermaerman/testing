@@ -266,7 +266,10 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
-                                                    <a href="index.php?content=account"><img src="../assets/img/icon.png" alt="" /></a>
+                                                     <?php
+
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src='.$_SESSION['foto'].'></a>';
+                                                    ?>
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>

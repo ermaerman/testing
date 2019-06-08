@@ -35,14 +35,55 @@
                         <div class="compose-ml">
                             <a class="btn" href="#">Bantuan</a>
                         </div>
-                        <div class="inbox-status">
-                            <ul class="inbox-st-nav">
-                               <!--  <li><a href="index.php?content=list_masuk"><i class="notika-icon notika-mail"></i> Pertanyaan Masuk<span class="pull-right">12</span></a></li> -->
-                                <li><a href="index.php?content=belum_dibalas"><i class="notika-icon notika-draft"></i> Belum Dibalas</a></li>
-                                <li><a href="index.php?content=sudah_dibalas"><i class="notika-icon notika-sent"></i> Sudah Dibalas</a></li>
-                                <li><a href="index.php?content=trash"><i class="notika-icon notika-trash"></i> <b>Trash</b></a></li>
-                            </ul>
-                        </div>
+                       <div class="inbox-status">
+                             <ul class="inbox-st-nav">
+                                <!--  <li><a href="index.php?content=list_masuk"><i class="notika-icon notika-mail"></i> Pertanyaan Masuk<span class="pull-right">12</span></a></li> -->
+                                 <li>
+                                   <a href="index.php?content=belum_dibalas">
+                                     <i class="notika-icon notika-draft"></i> Belum Dibalas
+                                     <span class="pull-right">
+                                       <?php
+                                         $qhelp      = "SELECT count(*) as count FROM tbl_helpdesk WHERE status=0 AND outbox=0 AND trash=0";
+                                         $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
+                                         $result     = mysqli_fetch_assoc($query);
+                                         $count      = $result['count'];
+                                         
+                                         echo $count;
+                                       ?>
+                                     </span>
+                                   </a>
+                                 </li>
+                                 <li>
+                                   <a href="index.php?content=sudah_dibalas"><i class="notika-icon notika-sent"></i> Sudah Dibalas
+                                     <span class="pull-right">
+                                       <?php
+                                         $qhelp      = "SELECT count(*) as count FROM tbl_helpdesk WHERE status=1 AND outbox!='0' AND trash=0";
+                                         $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
+                                         $result     = mysqli_fetch_assoc($query);
+                                         $count      = $result['count'];
+                                         
+                                         echo $count;
+                                       ?>
+                                     </span>
+                                   </a>
+                                 </li>
+                                 <li>
+                                   <a href="index.php?content=trash">
+                                     <i class="notika-icon notika-trash"></i> <b>Trash</b>
+                                     <span class="pull-right">
+                                       <?php
+                                         $qhelp      = "SELECT count(*) as count FROM tbl_helpdesk WHERE trash=1";
+                                         $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
+                                         $result     = mysqli_fetch_assoc($query);
+                                         $count      = $result['count'];
+                                         
+                                         echo $count;
+                                       ?>
+                                     </span>
+                                   </a>
+                                 </li>
+                             </ul>
+                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">

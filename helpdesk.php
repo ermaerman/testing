@@ -72,7 +72,24 @@
                                    echo '</tr>';
                                    echo '<tr>';
                                    echo '<td width=""><img src="assets/img/logo2.png" class="media-object" style="width:40px"></td>';
-                                   echo '<td width="86%"><font color="white">Balasan</font><br>'.$data['outbox'].'</td>';
+                                   ?>
+                                   <td width="86%">
+                                    <font color='white'>Balasan</font>
+                                    <br>
+                                    <i>
+                                     <?php
+                                        if ($data['outbox']!='0') {
+                                          echo $data['outbox'];
+                                        }
+                                        else {
+                                          echo "Menunggu Balasan"; 
+
+                                        }
+                                     ?>
+                                     </i>
+                                   </td>
+                                   <?php
+                                   // echo '<td width="86%"><font color="white">Balasan</font><br>'.$data['outbox'].'</td>';
                                    echo '</tr>';
                                    echo '</table>';
                                   echo '</div>';

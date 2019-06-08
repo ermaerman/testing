@@ -467,7 +467,9 @@
             elseif ($content=='pemberitahuan')
               include 'pemberitahuan.php';
             elseif ($content=='account')
-              include 'account.php';
+              include 'account.php';/*
+            elseif ($content=='edit_account')
+              include 'edit_account.php';*/
 
             // Penjualan
             elseif ($content=='data_penjualan')

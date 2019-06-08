@@ -30,6 +30,10 @@
                                     </div>
                                 </div>
                             </div>
+                                <div class="breadcomb-report">
+                                    <a href="index.php?content=edit_user&&id_user=<?php echo $data['id_user'] ?>"><button data-toggle="tooltip" data-placement="left" title="Edit Akun" class="btn"><i class="notika-icon notika-edit"></i></button></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -44,6 +48,17 @@
                 <form action="" class="form-horizontal" method="POST">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-example-wrap mg-t-30">
+                        <div class="form-example-int form-horizental mg-t-15">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="nk-int-st">
+                                            <p align="center"><img width="150" height="250" src="<?php echo $data['foto']; ?>"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-example-int form-horizental mg-t-15">
                             <div class="form-group">
                                 <div class="row">
@@ -142,20 +157,6 @@
                                 </div>
                             </div>
                         </div>
-                         <div class="form-example-int form-horizental">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                                        <label class="hrzn-fm">Foto</label>
-                                    </div>
-                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                        <div class="nk-int-st">
-                                               <input type="text" class="form-control" name="foto" placeholder="Foto" value="<?php echo $data['foto']; ?>" readonly>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
@@ -174,11 +175,18 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                                        <label class="hrzn-fm">ID Level</label>
+                                        <label class="hrzn-fm">Level</label>
                                     </div>
+                                    <?php
+
+                                        // $level  = "SELECT * FROM tbl_level WHERE id_level='$data['id_level']";
+                                        // $query  = mysqli_query($konek,$level)or die(mysqli_error($konek));
+                                        // $show   = mysqli_fetch_array($query);
+                                        // // var_dump($show['level']);
+                                    ?>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                               <input type="text" class="form-control" name="id_level" placeholder="ID Level" value="<?php echo $data['id_level']; ?>" readonly>
+                                            <input type="text" class="form-control" name="id_level" placeholder="ID Level" value="<?php echo $show['level']; ?>" readonly>
                                         </div>
                                     </div>
                                 </div>
