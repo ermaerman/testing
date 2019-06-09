@@ -7,9 +7,19 @@
     $id_user = $_GET['id_user'];
 
     $edit    = "SELECT id_user, nik, nama, email, password, no_telp, id_divre, id_cabang, foto, alamat, id_level FROM tbl_user WHERE id_user = '$id_user'";
-    $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
+    $hasil   = mysqli_query($konek, $edit)or die(mysql_error($konek));
     $data    = mysqli_fetch_array($hasil);
 
+    $cabang     = $data['id_cabang'];
+    $divre      = $data['id_divre'];
+
+    $qcabang    = "SELECT * FROM tbl_cabang WHERE id_cabang='$cabang'";
+    $query      = mysqli_query($konek,$qcabang)or die(mysqli_error($konek));
+    $cshow      = mysqli_fetch_array($query);
+
+    $qdivre    = "SELECT * FROM tbl_divre WHERE id_divre='$divre'";
+    $query      = mysqli_query($konek,$qdivre)or die(mysqli_error($konek));
+    $dshow      = mysqli_fetch_array($query);
 ?>
 
 <!-- Breadcomb area Start-->
@@ -30,6 +40,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
                                     <a href="index.php?content=edit_user&&id_user=<?php echo $data['id_user'] ?>"><button data-toggle="tooltip" data-placement="left" title="Edit Akun" class="btn"><i class="notika-icon notika-edit"></i></button></a>
                                 </div>
@@ -138,7 +149,7 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                               <input type="text" class="form-control" name="id_divre" placeholder="ID Divre" value="<?php echo $data['id_divre']; ?>" readonly>
+                                               <input type="text" class="form-control" name="id_divre" placeholder="ID Divre" value="<?php echo $dshow['nama']; ?>" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +163,7 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                            <input type="text" class="form-control" name="id_cabang" placeholder="ID Cabang" value="<?php echo $data['id_cabang']; ?>" readonly>
+                                            <input type="text" class="form-control" name="id_cabang" placeholder="ID Cabang" value="<?php echo $cshow['nama']; ?>" readonly>
                                     </div>
                                 </div>
                             </div>

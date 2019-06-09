@@ -32,6 +32,10 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-example-wrap mg-t-30">
                         <div class="form-example-int form-horizental mg-t-15">
+                            <?php
+                                $level = $_SESSION['id_level'];
+                            ?>
+                            <input type="hidden" name="id_level" value="<?php echo $level?>">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">

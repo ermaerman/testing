@@ -4,6 +4,7 @@
 	
 	include 'koneksi.php';
 
+	$level 				= $_POST['id_level'];
 	$id_penjualan       = $_POST['id_penjualan'];
     $tgl_berangkat      = $_POST['tgl_berangkat'];
     $jam_berangkat      = $_POST['jam_berangkat'];
@@ -20,10 +21,27 @@
 
 	$simpan			= mysqli_query($konek, $insert)or die(mysqli_error($konek));
 
-	echo "<br><br><br><strong><center><i>Data berhasil ditambah!";
-	print
-		"<script>
-    		history.back(-1);
-    	</script>";  
+	if ($simpan)
+	{
+            if ($level=='1'){
+                echo "<br><br><br><strong><center><i>Data berhasil ditambah!";
+                echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../superadmin/index.php?content=data_penjualan">';
+            }
+            elseif ($level=='2') {
+                echo "<br><br><br><strong><center><i>Data berhasil ditambah!";
+                echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../admin/index.php?content=data_penjualan">';
+            }
+            else {
+                echo "<br><br><br><strong><center><i>Data berhasil ditambah!";
+                echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../general_manager/index.php?content=data_penjualan">';
+            }
+    	}
 
+	else {
+    		print"
+    			<script>
+    				alert(\"Data Gagal Diubah!\");
+    				history.back(-1);
+    			</script>";
+    	}
 ?>

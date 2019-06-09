@@ -56,7 +56,7 @@
                                       <th>Jumlah Penumpang</th>
                                       <th>Load Factor</th>
                                       <th>Status Analisis</th>
-                                      <th>Hasil Analisis</th>
+                                      <!-- <th>Hasil Analisis</th> -->
                                       <th>Action</th>
                                     </tr>
                                   </thead>
@@ -93,7 +93,7 @@
 
                                       $querydata = mysqli_query($konek, $query)or die(mysqli_error());
                                               if(mysqli_num_rows($querydata) == 0){ 
-                                                echo '<tr><td colspan="11" align="center">Tidak ada data!</td></tr>';    
+                                                echo '<tr><td colspan="10" align="center">Tidak ada data!</td></tr>';    
                                               }
                                                 else
                                               { 
@@ -104,13 +104,63 @@
                                                   echo '<td>'.$data['tgl_berangkat'].'</td>';
                                                   echo '<td>'.$data['jam_berangkat'].'</td>';
                                                   echo '<td>'.$data['jam_sampai'].'</td>';
-                                                  echo '<td>'.$data['id_armada'].'</td>';
+                                                  ?>
+                                                   <td>
+                                                    <?php
+                                                      $armada   = $data['id_armada'];
+
+                                                      $aquery   = "SELECT * FROM tbl_armada WHERE id_armada=$armada";
+                                                      $query    = mysqli_query($konek,$aquery)or die(mysqli_error($konek));
+                                                      $ashow    = mysqli_fetch_array($query);
+
+
+                                                      echo $ashow['armada'];
+                                                    ?>  
+                                                  </td>
+                                                   <td>
+                                                    <?php
+                                                      $trayek   = $data['id_trayek'];
+
+                                                      $tquery   = "SELECT * FROM tbl_trayek WHERE id_trayek=$trayek";
+                                                      $query    = mysqli_query($konek,$tquery)or die(mysqli_error($konek));
+                                                      $tshow    = mysqli_fetch_array($query);
+
+
+                                                      echo $tshow['jurusan'];
+                                                    ?>  
+                                                  </td>
+                                                  <td>
+                                                    <?php
+                                                      $layanan   = $data['id_layanan'];
+
+                                                      $lquery   = "SELECT * FROM tbl_layanan WHERE id_layanan=$layanan";
+                                                      $query    = mysqli_query($konek,$lquery)or die(mysqli_error($konek));
+                                                      $lshow    = mysqli_fetch_array($query);
+
+
+                                                      echo $lshow['jenis_layanan'];
+                                                    ?>  
+                                                  </td>
+                                                  <!-- echo '<td>'.$data['id_armada'].'</td>';
                                                   echo '<td>'.$data['id_trayek'].'</td>';
-                                                  echo '<td>'.$data['id_layanan'].'</td>';
+                                                  echo '<td>'.$data['id_layanan'].'</td>'; -->
+                                                  <?php
                                                   echo '<td>'.$data['jml_penumpang'].'</td>';
                                                   echo '<td>'.$data['load_factor'].'</td>';
-                                                  echo '<td>'.$data['status'].'</td>';
-                                                  echo '<td>'.$data['hasil_analisis'].'</td>';
+                                                  ?>
+                                                  <td> 
+                                                    <?php
+                                                      if ($data['status']=='1'){
+                                                        echo '<font color="green">Sudah dianalisis</font>';
+                                                      }
+                                                      else {
+                                                        echo '<font color="red">Belum dianalisis</font>';
+                                                      }
+                                                    ?>
+                                                  </td>
+                                                  <!-- echo '<td>'.$data['status'].'</td>'; -->
+                                                  <?php
+                                                  /*echo '<td>'.$data['hasil_analisis'].'</td>';*/
                                                   //================================================================
                                                   //belum arahin ke py
                                                   echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" href=index.php?content=kmeans&&id_penjualan='.$data['id_penjualan'].'><i class="fa fa-rocket fa-fw"></i></a></td>';

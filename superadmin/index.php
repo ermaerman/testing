@@ -477,7 +477,7 @@
             elseif ($content=='tambah_data_penjualan')
               include 'tambah_data_penjualan.php';
             elseif ($content=='edit_penjualan')
-              include 'edit_penjualan.php';
+              include '../superadmin/edit_user.php';
 
             // Laporan 
             elseif ($content=='laporan_penjualan')

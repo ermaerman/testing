@@ -96,7 +96,18 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                           <input type="text" class="form-control" name="id_armada" placeholder="Armada" value="<?php echo $data['id_armada']; ?>" required>
+                                             <select name="id_armada" class="form-control">
+                                                 <?php
+                                                     $query  = "SELECT * FROM tbl_armada";
+                                                     $armada = mysqli_query($konek,$query)or die(mysqli_error($konek));
+                                                     while ($tampil = mysqli_fetch_array($armada)) {
+                                                 ?>
+                                                     <option value="<?php echo $tampil['id_armada']; ?>" <?php if ($data['id_armada'] == $tampil['id_armada']) { echo 'selected'; } ?> ><?php echo $tampil['armada']; ?></option>
+                                                 <?php 
+                                                     }
+                                                 ?>
+                                             </select>
+                                          <!--  <input type="text" class="form-control" name="id_armada" placeholder="Armada" value="<?php echo $data['id_armada']; ?>" required> -->
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +121,18 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                            <input type="text" class="form-control" name="id_trayek" placeholder="Trayek" value="<?php echo $data['id_trayek']; ?>" required>
+                                            <select name="id_armada" class="form-control">
+                                                 <?php
+                                                     $query  = "SELECT * FROM tbl_trayek";
+                                                     $trayek = mysqli_query($konek,$query)or die(mysqli_error($konek));
+                                                     while ($tampil = mysqli_fetch_array($trayek)) {
+                                                 ?>
+                                                     <option value="<?php echo $tampil['id_trayek']; ?>" <?php if ($data['id_trayek'] == $tampil['id_trayek']) { echo 'selected'; } ?> ><?php echo $tampil['jurusan']; ?></option>
+                                                 <?php 
+                                                     }
+                                                 ?>
+                                             </select>
+                                            <!-- <input type="text" class="form-control" name="id_trayek" placeholder="Trayek" value="<?php echo $data['id_trayek']; ?>" required> -->
                                         </div>
                                     </div>
                                 </div>
@@ -124,7 +146,18 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                             <input type="text" class="form-control" name="id_layanan" placeholder="Layanan" value="<?php echo $data['id_layanan']; ?>" required>
+                                            <select name="id_layanan" class="form-control">
+                                                 <?php
+                                                     $query  = "SELECT * FROM tbl_layanan";
+                                                     $layanan = mysqli_query($konek,$query)or die(mysqli_error($konek));
+                                                     while ($tampil = mysqli_fetch_array($layanan)) {
+                                                 ?>
+                                                     <option value="<?php echo $tampil['id_layanan']; ?>" <?php if ($data['id_layanan'] == $tampil['id_layanan']) { echo 'selected'; } ?> ><?php echo $tampil['jenis_layanan']; ?></option>
+                                                 <?php 
+                                                     }
+                                                 ?>
+                                             </select>
+                                             <!-- <input type="text" class="form-control" name="id_layanan" placeholder="Layanan" value="<?php echo $data['id_layanan']; ?>" required> -->
                                         </div>
                                     </div>
                                 </div>

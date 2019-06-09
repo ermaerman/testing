@@ -68,6 +68,9 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="../assets_be/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
     <style type="text/css">
         .header-top-area, .footer-copyright-area{
             background:#111535;
@@ -233,13 +236,13 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
+                             <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Bantuan</h2>
                                     </div>
-                                   <div class="hd-message-info">
+                                    <div class="hd-message-info">
                                         
                                                     <?php
 
@@ -247,7 +250,7 @@
 
                                                       $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE outbox='0' AND trash='0' AND status='0' ORDER BY id_helpdesk DESC LIMIT 5")or die(mysqli_error());
                                                       if(mysqli_num_rows($query) == 0){ 
-                                                        echo '<div class="hd-mg-ctn">Tidak ada pemberitahuan</div>';    
+                                                        echo '<div"><p align="center"><i>Tidak ada pemberitahuan</i></p></div>';    
                                                       }
                                                         else
                                                       { 
@@ -264,6 +267,7 @@
                                                           }
                                                         }
                                                     ?>
+                                        
                                     <div class="hd-mg-va">
                                         <a href="index.php?content=belum_dibalas">Lihat Semua</a>
                                     </div>
@@ -435,6 +439,8 @@
               include 'data_penjualan.php';
             elseif ($content=='tambah_data_penjualan')
               include 'tambah_data_penjualan.php';
+            elseif ($content=='edit_penjualan')
+              include 'edit_penjualan.php';
 
           // Laporan 
             elseif ($content=='laporan_penjualan')
