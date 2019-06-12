@@ -69,6 +69,10 @@
     
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../assets_be/code/highcharts.js"></script>
+    <script src="../assets_be/code/modules/exporting.js"></script>
+    <script src="../assets_be/code/modules/export-data.js"></script>
 
     <!-- modernizr JS
         ============================================ -->
@@ -418,7 +422,7 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.php?content=grafik_penjualan">Grafik penjualan</a>
                                 </li>
-                                <li><a href="index.php?content=grafik-k-means">Grafik <i>K-Means</i></a>
+                                <li><a href="index.php?content=grafik_k_means">Grafik <i>K-Means</i></a>
                                 </li>
                             </ul>
                         </div>
@@ -494,8 +498,8 @@
             // Grafik 
             elseif ($content=='grafik_penjualan')
               include 'grafik_penjualan.php';
-            elseif ($content=='grafik-k-means')
-              include 'grafik-k-means.php';
+            elseif ($content=='grafik_k_means')
+              include 'grafik_k_means.php';
 
             // Bantuan
             elseif ($content=='list_masuk')

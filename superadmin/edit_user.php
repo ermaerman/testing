@@ -48,7 +48,7 @@
                 <form action="../config/update_user.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-example-wrap mg-t-30">
-                        <div class="form-example-int form-horizental mg-t-15">
+                        <div class="form-example-int form-horizental mg-t-10">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-7 col-sm-7 col-xs-12">
