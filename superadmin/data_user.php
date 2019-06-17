@@ -60,7 +60,7 @@
                                       <th>Cabang</th>
                                       <th>Foto</th>
                                       <th>Alamat</th>
-                                      <th>ID Level</th>
+                                      <th>Level</th>
                                       <th colspan="2"><center>Action</center></th>
                                     </tr>
                                   </thead>

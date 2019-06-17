@@ -383,7 +383,7 @@
             elseif ($content=='account')
               include 'account.php';
             elseif ($content=='edit_user')
-              include 'edit_user.php';
+              include '../superadmin/edit_user.php';
 
             // Laporan 
             elseif ($content=='laporan_penjualan')

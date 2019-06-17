@@ -6,7 +6,7 @@
 
     $id_penjualan = $_GET['id_penjualan'];
 
-    $edit    = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan WHERE id_penjualan = '$id_penjualan'";
+    $edit    = "SELECT * FROM tbl_penjualan WHERE id_penjualan = '$id_penjualan'";
     $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
     $data    = mysqli_fetch_array($hasil);
 
@@ -68,26 +68,37 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                            <input type="text" class="form-control" name="jam_berangkat" placeholder="Jam Berangkat" value="<?php echo $data['jam_berangkat']; ?>" required>
+                                           <select name="id_jam" class="form-control">
+                                                 <?php
+                                                     $query  = "SELECT * FROM tbl_jam";
+                                                     $jam = mysqli_query($konek,$query)or die(mysqli_error($konek));
+                                                     // var_dump($jam);
+                                                     while ($tampil = mysqli_fetch_array($jam)) {
+                                                 ?>
+                                                     <option value="<?php echo $tampil['id_jam']; ?>" <?php if ($data['id_jam'] == $tampil['id_jam']) { echo 'selected'; } ?> ><?php echo $tampil['jam']; ?></option>
+                                                 <?php 
+                                                     }
+                                                 ?>
+                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                         <div class="form-example-int form-horizental">
+                         <!-- <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
                                         <label class="hrzn-fm">Jam Sampai</label>
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                        <div class="nk-int-st">
-                                            <input type="text" class="form-control" name="jam_sampai" placeholder="Jam Sampai" value="<?php echo $data['jam_sampai']; ?>" required>
-                                        </div>
+                                        <div class="nk-int-st"> -->
+                                           <!--  <input type="hidden" class="form-control" name="jam_sampai" placeholder="Jam Sampai" value="<?php echo $data['jam_sampai']; ?>" required> -->
+                                       <!--  </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                          <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
@@ -121,7 +132,7 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                            <select name="id_armada" class="form-control">
+                                            <select name="id_trayek" class="form-control">
                                                  <?php
                                                      $query  = "SELECT * FROM tbl_trayek";
                                                      $trayek = mysqli_query($konek,$query)or die(mysqli_error($konek));

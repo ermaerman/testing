@@ -420,7 +420,7 @@
                         </div>
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="index.php?content=grafik_penjualan">Grafik penjualan</a>
+                                <li><a href="index.php?content=grafik_penjualan">Grafik Penjualan</a>
                                 </li>
                                 <li><a href="index.php?content=grafik_k_means">Grafik <i>K-Means</i></a>
                                 </li>
@@ -481,7 +481,7 @@
             elseif ($content=='tambah_data_penjualan')
               include 'tambah_data_penjualan.php';
             elseif ($content=='edit_penjualan')
-              include '../superadmin/edit_user.php';
+              include 'edit_penjualan.php';
 
             // Laporan 
             elseif ($content=='laporan_penjualan')

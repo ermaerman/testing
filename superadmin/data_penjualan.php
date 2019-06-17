@@ -46,6 +46,10 @@
                                 <a href="index.php?content=data_penjualan"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
                               </div>
                             </form>
+                            <!-- <?php
+                              $date = date('Y-m-d');
+                              var_dump($date);
+                            ?> -->
                               <br><br>
                               <form class="form-horizontal" method="POST">
                                 <table class="table table-striped" id="data-table-basic">
@@ -54,7 +58,6 @@
                                       <th>No</th>
                                       <th>Tanggal</th>
                                       <th>Berangkat</th>
-                                      <th>Sampai</th>
                                       <th>Armada</th>
                                       <th>Trayek</th>
                                       <th>Layanan</th>
@@ -80,23 +83,23 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR jam_berangkat LIKE '%$pencarian%' OR jam_sampai LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
+                                                     $sql = "SELECT *FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR id_jam LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC";
+                                                     $query = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor FROM tbl_penjualan ORDER BY id_penjualan DESC";
+                                                   $query = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC";
                                                    $no = $posisi + 1;
                                                  }
 
                                       $querydata = mysqli_query($konek, $query)or die(mysqli_error());
                                               if(mysqli_num_rows($querydata) == 0){ 
-                                                echo '<tr><td colspan="10" align="center">Tidak ada data!</td></tr>';    
+                                                echo '<tr><td colspan="9" align="center">Tidak ada data!</td></tr>';    
                                               }
                                                 else
                                               { 
@@ -105,13 +108,20 @@
                                                   echo '<tr>';
                                                   echo '<td>'.$no.'</td>';
                                                   echo '<td>'.$data['tgl_berangkat'].'</td>';
-                                                  echo '<td>'.$data['jam_berangkat'].'</td>';
-                                                  echo '<td>'.$data['jam_sampai'].'</td>';
                                                   ?>
                                                   <td>
                                                     <?php
-                                                      $armada   = $data['id_armada'];
+                                                      $jam   = $data['id_jam'];
+                                                      $jmquery   = "SELECT * FROM tbl_jam WHERE id_jam=$jam";
+                                                      $query    = mysqli_query($konek,$jmquery)or die(mysqli_error($konek));
+                                                      $jmshow    = mysqli_fetch_array($query);
 
+                                                      echo $jmshow['jam'];
+                                                    ?>  
+                                                  </td>
+                                                  <td>
+                                                    <?php
+                                                      $armada   = $data['id_armada'];
                                                       $aquery   = "SELECT * FROM tbl_armada WHERE id_armada=$armada";
                                                       $query    = mysqli_query($konek,$aquery)or die(mysqli_error($konek));
                                                       $ashow    = mysqli_fetch_array($query);

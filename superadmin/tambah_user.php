@@ -90,7 +90,18 @@
                                         <i class="notika-icon notika-next"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" name="id_divre" class="form-control" placeholder="Divisi Regional" required>
+                                        <select name="id_divre" id="divre" class="form-control">
+                                            <option>-- Pilih Divisi Regional --</option>
+                                            <?php 
+                                                $query      = "SELECT * FROM tbl_divre";
+                                                $divre    = mysqli_query($konek, $query);
+                                                while ($tampilDivre = mysqli_fetch_array($divre)){
+                                            ?>
+                                                <option value="<?php echo $tampilDivre['id_divre'] ?>"><?php echo $tampilDivre['nama'] ?></option>
+                                            <?php
+                                                }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +113,18 @@
                                         <i class="notika-icon notika-next"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" name="id_cabang" class="form-control" placeholder="Cabang" required>
+                                        <select name="id_cabang" id="cabang" class="form-control">
+                                            <option>-- Pilih Cabang --</option>
+                                            <?php 
+                                                $query      = "SELECT * FROM tbl_cabang";
+                                                $cabang    = mysqli_query($konek, $query);
+                                                while ($tampilCabang = mysqli_fetch_array($cabang)){
+                                            ?>
+                                                <option value="<?php echo $tampilCabang['id_cabang'] ?>"><?php echo $tampilCabang['nama'] ?></option>
+                                            <?php
+                                                }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +154,18 @@
                                         <i class="notika-icon notika-travel"></i>
                                     </div>
                                     <div class="nk-int-st">
-                                        <input type="text" name="id_level" class="form-control" placeholder="Level" required>
+                                        <select name="id_level" id="level" class="form-control">
+                                            <option>-- Pilih Level --</option>
+                                            <?php 
+                                                $query      = "SELECT * FROM tbl_level";
+                                                $level    = mysqli_query($konek, $query);
+                                                while ($tampilLevel = mysqli_fetch_array($level)){
+                                            ?>
+                                                <option value="<?php echo $tampilLevel['id_level'] ?>"><?php echo $tampilLevel['level'] ?></option>
+                                            <?php
+                                                }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

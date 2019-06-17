@@ -36,7 +36,7 @@
                                 $level = $_SESSION['id_level'];
                             ?>
                             <input type="hidden" name="id_level" value="<?php echo $level?>">
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
                                         <label class="hrzn-fm">Tanggal Keberangkatan</label>
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="form-example-int form-horizental mg-t-15">
                             <div class="form-group">
@@ -57,26 +57,37 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                            <input type="time" name="jam_berangkat" class="form-control input-sm" placeholder="Jam Berangkat" required>
+                                           <select name="id_jam" class="form-control">
+                                                <option>-- Pilih Jam Berangkat --</option>
+                                                <?php
+                                                    $query  = "SELECT * FROM tbl_jam";
+                                                    $jam = mysqli_query($konek,$query);
+                                                    while ($tampil = mysqli_fetch_array($jam)) {
+                                                ?>
+                                                    <option value="<?php echo $tampil['id_jam'] ?>"><?php echo $tampil['jam'] ?></option>
+                                                <?php 
+                                                    }
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                         <div class="form-example-int form-horizental">
+                        <!--  <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
                                         <label class="hrzn-fm">Jam Sampai</label>
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                        <div class="nk-int-st">
-                                            <input type="time" name="jam_sampai" class="form-control input-sm" placeholder="Jam Sampai" required>
-                                        </div>
+                                        <div class="nk-int-st"> -->
+                                           <!--  <input type="hidden" name="jam_sampai" class="form-control input-sm" placeholder="Jam Sampai" required> -->
+                                        <!-- </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                          <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
@@ -86,6 +97,7 @@
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
                                             <select name="id_armada" class="form-control">
+                                                <option>-- Pilih Armada --</option>
                                                 <?php
                                                     $query  = "SELECT * FROM tbl_armada";
                                                     $armada = mysqli_query($konek,$query);
@@ -110,6 +122,7 @@
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
                                             <select name="id_trayek" class="form-control">
+                                                <option>-- Pilih Trayek --</option>
                                                 <?php 
                                                     $query  = "SELECT * FROM tbl_trayek";
                                                     $trayek = mysqli_query($konek, $query);
@@ -134,7 +147,7 @@
                                 <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                     <div class="nk-int-st">
                                         <select name="id_layanan" id="layanan" class="form-control">
-                                            <option>--Pilih Jenis Layanan--</option>
+                                            <option>-- Pilih Jenis Layanan --</option>
                                             <?php 
                                                 $query      = "SELECT * FROM tbl_layanan";
                                                 $layanan    = mysqli_query($konek, $query);
