@@ -180,23 +180,41 @@
                 <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
                     <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
                         <div class="past-day-statis">
-                            <h2>Tiket Terjual</h2>
-                            <p>Jumlah <i>e-ticketing</i> bus DAMRI segmen antar kota Cabang Bandar Lampung yang terjual hari ini.</p>
+                            <h2>Lainnya</h2>
+                            <p>Info Bus DAMRI segmen antar kota Cabang Bandar Lampung yang berjalan hari ini.</p>
                         </div>
 						<div class="dash-widget-visits"></div>
                         <div class="past-statistic-an">
                             <div class="past-statistic-ctn">
-                                <h3><span class="counter">1211</span></h3>
-                                <p>Jumlah</p>
+                                <h3>
+                                 <?php 
+                                    $tgl=date('Y-m-d');
+                                    $pro1      = "SELECT id_pnp_promo, id_layanan, id_promo, tgl_berangkat, SUM(jml_penumpang) AS pro1 FROM tbl_pnp_promo WHERE id_promo='1' AND tgl_berangkat='$tgl'";
+                                    $query      = mysqli_query($konek, $pro1)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $pro1      = $result['pro1'];
+
+                                    echo $pro1;
+                                ?> Orang
+                            </h3>
+                            <p>Promo <b>Mudik Gratis</b> <i>(Hari ini)</i></p>
                             </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-bar"></div>
-                            </div>
+                           
                         </div>
                         <div class="past-statistic-an">
                             <div class="past-statistic-ctn">
-                                <h3><span class="counter">43</span></h3>
-                                <p>Bis Jalan</p>
+                                <h3>
+                                 <?php 
+                                    $tgl=date('Y-m-d');
+                                    $pro2      = "SELECT id_pnp_promo, id_layanan, id_promo, tgl_berangkat, SUM(jml_penumpang) AS pro2 FROM tbl_pnp_promo WHERE id_promo='2' AND tgl_berangkat='$tgl'";
+                                    $query      = mysqli_query($konek, $pro2)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $pro2      = $result['pro2'];
+
+                                    echo $pro2;
+                                ?> Orang
+                            </h3>
+                            <p>Promo <b>LinkAja</b> <i>(Hari ini)</i></p>
                             </div>
                             <div class="past-statistic-graph">
                                 <div class="stats-line"></div>
@@ -204,8 +222,18 @@
                         </div>
                         <div class="past-statistic-an">
                             <div class="past-statistic-ctn">
-                                <h3><span class="counter">78,000,000</span></h3>
-                                <p>Pendapatan (Rp.)</p>
+                                <h3>
+                                 <?php 
+                                    $tgl=date('Y-m-d');
+                                    $pro3      = "SELECT id_pnp_promo, id_layanan, id_promo, tgl_berangkat, SUM(jml_penumpang) AS pro3 FROM tbl_pnp_promo WHERE id_promo='3' AND tgl_berangkat='$tgl'";
+                                    $query      = mysqli_query($konek, $pro3)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $pro3      = $result['pro3'];
+
+                                    echo $pro3;
+                                ?> Orang
+                            </h3>
+                            <p>Promo <b>GoPay</b> <i>(Hari ini)</i></p>
                             </div>
                             <div class="past-statistic-graph">
                                 <div class="stats-bar-2"></div>
