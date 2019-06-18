@@ -28,8 +28,18 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
-                            <h2><span class="counter">51</span></h2>
-                            <p>Tiket Terjual (Pagi)</p>
+                            <h2>
+                                 <?php 
+                                    $tgl=date('Y-m-d');
+                                    $qroyal      = "SELECT id_penjualan, id_layanan, tgl_berangkat, SUM(jml_penumpang) AS royal FROM tbl_penjualan WHERE id_layanan='1' AND tgl_berangkat='$tgl'";
+                                    $query      = mysqli_query($konek, $qroyal)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $royal      = $result['royal'];
+
+                                    echo $royal;
+                                ?> Orang
+                            </h2>
+                            <p>Jumlah Penumpang<br><b>Kelas Royal</b> <i>(Hari ini)</i></p>
                         </div>
                         <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
                     </div>
@@ -37,8 +47,18 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
-                            <h2>Rp. 48,000,000</h2>
-                            <p>Pendapatan (Pagi)</p>
+                             <h2>
+                                 <?php 
+                                    $tgl=date('Y-m-d');
+                                    $qeks      = "SELECT id_penjualan, id_layanan, tgl_berangkat, SUM(jml_penumpang) AS eks FROM tbl_penjualan WHERE id_layanan='2' AND tgl_berangkat='$tgl'";
+                                    $query      = mysqli_query($konek, $qeks)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $eks      = $result['eks'];
+
+                                    echo $eks;
+                                ?> Orang
+                            </h2>
+                            <p>Jumlah Penumpang<br><b>Kelas Eksekutif</b> <i>(Hari ini)</i></p>
                         </div>
                         <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
                     </div>
@@ -46,8 +66,18 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
-                            <h2>50</h2>
-                            <p>Tiket Terjual (Pagi)</p>
+                           <h2>
+                                 <?php 
+                                    $tgl=date('Y-m-d');
+                                    $qbisnis      = "SELECT id_penjualan, id_layanan, tgl_berangkat, SUM(jml_penumpang) AS bisnis FROM tbl_penjualan WHERE id_layanan='3' AND tgl_berangkat='$tgl'";
+                                    $query      = mysqli_query($konek, $qbisnis)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $bisnis      = $result['bisnis'];
+
+                                    echo $bisnis;
+                                ?> Orang
+                            </h2>
+                            <p>Jumlah Penumpang<br><b>Kelas Bisnis</b> <i>(Hari ini)</i></p>
                         </div>
                         <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
                     </div>
@@ -55,8 +85,18 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
-                            <h2>Rp. 30,000,000</h2>
-                            <p>Pendapatan (Sore)</p>
+                            <h2>
+                                 <?php 
+                                    $tgl=date('Y-m-d');
+                                    $qall      = "SELECT id_penjualan, id_layanan, tgl_berangkat, SUM(jml_penumpang) AS allkelas FROM tbl_penjualan WHERE tgl_berangkat='$tgl'";
+                                    $query      = mysqli_query($konek, $qall)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $allkelas      = $result['allkelas'];
+
+                                    echo $allkelas;
+                                ?> Orang
+                            </h2>
+                            <p>Jumlah Penumpang<br><b>Semua Kelas</b> <i>(Hari ini)</i></p>
                         </div>
                         <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
                     </div>
