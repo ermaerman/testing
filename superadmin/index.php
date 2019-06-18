@@ -279,7 +279,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>
                                 <?php 
                                     $qhelp      = "SELECT COUNT(*) AS COUNT FROM tbl_helpdesk WHERE outbox=0 AND trash=0 AND status=0";
                                     $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
@@ -289,7 +289,7 @@
                                     echo $count;
                                 ?>
                             </span></div></a>
-                                <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
+                                <!-- <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Pemberitahuan</h2>
                                     </div>
@@ -308,9 +308,9 @@
                                     <div class="hd-mg-va">
                                         <a href="index.php?content=pemberitahuan">Lihat Semua</a>
                                     </div>
-                                </div>
+                                </div> -->
                             </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div> --></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Akun Pengguna</h2>
