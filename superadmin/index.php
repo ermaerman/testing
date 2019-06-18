@@ -432,6 +432,8 @@
                                 </li>
                                 <li><a href="index.php?content=laporan_analisis">Laporan Analisis</a>
                                 </li>
+                                <li><a href="index.php?content=laporan_data_promo">Laporan Data Promo</a>
+                                </li>
                             </ul>
                         </div>
                         <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
@@ -439,6 +441,10 @@
                                 <li><a href="index.php?content=data_penjualan">Data Penjualan</a>
                                 </li>
                                 <li><a href="index.php?content=tambah_data_penjualan">Tambah Data Penjualan</a>
+                                </li>
+                                <li><a href="index.php?content=data_promo">Data Promo</a>
+                                </li>
+                                <li><a href="index.php?content=tambah_data_promo">Tambah Data Promo</a>
                                 </li>
                             </ul>
                         </div>
@@ -482,12 +488,18 @@
               include 'tambah_data_penjualan.php';
             elseif ($content=='edit_penjualan')
               include 'edit_penjualan.php';
+            elseif ($content=='data_promo')
+              include 'data_promo.php';
+            elseif ($content=='tambah_data_promo')
+              include 'tambah_data_promo.php';
 
             // Laporan 
             elseif ($content=='laporan_penjualan')
               include 'laporan_penjualan.php';
             elseif ($content=='laporan_analisis')
               include 'laporan_analisis.php';
+            elseif ($content=='laporan_data_promo')
+              include 'laporan_data_promo.php';
 
             // Analisis 
             elseif ($content=='analisis')
