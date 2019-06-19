@@ -14,10 +14,8 @@
     $id_layanan         = $_POST['id_layanan'];
     $jml_penumpang      = $_POST['jml_penumpang'];
     $load_factor        = $_POST['load_factor'];
-	$status    	        = $_POST['status'];
-	$hasil_analisis    	= $_POST['hasil_analisis'];
 
-	$insert			= "INSERT INTO tbl_penjualan VALUES ('','$tgl_berangkat', '$id_jam', '$id_armada', '$id_trayek', '$id_layanan', '$jml_penumpang', '$load_factor', 0, '-')";
+	$insert			= "INSERT INTO tbl_penjualan VALUES ('','$tgl_berangkat', '$id_jam', '$id_armada', '$id_trayek', '$id_layanan', '$jml_penumpang', '$load_factor')";
 
 	$simpan			= mysqli_query($konek, $insert)or die(mysqli_error($konek));
 

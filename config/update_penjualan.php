@@ -10,12 +10,10 @@
     $id_layanan         = $_POST['id_layanan'];
     $jml_penumpang      = $_POST['jml_penumpang'];
     $load_factor        = $_POST['load_factor'];
-    $status             = $_POST['status'];
-	$hasil_analisis    	= $_POST['hasil_analisis'];
 
 
 
-	$update 	= "UPDATE tbl_penjualan SET tgl_berangkat='$tgl_berangkat', id_jam='$id_jam', id_armada='$id_armada', id_trayek='$id_trayek', id_layanan='$id_layanan', jml_penumpang='$jml_penumpang', load_factor='$load_factor', status='$status', hasil_analisis='$hasil_analisis' WHERE id_penjualan='$id_penjualan'";
+	$update 	= "UPDATE tbl_penjualan SET tgl_berangkat='$tgl_berangkat', id_jam='$id_jam', id_armada='$id_armada', id_trayek='$id_trayek', id_layanan='$id_layanan', jml_penumpang='$jml_penumpang', load_factor='$load_factor' WHERE id_penjualan='$id_penjualan'";
 	$updatepenjualan	= mysqli_query($konek, $update)or die(mysqli_error($konek));
 
 	if ($updatepenjualan)

@@ -48,12 +48,10 @@
                                     <tr>
                                       <th>No</th>
                                       <th>Tanggal</th>
-                                      <th>Berangkat</th>
-                                      <th>Armada</th>
                                       <th>Trayek</th>
                                       <th>Layanan</th>
+                                      <th>Jumlah Seat</th>
                                       <th>Jumlah Penumpang</th>
-                                      <th>Load Factor</th>
                                       <th>Status Analisis</th>
                                       <!-- <th>Hasil Analisis</th> -->
                                       <th>Action</th>
@@ -76,17 +74,17 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT * FROM tbl_penjualan WHERE status='0' AND tgl_berangkat LIKE '%$pencarian%' OR jam_berangkat LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' OR status LIKE '%$pencarian%' OR hasil_analisis LIKE '%$pencarian%'";
+                                                     $sql = "SELECT * FROM tbl_count WHERE status='0' AND tgl_berangkat LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR jml_seat LIKE '%$pencarian%' OR status LIKE '%$pencarian%' OR hasil_analisis LIKE '%$pencarian%'";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT * FROM tbl_penjualan WHERE status='0' LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT * FROM tbl_penjualan WHERE status='0'";
+                                                     $query = "SELECT * FROM tbl_count WHERE status='0' LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT * FROM tbl_count WHERE status='0'";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT * FROM tbl_penjualan WHERE status='0' LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT * FROM tbl_penjualan WHERE status='0'";
+                                                   $query = "SELECT * FROM tbl_count WHERE status='0' LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT * FROM tbl_count WHERE status='0'";
                                                    $no = $posisi + 1;
                                                  }
 
@@ -103,28 +101,6 @@
                                                   echo '<td>'.$data['tgl_berangkat'].'</td>';
                                                   /*echo '<td>'.$data['id_jam'].'</td>';*/ 
                                                   ?>
-                                                   <td>
-                                                    <?php
-                                                      $jam   = $data['id_jam'];
-                                                      $jmquery   = "SELECT * FROM tbl_jam WHERE id_jam=$jam";
-                                                      $query    = mysqli_query($konek,$jmquery)or die(mysqli_error($konek));
-                                                      $jmshow    = mysqli_fetch_array($query);
-
-                                                      echo $jmshow['jam'];
-                                                    ?>  
-                                                  </td>
-                                                   <td>
-                                                    <?php
-                                                      $armada   = $data['id_armada'];
-
-                                                      $aquery   = "SELECT * FROM tbl_armada WHERE id_armada=$armada";
-                                                      $query    = mysqli_query($konek,$aquery)or die(mysqli_error($konek));
-                                                      $ashow    = mysqli_fetch_array($query);
-
-
-                                                      echo $ashow['armada'];
-                                                    ?>  
-                                                  </td>
                                                    <td>
                                                     <?php
                                                       $trayek   = $data['id_trayek'];
@@ -153,8 +129,8 @@
                                                   echo '<td>'.$data['id_trayek'].'</td>';
                                                   echo '<td>'.$data['id_layanan'].'</td>'; -->
                                                   <?php
+                                                  echo '<td>'.$data['jml_seat'].'</td>';
                                                   echo '<td>'.$data['jml_penumpang'].'</td>';
-                                                  echo '<td>'.$data['load_factor'].'</td>';
                                                   ?>
                                                   <td> 
                                                     <?php
@@ -171,7 +147,7 @@
                                                   /*echo '<td>'.$data['hasil_analisis'].'</td>';*/
                                                   //================================================================
                                                   //belum arahin ke py
-                                                  echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" href=index.php?content=kmeans&&id_penjualan='.$data['id_penjualan'].'><i class="fa fa-rocket fa-fw"></i></a></td>';
+                                                  echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" href=index.php?content=kmeans&&id_count='.$data['id_count'].'><i class="fa fa-rocket fa-fw"></i></a></td>';
                                                   //================================================================
                                                   echo '</tr>';
                                                   $no++;  
