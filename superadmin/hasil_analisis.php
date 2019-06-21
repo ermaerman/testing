@@ -48,6 +48,7 @@
                                     <tr>
                                       <th>No</th>
                                       <th>Tanggal</th>
+                                      <th>Jam Berangkat</th>
                                       <th>Trayek</th>
                                       <th>Layanan</th>
                                       <th>Jumlah Seat</th>
@@ -89,7 +90,7 @@
 
                                       $querydata = mysqli_query($konek, $query)or die(mysqli_error());
                                               if(mysqli_num_rows($querydata) == 0){ 
-                                                echo '<tr><td colspan="9" align="center">Tidak ada data!</td></tr>';    
+                                                echo '<tr><td colspan="10" align="center">Tidak ada data!</td></tr>';    
                                               }
                                                 else
                                               { 
@@ -100,6 +101,16 @@
                                                   echo '<td>'.$data['tgl_berangkat'].'</td>';
                                                   /*echo '<td>'.$data['id_jam'].'</td>';*/ 
                                                   ?>
+                                                  <td>
+                                                    <?php
+                                                      $jam   = $data['id_jam'];
+                                                      $jmquery   = "SELECT * FROM tbl_jam WHERE id_jam=$jam";
+                                                      $query    = mysqli_query($konek,$jmquery)or die(mysqli_error($konek));
+                                                      $jmshow    = mysqli_fetch_array($query);
+
+                                                      echo $jmshow['jam'];
+                                                    ?>  
+                                                  </td>
                                                    <td>
                                                     <?php
                                                       $trayek   = $data['id_trayek'];

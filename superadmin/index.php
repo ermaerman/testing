@@ -238,7 +238,7 @@
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
                                     <div class="search-input">
                                         <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" />
+                                        <input type="text"/>
                                     </div>
                                 </div>
                             </li>
@@ -321,7 +321,7 @@
                                                 <div class="hd-message-img">
                                                     <?php
 
-                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src='.$_SESSION['foto'].'></a>';
+                                                    echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src='.$_SESSION['foto'].'></a>';
                                                     ?>
                                                 </div>
                                                 <div class="hd-mg-ctn">

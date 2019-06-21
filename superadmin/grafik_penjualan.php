@@ -44,7 +44,7 @@
                                         zoomType: 'x'
                                     },
                                     title: {
-                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung (Pagi)'
+                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung'
                                     },
                                     subtitle: {
                                         text: document.ontouchstart === undefined ?
@@ -114,7 +114,7 @@
                                         zoomType: 'x'
                                     },
                                     title: {
-                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung (Sore)'
+                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung'
                                     },
                                     subtitle: {
                                         text: document.ontouchstart === undefined ?

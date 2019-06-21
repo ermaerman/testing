@@ -207,14 +207,3 @@
         </div>
     </div>
     <!-- Data Table area End-->
-
- <td> 
-                                                    <?php
-                                                      if ($data['status']=='1'){
-                                                        echo '<font color="green">Sudah dianalisis</font>';
-                                                      }
-                                                      else {
-                                                        echo '<font color="red">Belum dianalisis</font>';
-                                                      }
-                                                    ?>
-                                                  </td>
