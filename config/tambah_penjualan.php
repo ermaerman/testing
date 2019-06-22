@@ -62,16 +62,16 @@
                         $query        = mysqli_query($konek, $cek)or die(mysqli_error($konek));
                         $result       = mysqli_fetch_assoc($query);
                         $count_l      = $result['layanan'];
-                        var_dump($count_l);
+                        // var_dump($count_l);
 
                         $jml_seat     = $count_l * $seat;
 
                         // var_dump($jml_seat);
 
-                        $insertcount    = "INSERT INTO tbl_count(tgl_berangkat,id_jam,id_trayek,id_layanan,jml_penumpang,jml_seat)VALUES('$')";
+                        $insertcount    = "INSERT INTO tbl_count(tgl_berangkat,id_jam,id_trayek,id_layanan,jml_penumpang,jml_seat)VALUES('$tgl_berangkat', '$id_jam', '$id_trayek', '$id_layanan','$sum_pnmp', '$jml_seat')";
                         $querycount     = mysqli_query($konek, $insert)or die(mysqli_error($konek));   
 
-                        $insert         = "INSERT INTO dataset(jml_penumpang, jml_seat)VALUES('$sum_pnmp','$jml_seat')";
+                        $insert         = "INSERT INTO dataset(id_jam, id_trayek, id_layanan, jml_seat, jml_penumpang)VALUES('$id_jam','$id_trayek','$id_layanan','$jml_seat','$jml_penumpang')";
 
                         $query          = mysqli_query($konek, $insert)or die(mysqli_error($konek));   
                     }
