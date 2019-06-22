@@ -83,7 +83,7 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT *FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR id_jam LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
+                                                     $sql = "SELECT * FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR id_jam LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
