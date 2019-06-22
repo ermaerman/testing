@@ -99,16 +99,22 @@
                                     <div class="nk-int-st">
                                         <select name="id_layanan" id="layanan" class="form-control">
                                             <option>-- Pilih Jenis Layanan --</option>
-                                            <!-- <?php 
-                                                $query      = "SELECT * FROM tbl_layanan";
-                                                $layanan    = mysqli_query($konek, $query);
-                                                while ($tampilLayanan = mysqli_fetch_array($layanan)){
-                                            ?>
-                                                <option value="<?php echo $tampilLayanan['id_layanan'] ?>"><?php echo $tampilLayanan['jenis_layanan'] ?></option>
-                                            <?php
-                                                }
-                                            ?> -->
+                                            
                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-example-int form-horizental">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                    <!-- <label class="hrzn-fm">Jenis Layanan</label> -->
+                                </div>
+                                <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="nk-int-st">
+                                        <input type="text" name="jml_seat" id="seat">
                                     </div>
                                 </div>
                             </div>
@@ -124,15 +130,7 @@
                                         <div class="nk-int-st">
                                            <select name="id_jam" id="jam" class="form-control">
                                                 <option>-- Pilih Jam Berangkat --</option>
-                                                <!-- <?php 
-                                                    $query  = "SELECT * FROM tbl_jam";
-                                                    $jam = mysqli_query($konek, $query);
-                                                    while ($tampilJam = mysqli_fetch_array($jam)){
-                                                ?>
-                                                    <option value="<?php echo $tampilTrayek['id_jam'] ?>"><?php echo $tampilJam['jam'] ?></option>
-                                                <?php
-                                                    }
-                                                ?> -->
+                                                
                                             </select>
                                         </div>
                                     </div>
@@ -243,6 +241,17 @@
                 url: './ajax_berangkat.php?id_trayek=' + id_trayek + '&id_layanan=' + id_layanan,
                 success: function(result){
                   $("#jam").html(result);
+                }           
+            });
+        });
+
+        $( "#layanan" ).change(function() {
+            var id_layanan = $("#layanan").val();
+            console.log(id_layanan);
+            $.ajax({
+                url: './ajax_seat.php?id_layanan=' + id_layanan,
+                success: function(result){
+                  $("#seat").html(result);
                 }           
             });
         });
