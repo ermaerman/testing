@@ -70,7 +70,7 @@
                                     <?php
 
                                       include '../config/koneksi.php';
-                                                 error_reporting(0);
+                                                 // error_reporting(0);
 
                                                  $batas  = 10;
                                                  $hal    = @$_GET['hal'];
@@ -132,14 +132,14 @@
                                                   </td>
                                                    <td>
                                                     <?php
-                                                      $trayek   = $data['id_trayek'];
-
-                                                      $tquery   = "SELECT * FROM tbl_trayek WHERE id_trayek=$trayek";
-                                                      $query    = mysqli_query($konek,$tquery)or die(mysqli_error($konek));
-                                                      $tshow    = mysqli_fetch_array($query);
-
+                                                      $idtrayek = $data['id_trayek'];
+                                                      // echo $idtrayek;
+                                                      $trayek   = "SELECT * FROM tbl_trayek WHERE id_trayek='$idtrayek'";
+                                                      $tquery   = mysqli_query($konek,$trayek)or die(mysqli_error($konek));
+                                                      $tshow    = mysqli_fetch_array($tquery);
 
                                                       echo $tshow['jurusan'];
+
                                                     ?>  
                                                   </td>
                                                   <td>

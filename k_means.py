@@ -12,7 +12,7 @@ df = pd.DataFrame({
 
 
 np.random.seed(200)
-k = 3
+k = 2
 # centroids[i] = [x, y]
 centroids = {
     i+1: [np.random.randint(0, 80), np.random.randint(0, 80)]
