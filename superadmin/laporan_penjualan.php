@@ -43,7 +43,7 @@
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
-                                <a href="index.php?content=data_penjualan"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
+                                <a href="index.php?content=laporan_penjualan"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
                               </div>
                             </form>
                             <!-- <?php

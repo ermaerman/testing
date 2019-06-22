@@ -222,6 +222,7 @@
     </div>
     <!-- Form Element area End-->
    
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
    <script type="text/javascript">
         $( "#trayek" ).change(function() {
           var id_trayek = $("#trayek").val();
@@ -235,15 +236,28 @@
         });
 
         $( "#layanan" ).change(function() {
-          var id_trayek = $("#trayek").val();
-          var id_layanan = $("#layanan").val();
-          console.log(id_layanan);
-          $.ajax({
-            url: "./ajax_berangkat.php?id_layanan=" + id_layanan + "&id_trayek" + id_trayek,
-            success: function(result){
-              $("#jam").html(result);
-            }
-          });
+            var id_layanan = $("#layanan").val();
+            var id_trayek  = $("#trayek").val(); 
+            console.log(id_layanan);
+            $.ajax({
+                url: './ajax_berangkat.php?id_trayek=' + id_trayek + '&id_layanan=' + id_layanan,
+                success: function(result){
+                  $("#jam").html(result);
+                }           
+            });
+        });
+
+        $( "#jam" ).change(function() {
+            var id_layanan = $("#layanan").val();
+            var id_trayek  = $("#trayek").val(); 
+            var id_jam     = $("#jam").val(); 
+            console.log(id_jam);
+            $.ajax({
+                url: './ajax_armada.php?id_trayek=' + id_trayek + '&id_layanan=' + id_layanan + '&id_jam=' + id_jam,
+                success: function(result){
+                  $("#armada").html(result);
+                }           
+            });
         });
 
         $( "#penumpang" ).change(function() {

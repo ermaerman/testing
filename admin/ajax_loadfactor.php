@@ -2,10 +2,10 @@
 
 	include "../config/koneksi.php";
 
-	$layanan	= $_GET["layanan"];
+	$id_layanan	= $_GET["id_layanan"];
 	$penumpang 	= $_GET["penumpang"];
 
-	$query = "SELECT * FROM tbl_layanan WHERE id_layanan = '$layanan'";
+	$query = "SELECT * FROM tbl_layanan WHERE id_layanan = '$id_layanan'";
 	$sql = mysqli_query($konek,$query)or die(mysqli_error($konek));
 	$row = mysqli_fetch_array($sql);
 

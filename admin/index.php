@@ -69,7 +69,13 @@
         ============================================ -->
     <script src="../assets_be/js/vendor/modernizr-2.8.3.min.js"></script>
 
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../assets_be/code/highcharts.js"></script>
+    <script src="../assets_be/code/modules/exporting.js"></script>
+    <script src="../assets_be/code/modules/export-data.js"></script>
     
     <style type="text/css">
         .header-top-area, .footer-copyright-area{
@@ -273,7 +279,8 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn">
+                                <span>
                                 <?php 
                                     $qhelp      = "SELECT COUNT(*) AS COUNT FROM tbl_helpdesk WHERE outbox=0 AND trash=0 AND status=0";
                                     $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
@@ -282,29 +289,7 @@
                                     
                                     echo $count;
                                 ?>
-                            </span></div></a>
-                                <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Pemberitahuan</h2>
-                                    </div>
-                                    <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    <div class="hd-mg-va">
-                                        <a href="index.php?content=pemberitahuan">Lihat Semua</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                                </span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Akun Pengguna</h2>
@@ -371,6 +356,8 @@
                         </li>
                         <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
+                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Grafik</a>
+                        </li>
                         <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Bantuan</a>
                         </li>
                     </ul>
@@ -401,6 +388,14 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.php?content=laporan_penjualan">Laporan Penjualan</a>
                                 </li>
+                                <li><a href="index.php?content=laporan_data_promo">Laporan Data Promo</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="index.php?content=grafik_penjualan">Grafik Penjualan</a>
+                                </li>
                             </ul>
                         </div>
                         <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
@@ -408,6 +403,11 @@
                                 <li><a href="index.php?content=data_penjualan">Data Penjualan</a>
                                 </li>
                                 <li><a href="index.php?content=tambah_data_penjualan">Tambah Data Penjualan</a>
+                                </li>
+                                <li><a href="index.php?content=data_promo">Data Promo</a>
+                                </li>
+                                <li><a href="index.php?content=tambah_data_promo">Tambah Data Promo</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -441,10 +441,20 @@
               include 'tambah_data_penjualan.php';
             elseif ($content=='edit_penjualan')
               include 'edit_penjualan.php';
+            elseif ($content=='data_promo')
+              include 'data_promo.php';
+            elseif ($content=='tambah_data_promo')
+              include 'tambah_data_promo.php';
 
           // Laporan 
             elseif ($content=='laporan_penjualan')
               include 'laporan_penjualan.php';
+            elseif ($content=='laporan_data_promo')
+              include 'laporan_data_promo.php';
+          
+           // Grafik 
+            elseif ($content=='grafik_penjualan')
+              include 'grafik_penjualan.php';
             
             // Bantuan
             elseif ($content=='list_masuk')

@@ -1,32 +1,32 @@
-    <div class="breadcomb-area">
-        <div class="container">
+  <div class="breadcomb-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="breadcomb-list">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-windows"></i>
-                                    </div>
-                                    <div class="breadcomb-ctn">
-                                        <h2>Laporan Penjualan</h2>
-                                        <p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
-                                    </div>
-                                </div>
-                            </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="breadcomb-wp">
+                  <div class="breadcomb-icon">
+                    <i class="notika-icon notika-windows"></i>
+                  </div>
+                  <div class="breadcomb-ctn">
+                    <h2>Laporan Penjualan</h2>
+                    <p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
+                  </div>
+                </div>
+              </div><!-- 
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
-                                    <a target ="_blank" role="button" href="cetak_laporan_penjualan.php"><button data-toggle="tooltip" data-placement="left" title="Cetak Laporan Penjualan" class="btn"><i class="notika-icon notika-print"></i></button></a>
+                                    <a href="index.php?content=tambah_data_penjualan"><button data-toggle="tooltip" data-placement="left" title="Tambah Data Penjualan" class="btn"><i class="notika-icon notika-plus-symbol"></i></button></a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </div> -->
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Breadcomb area End-->
+  </div>
+  <!-- Breadcomb area End-->
     <!-- Data Table area Start-->
     <div class="data-table-area">
         <div class="container">
@@ -46,6 +46,10 @@
                                 <a href="index.php?content=laporan_penjualan"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
                               </div>
                             </form>
+                            <!-- <?php
+                              $date = date('Y-m-d');
+                              var_dump($date);
+                            ?> -->
                               <br><br>
                               <form class="form-horizontal" method="POST">
                                 <table class="table table-striped" id="data-table-basic">
@@ -54,7 +58,6 @@
                                       <th>No</th>
                                       <th>Tanggal</th>
                                       <th>Berangkat</th>
-                                      <th>Sampai</th>
                                       <th>Armada</th>
                                       <th>Trayek</th>
                                       <th>Layanan</th>
@@ -66,9 +69,9 @@
                                     <?php
 
                                       include '../config/koneksi.php';
-                                                 //error_reporting(0);
+                                                 error_reporting(0);
 
-                                                 $batas  = 8;
+                                                 $batas  = 10;
                                                  $hal    = @$_GET['hal'];
                                                  if (empty($hal)) {
                                                    $posisi = 0;
@@ -79,23 +82,23 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR jam_berangkat LIKE '%$pencarian%' OR jam_sampai LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' OR status LIKE '%$pencarian%'";
+                                                     $sql = "SELECT *FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR id_jam LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan";
+                                                     $query = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT id_penjualan, tgl_berangkat, jam_berangkat, jam_sampai, id_armada, id_trayek, id_layanan, jml_penumpang, load_factor, status FROM tbl_penjualan";
+                                                   $query = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC";
                                                    $no = $posisi + 1;
                                                  }
 
                                       $querydata = mysqli_query($konek, $query)or die(mysqli_error());
                                               if(mysqli_num_rows($querydata) == 0){ 
-                                                echo '<tr><td colspan="10" align="center">Tidak ada data!</td></tr>';    
+                                                echo '<tr><td colspan="7" align="center">Tidak ada data!</td></tr>';    
                                               }
                                                 else
                                               { 
@@ -104,13 +107,20 @@
                                                   echo '<tr>';
                                                   echo '<td>'.$no.'</td>';
                                                   echo '<td>'.$data['tgl_berangkat'].'</td>';
-                                                  echo '<td>'.$data['jam_berangkat'].'</td>';
-                                                  echo '<td>'.$data['jam_sampai'].'</td>';
                                                   ?>
                                                   <td>
                                                     <?php
-                                                      $armada   = $data['id_armada'];
+                                                      $jam   = $data['id_jam'];
+                                                      $jmquery   = "SELECT * FROM tbl_jam WHERE id_jam=$jam";
+                                                      $query    = mysqli_query($konek,$jmquery)or die(mysqli_error($konek));
+                                                      $jmshow    = mysqli_fetch_array($query);
 
+                                                      echo $jmshow['jam'];
+                                                    ?>  
+                                                  </td>
+                                                  <td>
+                                                    <?php
+                                                      $armada   = $data['id_armada'];
                                                       $aquery   = "SELECT * FROM tbl_armada WHERE id_armada=$armada";
                                                       $query    = mysqli_query($konek,$aquery)or die(mysqli_error($konek));
                                                       $ashow    = mysqli_fetch_array($query);
@@ -143,10 +153,10 @@
                                                       echo $lshow['jenis_layanan'];
                                                     ?>  
                                                   </td>
-                                                  <!-- echo '<td>'.$data['id_armada'].'</td>'; -->
+                                                  <!-- /*echo '<td>'.$data['id_armada'].'</td>';*/ -->
                                                   <?php
-                                                  /*echo '<td>'.$data['id_trayek'].'</td>';
-                                                  echo '<td>'.$data['id_layanan'].'</td>';*/
+                                                  /*echo '<td>'.$data['id_trayek'].'</td>';*/
+                                                  /*echo '<td>'.$data['id_layanan'].'</td>';*/
                                                   echo '<td>'.$data['jml_penumpang'].'</td>';
                                                   echo '<td>'.$data['load_factor'].'</td>';
                                                   echo '</tr>';
@@ -197,4 +207,3 @@
         </div>
     </div>
     <!-- Data Table area End-->
-

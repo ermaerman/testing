@@ -69,6 +69,18 @@
     <link rel="stylesheet" href="../assets_be/css/responsive.css">
     <!-- modernizr JS
         ============================================ -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../assets_be/code/highcharts.js"></script>
+    <script src="../assets_be/code/modules/exporting.js"></script>
+    <script src="../assets_be/code/modules/export-data.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../assets_be/code/highcharts.js"></script>
+    <script src="../assets_be/code/modules/exporting.js"></script>
+    <script src="../assets_be/code/modules/export-data.js"></script>
+    
     <script src="../assets_be/js/vendor/modernizr-2.8.3.min.js"></script>
     <style type="text/css">
         .header-top-area, .footer-copyright-area{
@@ -358,6 +370,8 @@
                                 </li>
                                 <li><a href="index.php?content=laporan_analisis">Laporan Analisis</a>
                                 </li>
+                                <li><a href="index.php?content=laporan_data_promo">Laporan Data Promo</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -390,6 +404,8 @@
               include 'laporan_penjualan.php';
             elseif ($content=='laporan_analisis')
               include 'laporan_analisis.php';
+            elseif ($content=='laporan_data_promo')
+              include 'laporan_data_promo.php';
 
             // Analisis 
             elseif ($content=='analisis')

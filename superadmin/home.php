@@ -261,7 +261,7 @@
                                         zoomType: 'x'
                                     },
                                     title: {
-                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung (Pagi)'
+                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung'
                                     },
                                     subtitle: {
                                         text: document.ontouchstart === undefined ?
@@ -331,7 +331,7 @@
                                         zoomType: 'x'
                                     },
                                     title: {
-                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung (Sore)'
+                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung'
                                     },
                                     subtitle: {
                                         text: document.ontouchstart === undefined ?
@@ -404,7 +404,7 @@
                                         zoomType: 'x'
                                     },
                                     title: {
-                                        text: 'Grafik Analisis <i>K-Means</i> Pada Penjualan <br><i>E-Ticketing</i> Bus DAMRI Segmen Antar Kota <br>Cabang Bandar Lampung (Pagi)'
+                                        text: 'Grafik Analisis <i>K-Means</i> Pada Penjualan <br><i>E-Ticketing</i> Bus DAMRI Segmen Antar Kota <br>Cabang Bandar Lampung'
                                     },
                                     subtitle: {
                                         text: document.ontouchstart === undefined ?
@@ -474,7 +474,7 @@
                                         zoomType: 'x'
                                     },
                                     title: {
-                                        text: 'Grafik Analisis <i>K-Means</i> Pada Penjualan <br><i>E-Ticketing</i> Bus DAMRI Segmen Antar Kota <br>Cabang Bandar Lampung (Sore)'
+                                        text: 'Grafik Analisis <i>K-Means</i> Pada Penjualan <br><i>E-Ticketing</i> Bus DAMRI Segmen Antar Kota <br>Cabang Bandar Lampung'
                                     },
                                     subtitle: {
                                         text: document.ontouchstart === undefined ?

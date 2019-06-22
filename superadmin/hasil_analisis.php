@@ -185,7 +185,7 @@
                                       $jml_hal = ceil($jml / $batas);
                                       for ($i=1; $i <= $jml_hal; $i++) {
                                         if ($i != $hal) {
-                                          echo "<li><a href=\"index.php?content=analisis&&hal=$i\">$i</a></li>";
+                                          echo "<li><a href=\"index.php?content=hasil_analisis&&hal=$i\">$i</a></li>";
                                         } else {
                                           echo "<li class=\"active\"><a>$i</a></li>";
                                         }

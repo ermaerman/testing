@@ -1,32 +1,32 @@
-  <div class="breadcomb-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="breadcomb-list">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="breadcomb-wp">
-                  <div class="breadcomb-icon">
-                    <i class="notika-icon notika-windows"></i>
-                  </div>
-                  <div class="breadcomb-ctn">
-                    <h2>Laporan Analisis</h2>
+	<div class="breadcomb-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="breadcomb-list">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="breadcomb-wp">
+									<div class="breadcomb-icon">
+										<i class="notika-icon notika-windows"></i>
+									</div>
+									<div class="breadcomb-ctn">
+										<h2>Laporan Data Penumpang Dengan Promo</h2>
                     <p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
-                  </div>
-                </div>
-              </div>
-                          <!--   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+									</div>
+								</div>
+							</div>
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
-                                    <a href="index.php?content=tambah_data_penjualan"><button data-toggle="tooltip" data-placement="left" title="Tambah Data Penjualan" class="btn"><i class="notika-icon notika-plus-symbol"></i></button></a>
+                                    <a href="index.php?content=tambah_data_promo"><button data-toggle="tooltip" data-placement="left" title="Tambah Data Promo" class="btn"><i class="notika-icon notika-plus-symbol"></i></button></a>
                                 </div>
                             </div> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Breadcomb area End-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Breadcomb area End-->
     <!-- Data Table area Start-->
     <div class="data-table-area">
         <div class="container">
@@ -43,7 +43,7 @@
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
-                                <a href="index.php?content=laporan_analisis"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
+                                <a href="index.php?content=laporan_data_promo"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
                               </div>
                             </form>
                             <!-- <?php
@@ -62,8 +62,7 @@
                                       <th>Trayek</th>
                                       <th>Layanan</th>
                                       <th>Jumlah Penumpang</th>
-                                      <th>Load Factor</th>
-                                      <th>Status</th>
+                                      <th>Promo</th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -83,23 +82,23 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT *FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR id_jam LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
+                                                     $sql = "SELECT * FROM tbl_pnp_promo WHERE tgl_berangkat LIKE '%$pencarian%' OR id_jam LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' ORDER BY id_pnp_promo DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC";
+                                                     $query = "SELECT * FROM tbl_pnp_promo ORDER BY id_pnp_promo DESC LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT * FROM tbl_pnp_promo ORDER BY id_pnp_promo DESC";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT * FROM tbl_penjualan ORDER BY id_penjualan DESC";
+                                                   $query = "SELECT * FROM tbl_pnp_promo ORDER BY id_pnp_promo DESC LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT * FROM tbl_pnp_promo ORDER BY id_pnp_promo DESC";
                                                    $no = $posisi + 1;
                                                  }
 
                                       $querydata = mysqli_query($konek, $query)or die(mysqli_error());
                                               if(mysqli_num_rows($querydata) == 0){ 
-                                                echo '<tr><td colspan="7" align="center">Tidak ada data!</td></tr>';    
+                                                echo '<tr><td colspan="8" align="center">Tidak ada data!</td></tr>';    
                                               }
                                                 else
                                               { 
@@ -159,17 +158,18 @@
                                                   /*echo '<td>'.$data['id_trayek'].'</td>';*/
                                                   /*echo '<td>'.$data['id_layanan'].'</td>';*/
                                                   echo '<td>'.$data['jml_penumpang'].'</td>';
-                                                  echo '<td>'.$data['load_factor'].'</td>';
                                                   ?>
-                                                   <td> 
+                                                  <td>
                                                     <?php
-                                                      if ($data['status']=='1'){
-                                                        echo '<font color="green">Sudah dianalisis</font>';
-                                                      }
-                                                      else {
-                                                        echo '<font color="red">Belum dianalisis</font>';
-                                                      }
-                                                    ?>
+                                                      $promo   = $data['id_promo'];
+
+                                                      $pquery   = "SELECT * FROM tbl_promo WHERE id_promo=$promo";
+                                                      $query    = mysqli_query($konek,$pquery)or die(mysqli_error($konek));
+                                                      $pshow    = mysqli_fetch_array($query);
+
+
+                                                      echo $pshow['promo'];
+                                                    ?>  
                                                   </td>
                                                   <?php
                                                   echo '</tr>';
@@ -202,7 +202,7 @@
                                       $jml_hal = ceil($jml / $batas);
                                       for ($i=1; $i <= $jml_hal; $i++) {
                                         if ($i != $hal) {
-                                          echo "<li><a href=\"index.php?content=laporan_analisis&&hal=$i\">$i</a></li>";
+                                          echo "<li><a href=\"index.php?content=laporan_data_promo&&hal=$i\">$i</a></li>";
                                         } else {
                                           echo "<li class=\"active\"><a>$i</a></li>";
                                         }

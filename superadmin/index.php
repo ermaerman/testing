@@ -220,7 +220,6 @@
     </style>
 </head>
 
-
 <body>
     <div class="header-top-area">
         <div class="container">
@@ -238,11 +237,11 @@
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
                                     <div class="search-input">
                                         <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text"/>
+                                        <input type="text" />
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
+                             <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -279,8 +278,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>
-                                <?php 
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn">
+                                <span>
+                                    <?php 
                                     $qhelp      = "SELECT COUNT(*) AS COUNT FROM tbl_helpdesk WHERE outbox=0 AND trash=0 AND status=0";
                                     $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
                                     $result     = mysqli_fetch_assoc($query);
@@ -288,29 +288,7 @@
                                     
                                     echo $count;
                                 ?>
-                            </span></div></a>
-                                <!-- <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Pemberitahuan</h2>
-                                    </div>
-                                    <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    <div class="hd-mg-va">
-                                        <a href="index.php?content=pemberitahuan">Lihat Semua</a>
-                                    </div>
-                                </div> -->
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div> --></a>
+                                </span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Akun Pengguna</h2>
@@ -321,23 +299,22 @@
                                                 <div class="hd-message-img">
                                                     <?php
 
-                                                    echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src='.$_SESSION['foto'].'></a>';
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src='.$_SESSION['foto'].'></a>';
                                                     ?>
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>
                                                         <?php echo "<b>".$_SESSION['nama']."</b>"?>
                                                     </h3>
-
                                                     <?php
                                                         $level      = $_SESSION['id_level'];
 
-                                                        $qlevel 	= "SELECT * FROM tbl_level WHERE id_level='$level'";
+                                                        $qlevel     = "SELECT * FROM tbl_level WHERE id_level='$level'";
                                                         $record     = mysqli_query($konek, $qlevel)or die(mysqli_error($konek));
                                                         $show       = mysqli_fetch_array($record);
                                                     
                                                     ?>
-                                                    <p>Anda login sebagai <?php echo $show['level']; ?> </p>
+                                                    <p>Anda telah login sebagai <?php echo $show['level']; ?>.</p>
                                                 </div>
                                             </div>
                                         </a>
