@@ -49,21 +49,6 @@
                                 </div>
                             </div> -->
                         </div>
-                        
-                        <!--  <div class="form-example-int form-horizental">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                                        <label class="hrzn-fm">Jam Sampai</label>
-                                    </div>
-                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                        <div class="nk-int-st"> -->
-                                           <!--  <input type="hidden" name="jam_sampai" class="form-control input-sm" placeholder="Jam Sampai" required> -->
-                                        <!-- </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
@@ -114,7 +99,7 @@
                                 </div>
                                 <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                     <div class="nk-int-st">
-                                        <input type="text" name="jml_seat" id="seat">
+                                        <!-- <input type="text" name="jml_seat" id="seat"> -->
                                     </div>
                                 </div>
                             </div>
@@ -241,17 +226,6 @@
                 url: './ajax_berangkat.php?id_trayek=' + id_trayek + '&id_layanan=' + id_layanan,
                 success: function(result){
                   $("#jam").html(result);
-                }           
-            });
-        });
-
-        $( "#layanan" ).change(function() {
-            var id_layanan = $("#layanan").val();
-            console.log(id_layanan);
-            $.ajax({
-                url: './ajax_seat.php?id_layanan=' + id_layanan,
-                success: function(result){
-                  $("#seat").html(result);
                 }           
             });
         });

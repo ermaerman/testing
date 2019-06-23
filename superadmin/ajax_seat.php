@@ -9,7 +9,9 @@
 	$sql = mysqli_query($konek,$query)or die(mysqli_error($konek));
     $hasil = mysqli_fetch_array($sql);
 
-    echo $hasil['jml_seat'];
+    $seat = $hasil['jml_seat'];
+    dd($seat);
+    // echo $hasil['jml_seat'];
 
    
 ?>

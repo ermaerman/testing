@@ -18,14 +18,14 @@
 	$insert			= "INSERT INTO tbl_penjualan VALUES ('','$tgl_berangkat', '$id_jam', '$id_armada', '$id_trayek', '$id_layanan', '$jml_penumpang', '$load_factor')";
 
 	$simpan			= mysqli_query($konek, $insert)or die(mysqli_error($konek));
-
-	if ($simpan)
+    // var_dump($simpan);
+	if ($simpan=='true')
 	{
             if ($level=='1'){
 
                 date_default_timezone_set('Asia/Jakarta');
                 $date       = date('Y-m-d');
-                var_dump($date);
+                // var_dump($date);
                 if ($tgl_berangkat==$date)
                 {
                     // input -> cek di penjualan, apakah jumlah penjualan pada hari ini sudah sama dengan jumlah armada yg ada pada    trayek dan layanan tsb -> jika sudah sesuai, maka akan menjumlahkan jml_penumpang dan jml seat
@@ -71,14 +71,27 @@
                         $insertcount    = "INSERT INTO tbl_count(tgl_berangkat,id_jam,id_trayek,id_layanan,jml_penumpang,jml_seat)VALUES('$tgl_berangkat', '$id_jam', '$id_trayek', '$id_layanan','$sum_pnmp', '$jml_seat')";
                         $querycount     = mysqli_query($konek, $insert)or die(mysqli_error($konek));   
 
-                        $insert         = "INSERT INTO dataset(id_jam, id_trayek, id_layanan, jml_seat, jml_penumpang)VALUES('$id_jam','$id_trayek','$id_layanan','$jml_seat','$jml_penumpang')";
+                        if($id_layanan==1){
+                            $insert         = "INSERT INTO dataset(id_jam, id_trayek, id_layanan, jml_seat, jml_penumpang)VALUES('$id_jam','$id_trayek','$id_layanan','23','$jml_penumpang')";
 
-                        $query          = mysqli_query($konek, $insert)or die(mysqli_error($konek));   
+                            $query          = mysqli_query($konek, $insert)or die(mysqli_error($konek));
+                        }
+                        elseif($id_layanan==2){
+                            $insert         = "INSERT INTO dataset(id_jam, id_trayek, id_layanan, jml_seat, jml_penumpang)VALUES('$id_jam','$id_trayek','$id_layanan','30','$jml_penumpang')";
+
+                            $query          = mysqli_query($konek, $insert)or die(mysqli_error($konek));
+                        }
+                        elseif($id_layanan==3){
+                            $insert         = "INSERT INTO dataset(id_jam, id_trayek, id_layanan, jml_seat, jml_penumpang)VALUES('$id_jam','$id_trayek','$id_layanan','40','$jml_penumpang')";
+
+                            $query          = mysqli_query($konek, $insert)or die(mysqli_error($konek));
+                        }
+                           
                     }
 
                 }
-                echo "<br><br><br><strong><center><i>Data berhasil ditambah!";
-                echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../superadmin/index.php?content=data_penjualan">';
+                // echo "<br><br><br><strong><center><i>Data berhasil ditambah!";
+                // echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../superadmin/index.php?content=data_penjualan">';
             }
             elseif ($level=='2') {
                 date_default_timezone_set('Asia/Jakarta');
@@ -140,7 +153,7 @@
                 echo "<br><br><br><strong><center><i>Data berhasil ditambah!";
                 echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../general_manager/index.php?content=data_penjualan">';
             }
-    	}
+    }
 
 	else {
     		print"

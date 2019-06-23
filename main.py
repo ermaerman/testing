@@ -23,30 +23,31 @@ def index():
     return "test"
 
 
-# @app.route('/api/v1.0/bayes', methods = ['POST'])
-# def predict():
-   
-   
-    X_predict = np.float32([[request.form['umur'], request.form['pekerjaan'], request.form['penghasilan'], request.form['jml_ang_kel'], request.form['status_rumah']]])
+@app.route('/api/v1/result', methods = ['POST'])
+def predict():
+    
+    # value prams from front end
+    X_predict = np.float32([[request.form['id_jam'], request.form['id_trayek'], request.form['id_layanan'], request.form['jml_seat'], request.form['jml_penumpang']]])
 
     
     ################################
     # Load pickle
     ################################
 
-    gnb = pickle.load( open( "bayes.p", "rb" ))
+    gnb = pickle.load( open( "result.p", "rb" ))
 
+    ## load predict after training algorithm
     predict = gnb.predict(X_predict)
 
 
     response = {
-        'endpoint': 'api/v1.0/bayes',
+        'endpoint': 'api/v1/result',
         'method': 'POST',
-        'umur': request.form['umur'],
-        'pekerjaan': request.form['pekerjaan'],
-        'penghasilan': request.form['penghasilan'],
-        'jumlah': request.form['jml_ang_kel'],
-        'status_rumah': request.form['status_rumah'],
+        'id_jam': request.form['id_jam'],
+        'id_trayek': request.form['id_trayek'],
+        'id_layanan': request.form['id_layanan'],
+        'jml_seat': request.form['jml_seat'],
+        'jml_penumpang': request.form['jml_penumpang'],
         'status':int(predict)
     }
 
