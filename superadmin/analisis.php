@@ -241,7 +241,7 @@
                   <h4 class="form-wording" id="myModalLabel"></h4>
                 </div>
                 <div class="modal-body">
-
+                  <span id="result" style="display: block; font-weight: bold; text-align: center;"></span>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -257,9 +257,9 @@
     <script type="text/javascript">
                     
           $("#form-predict").submit(function(e) {
-            var url = "http://0.0.0.0:5000/api/v1.0/predict"; 
-            var xhr = new XMLHttpRequest({mozSystem: true});
-            var data = $("#form-predict").serialize()
+            var url = "http://0.0.0.0:5000/api/v1/result"; 
+            //var xhr = new XMLHttpRequest({mozSystem: true});
+            var data = $("#form-predict").serialize();
             console.log("data", data)
             $.ajax({
                       type: "POST",
@@ -267,18 +267,16 @@
                       data: data, // serializes the form's elements.
                       success: function(data)
                       {
-
+                          console.log("predict "+data.response.predict)
                           $('#modal-hasil').modal('show');
-                          $('.percentage_do').html((data.response.percentage_do)*100);   
-                          $('.percentage_not_do').html((data.response.percentage_not_do)*100);
                           if (data.response.status == 1) {
-                            var id_jam = data.response.id_jam;
-                            var id_trayek = data.response.id_trayek;
-                            var id_layanan = data.response.id_layanan;
-                            var jml_seat = data.response.jml_seat;
-                            var jml_penumpang = data.response.jml_penumpang;
+                            // var id_jam = data.response.id_jam;
+                            // var id_trayek = data.response.id_trayek;
+                            // var id_layanan = data.response.id_layanan;
+                            // var jml_seat = data.response.jml_seat;
+                            // var jml_penumpang = data.response.jml_penumpang;
 
-                            $('.status').html("Laku");
+                            $('#result').html("Laku");
 
                            /* if (angkatan == '2010') {
                                 var pembagiSMT = 14;
@@ -367,7 +365,7 @@
                               */
 
                           }else{
-                            $('.status').html("Tidak Laku");
+                            $('#result').html("Tidak Laku");
                           }  
                       },
                       error: function (request, status, error) {

@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, abort, request, make_response, url_for, render_template
 from flask_cors import CORS, cross_origin
 import numpy as np
-#import pickle
+import pickle
 
 
 app = Flask(__name__, static_url_path = "/static")
@@ -34,24 +34,24 @@ def predict():
     # Load pickle
     ################################
 
-    gnb = pickle.load( open( "result.p", "rb" ))
+    kmeans = pickle.load( open( "result.p", "rb" ))
 
     ## load predict after training algorithm
-    predict = gnb.predict(X_predict)
+    predict = kmeans.predict(X_predict)
 
 
     response = {
         'endpoint': 'api/v1/result',
         'method': 'POST',
-        'id_jam': request.form['id_jam'],
-        'id_trayek': request.form['id_trayek'],
-        'id_layanan': request.form['id_layanan'],
-        'jml_seat': request.form['jml_seat'],
-        'jml_penumpang': request.form['jml_penumpang'],
-        'status':int(predict)
+        'jam': request.form['id_jam'],
+        'trayek': request.form['id_trayek'],
+        'layanan': request.form['id_layanan'],
+        'seat': request.form['jml_seat'],
+        'penumpang': request.form['jml_penumpang'],
+        'predict':int(predict)
     }
 
     return jsonify( { 'response': response } )
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug = True)
+    app.run(debug=True)
