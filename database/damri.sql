@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2019 at 11:23 AM
+-- Generation Time: Jun 24, 2019 at 04:47 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -664,7 +664,9 @@ CREATE TABLE `tbl_count` (
 
 INSERT INTO `tbl_count` (`id_count`, `tgl_berangkat`, `id_jam`, `id_trayek`, `id_layanan`, `jml_penumpang`, `jml_seat`, `status`, `hasil_analisis`) VALUES
 (1, '2019-12-11', 5, 2, 1, 11, 23, '0', '-'),
-(2, '2019-12-11', 1, 1, 1, 20, 23, '0', '-');
+(2, '2019-12-11', 1, 1, 1, 20, 23, '0', '-'),
+(3, '2019-12-11', 2, 3, 2, 2, 30, '0', '-'),
+(4, '2019-12-11', 1, 24, 1, 22, 23, '0', '-');
 
 -- --------------------------------------------------------
 
@@ -1466,7 +1468,7 @@ ALTER TABLE `tbl_cabang`
 -- AUTO_INCREMENT for table `tbl_count`
 --
 ALTER TABLE `tbl_count`
-  MODIFY `id_count` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_count` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_divre`

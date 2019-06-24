@@ -44,7 +44,7 @@
 
                               <br><br>
                               
-                              <form id="form-predict" class="form-horizontal" method="POST">
+                              <form class="form-horizontal" method="POST">
                                 <table class="table table-striped" id="data-table-basic">
                                   <thead>
                                     <tr>
@@ -180,7 +180,7 @@
                                                   /*echo '<td>'.$data['hasil_analisis'].'</td>';*/
                                                   //================================================================
                                                   //belum arahin ke py
-                                                  echo '<td><button type="submit" data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" class="btn btn-primary"><i class="fa fa-rocket fa-fw"></i> Predict</button></td>';
+                                                   echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" href=index.php?content=analisis_predict&&id_count='.$data['id_count'].'><i class="fa fa-edit fa-fw"></i></a></td>';
                                                   //================================================================
                                                   echo '</tr>';
                                                   $no++;  
@@ -231,150 +231,4 @@
     </div>
     <!-- Data Table area End-->
 
-    <div class="row">
-        <!-- Modal -->
-          <div class="modal fade" id="modal-hasil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                <center><h4><strong>Analisis Penjualan <i>E-ticketing</i> Bus DAMRI Segmen Antar Kota Cabang Bandar Lampung</strong></h4></center>
-                  <h4 class="form-wording" id="myModalLabel"></h4>
-                </div>
-                <div class="modal-body">
-                  <span id="result" style="display: block; font-weight: bold; text-align: center;"></span>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
-    <!-- End Modals-->
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script> 
-    <script type="text/javascript">
-                    
-          $("#form-predict").submit(function(e) {
-            var url = "http://0.0.0.0:5000/api/v1/result"; 
-            //var xhr = new XMLHttpRequest({mozSystem: true});
-            var data = $("#form-predict").serialize();
-            console.log("data", data)
-            $.ajax({
-                      type: "POST",
-                      url: url,
-                      data: data, // serializes the form's elements.
-                      success: function(data)
-                      {
-                          console.log("predict "+data.response.predict)
-                          $('#modal-hasil').modal('show');
-                          if (data.response.status == 1) {
-                            // var id_jam = data.response.id_jam;
-                            // var id_trayek = data.response.id_trayek;
-                            // var id_layanan = data.response.id_layanan;
-                            // var jml_seat = data.response.jml_seat;
-                            // var jml_penumpang = data.response.jml_penumpang;
-
-                            $('#result').html("Laku");
-
-                           /* if (angkatan == '2010') {
-                                var pembagiSMT = 14;
-                            } else if (angkatan == '2011') {
-                                var pembagiSMT = 12;
-                            } else if (angkatan == '2012') {
-                                var pembagiSMT = 10;
-                            } else if (angkatan == '2013') {
-                                var pembagiSMT = 8;
-                            } else if (angkatan == '2014') {
-                                var pembagiSMT = 6;
-                            } else if (angkatan == '2015') {
-                                var pembagiSMT = 4;
-                            }
-                            
-                            normalizedIPK = ipk / 4;
-                            normalizedPenghasilan = penghasilan / 8;
-                            normalizedJarak = 1 - (jarak / 42);
-                            normalizedSMT = semester / pembagiSMT;
-
-                            if (normalizedIPK < normalizedSMT && normalizedIPK < normalizedPenghasilan && normalizedIPK < normalizedJarak) {
-                              if(beasiswa == 1){
-                                var alasan = 'IPK rendah';
-                                var dampak = 'Beasiswa yang didapat akan dicabut';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.dampak').html("Dampak: " + dampak);
-                              }else{
-                                var alasan = 'IPK rendah';
-                                var solusi = 'Untuk diberikan binaan agar IPK naik';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.solusi').html("Solusi: " + solusi);
-                              }
-                            } else if (normalizedPenghasilan < normalizedIPK && normalizedPenghasilan < normalizedJarak && normalizedPenghasilan < normalizedSMT) {
-                               if(beasiswa == 1){
-                                 $('.status').html("Tidak Mengundurkan Diri");
-                                }else{ 
-                                var alasan = 'Penghasilan Orang Tua Rendah';
-                                var solusi = 'Disarankan mengajukan beasiswa';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.solusi').html("Solusi: " + solusi);
-                              }
-                            } else if (normalizedJarak < normalizedIPK && normalizedJarak < normalizedPenghasilan && normalizedJarak < normalizedSMT) {
-                              var alasan = 'Jarak menuju kampus jauh';
-                              var solusi = 'Disarankan untuk sewa kos didekat kampus';
-                              $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                              $('.alasan').html("Alasan: " + alasan);
-                              $('.solusi').html("Solusi: " + solusi);
-                            }else if(normalizedSMT < normalizedIPK && normalizedSMT < normalizedPenghasilan && normalizedSMT < normalizedJarak){
-                              if(beasiswa == 1){
-                                var alasan = 'Semester yang ditempuh kurang';
-                                var dampak = 'Beasiswa yang didapat akan dicabut';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.dampak').html("Dampak: " + dampak);
-                              }else{
-                                var alasan = 'Semester yang ditempuh kurang';
-                                var solusi = 'Disarankan agar tidak mengajukan cuti akademik';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.solusi').html("Solusi: " + solusi);
-                              }
-                            }else{
-                              if(beasiswa == 1){
-                                var alasan = 'Semester yang ditempuh kurang';
-                                var dampak = 'Beasiswa yang didapat akan dicabut';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.dampak').html("Dampak: " + dampak);
-                              }else{
-                                var alasan = 'Semester yang ditempuh kurang';
-                                var solusi = 'Disarankan agar tidak mengajukan cuti akademik';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.solusi').html("Solusi: " + solusi);
-                              }
-                            }
-
-                            console.log("normalized ipk", normalizedIPK);
-                            console.log("normalized semester", normalizedSMT);
-                            console.log("normalized penghasilan", normalizedPenghasilan);
-                            console.log("normalized jarak", normalizedJarak);
-                            console.log("alasan", alasan);
-                              */
-
-                          }else{
-                            $('#result').html("Tidak Laku");
-                          }  
-                      },
-                      error: function (request, status, error) {
-                          alert(request.responseText);
-                      }
-                     });
-
-          
-            e.preventDefault(); // avoid to execute the actual submit of the form.
-          });
-          </script>    
-
+    
