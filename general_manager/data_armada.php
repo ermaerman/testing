@@ -10,7 +10,7 @@
 										<i class="notika-icon notika-windows"></i>
 									</div>
 									<div class="breadcomb-ctn">
-										<h2>Data Trayek / Rute</h2>
+										<h2>Data Armada</h2>
                     <p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
 									</div>
 								</div>
@@ -38,7 +38,7 @@
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
-                                <a href="index.php?content=data_trayek"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
+                                <a href="index.php?content=data_armada"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
                               </div>
                             </form>
                               <br><br>
@@ -47,20 +47,22 @@
                                   <thead>
                                     <tr>
                                       <th>No</th>
-                                      <th>Asal</th>
-                                      <th>Tujuan</th>
-                                      <th>Jurusan</th>
+                                      <th>Armada</th>
+                                      <th>No. Polisi</th>
+                                      <th>Tahun</th>
+                                      <th>Merk Type</th>
+                                      <th>No. Rangka</th>
+                                      <th>No. Mesin</th>
                                       <th>Segmen</th>
-                                      <th>Jarak (Km)</th>
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <?php
 
                                       include '../config/koneksi.php';
-                                                 // error_reporting(0);
+                                                 error_reporting(0);
 
-                                                 $batas  = 10;
+                                                 $batas  = 20;
                                                  $hal    = @$_GET['hal'];
                                                  if (empty($hal)) {
                                                    $posisi = 0;
@@ -71,23 +73,23 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT * FROM tbl_trayek WHERE asal LIKE '%$pencarian%' OR tujuan LIKE '%$pencarian%' OR jurusan LIKE '%$pencarian%' OR segmen LIKE '%$pencarian%' OR jarak LIKE '%$pencarian%' ORDER BY id_trayek DESC";
+                                                     $sql = "SELECT * FROM tbl_armada WHERE armada LIKE '%$pencarian%' OR no_pol LIKE '%$pencarian%' OR tahun LIKE '%$pencarian%' OR tahun LIKE '%$pencarian%' OR merk_type LIKE '%$pencarian%' OR no_rangka LIKE '%$pencarian%' OR no_mesin LIKE '%$pencarian%' OR segmen LIKE '%$pencarian%' ORDER BY id_armada";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT * FROM tbl_trayek ORDER BY id_trayek DESC LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT * FROM tbl_trayek ORDER BY id_trayek DESC";
+                                                     $query = "SELECT * FROM tbl_armada ORDER BY id_armada LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT * FROM tbl_armada ORDER BY id_armada";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT * FROM tbl_trayek ORDER BY id_trayek DESC LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT * FROM tbl_trayek ORDER BY id_trayek DESC";
+                                                   $query = "SELECT * FROM tbl_armada ORDER BY id_armada LIMIT $posisi, $batas";
+                                                   $queryJml = "SELECT * FROM tbl_armada ORDER BY id_armada";
                                                    $no = $posisi + 1;
                                                  }
 
                                       $querydata = mysqli_query($konek, $query)or die(mysqli_error());
                                               if(mysqli_num_rows($querydata) == 0){ 
-                                                echo '<tr><td colspan="6" align="center">Tidak ada data!</td></tr>';    
+                                                echo '<tr><td colspan="8" align="center">Tidak ada data!</td></tr>';    
                                               }
                                                 else
                                               { 
@@ -95,11 +97,13 @@
                                                 while($data = mysqli_fetch_array($querydata)){  
                                                   echo '<tr>';
                                                   echo '<td>'.$no.'</td>';
-                                                  echo '<td>'.$data['asal'].'</td>';
-                                                  echo '<td>'.$data['tujuan'].'</td>';
-                                                  echo '<td>'.$data['jurusan'].'</td>';
+                                                  echo '<td>'.$data['armada'].'</td>';
+                                                  echo '<td>'.$data['no_pol'].'</td>';
+                                                  echo '<td>'.$data['tahun'].'</td>';
+                                                  echo '<td>'.$data['merk_type'].'</td>';
+                                                  echo '<td>'.$data['no_rangka'].'</td>';
+                                                  echo '<td>'.$data['no_mesin'].'</td>';
                                                   echo '<td>'.$data['segmen'].'</td>';
-                                                  echo '<td>'.$data['jarak'].'</td>';
                                                   echo '</tr>';
                                                   $no++;  
                                                 }
@@ -130,7 +134,7 @@
                                       $jml_hal = ceil($jml / $batas);
                                       for ($i=1; $i <= $jml_hal; $i++) {
                                         if ($i != $hal) {
-                                          echo "<li><a href=\"index.php?content=data_trayek&&hal=$i\">$i</a></li>";
+                                          echo "<li><a href=\"index.php?content=data_armada&&hal=$i\">$i</a></li>";
                                         } else {
                                           echo "<li class=\"active\"><a>$i</a></li>";
                                         }

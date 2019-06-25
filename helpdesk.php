@@ -8,9 +8,12 @@
             <h1 class="text-white">Bantuan —
             </h1>
             <p class="text-white mb-3">Jl. Matraman Raya No. 25 Jakarta Timur 13140
-            	<br>Telp : (021)8583131 (Hunting) Fax : (021)8583732, 8504876<br>
-					Contact Center Hello DAMRI 1500825
-					<br><a href="https://www.damri.co.id">https://www.damri.co.id</a></p>
+            <br>
+            Telp : (021)8583131 (Hunting) Fax : (021)8583732, 8504876
+            <br>
+					  Contact Center Hello DAMRI 1500825
+					  <br>
+            <a href="https://www.damri.co.id">https://www.damri.co.id</a></p>
             <div class="btn-wrapper mb-3">
               <p class="text-success d-inline">Silahkan gulir kebawah</p>
               <a href="#blk" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-down"></i></a>
@@ -34,79 +37,78 @@
     </div>
   </div>
   <div class="section section-tabs">
-        <div class="container">
-          <div class="title">
-            <h3 class="mb-3">Bantuan Tabs</h3>
-             <a class="nav-link btn btn-default d-none d-lg-block" href="" data-toggle="modal" data-target="#myModal3">
-              <i class="tim-icons icon-pin"></i> Masukan Pertanyaan
-            </a>
+    <div class="container">
+      <div class="title">
+        <h3 class="mb-3">Bantuan Tabs</h3>
+         <a class="nav-link btn btn-default d-none d-lg-block" href="" data-toggle="modal" data-target="#myModal3">
+          <i class="tim-icons icon-pin"></i> Masukan Pertanyaan
+        </a>
+      </div>
+      <div class="row">
+        <div class="col-md-12 ml-auto col-xl-12 mr-auto">
+          <div class="mb-3">
+            <small class="text-uppercase font-weight-bold">Frequently Asked Question</small>
           </div>
-          <div class="row">
-            <div class="col-md-12 ml-auto col-xl-12 mr-auto">
-              <div class="mb-3">
-                <small class="text-uppercase font-weight-bold">Frequently Answer Question</small>
-              </div>
-              <!-- Nav tabs -->
-              
-               <form class="form-horizontal" method="POST">
-                    <?php
 
-                      include 'config/koneksi.php';
+          <!-- Nav tabs -->
+           <form class="form-horizontal" method="POST">
+                <?php
 
-                      $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE trash='0' ORDER BY id_helpdesk DESC")or die(mysqli_error());
-                              if(mysqli_num_rows($query) == 0){ 
-                                echo '<tr><td colspan="4" align="center"><i>Belum ada pertanyaan / komentar!</i></td></tr>';    
-                              }
-                                else
-                              { 
-                                $no = 1;        
-                                while($data = mysqli_fetch_array($query)){ 
-                                   echo '<div class="container">';
-                                   echo '<table width="100%">';
-                                   echo '<tr>';
-                                   echo '<td><font color="white"><b>'.$data['nama'].'</b></font></td>';
-                                   echo '<td align="right" colspan="2"><i>'.$data['tanggal'].'<?i></td>';
-                                   echo '</tr>';
-                                    echo '<tr>';
-                                   echo '<td colspan="2">'.$data['inbox'].'</td>';
-                                   echo '</tr>';
-                                   echo '<tr>';
-                                   echo '<td width=""><img src="assets/img/logo2.png" class="media-object" style="width:40px"></td>';
-                                   ?>
-                                   <td width="86%">
-                                    <font color='white'>Balasan</font>
-                                    <br>
-                                    <i>
-                                     <?php
-                                        if ($data['outbox']!='0') {
-                                          echo $data['outbox'];
-                                        }
-                                        else {
-                                          echo "Menunggu Balasan"; 
+                  include 'config/koneksi.php';
 
-                                        }
-                                     ?>
-                                     </i>
-                                   </td>
-                                   <?php
-                                   // echo '<td width="86%"><font color="white">Balasan</font><br>'.$data['outbox'].'</td>';
-                                   echo '</tr>';
-                                   echo '</table>';
-                                  echo '</div>';
-                                  echo '<hr>';
-                                }
-                              }
-                        
-                          ?>
+                  $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE trash='0' ORDER BY id_helpdesk DESC")or die(mysqli_error());
+                          if(mysqli_num_rows($query) == 0){ 
+                            echo '<tr><td colspan="4" align="center"><i>Belum ada pertanyaan / komentar!</i></td></tr>';    
+                          }
+                            else
+                          { 
+                            $no = 1;        
+                            while($data = mysqli_fetch_array($query)){ 
+                               echo '<div class="container">';
+                               echo '<table width="100%">';
+                               echo '<tr>';
+                               echo '<td><font color="white"><b>'.$data['nama'].'</b></font></td>';
+                               echo '<td align="right" colspan="2"><i>'.$data['tanggal'].'<?i></td>';
+                               echo '</tr>';
+                               echo '<tr>';
+                               echo '<td colspan="2">'.$data['inbox'].'</td>';
+                               echo '</tr>';
+                               echo '<tr>';
+                               echo '<td width=""><img src="assets/img/logo2.png" class="media-object" style="width:40px"></td>';
+                               ?>
+                               <td width="86%">
+                                <font color='white'>Balasan</font>
+                                <br>
+                                <i>
+                                 <?php
+                                    if ($data['outbox']!='0') {
+                                      echo $data['outbox'];
+                                    }
+                                    else {
+                                      echo "Menunggu Balasan"; 
 
-              </form>
-              </div>
-            </div>
-           </div>
+                                    }
+                                 ?>
+                                 </i>
+                               </td>
+                               <?php
+                               echo '</tr>';
+                               echo '</table>';
+                               echo '</div>';
+                               echo '<hr>';
+                            }
+                          }
+                      ?>
+
+          </form>
+          </div>
+        </div>
+       </div>
       </div>
 
-      <!-- End Section Tabs -->
-   <!-- Form Modal -->
+<!-- End Section Tabs -->
+   
+<!-- Form Modal -->
       <div class="modal fade modal-black" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -139,12 +141,6 @@
                     <input class="form-control" placeholder="Password" type="password" name="password" required>
                   </div>
                 </div>
-                <!-- <div class="form-check mt-3">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" checked>
-                    <span class="form-check-sign"></span>
-                    Remember me!
-                  </label>
                 </div> -->
                 <div align="right">
                   <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Masuk</button>

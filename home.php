@@ -32,13 +32,6 @@
                     <input class="form-control" placeholder="Password" type="password" name="password" required>
                   </div>
                 </div>
-                <!-- <div class="form-check mt-3">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" checked>
-                    <span class="form-check-sign"></span>
-                    Remember me!
-                  </label>
-                </div> -->
                 <div align="right">
                   <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Masuk</button>
                 </div>
@@ -88,8 +81,8 @@
           <center>
             <h5>
             Selamat datang di <a href="index.php">analysis.damri.co.id</a>,
-        pada aplikasi ini anda dapat melakukan analisis terhadap penjualan e-ticketing bus DAMRI segmen antar kota Cabang Bandar Lampung.
-        Anda dapat mengakses halaman tersebut setelah login menggunakan email corporate DAMRI yang telah valid. Terimakasih!
+            pada aplikasi ini anda dapat melakukan analisis terhadap penjualan e-ticketing bus DAMRI segmen antar kota Cabang Bandar Lampung.
+            Anda dapat mengakses halaman tersebut setelah login menggunakan email corporate DAMRI yang telah valid. Terimakasih!
           </h5>
           </center>
         </div>

@@ -16,11 +16,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <a href="index.php?content=edit_user&&id_user=<?php echo $data['id_user'] ?>"><button data-toggle="tooltip" data-placement="left" title="Edit Akun" class="btn"><i class="notika-icon notika-edit"></i></button></a>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>

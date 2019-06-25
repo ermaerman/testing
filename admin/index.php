@@ -356,6 +356,8 @@
                         </li>
                         <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
+                        <li><a data-toggle="tab" href="#Data"><i class="notika-icon notika-file"></i> Data</a>
+                        </li>
                         <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Grafik</a>
                         </li>
                         <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Bantuan</a>
@@ -389,6 +391,18 @@
                                 <li><a href="index.php?content=laporan_penjualan">Laporan Penjualan</a>
                                 </li>
                                 <li><a href="index.php?content=laporan_data_promo">Laporan Data Promo</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Data" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="index.php?content=data_trayek">Data Trayek / Rute</a>
+                                </li>
+                                <li><a href="index.php?content=data_harga">Data Harga</a>
+                                </li>
+                                <li><a href="index.php?content=data_layanan">Data Layanan</a>
+                                </li>
+                                <li><a href="index.php?content=data_armada">Data Armada</a>
                                 </li>
                             </ul>
                         </div>
@@ -451,6 +465,16 @@
               include 'laporan_penjualan.php';
             elseif ($content=='laporan_data_promo')
               include 'laporan_data_promo.php';
+
+          // Data
+            elseif ($content=='data_trayek')
+              include 'data_trayek.php';
+            elseif ($content=='data_harga')
+              include 'data_harga.php';
+            elseif ($content=='data_layanan')
+              include 'data_layanan.php';
+            elseif ($content=='data_armada')
+              include 'data_armada.php';
           
            // Grafik 
             elseif ($content=='grafik_penjualan')

@@ -15,11 +15,6 @@
                                     </div>
                                 </div>
                             </div>
-                           <!--  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <a href="index.php?content=tambah_user"><button data-toggle="tooltip" data-placement="left" title="Tambah Data User" class="btn"><i class="notika-icon notika-plus-symbol"></i></button></a>
-                                </div>
-                            </div>
  -->                        </div>
                     </div>
                 </div>
@@ -139,7 +134,7 @@
                                 </div>
                                 <div class="invoice-ds-int invoice-last">
                                     <h2>Angkutan Kota</h2>
-                                    <p align="justify">Angkutan Bus Kota Adalah sebuah moda transportasi perkotaan yang merujuk kepada kendaraan umum dengan rute yang sudah ditentukan. pelayanannya meliputi jaringan trayek kota ( dalam wilyah kota, Ibu Kota Provinsi dan Kabupaten). Jaringan Pelayanan meliputi 14 (empat belas) kota besar diseluruh Indonesia meliputi Medan, Batam, Padang, Palembang, Bandar Lampung, Bandung, Yogyakarta, Surakarta, Semarang, Jember, Surabaya, Makassar, Kendari dan Manado </p>
+                                    <p align="justify">Angkutan Bus Kota Adalah sebuah moda transportasi perkotaan yang merujuk kepada kendaraan umum dengan rute yang sudah ditentukan. Pelayanannya meliputi jaringan trayek kota ( dalam wilyah kota, Ibu Kota Provinsi dan Kabupaten). Jaringan Pelayanan meliputi 14 (empat belas) kota besar diseluruh Indonesia meliputi Medan, Batam, Padang, Palembang, Bandar Lampung, Bandung, Yogyakarta, Surakarta, Semarang, Jember, Surabaya, Makassar, Kendari dan Manado </p>
                                 </div>
                             </div>
                         </div>

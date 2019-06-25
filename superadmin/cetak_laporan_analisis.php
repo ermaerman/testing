@@ -212,24 +212,22 @@
                                     <tr>
                                       <th>No</th>
                                       <th>Tanggal</th>
-                                      <th>Berangkat</th>
-                                      <th>Sampai</th>
-                                      <th>Armada</th>
+                                      <th>Jam Berangkat</th>
                                       <th>Trayek</th>
                                       <th>Layanan</th>
+                                      <th>Jumlah Seat</th>
                                       <th>Jumlah Penumpang</th>
-                                      <th>Load Factor</th>
-                                      <th>Status</th>
+                                      <th>Status Analisis</th>
                                       <th>Hasil Analisis</th>
                                     </tr>
                                   </thead>
                                   <tbody>
                                   <?php
-                              error_reporting(0);
+                              //error_reporting(0);
 
                                 include '../config/koneksi.php';
 
-                                $query = mysqli_query($konek, "SELECT * FROM tbl_penjualan ORDER BY id_penjualan")or die(mysqli_error($konek));
+                                $query = mysqli_query($konek, "SELECT * FROM tbl_count ORDER BY id_count")or die(mysqli_error($konek));
                                         if(mysqli_num_rows($query) == 0){
                                           echo '<tr><td colspan="10" align="center"><i>Tidak ada data!</i></td></tr>';
                                         }
@@ -237,17 +235,73 @@
                                         {
                                           $no = 1;
                                           while($data = mysqli_fetch_array($query)){
-                                                  echo '<tr>';
-                                                  echo '<td>'.$no.'</td>';
-                                                  echo '<td>'.$data['tgl_berangkat'].'</td>';
-                                                  echo '<td>'.$data['jam_berangkat'].'</td>';
-                                                  echo '<td>'.$data['jam_sampai'].'</td>';
-                                                  echo '<td>'.$data['id_armada'].'</td>';
-                                                  echo '<td>'.$data['id_trayek'].'</td>';
-                                                  echo '<td>'.$data['id_layanan'].'</td>';
-                                                  echo '<td>'.$data['jml_penumpang'].'</td>';
-                                                  echo '<td>'.$data['load_factor'].'</td>';
-                                                  echo '<td>'.$data['status'].'</td>';
+                                                 echo '<tr>';
+                                                  echo '<td>'.$no.'';
+                                                  ?>
+                                                  <?php
+                                                  echo '</td>';
+                                                  echo '<td>'.$data['tgl_berangkat'].'';
+                                                  ?>
+                                                  <?php
+                                                  echo '</td>';
+                                                  ?>
+                                                  <td>
+                                                    <?php
+                                                      $jam   = $data['id_jam'];
+                                                      $jmquery   = "SELECT * FROM tbl_jam WHERE id_jam=$jam";
+                                                      $query    = mysqli_query($konek,$jmquery)or die(mysqli_error($konek));
+                                                      $jmshow    = mysqli_fetch_array($query);
+
+                                                      echo $jmshow['jam'];
+                                                    ?>
+                                                  </td>
+                                                   <td>
+                                                    <?php
+                                                      $trayek   = $data['id_trayek'];
+
+                                                      $tquery   = "SELECT * FROM tbl_trayek WHERE id_trayek=$trayek";
+                                                      $query    = mysqli_query($konek,$tquery)or die(mysqli_error($konek));
+                                                      $tshow    = mysqli_fetch_array($query);
+
+
+                                                      echo $tshow['jurusan'];
+                                                    ?>  
+                                                    <br>
+                                                    <input type="hidden" name="id_trayek" value="<?php echo $data['id_trayek']; ?>" >  
+                                                  </td>
+                                                  <td>
+                                                    <?php
+                                                      $layanan   = $data['id_layanan'];
+
+                                                      $lquery   = "SELECT * FROM tbl_layanan WHERE id_layanan=$layanan";
+                                                      $query    = mysqli_query($konek,$lquery)or die(mysqli_error($konek));
+                                                      $lshow    = mysqli_fetch_array($query);
+
+
+                                                      echo $lshow['jenis_layanan'];
+                                                    ?> 
+                                                  </td>
+                                                  <?php
+                                                  echo '<td>'.$data['jml_seat'].'<br>';
+                                                  ?>
+                                                    <input type="hidden" name="jml_seat" value="<?php echo $data['jml_seat']; ?>" >
+                                                    </td>  
+                                                  <?php
+                                                  echo '<td>'.$data['jml_penumpang'].'<br>';
+                                                  ?>
+                                                  <input type="hidden" name="jml_penumpang" value="<?php echo $data['jml_penumpang']; ?>" >
+                                                    </td>
+                                                  <td> 
+                                                    <?php
+                                                      if ($data['status']=='1'){
+                                                        echo '<font color="green">Sudah dianalisis</font>';
+                                                      }
+                                                      else {
+                                                        echo '<font color="red">Belum dianalisis</font>';
+                                                      }
+                                                    ?>
+                                                  </td>
+                                                  <?php
                                                   echo '<td>'.$data['hasil_analisis'].'</td>';
                                                   echo '</tr>';
                                             $no++;

@@ -2,6 +2,7 @@
   
   //menyambungkan koneksi
   include 'config/koneksi.php';
+  
   session_start();
   if(isset($_SESSION['email']) ){
   header("Location: 404.php");}
@@ -47,7 +48,7 @@
             </div>
             <div class="col-6 collapse-close text-right">
               <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="tim-icons icon-simple-remove"></i>
+              <i class="tim-icons icon-simple-remove"></i>
               </button>
             </div>
           </div>
@@ -75,22 +76,22 @@
       </div>
     </div>
   </nav>
+
   <?php
-              if ($content=='index')
-                include 'home.php';
-              else if ($content=='documentation')
-                include 'documentation.php';
-              else if ($content=='helpdesk')
-                include 'helpdesk.php';
+    if ($content=='index')
+      include 'home.php';
+    else if ($content=='documentation')
+      include 'documentation.php';
+    else if ($content=='helpdesk')
+      include 'helpdesk.php';
   ?>
+
   </div>
-     
-   
-    <footer class="footer">
-      <div class="container" align="center">
-          <p style="color: grey; font-size: 13px;">© 2019, Made with <img width="20" src="./assets/img/love1.png"> by Erma Noviana for a better DAMRI </p>
-      </div>
-    </footer>
+  <footer class="footer">
+    <div class="container" align="center">
+        <p style="color: grey; font-size: 13px;">© 2019, Made with <img width="20" src="./assets/img/love1.png"> by Erma Noviana for a better DAMRI </p>
+    </div>
+  </footer>
 
   <!--   Core JS Files   -->
   <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>

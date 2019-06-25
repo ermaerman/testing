@@ -188,13 +188,6 @@
                                     <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
                                         <label class="hrzn-fm">Level</label>
                                     </div>
-                                    <?php
-
-                                        // $level  = "SELECT * FROM tbl_level WHERE id_level='$data['id_level']";
-                                        // $query  = mysqli_query($konek,$level)or die(mysqli_error($konek));
-                                        // $show   = mysqli_fetch_array($query);
-                                        // // var_dump($show['level']);
-                                    ?>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
                                             <input type="text" class="form-control" name="id_level" placeholder="ID Level" value="<?php echo $show['level']; ?>" readonly>

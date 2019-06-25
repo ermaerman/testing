@@ -188,7 +188,7 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st"> -->
-                                               <input type="hidden" class="form-control" name="foto" placeholder="Foto" value="<?php echo $data['foto']; ?>" required>
+                                        <input type="hidden" class="form-control" name="foto" placeholder="Foto" value="<?php echo $data['foto']; ?>" required>
                                        <!--  </div>
                                     </div>
                                 </div>

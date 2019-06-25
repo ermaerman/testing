@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="invoice-ds-int invoice-last">
                                     <h2>Angkutan Kota</h2>
-                                    <p align="justify">Angkutan Bus Kota Adalah sebuah moda transportasi perkotaan yang merujuk kepada kendaraan umum dengan rute yang sudah ditentukan. pelayanannya meliputi jaringan trayek kota ( dalam wilyah kota, Ibu Kota Provinsi dan Kabupaten). Jaringan Pelayanan meliputi 14 (empat belas) kota besar diseluruh Indonesia meliputi Medan, Batam, Padang, Palembang, Bandar Lampung, Bandung, Yogyakarta, Surakarta, Semarang, Jember, Surabaya, Makassar, Kendari dan Manado </p>
+                                    <p align="justify">Angkutan Bus Kota Adalah sebuah moda transportasi perkotaan yang merujuk kepada kendaraan umum dengan rute yang sudah ditentukan. Pelayanannya meliputi jaringan trayek kota ( dalam wilyah kota, Ibu Kota Provinsi dan Kabupaten). Jaringan Pelayanan meliputi 14 (empat belas) kota besar diseluruh Indonesia meliputi Medan, Batam, Padang, Palembang, Bandar Lampung, Bandung, Yogyakarta, Surakarta, Semarang, Jember, Surabaya, Makassar, Kendari dan Manado </p>
                                 </div>
                             </div>
                         </div>

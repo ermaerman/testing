@@ -247,29 +247,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span></a>
-                                <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Pemberitahuan</h2>
-                                    </div>
-                                    <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    <div class="hd-mg-va">
-                                        <a href="index.php?content=pemberitahuan">Lihat Semua</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Akun Pengguna</h2>
@@ -332,9 +310,11 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
+                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Analisis</a>
+                        </li>
                         <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Analisis</a>
+                        <li><a data-toggle="tab" href="#Data"><i class="notika-icon notika-file"></i> Data</a>
                         </li>
                         <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Grafik</a>
                         </li>
@@ -358,7 +338,7 @@
                         </div>
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="index.php?content=grafik_penjualan">Grafik penjualan</a>
+                                <li><a href="index.php?content=grafik_penjualan">Grafik Penjualan</a>
                                 </li>
                                 <li><a href="index.php?content=grafik-k-means">Grafik <i>K-Means</i></a>
                                 </li>
@@ -371,6 +351,18 @@
                                 <li><a href="index.php?content=laporan_analisis">Laporan Analisis</a>
                                 </li>
                                 <li><a href="index.php?content=laporan_data_promo">Laporan Data Promo</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Data" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="index.php?content=data_trayek">Data Trayek / Rute</a>
+                                </li>
+                                <li><a href="index.php?content=data_harga">Data Harga</a>
+                                </li>
+                                <li><a href="index.php?content=data_layanan">Data Layanan</a>
+                                </li>
+                                <li><a href="index.php?content=data_armada">Data Armada</a>
                                 </li>
                             </ul>
                         </div>
@@ -418,6 +410,16 @@
               include 'grafik_penjualan.php';
             elseif ($content=='grafik-k-means')
               include 'grafik-k-means.php'; 
+
+            // Data
+            elseif ($content=='data_trayek')
+              include 'data_trayek.php';
+            elseif ($content=='data_harga')
+              include 'data_harga.php';
+            elseif ($content=='data_layanan')
+              include 'data_layanan.php';
+            elseif ($content=='data_armada')
+              include 'data_armada.php';
 
         ?>
 

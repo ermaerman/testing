@@ -14,12 +14,12 @@
                     <p><i>Analysis System V 1.0.0 Cabang Bandar Lampung</i></p>
                   </div>
                 </div>
-              </div><!-- 
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <a href="index.php?content=tambah_data_penjualan"><button data-toggle="tooltip" data-placement="left" title="Tambah Data Penjualan" class="btn"><i class="notika-icon notika-plus-symbol"></i></button></a>
-                                </div>
-                            </div> -->
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                  <div class="breadcomb-report">
+                      <a target="_blank" href="cetak_laporan_penjualan.php"><button data-toggle="tooltip" data-placement="left" title="Cetak Laporan Penjualan" class="btn"><i class="notika-icon notika-print"></i></button></a>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT *FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR id_jam LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
+                                                     $sql = "SELECT * FROM tbl_penjualan WHERE tgl_berangkat LIKE '%$pencarian%' OR id_jam LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR load_factor LIKE '%$pencarian%' ORDER BY id_penjualan DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
