@@ -113,68 +113,47 @@
                     <div class="sale-statistic-inner notika-shadow mg-tb-30">
                         <div id="container" style="min-width: 310px; height: 380px; margin: 0 auto"></div>
                         <script type="text/javascript">
-                        $.getJSON(
-                            'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/usdeur.json',
-                            function (data) {
-
-                                Highcharts.chart('container', {
-                                    chart: {
-                                        zoomType: 'x'
-                                    },
-                                    title: {
-                                        text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung per-Tahun'
-                                    },
-                                    subtitle: {
-                                        text: document.ontouchstart === undefined ?
-                                            'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
-                                    },
-                                    xAxis: {
-                                        type: 'datetime'
-                                    },
-                                    yAxis: {
-                                        title: {
-                                            text: 'Jumlah Tiket Terjual'
-                                        }
-                                    },
-                                    legend: {
-                                        enabled: false
-                                    },
-                                    plotOptions: {
-                                        area: {
-                                            fillColor: {
-                                                linearGradient: {
-                                                    x1: 0,
-                                                    y1: 0,
-                                                    x2: 0,
-                                                    y2: 1
-                                                },
-                                                stops: [
-                                                    [0, Highcharts.getOptions().colors[0]],
-                                                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                                                ]
-                                            },
-                                            marker: {
-                                                radius: 2
-                                            },
-                                            lineWidth: 1,
-                                            states: {
-                                                hover: {
-                                                    lineWidth: 1
-                                                }
-                                            },
-                                            threshold: null
-                                        }
-                                    },
-
-                                    series: [{
-                                        type: 'area',
-                                        name: 'Tiket',
-                                        data: data
-                                    }]
-                                });
-                            }
-                        );
-                    </script>
+                        var chart1; // globally available
+                       $(document).ready(function() {
+                             chart1 = new Highcharts.Chart({
+                                chart: {
+                                   renderTo: 'container',
+                                   type: 'column'
+                                },   
+                                title: {
+                                   text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung'
+                                },
+                                xAxis: {
+                                   categories: ['Tanggal']
+                                },
+                                yAxis: {
+                                   title: {
+                                      text: 'Jumlah terjual'
+                                   }
+                                },
+                                     series:             
+                                   [
+                                   <?php 
+                                include '../config/koneksi.php';
+                                    $sql   = "SELECT DISTINCT tgl_berangkat FROM tbl_penjualan";
+                                     $query = mysqli_query($konek, $sql )  or die(mysql_error($konek));
+                                     while( $ret = mysqli_fetch_array( $query ) ){
+                                       $tgl_berangkat=$ret['tgl_berangkat'];                     
+                                          $sql_jumlah   = "SELECT SUM(jml_penumpang) AS jml_penumpang FROM tbl_penjualan WHERE tgl_berangkat='$tgl_berangkat'";        
+                                          $query_jumlah = mysqli_query($konek,$sql_jumlah ) or die(mysql_error($konek));
+                                          while( $data = mysqli_fetch_array( $query_jumlah ) ){
+                                             $jumlah = $data['jml_penumpang'];               
+                                         }             
+                                         ?>
+                                         {
+                                             name: '<?php echo $tgl_berangkat; ?>',
+                                        data: [<?php echo $jumlah; ?>]
+                                         },
+                                         <?php } ?>
+                                   ]
+                             });
+                          }); 
+                      </script>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">

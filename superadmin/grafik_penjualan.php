@@ -31,7 +31,7 @@
 
  <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="sale-statistic-inner notika-shadow mg-tb-10">
                         <div id="container2" style="min-width: 310px; height: 380px; margin: 0 auto"></div>
                        <script type="text/javascript">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
          
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <!--   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="sale-statistic-inner notika-shadow mg-tb-10">
                         <div id="container3" style="min-width: 310px; height: 380px; margin: 0 auto"></div>
                         <script type="text/javascript">
@@ -146,6 +146,6 @@
                         );
                     </script>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
