@@ -7,6 +7,7 @@
       <br>
       <br>
       <br>
+      <br>
 
       <div class="row justify-content-between align-items-center">
         <div class="col-lg-5 mb-5 mb-lg-0 ">
@@ -181,6 +182,7 @@
         </div>
       </div>
 
+    <br>
     <br>
     <br>
     <br>

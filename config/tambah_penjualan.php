@@ -143,7 +143,7 @@
 
                 echo "<br><br><br><strong><center><i>Data berhasil ditambah!";
                 echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../superadmin/index.php?content=data_penjualan">';
-    }
+    }}
 
 	else {
     		print"
