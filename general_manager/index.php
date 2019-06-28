@@ -340,7 +340,7 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.php?content=grafik_penjualan">Grafik Penjualan</a>
                                 </li>
-                                <li><a href="index.php?content=grafik-k-means">Grafik <i>K-Means</i></a>
+                                <li><a href="index.php?content=grafik_k_means">Grafik Analisis</a>
                                 </li>
                             </ul>
                         </div>
@@ -402,14 +402,16 @@
             // Analisis 
             elseif ($content=='analisis')
               include 'analisis.php';
+            elseif ($content=='analisis_predict')
+              include 'analisis_predict.php';
             elseif ($content=='hasil_analisis')
               include 'hasil_analisis.php';
 
             // Grafik 
             elseif ($content=='grafik_penjualan')
               include 'grafik_penjualan.php';
-            elseif ($content=='grafik-k-means')
-              include 'grafik-k-means.php'; 
+            elseif ($content=='grafik_k_means')
+              include 'grafik_k_means.php'; 
 
             // Data
             elseif ($content=='data_trayek')

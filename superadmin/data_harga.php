@@ -69,7 +69,7 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT *FROM tbl_jadwal WHERE harga LIKE '%$pencarian%' ORDER BY id_jadwal DESC";
+                                                     $sql = "SELECT * FROM tbl_jadwal WHERE harga LIKE '%$pencarian%' ORDER BY id_jadwal DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {

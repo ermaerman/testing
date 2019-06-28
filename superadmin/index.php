@@ -401,7 +401,7 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.php?content=grafik_penjualan">Grafik Penjualan</a>
                                 </li>
-                                <li><a href="index.php?content=grafik_k_means">Grafik <i>K-Means</i></a>
+                                <li><a href="index.php?content=grafik_k_means">Grafik Analisis</a>
                                 </li>
                             </ul>
                         </div>

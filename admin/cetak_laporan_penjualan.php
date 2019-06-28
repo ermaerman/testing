@@ -213,7 +213,6 @@
                                       <th>No</th>
                                       <th>Tanggal</th>
                                       <th>Berangkat</th>
-                                      <th>Sampai</th>
                                       <th>Armada</th>
                                       <th>Trayek</th>
                                       <th>Layanan</th>
@@ -238,8 +237,7 @@
                                                   echo '<tr>';
                                                   echo '<td>'.$no.'</td>';
                                                   echo '<td>'.$data['tgl_berangkat'].'</td>';
-                                                  echo '<td>'.$data['jam_berangkat'].'</td>';
-                                                  echo '<td>'.$data['jam_sampai'].'</td>';
+                                                  echo '<td>'.$data['id_jam'].'</td>';
                                                   echo '<td>'.$data['id_armada'].'</td>';
                                                   echo '<td>'.$data['id_trayek'].'</td>';
                                                   echo '<td>'.$data['id_layanan'].'</td>';

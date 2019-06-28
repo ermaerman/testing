@@ -15,11 +15,11 @@
                   </div>
                 </div>
               </div>
-                          <!--   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <a href="index.php?content=tambah_data_penjualan"><button data-toggle="tooltip" data-placement="left" title="Tambah Data Penjualan" class="btn"><i class="notika-icon notika-plus-symbol"></i></button></a>
-                                </div>
-                            </div> -->
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                  <div class="breadcomb-report">
+                      <a target="_blank" href="cetak_laporan_analisis.php"><button data-toggle="tooltip" data-placement="left" title="Cetak Laporan Analisis" class="btn"><i class="notika-icon notika-print"></i></button></a>
+                  </div>
+              </div>
             </div>
           </div>
         </div>

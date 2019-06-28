@@ -180,7 +180,7 @@
                                                   /*echo '<td>'.$data['hasil_analisis'].'</td>';*/
                                                   //================================================================
                                                   //belum arahin ke py
-                                                   echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" href=index.php?content=analisis_predict&&id_count='.$data['id_count'].'><i class="fa fa-edit fa-fw"></i></a></td>';
+                                                   echo '<td align="center" width="20"><a data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" href=index.php?content=analisis_predict&&id_count='.$data['id_count'].'><i class="fa fa-rocket fa-fw"></i></a></td>';
                                                   //================================================================
                                                   echo '</tr>';
                                                   $no++;  

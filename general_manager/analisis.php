@@ -41,7 +41,9 @@
                                 <a href="index.php?content=analisis"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
                               </div>
                             </form>
+
                               <br><br>
+                              
                               <form class="form-horizontal" method="POST">
                                 <table class="table table-striped" id="data-table-basic">
                                   <thead>
@@ -54,7 +56,6 @@
                                       <th>Jumlah Seat</th>
                                       <th>Jumlah Penumpang</th>
                                       <th>Status Analisis</th>
-                                      <!-- <th>Hasil Analisis</th> -->
                                       <th>Action</th>
                                     </tr>
                                   </thead>
@@ -98,9 +99,18 @@
                                                 $no = 1;        
                                                 while($data = mysqli_fetch_array($querydata)){  
                                                   echo '<tr>';
-                                                  echo '<td>'.$no.'</td>';
-                                                  echo '<td>'.$data['tgl_berangkat'].'</td>';
-                                                  /*echo '<td>'.$data['id_jam'].'</td>';*/ 
+                                                  echo '<td>'.$no.'';
+                                                  ?>
+                                                  <br>
+                                                 <!--  <input type="hidden" name="id_count" value="<?php echo $data['id_count']; ?>" > -->
+                                                  <?php
+                                                  echo '</td>';
+                                                  echo '<td>'.$data['tgl_berangkat'].'';
+                                                  ?>
+                                                  <br>
+                                                 <!--  <input type="hidden" name="tgl_berangkat" value="<?php echo $data['tgl_berangkat']; ?>" > -->
+                                                  <?php
+                                                  echo '</td>';
                                                   ?>
                                                   <td>
                                                     <?php
@@ -110,7 +120,9 @@
                                                       $jmshow    = mysqli_fetch_array($query);
 
                                                       echo $jmshow['jam'];
-                                                    ?>  
+                                                    ?>
+                                                    <br>
+                                                    <input type="hidden" name="id_jam" value="<?php echo $data['id_jam']; ?>" >  
                                                   </td>
                                                    <td>
                                                     <?php
@@ -123,6 +135,8 @@
 
                                                       echo $tshow['jurusan'];
                                                     ?>  
+                                                    <br>
+                                                    <input type="hidden" name="id_trayek" value="<?php echo $data['id_trayek']; ?>" >  
                                                   </td>
                                                   <td>
                                                     <?php
@@ -135,14 +149,22 @@
 
                                                       echo $lshow['jenis_layanan'];
                                                     ?>  
+                                                    <br>
+                                                    <input type="hidden" name="id_layanan" value="<?php echo $data['id_layanan']; ?>" >  
                                                   </td>
                                                   <!-- echo '<td>'.$data['id_armada'].'</td>';
                                                   echo '<td>'.$data['id_trayek'].'</td>';
                                                   echo '<td>'.$data['id_layanan'].'</td>'; -->
                                                   <?php
-                                                  echo '<td>'.$data['jml_seat'].'</td>';
-                                                  echo '<td>'.$data['jml_penumpang'].'</td>';
+                                                  echo '<td>'.$data['jml_seat'].'<br>';
                                                   ?>
+                                                    <input type="hidden" name="jml_seat" value="<?php echo $data['jml_seat']; ?>" >
+                                                    </td>  
+                                                  <?php
+                                                  echo '<td>'.$data['jml_penumpang'].'<br>';
+                                                  ?>
+                                                  <input type="hidden" name="jml_penumpang" value="<?php echo $data['jml_penumpang']; ?>" >
+                                                    </td>
                                                   <td> 
                                                     <?php
                                                       if ($data['status']=='1'){
@@ -158,7 +180,7 @@
                                                   /*echo '<td>'.$data['hasil_analisis'].'</td>';*/
                                                   //================================================================
                                                   //belum arahin ke py
-                                                  echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" href=index.php?content=kmeans&&id_count='.$data['id_count'].'><i class="fa fa-rocket fa-fw"></i></a></td>';
+                                                   echo '<td align="center"  width="20"><a data-toggle="tooltip" data-placement="left" title="Lakukan Analisis" href=index.php?content=analisis_predict&&id_count='.$data['id_count'].'><i class="fa fa-rocket fa-fw"></i></a></td>';
                                                   //================================================================
                                                   echo '</tr>';
                                                   $no++;  
@@ -209,3 +231,4 @@
     </div>
     <!-- Data Table area End-->
 
+    

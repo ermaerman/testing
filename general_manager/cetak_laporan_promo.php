@@ -204,7 +204,7 @@
                         <div class="table-responsive">
                           <p align="right"><img width="300" height="100" src="../assets/img/logo11.png"></p>
                           <br>
-                          <b><h4 align="center">LAPORAN ANALISIS<br><i>E-TICKETING</i> BUS DAMRI SEGMEN ANTAR KOTA<br>CABANG BANDAR LAMPUNG</h4></b>
+                          <b><h4 align="center">LAPORAN PENJUALAN<br><i>E-TICKETING</i> BUS DAMRI SEGMEN ANTAR KOTA<br>CABANG BANDAR LAMPUNG PENUMPANG DENGAN PROMO</h4></b>
                           <hr>
                               <form class="form-horizontal" method="POST">
                                 <table class="table table-striped" id="data-table-basic">
@@ -212,13 +212,12 @@
                                     <tr>
                                       <th>No</th>
                                       <th>Tanggal</th>
-                                      <th>Jam Berangkat</th>
+                                      <th>Berangkat</th>
+                                      <th>Armada</th>
                                       <th>Trayek</th>
                                       <th>Layanan</th>
-                                      <th>Jumlah Seat</th>
                                       <th>Jumlah Penumpang</th>
-                                      <th>Status Analisis</th>
-                                      <th>Hasil Analisis</th>
+                                      <th>Promo</th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -227,7 +226,7 @@
 
                                 include '../config/koneksi.php';
 
-                                $query = mysqli_query($konek, "SELECT * FROM tbl_count ORDER BY id_count")or die(mysqli_error($konek));
+                                $query = mysqli_query($konek, "SELECT * FROM tbl_pnp_promo ORDER BY id_pnp_promo")or die(mysqli_error($konek));
                                         if(mysqli_num_rows($query) == 0){
                                           echo '<tr><td colspan="10" align="center"><i>Tidak ada data!</i></td></tr>';
                                         }
@@ -239,12 +238,11 @@
                                                   echo '<td>'.$no.'</td>';
                                                   echo '<td>'.$data['tgl_berangkat'].'</td>';
                                                   echo '<td>'.$data['id_jam'].'</td>';
+                                                  echo '<td>'.$data['id_armada'].'</td>';
                                                   echo '<td>'.$data['id_trayek'].'</td>';
                                                   echo '<td>'.$data['id_layanan'].'</td>';
-                                                  echo '<td>'.$data['jml_seat'].'</td>';
                                                   echo '<td>'.$data['jml_penumpang'].'</td>';
-                                                  echo '<td>'.$data['status'].'</td>';
-                                                  echo '<td>'.$data['hasil_analisis'].'</td>';
+                                                  echo '<td>'.$data['id_promo'].'</td>';
                                                   echo '</tr>';
                                             $no++;
                                           }

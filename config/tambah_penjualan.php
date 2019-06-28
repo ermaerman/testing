@@ -58,7 +58,7 @@
                     $jml_seat     = $count_l * $seat;
                     var_dump($jml_seat);
 
-                    $insertcount    = "INSERT INTO tbl_count(tgl_berangkat,id_jam,id_trayek,id_layanan,jml_penumpang,jml_seat)VALUES('$tgl_berangkat', '$id_jam', '$id_trayek', '$id_layanan','$sum_pnmp', '$jml_seat')";
+                    $insertcount    = "INSERT INTO tbl_count(tgl_berangkat,id_jam,id_trayek,id_layanan,jml_penumpang,jml_seat,status,hasil_analisis)VALUES('$tgl_berangkat', '$id_jam', '$id_trayek', '$id_layanan','$sum_pnmp', '$jml_seat','0','-')";
                     $querycount     = mysqli_query($konek, $insertcount)or die(mysqli_error($konek));
 
                 }

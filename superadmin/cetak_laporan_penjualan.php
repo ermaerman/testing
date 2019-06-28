@@ -237,56 +237,10 @@
                                                   echo '<tr>';
                                                   echo '<td>'.$no.'</td>';
                                                   echo '<td>'.$data['tgl_berangkat'].'</td>';
-                                                  ?>
-                                                  <td>
-                                                    <?php
-                                                      $jam   = $data['id_jam'];
-                                                      $jmquery   = "SELECT * FROM tbl_jam WHERE id_jam=$jam";
-                                                      $query    = mysqli_query($konek,$jmquery)or die(mysqli_error($konek));
-                                                      $jmshow    = mysqli_fetch_array($query);
-
-                                                      echo $jmshow['jam'];
-                                                    ?>  
-                                                  </td>
-                                                  <td>
-                                                    <?php
-                                                      $armada   = $data['id_armada'];
-                                                      $aquery   = "SELECT * FROM tbl_armada WHERE id_armada=$armada";
-                                                      $query    = mysqli_query($konek,$aquery)or die(mysqli_error($konek));
-                                                      $ashow    = mysqli_fetch_array($query);
-
-
-                                                      echo $ashow['armada'];
-                                                    ?>  
-                                                  </td>
-                                                   <td>
-                                                    <?php
-                                                      $trayek   = $data['id_trayek'];
-
-                                                      $tquery   = "SELECT * FROM tbl_trayek WHERE id_trayek=$trayek";
-                                                      $query    = mysqli_query($konek,$tquery)or die(mysqli_error($konek));
-                                                      $tshow    = mysqli_fetch_array($query);
-
-
-                                                      echo $tshow['jurusan'];
-                                                    ?>  
-                                                  </td>
-                                                  <td>
-                                                    <?php
-                                                      $layanan   = $data['id_layanan'];
-
-                                                      $lquery   = "SELECT * FROM tbl_layanan WHERE id_layanan=$layanan";
-                                                      $query    = mysqli_query($konek,$lquery)or die(mysqli_error($konek));
-                                                      $lshow    = mysqli_fetch_array($query);
-
-
-                                                      echo $lshow['jenis_layanan'];
-                                                    ?>  
-                                                  </td>
-                                                  <!-- /*echo '<td>'.$data['id_armada'].'</td>';*/ -->
-                                                  <?php
-                                                  /*echo '<td>'.$data['id_trayek'].'</td>';*/
-                                                  /*echo '<td>'.$data['id_layanan'].'</td>';*/
+                                                  echo '<td>'.$data['id_jam'].'</td>';
+                                                  echo '<td>'.$data['id_armada'].'</td>';
+                                                  echo '<td>'.$data['id_trayek'].'</td>';
+                                                  echo '<td>'.$data['id_layanan'].'</td>';
                                                   echo '<td>'.$data['jml_penumpang'].'</td>';
                                                   echo '<td>'.$data['load_factor'].'</td>';
                                                   echo '</tr>';
