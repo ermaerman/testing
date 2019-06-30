@@ -168,10 +168,10 @@
                                                   <td> 
                                                     <?php
                                                       if ($data['status']=='1'){
-                                                        echo '<font color="green">Sudah dianalisis</font>';
+                                                        echo '<a data-toggle="tooltip" data-placement="right" title="Sudah Dianalisis" href="#"><i class="fa fa-check fa-fw"></a></i>';
                                                       }
                                                       else {
-                                                        echo '<font color="red">Belum dianalisis</font>';
+                                                        echo '<a data-toggle="tooltip" data-placement="right" title="Belum Dianalisis" href="#"><i class="fa fa-times fa-fw"></a></i>';
                                                       }
                                                     ?>
                                                   </td>

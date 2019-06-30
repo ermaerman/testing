@@ -158,15 +158,25 @@
                                                   <td> 
                                                     <?php
                                                       if ($data['status']=='1'){
-                                                        echo '<font color="green">Sudah dianalisis</font>';
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Sudah Dianalisis" href="#"><i class="fa fa-check fa-fw"></a></i>';
                                                       }
                                                       else {
-                                                        echo '<font color="red">Belum dianalisis</font>';
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Belum Dianalisis" href="#"><i class="fa fa-times fa-fw"></a></i>';
+                                                      }
+                                                    ?>
+                                                  </td>
+                                                  <td> 
+                                                    <?php
+                                                      if ($data['hasil_analisis']=='Laris'){
+                                                        echo '<font color="green"><b>Laris</b></font>';
+                                                      }
+                                                      else if ($data['hasil_analisis']=='Tidak Laris'){
+                                                        echo '<font color="red"><b>Tidak Laris</b></font>';
                                                       }
                                                     ?>
                                                   </td>
                                                   <?php
-                                                  echo '<td>'.$data['hasil_analisis'].'</td>';
+                                                  //echo '<td>'.$data['hasil_analisis'].'</td>';
                                                   echo '</tr>';
                                                   $no++;  
                                                 }

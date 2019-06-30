@@ -15,6 +15,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                                <div class="breadcomb-report">
+                                    <a target="_blank" href="cetak_laporan_analisis.php"><button data-toggle="tooltip" data-placement="left" title="Cetak Laporan Analisis" class="btn"><i class="notika-icon notika-print"></i></button></a>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -38,10 +43,12 @@
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
-                                <a href="index.php?content=analisis"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
+                                <a href="index.php?content=laporan_analisis"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
                               </div>
                             </form>
+
                               <br><br>
+                              
                               <form class="form-horizontal" method="POST">
                                 <table class="table table-striped" id="data-table-basic">
                                   <thead>
@@ -74,17 +81,17 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT * FROM tbl_count WHERE status='0' AND tgl_berangkat LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR jml_seat LIKE '%$pencarian%' OR status LIKE '%$pencarian%' OR hasil_analisis LIKE '%$pencarian%'";
+                                                     $sql = "SELECT * FROM tbl_count WHERE status=1 AND tgl_berangkat LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR jml_seat LIKE '%$pencarian%' OR status LIKE '%$pencarian%' OR hasil_analisis LIKE '%$pencarian%'";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT * FROM tbl_count WHERE status='0' LIMIT $posisi, $batas ";
+                                                     $query = "SELECT * FROM tbl_count WHERE status=1 LIMIT $posisi, $batas ";
                                                      $queryJml = "SELECT * FROM tbl_count WHERE status='0'";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT * FROM tbl_count WHERE status='0' LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT * FROM tbl_count WHERE status='0'";
+                                                   $query = "SELECT * FROM tbl_count WHERE status=1 LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT * FROM tbl_count";
                                                    $no = $posisi + 1;
                                                  }
 
@@ -97,9 +104,14 @@
                                                 $no = 1;        
                                                 while($data = mysqli_fetch_array($querydata)){  
                                                   echo '<tr>';
-                                                  echo '<td>'.$no.'</td>';
-                                                  echo '<td>'.$data['tgl_berangkat'].'</td>';
-                                                  /*echo '<td>'.$data['id_jam'].'</td>';*/ 
+                                                  echo '<td>'.$no.'';
+                                                  ?>
+                                                  <?php
+                                                  echo '</td>';
+                                                  echo '<td>'.$data['tgl_berangkat'].'';
+                                                  ?>
+                                                  <?php
+                                                  echo '</td>';
                                                   ?>
                                                   <td>
                                                     <?php
@@ -109,7 +121,7 @@
                                                       $jmshow    = mysqli_fetch_array($query);
 
                                                       echo $jmshow['jam'];
-                                                    ?>  
+                                                    ?>
                                                   </td>
                                                    <td>
                                                     <?php
@@ -121,7 +133,7 @@
 
 
                                                       echo $tshow['jurusan'];
-                                                    ?>  
+                                                    ?> 
                                                   </td>
                                                   <td>
                                                     <?php
@@ -133,28 +145,38 @@
 
 
                                                       echo $lshow['jenis_layanan'];
-                                                    ?>  
+                                                    ?> 
                                                   </td>
-                                                  <!-- echo '<td>'.$data['id_armada'].'</td>';
-                                                  echo '<td>'.$data['id_trayek'].'</td>';
-                                                  echo '<td>'.$data['id_layanan'].'</td>'; -->
                                                   <?php
-                                                  echo '<td>'.$data['jml_seat'].'</td>';
-                                                  echo '<td>'.$data['jml_penumpang'].'</td>';
+                                                  echo '<td>'.$data['jml_seat'].'<br>';
                                                   ?>
+                                                    </td>  
+                                                  <?php
+                                                  echo '<td>'.$data['jml_penumpang'].'<br>';
+                                                  ?>
+                                                    </td>
                                                   <td> 
                                                     <?php
                                                       if ($data['status']=='1'){
-                                                        echo '<font color="green">Sudah dianalisis</font>';
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Sudah Dianalisis" href="#"><i class="fa fa-check fa-fw"></a></i>';
                                                       }
                                                       else {
-                                                        echo '<font color="red">Belum dianalisis</font>';
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Belum Dianalisis" href="#"><i class="fa fa-times fa-fw"></a></i>';
                                                       }
                                                     ?>
                                                   </td>
-                                                  <!-- echo '<td>'.$data['status'].'</td>'; -->
+                                                  <td> 
+                                                    <?php
+                                                      if ($data['hasil_analisis']=='Laris'){
+                                                        echo '<font color="green"><b>Laris</b></font>';
+                                                      }
+                                                      else if ($data['hasil_analisis']=='Tidak Laris'){
+                                                        echo '<font color="red"><b>Tidak Laris</b></font>';
+                                                      }
+                                                    ?>
+                                                  </td>
                                                   <?php
-                                                  echo '<td>'.$data['hasil_analisis'].'</td>';
+                                                  //echo '<td>'.$data['hasil_analisis'].'</td>';
                                                   echo '</tr>';
                                                   $no++;  
                                                 }
@@ -204,3 +226,4 @@
     </div>
     <!-- Data Table area End-->
 
+    

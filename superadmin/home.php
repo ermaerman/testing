@@ -1,3 +1,13 @@
+<?php
+
+$query   = mysqli_query($konek,"SELECT * FROM tbl_count WHERE hasil_analisis = 'Laris' ") or die(mysqli_error($konek));
+$set1    = mysqli_num_rows($query);
+
+$query1  = mysqli_query($konek,"SELECT * FROM tbl_count WHERE hasil_analisis = 'Tidak Laris' ") or die(mysqli_error($konek));
+$set2    = mysqli_num_rows($query1);
+
+?>
+
 <div class="breadcomb-area">
         <div class="container">
             <div class="row">
@@ -277,55 +287,65 @@
                     </div>
                 </div>
           
-
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="sale-statistic-inner notika-shadow mg-tb-10">
-                        <div id="container3" style="min-width: 310px; height: 380px; margin: 0 auto"></div>
-                        <script type="text/javascript">
-                        var chart1; // globally available
-                       $(document).ready(function() {
-                             chart1 = new Highcharts.Chart({
-                                chart: {
-                                   renderTo: 'container3',
-                                   type: 'column'
-                                },   
-                                title: {
-                                   text: 'Grafik Analisis Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung'
-                                },
-                                xAxis: {
-                                   categories: ['Tanggal']
-                                },
-                                yAxis: {
-                                   title: {
-                                      text: 'Jumlah'
-                                   }
-                                },
-                                     series:             
-                                   [
-                                   <?php 
-                                    include '../config/koneksi.php';
-                                    
-                                    $sql   = "SELECT DISTINCT tgl_berangkat FROM tbl_pnp_promo";
-                                    $query = mysqli_query($konek, $sql )  or die(mysql_error($konek));
-                                    while( $ret = mysqli_fetch_array( $query ) ){
-                                        $tgl_berangkat = $ret['tgl_berangkat'];                     
-                                        $sql_jumlah    = "SELECT SUM(jml_penumpang) AS jml_penumpang FROM tbl_pnp_promo WHERE tgl_berangkat='$tgl_berangkat'";        
-                                        $query_jumlah = mysqli_query($konek,$sql_jumlah ) or die(mysql_error($konek));
-                                        while( $data  = mysqli_fetch_array( $query_jumlah ) ){
-                                            $jumlah   = $data['jml_penumpang'];               
-                                         }             
-                                    ?>
-                                         {
-                                             name: '<?php echo $tgl_berangkat; ?>',
-                                             data: [<?php echo $jumlah; ?>]
-                                         },
-                                    <?php } ?>
-                                   ]
-                             });
-                          }); 
-                      </script>
-                    </div>
+                        <div class="panel-body">
+                          <center>
+                          <h4><b>Laris : <?php echo $set1; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tidak Laris : <?php 
+                          $cal = $set2 - $set3;
+                          echo $cal; ?> </b></h4><br>
+                          <canvas id="piechart" width="400" height="225"></canvas>
+                          </center><br>
+                          <table align="right">
+                            <tr>
+                                 <th>Keterangan : </th>
+                             </tr>
+                             <tr>
+                                <td><button class="btn btn-primary btn-sm"></button></td><td>:</td><td>&nbsp;Jumlah Trayek Penjualan E-Ticketing Laris</td>
+                             </tr>   
+                              <tr> 
+                               <td><button class="btn btn-info btn-sm"></button></td><td>:</td><td>&nbsp;Jumlah Trayek Penjualan E-Ticketing Tidak Laris</td>
+                             </tr>
+                          </table>     
+
+                       </div>
+                        </div>
+                    </div></div></div>
+                </div>
                 </div>
             </div>
         </div>
     
+<script type="text/javascript" src="../assets_be/node_modules/chart.js/dist/Chart.js"></script>
+ <script type="text/javascript" src="../assets_be/node_modules/chart.js/dist/Chart.min.js"></script>
+ <script type="text/javascript" src="../assets_be/node_modules/chart.js/dist/Chart.bundle.js"></script>
+ <script type="text/javascript" src="../assets_be/node_modules/chart.js/src/core/core.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+ 
+ 
+<script type="text/javascript">
+    var ctx = document.getElementById("piechart").getContext("2d");
+    var pieData = [
+      {
+          value: <?php echo $set1; ?>,
+          color: "#0b3e8f",
+          highlight: "#2758a8",
+          label: "Laris"
+      },
+      {
+          value : <?php echo $cal; ?>,
+          color: "#46b8da",
+          highlight:"#5bc0de", 
+          label: "Tidak Laris"
+      }
+      
+    ];
+    var options = {
+      animateScale: true
+    };
+
+    var myNewChart = new Chart(ctx).Pie(pieData,options);
+
+ </script>
+ 
+ 

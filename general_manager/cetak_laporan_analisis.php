@@ -242,9 +242,30 @@
                                                   echo '<td>'.$data['id_trayek'].'</td>';
                                                   echo '<td>'.$data['id_layanan'].'</td>';
                                                   echo '<td>'.$data['jml_seat'].'</td>';
-                                                  echo '<td>'.$data['jml_penumpang'].'</td>';
-                                                  echo '<td>'.$data['status'].'</td>';
-                                                  echo '<td>'.$data['hasil_analisis'].'</td>';
+                                                  echo '<td>'.$data['jml_penumpang'].'</td>';?>
+                                                   <td> 
+                                                    <?php
+                                                      if ($data['status']=='1'){
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Sudah Dianalisis" href="#"><i class="fa fa-check fa-fw"></a></i>';
+                                                      }
+                                                      else {
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Belum Dianalisis" href="#"><i class="fa fa-times fa-fw"></a></i>';
+                                                      }
+                                                    ?>
+                                                  </td>
+                                                  <td> 
+                                                    <?php
+                                                      if ($data['hasil_analisis']=='Laris'){
+                                                        echo '<font color="green"><b>Laris</b></font>';
+                                                      }
+                                                      else if ($data['hasil_analisis']=='Tidak Laris'){
+                                                        echo '<font color="red"><b>Tidak Laris</b></font>';
+                                                      }
+                                                    ?>
+                                                  </td>
+                                                  <?php
+                                                  /*echo '<td>'.$data['status'].'</td>';
+                                                  echo '<td>'.$data['hasil_analisis'].'</td>';*/
                                                   echo '</tr>';
                                             $no++;
                                           }
