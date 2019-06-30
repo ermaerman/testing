@@ -9,7 +9,7 @@ from sklearn.cluster import KMeans
 
 ##conection data
 mysql_cn= pymysql.connect(host='localhost', 
-                port=3306,user='root', passwd='', 
+                port=3306,user='root', passwd='',
                 db='damri')
 data_df = pd.read_sql("SELECT * FROM dataset;", con=mysql_cn)
 mysql_cn.close()
@@ -29,19 +29,14 @@ X = processed_df.values
 kmeans = KMeans(n_clusters=2, random_state=0).fit(X)
 kmeans.labels_
 
+
 y = kmeans.labels_
 
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.20,random_state=70)
 
 ##predicted
 predicted = kmeans.predict(X_test)
-
-##accuracy from calculate train and dataset
-label = len(y)
-predictsum = sum(predicted)
-acc = (label/predictsum) / 10
-
-print("accuracy : ", acc)
+print("accuracy : ", metrics.accuracy_score(y_test, predicted))
 
 ##pickle dump open result train
 pickle.dump( kmeans, open( "result.p", "wb" ) )
