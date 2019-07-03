@@ -155,10 +155,10 @@
                 </div>
                 <div class="modal-body">
                   <span id="result" style="display: block; font-weight: bold; text-align: center;"></span>
-                  <h5><b><span class="solusi"></span></b></h5>
+                  <h5><b><span class="solusi" ></span></b></h5>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  <a href="index.php?content=hasil_analisis"><button type="button" class="btn btn-danger" >Close</button></a>
                 </div>
               </div>
             </div>
@@ -172,9 +172,9 @@
                     
           $("#form-predict").submit(function(e) {
             <?php
-                include 'koneksi.php';
+                include '../config/koneksi.php';
 
-                $id_count                 = $_GET['id_count'];
+                $id_count       = $_GET['id_count'];
 
                 $update         = "UPDATE tbl_count SET status='1' WHERE id_count='$id_count'";
                 $updatecount    = mysqli_query($konek, $update)or die(mysqli_error($konek));
@@ -201,7 +201,7 @@
                             $('#result').html("Laris");
 
                             <?php
-                                include 'koneksi.php';
+                                include '../config/koneksi.php';
 
                                 $id_count       = $_GET['id_count'];
 
@@ -292,9 +292,9 @@
                             }
 
                             <?php
-                                include 'koneksi.php';
+                                include '../config/koneksi.php';
 
-                                $id_count                 = $_GET['id_count'];
+                                $id_count       = $_GET['id_count'];
 
                                 $update         = "UPDATE tbl_count SET hasil_analisis='Tidak Laris' WHERE id_count='$id_count'";
                                 $updatecount    = mysqli_query($konek, $update)or die(mysqli_error($konek));

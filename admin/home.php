@@ -1,3 +1,13 @@
+<?php
+
+$query   = mysqli_query($konek,"SELECT * FROM tbl_count WHERE hasil_analisis = 'Laris' ") or die(mysqli_error($konek));
+$set1    = mysqli_num_rows($query);
+
+$query1  = mysqli_query($konek,"SELECT * FROM tbl_count WHERE hasil_analisis = 'Tidak Laris' ") or die(mysqli_error($konek));
+$set2    = mysqli_num_rows($query1);
+
+?>
+
 <div class="breadcomb-area">
         <div class="container">
             <div class="row">
@@ -113,48 +123,48 @@
                     <div class="sale-statistic-inner notika-shadow mg-tb-30">
                         <div id="container" style="min-width: 310px; height: 380px; margin: 0 auto"></div>
                         <script type="text/javascript">
-                       var chart1; // globally available
-                      $(document).ready(function() {
-                            chart1 = new Highcharts.Chart({
-                               chart: {
-                                  renderTo: 'container',
-                                  type: 'column'
-                               },   
-                               title: {
-                                  text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung'
-                               },
-                               xAxis: {
-                                  categories: ['Tanggal']
-                               },
-                               yAxis: {
-                                  title: {
-                                     text: 'Jumlah terjual'
-                                  }
-                               },
-                                    series:             
-                                  [
-                                  <?php 
-                                   include '../config/koneksi.php';
-                                   
-                                   $sql   = "SELECT DISTINCT tgl_berangkat FROM tbl_penjualan";
-                                   $query = mysqli_query($konek, $sql )  or die(mysql_error($konek));
-                                   while( $ret = mysqli_fetch_array( $query ) ){
-                                       $tgl_berangkat = $ret['tgl_berangkat'];                     
-                                       $sql_jumlah    = "SELECT SUM(jml_penumpang) AS jml_penumpang FROM tbl_penjualan WHERE tgl_berangkat='$tgl_berangkat'";        
-                                       $query_jumlah = mysqli_query($konek,$sql_jumlah ) or die(mysql_error($konek));
-                                       while( $data  = mysqli_fetch_array( $query_jumlah ) ){
-                                           $jumlah   = $data['jml_penumpang'];               
-                                        }             
-                                   ?>
-                                        {
-                                            name: '<?php echo $tgl_berangkat; ?>',
-                                            data: [<?php echo $jumlah; ?>]
-                                        },
-                                   <?php } ?>
-                                  ]
-                            });
-                         }); 
-                     </script>
+                        var chart1; // globally available
+                       $(document).ready(function() {
+                             chart1 = new Highcharts.Chart({
+                                chart: {
+                                   renderTo: 'container',
+                                   type: 'column'
+                                },   
+                                title: {
+                                   text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung'
+                                },
+                                xAxis: {
+                                   categories: ['Tanggal']
+                                },
+                                yAxis: {
+                                   title: {
+                                      text: 'Jumlah terjual'
+                                   }
+                                },
+                                     series:             
+                                   [
+                                   <?php 
+                                    include '../config/koneksi.php';
+                                    
+                                    $sql   = "SELECT DISTINCT tgl_berangkat FROM tbl_penjualan";
+                                    $query = mysqli_query($konek, $sql )  or die(mysql_error($konek));
+                                    while( $ret = mysqli_fetch_array( $query ) ){
+                                        $tgl_berangkat = $ret['tgl_berangkat'];                     
+                                        $sql_jumlah    = "SELECT SUM(jml_penumpang) AS jml_penumpang FROM tbl_penjualan WHERE tgl_berangkat='$tgl_berangkat'";        
+                                        $query_jumlah = mysqli_query($konek,$sql_jumlah ) or die(mysql_error($konek));
+                                        while( $data  = mysqli_fetch_array( $query_jumlah ) ){
+                                            $jumlah   = $data['jml_penumpang'];               
+                                         }             
+                                    ?>
+                                         {
+                                             name: '<?php echo $tgl_berangkat; ?>',
+                                             data: [<?php echo $jumlah; ?>]
+                                         },
+                                    <?php } ?>
+                                   ]
+                             });
+                          }); 
+                      </script>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
@@ -226,4 +236,56 @@
     </div>
     <!-- End Sale Statistic area-->
 
-    
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sale-statistic-inner notika-shadow mg-tb-10">
+                        <div id="container2" style="min-width: 310px; height: 380px; margin: 0 auto"></div>
+                        <script type="text/javascript">
+                        var chart1; // globally available
+                       $(document).ready(function() {
+                             chart1 = new Highcharts.Chart({
+                                chart: {
+                                   renderTo: 'container2',
+                                   type: 'column'
+                                },   
+                                title: {
+                                   text: 'Grafik Pendapatan Penjualan <i>E-Ticketing</i><br> Bus DAMRI Segmen Antar Kota <br>Cabang Bandar Lampung'
+                                },
+                                xAxis: {
+                                   categories: ['Tanggal']
+                                },
+                                yAxis: {
+                                   title: {
+                                      text: 'Jumlah'
+                                   }
+                                },
+                                     series:             
+                                   [
+                                   <?php 
+                                    include '../config/koneksi.php';
+                                    
+                                    $sql   = "SELECT DISTINCT tgl_berangkat FROM tbl_penjualan";
+                                    $query = mysqli_query($konek, $sql )  or die(mysql_error($konek));
+                                    while( $ret = mysqli_fetch_array( $query ) ){
+                                        $tgl_berangkat = $ret['tgl_berangkat'];                     
+                                        $sql_jumlah    = "SELECT SUM(pendapatan) AS pendapatan FROM tbl_penjualan WHERE tgl_berangkat='$tgl_berangkat'";        
+                                        $query_jumlah = mysqli_query($konek,$sql_jumlah ) or die(mysql_error($konek));
+                                        while( $data  = mysqli_fetch_array( $query_jumlah ) ){
+                                            $jumlah   = $data['pendapatan'];               
+                                         }             
+                                    ?>
+                                         {
+                                             name: '<?php echo $tgl_berangkat; ?>',
+                                             data: [<?php echo $jumlah; ?>]
+                                         },
+                                    <?php } ?>
+                                   ]
+                             });
+                          }); 
+                      </script>
+                    </div>
+                </div>
+                </div>
+                </div>
+          

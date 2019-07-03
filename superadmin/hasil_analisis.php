@@ -158,10 +158,10 @@
                                                   <td> 
                                                     <?php
                                                       if ($data['status']=='1'){
-                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Sudah Dianalisis" href="#"><i class="fa fa-check fa-fw"></a></i>';
+                                                        echo '<a data-toggle="tooltip" data-placement="right" title="Sudah Dianalisis" href="#"><i class="fa fa-check fa-fw"></a></i>';
                                                       }
                                                       else {
-                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Belum Dianalisis" href="#"><i class="fa fa-times fa-fw"></a></i>';
+                                                        echo '<a data-toggle="tooltip" data-placement="right" title="Belum Dianalisis" href="#"><i class="fa fa-times fa-fw"></a></i>';
                                                       }
                                                     ?>
                                                   </td>

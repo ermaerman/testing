@@ -352,6 +352,8 @@
                                 </li>
                                 <li><a href="index.php?content=laporan_data_promo">Laporan Data Promo</a>
                                 </li>
+                                <li><a href="index.php?content=laporan_pendapatan">Laporan Pendapatan</a>
+                                </li>
                             </ul>
                         </div>
                         <div id="Data" class="tab-pane notika-tab-menu-bg animated flipInX">
@@ -398,6 +400,8 @@
               include 'laporan_analisis.php';
             elseif ($content=='laporan_data_promo')
               include 'laporan_data_promo.php';
+            elseif ($content=='laporan_pendapatan')
+              include 'laporan_pendapatan.php';
 
             // Analisis 
             elseif ($content=='analisis')

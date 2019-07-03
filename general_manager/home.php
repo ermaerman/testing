@@ -7,6 +7,7 @@ $query1  = mysqli_query($konek,"SELECT * FROM tbl_count WHERE hasil_analisis = '
 $set2    = mysqli_num_rows($query1);
 
 ?>
+
 <div class="breadcomb-area">
         <div class="container">
             <div class="row">
@@ -249,7 +250,7 @@ $set2    = mysqli_num_rows($query1);
                                    type: 'column'
                                 },   
                                 title: {
-                                   text: 'Grafik Penjualan <i>E-Ticketing</i> Bus DAMRI<br> Segmen Antar Kota Cabang Bandar Lampung (Penumpang dengan Promo)'
+                                   text: 'Grafik Pendapatan Penjualan <i>E-Ticketing</i><br> Bus DAMRI Segmen Antar Kota <br>Cabang Bandar Lampung'
                                 },
                                 xAxis: {
                                    categories: ['Tanggal']
@@ -264,14 +265,14 @@ $set2    = mysqli_num_rows($query1);
                                    <?php 
                                     include '../config/koneksi.php';
                                     
-                                    $sql   = "SELECT DISTINCT tgl_berangkat FROM tbl_pnp_promo";
+                                    $sql   = "SELECT DISTINCT tgl_berangkat FROM tbl_penjualan";
                                     $query = mysqli_query($konek, $sql )  or die(mysql_error($konek));
                                     while( $ret = mysqli_fetch_array( $query ) ){
                                         $tgl_berangkat = $ret['tgl_berangkat'];                     
-                                        $sql_jumlah    = "SELECT SUM(jml_penumpang) AS jml_penumpang FROM tbl_pnp_promo WHERE tgl_berangkat='$tgl_berangkat'";        
+                                        $sql_jumlah    = "SELECT SUM(pendapatan) AS pendapatan FROM tbl_penjualan WHERE tgl_berangkat='$tgl_berangkat'";        
                                         $query_jumlah = mysqli_query($konek,$sql_jumlah ) or die(mysql_error($konek));
                                         while( $data  = mysqli_fetch_array( $query_jumlah ) ){
-                                            $jumlah   = $data['jml_penumpang'];               
+                                            $jumlah   = $data['pendapatan'];               
                                          }             
                                     ?>
                                          {
@@ -286,8 +287,7 @@ $set2    = mysqli_num_rows($query1);
                     </div>
                 </div>
           
-
-               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="sale-statistic-inner notika-shadow mg-tb-10">
                         <div class="panel-body">
                           <center>
@@ -304,7 +304,7 @@ $set2    = mysqli_num_rows($query1);
                                 <td><button class="btn btn-primary btn-sm"></button></td><td>:</td><td>&nbsp;Jumlah Trayek Penjualan E-Ticketing Laris</td>
                              </tr>   
                               <tr> 
-                               <td><button class="btn btn-info btn-sm"></button></td><td>:</td><td>&nbsp;Jumlah Trayek Penjualan E-Ticketing Tidak Laris</td>
+                               <td><button class="btn btn-warning btn-sm"></button></td><td>:</td><td>&nbsp;Jumlah Trayek Penjualan E-Ticketing Tidak Laris</td>
                              </tr>
                           </table>     
 
@@ -323,7 +323,7 @@ $set2    = mysqli_num_rows($query1);
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
  
  
- <script type="text/javascript">
+<script type="text/javascript">
     var ctx = document.getElementById("piechart").getContext("2d");
     var pieData = [
       {
@@ -334,8 +334,8 @@ $set2    = mysqli_num_rows($query1);
       },
       {
           value : <?php echo $cal; ?>,
-          color: "#46b8da",
-          highlight:"#5bc0de", 
+          color: "#f2790f",
+          highlight:"#ff9436", 
           label: "Tidak Laris"
       }
       
@@ -347,4 +347,5 @@ $set2    = mysqli_num_rows($query1);
     var myNewChart = new Chart(ctx).Pie(pieData,options);
 
  </script>
+ 
  

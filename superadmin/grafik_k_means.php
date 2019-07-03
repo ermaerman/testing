@@ -53,7 +53,7 @@ $set2    = mysqli_num_rows($query1);
                                 <td><button class="btn btn-primary btn-sm"></button></td><td>:</td><td>&nbsp;Jumlah Trayek Penjualan E-Ticketing Laris</td>
                              </tr>   
                               <tr> 
-                               <td><button class="btn btn-info btn-sm"></button></td><td>:</td><td>&nbsp;Jumlah Trayek Penjualan E-Ticketing Tidak Laris</td>
+                               <td><button class="btn btn-warning btn-sm"></button></td><td>:</td><td>&nbsp;Jumlah Trayek Penjualan E-Ticketing Tidak Laris</td>
                              </tr>
                           </table>     
 
@@ -80,8 +80,8 @@ $set2    = mysqli_num_rows($query1);
       },
       {
           value : <?php echo $cal; ?>,
-          color: "#46b8da",
-          highlight:"#5bc0de", 
+          color: "#f2790f",
+          highlight:"#ff9436", 
           label: "Tidak Laris"
       }
       

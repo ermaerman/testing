@@ -161,6 +161,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-example-int form-horizental">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                        <label class="hrzn-fm">Pendapatan (Rp.)</label>
+                                    </div>
+                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="nk-int-st">
+                                            <input type="text" name="pendapatan" id="pendapatan" class="form-control input-sm" placeholder="Pendapatan" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                          <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
@@ -169,7 +183,7 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                            <input type="text" name="load_factor" id="load_factor" class="form-control input-sm" placeholder="Load Factor" required="">
+                                            <input type="text" name="load_factor" id="load_factor" class="form-control input-sm" placeholder="Load Factor" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -230,6 +244,7 @@
             });
         });
 
+
         $( "#jam" ).change(function() {
             var id_layanan = $("#layanan").val();
             var id_trayek  = $("#trayek").val(); 
@@ -252,6 +267,20 @@
             success: function(result){
                 console.log(result);
               $("#load_factor").val(result);
+            }
+          });
+        });
+
+        $( "#penumpang" ).change(function() {
+          var id_trayek  = $("#trayek").val(); 
+          var id_layanan = $("#layanan").val();
+          var penumpang = $("#penumpang").val();
+          console.log(penumpang);
+          $.ajax({
+            url: "./ajax_pendapatan.php?id_layanan=" + id_layanan + "&penumpang=" + penumpang + '&id_trayek=' + id_trayek,
+            success: function(result){
+                console.log(result);
+              $("#pendapatan").val(result);
             }
           });
         });

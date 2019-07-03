@@ -58,7 +58,7 @@
                                       include '../config/koneksi.php';
                                                  // error_reporting(0);
 
-                                                 $batas  = 20;
+                                                 $batas  = 15;
                                                  $hal    = @$_GET['hal'];
                                                  if (empty($hal)) {
                                                    $posisi = 0;
@@ -69,17 +69,17 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT * FROM tbl_jadwal WHERE harga LIKE '%$pencarian%' ORDER BY id_jadwal DESC";
+                                                     $sql = "SELECT DISTINCT id_trayek, id_layanan, harga FROM tbl_jadwal WHERE harga LIKE '%$pencarian%'";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT * FROM tbl_jadwal ORDER BY id_jadwal DESC LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT * FROM tbl_jadwal ORDER BY id_jadwal DESC";
+                                                     $query = "SELECT DISTINCT id_trayek, id_layanan, harga FROM tbl_jadwal LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT DISTINCT id_jadwal, id_trayek, id_layanan, harga FROM tbl_jadwal ";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT * FROM tbl_jadwal ORDER BY id_jadwal DESC LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT * FROM tbl_jadwal ORDER BY id_jadwal DESC";
+                                                   $query = "SELECT DISTINCT id_trayek, id_layanan, harga FROM tbl_jadwal LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT DISTINCT id_trayek, id_layanan, harga FROM tbl_jadwal";
                                                    $no = $posisi + 1;
                                                  }
 
@@ -96,9 +96,8 @@
                                                   ?>
                                                    <td>
                                                     <?php
-                                                      $idtrayek = $data['id_trayek'];
-                                                      // echo $idtrayek;
-                                                      $trayek   = "SELECT * FROM tbl_trayek WHERE id_trayek='$idtrayek'";
+                                                      $id_trayek = $data['id_trayek'];
+                                                      $trayek   = "SELECT * FROM tbl_trayek WHERE id_trayek='$id_trayek'";
                                                       $tquery   = mysqli_query($konek,$trayek)or die(mysqli_error($konek));
                                                       $tshow    = mysqli_fetch_array($tquery);
 
