@@ -62,6 +62,7 @@
                                       <th>Jumlah Penumpang</th>
                                       <th>Status Analisis</th>
                                       <th>Hasil Analisis</th>
+                                      <th>Aksi</th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -81,17 +82,17 @@
                                                  if($_SERVER['REQUEST_METHOD'] == "POST") {
                                                    $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                                                    if ($pencarian != '') {
-                                                     $sql = "SELECT * FROM tbl_count WHERE status=1 AND tgl_berangkat LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR jml_seat LIKE '%$pencarian%' OR status LIKE '%$pencarian%' OR hasil_analisis LIKE '%$pencarian%'";
+                                                     $sql = "SELECT * FROM tbl_count WHERE status=1 AND tgl_berangkat LIKE '%$pencarian%' OR jml_penumpang LIKE '%$pencarian%' OR jml_seat LIKE '%$pencarian%' OR status LIKE '%$pencarian%' OR hasil_analisis LIKE '%$pencarian%' ORDER BY id_count DESC";
                                                      $query = $sql;
                                                      $queryJml = $sql;
                                                    } else {
-                                                     $query = "SELECT * FROM tbl_count WHERE status=1 LIMIT $posisi, $batas ";
-                                                     $queryJml = "SELECT * FROM tbl_count WHERE status='0'";
+                                                     $query = "SELECT * FROM tbl_count WHERE status=1 ORDER BY id_count DESC LIMIT $posisi, $batas ";
+                                                     $queryJml = "SELECT * FROM tbl_count WHERE status='0' ORDER BY id_count DESC";
                                                      $no = $posisi + 1;
                                                    }
                                                  } else {
-                                                   $query = "SELECT * FROM tbl_count WHERE status=1 LIMIT $posisi, $batas ";
-                                                   $queryJml = "SELECT * FROM tbl_count";
+                                                   $query = "SELECT * FROM tbl_count WHERE status=1 ORDER BY id_count DESC LIMIT $posisi, $batas ";
+                                                   $queryJml = "SELECT * FROM tbl_count ORDER BY id_count DESC";
                                                    $no = $posisi + 1;
                                                  }
 
@@ -176,7 +177,7 @@
                                                     ?>
                                                   </td>
                                                   <?php
-                                                  //echo '<td>'.$data['hasil_analisis'].'</td>';
+                                                 echo '<td align="center" width="20"><a data-toggle="tooltip" data-placement="left" title="Saran / Solusi Selanjutnya" href=index.php?content=solusi&&id_count='.$data['id_count'].'><i class="fa fa-star fa-fw"></i></a></td>';
                                                   echo '</tr>';
                                                   $no++;  
                                                 }

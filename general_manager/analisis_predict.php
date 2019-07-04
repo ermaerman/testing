@@ -47,8 +47,8 @@
                     <div class="form-example-wrap mg-t-30">
                         <div class="form-example-int form-horizental mg-t-15">
                             <div class="form-group">
-                                <div class="row"><!-- 
-                                    <input type="hidden" class="form-control" name="id_penjualan" value="<?php echo $data['id_penjualan']; ?>" required> -->
+                                <div class="row">
+                                    <input type="hidden" class="form-control" name="id_count" value="<?php echo $data['id_count']; ?>">
                                     <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
                                         <label class="hrzn-fm">Jam Berangkat</label>
                                     </div>
@@ -155,9 +155,25 @@
                 </div>
                 <div class="modal-body">
                   <span id="result" style="display: block; font-weight: bold; text-align: center;"></span>
+                  <h5><b><span class="solusi" ></span></b></h5>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <?php
+
+                        //error_reporting(0);
+
+                        include '../config/koneksi.php';
+
+                        $id_count = $_GET['id_count'];
+
+                        $edit    = "SELECT * FROM tbl_count WHERE id_count = '$id_count'";
+                        $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
+                        $data    = mysqli_fetch_array($hasil);
+
+                        echo '<a href="index.php?content=solusi&&id_count='.$data['id_count'].'"><button type="button" class="btn btn-danger" >Close</button></a>';
+
+                    ?>
+                  
                 </div>
               </div>
             </div>
@@ -170,6 +186,14 @@
     <script type="text/javascript">
                     
           $("#form-predict").submit(function(e) {
+            <?php
+                include '../config/koneksi.php';
+
+                $id_count       = $_GET['id_count'];
+
+                $update         = "UPDATE tbl_count SET status='1' WHERE id_count='$id_count'";
+                $updatecount    = mysqli_query($konek, $update)or die(mysqli_error($konek));
+            ?>
             var url = "http://127.0.0.1:8000/api/v1/result"; 
             //var xhr = new XMLHttpRequest({mozSystem: true});
             var data = $("#form-predict").serialize();
@@ -180,106 +204,129 @@
                       data: data, // serializes the form's elements.
                       success: function(data)
                       {
-                          console.log("predict "+data.response.predict)
+                          console.log("predict "+ data.response.predict)
                           $('#modal-hasil').modal('show');
                           if (data.response.predict == 0) {
-                            // var id_jam = data.response.id_jam;
-                            // var id_trayek = data.response.id_trayek;
-                            // var id_layanan = data.response.id_layanan;
-                            // var jml_seat = data.response.jml_seat;
-                            // var jml_penumpang = data.response.jml_penumpang;
-
+                            
                             $('#result').html("Laris");
 
-                           /* if (angkatan == '2010') {
-                                var pembagiSMT = 14;
-                            } else if (angkatan == '2011') {
-                                var pembagiSMT = 12;
-                            } else if (angkatan == '2012') {
-                                var pembagiSMT = 10;
-                            } else if (angkatan == '2013') {
-                                var pembagiSMT = 8;
-                            } else if (angkatan == '2014') {
-                                var pembagiSMT = 6;
-                            } else if (angkatan == '2015') {
-                                var pembagiSMT = 4;
-                            }
+                            var id_jam = data.response.id_jam;
+                            var id_trayek = data.response.id_trayek;
+                            var id_layanan = data.response.id_layanan;
+                            var jml_seat = data.response.jml_seat;
+                            var jml_penumpang = data.response.jml_penumpang;
+
                             
-                            normalizedIPK = ipk / 4;
-                            normalizedPenghasilan = penghasilan / 8;
-                            normalizedJarak = 1 - (jarak / 42);
-                            normalizedSMT = semester / pembagiSMT;
 
-                            if (normalizedIPK < normalizedSMT && normalizedIPK < normalizedPenghasilan && normalizedIPK < normalizedJarak) {
-                              if(beasiswa == 1){
-                                var alasan = 'IPK rendah';
-                                var dampak = 'Beasiswa yang didapat akan dicabut';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.dampak').html("Dampak: " + dampak);
-                              }else{
-                                var alasan = 'IPK rendah';
-                                var solusi = 'Untuk diberikan binaan agar IPK naik';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
+                          } else if (data.response.predict == 1){
+                            $('#result').html("Tidak Laris");
+
+                            var id_jam = data.response.id_jam;
+                            var id_trayek = data.response.id_trayek;
+                            var id_layanan = data.response.id_layanan;
+                            var jml_seat = data.response.jml_seat;
+                            var jml_penumpang = data.response.jml_penumpang;
+
+                           
+                            /*normalizedIdJam = id_jam;
+                            normalizedLayanan = id_layanan;
+
+                            if (normalizedIdJam == 1 && normalizedLayanan == 1) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Royal yang beroperasi di jam 08:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
                                 $('.solusi').html("Solusi: " + solusi);
-                              }
-                            } else if (normalizedPenghasilan < normalizedIPK && normalizedPenghasilan < normalizedJarak && normalizedPenghasilan < normalizedSMT) {
-                               if(beasiswa == 1){
-                                 $('.status').html("Tidak Mengundurkan Diri");
-                                }else{ 
-                                var alasan = 'Penghasilan Orang Tua Rendah';
-                                var solusi = 'Disarankan mengajukan beasiswa';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
+                            } else if (normalizedIdJam == 2 && normalizedLayanan == 1) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Royal yang beroperasi di jam 10:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
                                 $('.solusi').html("Solusi: " + solusi);
-                              }
-                            } else if (normalizedJarak < normalizedIPK && normalizedJarak < normalizedPenghasilan && normalizedJarak < normalizedSMT) {
-                              var alasan = 'Jarak menuju kampus jauh';
-                              var solusi = 'Disarankan untuk sewa kos didekat kampus';
-                              $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                              $('.alasan').html("Alasan: " + alasan);
-                              $('.solusi').html("Solusi: " + solusi);
-                            }else if(normalizedSMT < normalizedIPK && normalizedSMT < normalizedPenghasilan && normalizedSMT < normalizedJarak){
-                              if(beasiswa == 1){
-                                var alasan = 'Semester yang ditempuh kurang';
-                                var dampak = 'Beasiswa yang didapat akan dicabut';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.dampak').html("Dampak: " + dampak);
-                              }else{
-                                var alasan = 'Semester yang ditempuh kurang';
-                                var solusi = 'Disarankan agar tidak mengajukan cuti akademik';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
+                            } else if (normalizedIdJam == 3 && normalizedLayanan == 1) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Royal yang beroperasi di jam 14:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
                                 $('.solusi').html("Solusi: " + solusi);
-                              }
-                            }else{
-                              if(beasiswa == 1){
-                                var alasan = 'Semester yang ditempuh kurang';
-                                var dampak = 'Beasiswa yang didapat akan dicabut';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
-                                $('.dampak').html("Dampak: " + dampak);
-                              }else{
-                                var alasan = 'Semester yang ditempuh kurang';
-                                var solusi = 'Disarankan agar tidak mengajukan cuti akademik';
-                                $('.status').html("<font color=red>Mengundurkan Diri</font>"); 
-                                $('.alasan').html("Alasan: " + alasan);
+                            } else if (normalizedIdJam == 4 && normalizedLayanan == 1) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Royal yang beroperasi di jam 16:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
                                 $('.solusi').html("Solusi: " + solusi);
-                              }
+                            } else if (normalizedIdJam == 5 && normalizedLayanan == 1) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Royal yang beroperasi di jam 20:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 6 && normalizedLayanan == 1) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Royal yang beroperasi di jam 22:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 1 && normalizedLayanan == 2) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Eksekutif yang beroperasi di jam 08:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 2 && normalizedLayanan == 2) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Eksekutif yang beroperasi di jam 10:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 3 && normalizedLayanan == 2) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Eksekutif yang beroperasi di jam 14:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 4 && normalizedLayanan == 2) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Eksekutif yang beroperasi di jam 16:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 5 && normalizedLayanan == 2) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Eksekutif yang beroperasi di jam 20:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 6 && normalizedLayanan == 2) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Eksekutif yang beroperasi di jam 22:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 1 && normalizedLayanan == 3) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Bisnis yang beroperasi di jam 08:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 2 && normalizedLayanan == 3) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Bisnis yang beroperasi di jam 10:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 3 && normalizedLayanan == 3) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Bisnis yang beroperasi di jam 14:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 4 && normalizedLayanan == 3) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Bisnis yang beroperasi di jam 16:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 5 && normalizedLayanan == 3) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Bisnis yang beroperasi di jam 20:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
+                            } else if (normalizedIdJam == 6 && normalizedLayanan == 3) {
+                                var solusi = 'Perbaikan layanan armada pada bus DAMRI Bisnis yang beroperasi di jam 22:00 WIB ditrayek tersebut';
+                                $('.status').html("<font color=red>Tidak Laris</font>"); 
+                                $('.solusi').html("Solusi: " + solusi);
                             }
 
-                            console.log("normalized ipk", normalizedIPK);
-                            console.log("normalized semester", normalizedSMT);
-                            console.log("normalized penghasilan", normalizedPenghasilan);
-                            console.log("normalized jarak", normalizedJarak);
-                            console.log("alasan", alasan);
-                              */
-
-                          }else{
-                            $('#result').html("Tidak Laris");
+                                console.log("normalized jam", normalizedIdJam);
+                                console.log("normalized layanan", normalizedLayanan);
+                                console.log("solusi", solusi);*/ 
                           }  
+
+                          <?php
+                                include '../config/koneksi.php';
+
+                                $id_count       = $_GET['id_count'];
+                                $hasil_analisis = $_GET['predict'];
+
+                                if ($hasil_analisis == 0) {
+                                $update         = "UPDATE tbl_count SET hasil_analisis='Laris' WHERE id_count='$id_count'";
+                                $updatecount    = mysqli_query($konek, $update)or die(mysqli_error($konek));
+                                }  
+
+                                else if ($hasil_analisis == 1) {
+                                $update         = "UPDATE tbl_count SET hasil_analisis='Tidak Laris' WHERE id_count='$id_count'";
+                                $updatecount    = mysqli_query($konek, $update)or die(mysqli_error($konek));
+                            }
+
+                            ?>
                       },
                       error: function (request, status, error) {
                           alert(request.responseText);

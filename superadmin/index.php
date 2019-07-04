@@ -517,6 +517,8 @@
               include 'hasil_analisis.php';
             elseif ($content=='analisis_predict')
               include 'analisis_predict.php';
+            elseif ($content=='solusi')
+              include 'solusi.php';
 
             // Grafik 
             elseif ($content=='grafik_penjualan')

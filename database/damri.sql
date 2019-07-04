@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2019 at 04:47 PM
+-- Generation Time: Jul 04, 2019 at 05:56 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -117,7 +117,7 @@ INSERT INTO `dataset` (`id_jam`, `id_trayek`, `id_layanan`, `jml_seat`, `jml_pen
 (3, 11, 1, 23, 12),
 (6, 11, 2, 30, 21),
 (1, 11, 3, 40, 28),
-(3, 11, 2, 30, 32),
+(3, 11, 2, 30, 29),
 (2, 12, 1, 23, 12),
 (1, 12, 2, 30, 23),
 (4, 12, 3, 40, 29),
@@ -131,14 +131,14 @@ INSERT INTO `dataset` (`id_jam`, `id_trayek`, `id_layanan`, `jml_seat`, `jml_pen
 (1, 8, 1, 23, 22),
 (4, 8, 2, 30, 27),
 (4, 8, 3, 40, 35),
-(2, 2, 1, 23, 27),
+(2, 2, 1, 23, 23),
 (1, 1, 1, 23, 20),
 (3, 4, 2, 30, 27),
 (2, 4, 3, 40, 39),
 (4, 4, 1, 23, 20),
 (6, 4, 2, 30, 23),
 (5, 4, 3, 40, 35),
-(4, 7, 2, 30, 39),
+(4, 7, 2, 30, 11),
 (5, 7, 1, 23, 20),
 (2, 7, 2, 30, 28),
 (4, 7, 3, 40, 34),
@@ -152,14 +152,14 @@ INSERT INTO `dataset` (`id_jam`, `id_trayek`, `id_layanan`, `jml_seat`, `jml_pen
 (6, 9, 1, 23, 18),
 (4, 9, 2, 30, 21),
 (2, 9, 3, 40, 39),
-(3, 9, 1, 23, 30),
+(3, 9, 1, 23, 18),
 (1, 28, 1, 23, 22),
 (2, 28, 2, 30, 29),
 (3, 28, 3, 40, 38),
 (4, 28, 1, 23, 21),
 (5, 28, 2, 30, 20),
 (6, 28, 3, 40, 37),
-(5, 29, 2, 30, 32),
+(5, 29, 2, 30, 18),
 (1, 29, 1, 23, 21),
 (4, 29, 2, 30, 30),
 (5, 29, 3, 40, 34),
@@ -267,7 +267,38 @@ INSERT INTO `dataset` (`id_jam`, `id_trayek`, `id_layanan`, `jml_seat`, `jml_pen
 (2, 2, 2, 30, 20),
 (3, 6, 2, 30, 12),
 (2, 2, 2, 30, 21),
-(4, 3, 3, 40, 18);
+(4, 3, 3, 40, 18),
+(3, 2, 2, 30, 13),
+(1, 1, 1, 23, 12),
+(1, 1, 1, 23, 16),
+(1, 1, 1, 23, 20),
+(1, 1, 1, 23, 18),
+(5, 4, 2, 30, 12),
+(2, 2, 2, 30, 11),
+(5, 1, 2, 30, 12),
+(3, 3, 2, 30, 29),
+(3, 2, 2, 30, 28),
+(1, 3, 3, 40, 38),
+(2, 2, 2, 30, 28),
+(1, 1, 1, 23, 23),
+(1, 1, 1, 23, 22),
+(1, 1, 1, 23, 20),
+(1, 1, 1, 23, 19),
+(1, 2, 2, 30, 23),
+(1, 2, 2, 30, 22),
+(5, 12, 3, 40, 39),
+(4, 8, 1, 23, 11),
+(6, 43, 1, 23, 20),
+(5, 45, 2, 30, 29),
+(3, 45, 3, 40, 11),
+(3, 48, 2, 30, 2),
+(1, 9, 2, 30, 27),
+(6, 22, 2, 30, 26),
+(6, 3, 2, 30, 12),
+(5, 46, 2, 30, 17),
+(5, 12, 3, 40, 13),
+(4, 19, 2, 30, 19),
+(4, 20, 2, 30, 25);
 
 -- --------------------------------------------------------
 
@@ -663,10 +694,24 @@ CREATE TABLE `tbl_count` (
 --
 
 INSERT INTO `tbl_count` (`id_count`, `tgl_berangkat`, `id_jam`, `id_trayek`, `id_layanan`, `jml_penumpang`, `jml_seat`, `status`, `hasil_analisis`) VALUES
-(1, '2019-12-11', 5, 2, 1, 11, 23, '0', '-'),
-(2, '2019-12-11', 1, 1, 1, 20, 23, '0', '-'),
-(3, '2019-12-11', 2, 3, 2, 2, 30, '0', '-'),
-(4, '2019-12-11', 1, 24, 1, 22, 23, '0', '-');
+(6, '2019-06-29', 1, 1, 1, 66, 92, '1', 'Tidak Laris'),
+(7, '2019-07-04', 3, 3, 2, 29, 30, '1', 'Laris'),
+(8, '2019-07-04', 3, 2, 2, 28, 30, '1', 'Laris'),
+(9, '2019-07-04', 1, 3, 3, 38, 40, '1', 'Laris'),
+(10, '2019-07-04', 2, 2, 2, 28, 30, '1', 'Laris'),
+(11, '2019-07-04', 1, 1, 1, 84, 92, '1', 'Laris'),
+(12, '2019-07-04', 1, 2, 2, 45, 60, '1', 'Tidak Laris'),
+(14, '2019-07-04', 4, 8, 1, 11, 23, '1', 'Tidak Laris'),
+(15, '2019-07-04', 6, 43, 1, 20, 23, '1', 'Laris'),
+(16, '2019-07-04', 5, 45, 2, 29, 30, '1', 'Laris'),
+(17, '2019-07-04', 3, 45, 3, 11, 40, '1', 'Tidak Laris'),
+(18, '2019-07-04', 3, 48, 2, 28, 30, '1', 'Laris'),
+(19, '2019-07-04', 1, 9, 2, 27, 30, '1', 'Laris'),
+(20, '2019-07-04', 6, 22, 2, 3, 30, '1', 'Tidak Laris'),
+(21, '2019-07-04', 6, 3, 2, 12, 30, '1', 'Tidak Laris'),
+(22, '2019-07-04', 5, 46, 2, 17, 30, '1', 'Tidak Laris'),
+(23, '2019-07-04', 4, 19, 2, 19, 30, '1', 'Tidak Laris'),
+(24, '2019-07-04', 4, 20, 2, 25, 30, '1', 'Laris');
 
 -- --------------------------------------------------------
 
@@ -724,8 +769,7 @@ CREATE TABLE `tbl_helpdesk` (
 --
 
 INSERT INTO `tbl_helpdesk` (`id_helpdesk`, `nama`, `email`, `inbox`, `outbox`, `tanggal`, `trash`, `status`) VALUES
-(8, 'Erma Noviana', 'erma.noviana@damri.co.id', 'Berapa nomor fax damri cabang bandar lampung?', 'kepo hol', '08-06-2019:06:44:49', 0, 1),
-(9, 'simon', 'simon@gmail.com', 'simon says uri real vibe killer', '0', '12-06-2019:08:28:25', 0, 0);
+(1, 'Erma Noviana', 'ermafel@gmail.com', 'Apakah DAMRI banyak cabangnya?', '0', '30-06-2019:06:25:33', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1212,16 +1256,42 @@ CREATE TABLE `tbl_penjualan` (
   `id_trayek` int(10) NOT NULL,
   `id_layanan` int(10) NOT NULL,
   `jml_penumpang` int(10) NOT NULL,
-  `load_factor` varchar(50) NOT NULL
+  `load_factor` varchar(50) NOT NULL,
+  `pendapatan` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_penjualan`
 --
 
-INSERT INTO `tbl_penjualan` (`id_penjualan`, `tgl_berangkat`, `id_jam`, `id_armada`, `id_trayek`, `id_layanan`, `jml_penumpang`, `load_factor`) VALUES
-(1, '2019-12-11', 1, 1, 1, 1, 20, '12'),
-(2, '2019-12-11', 5, 1, 2, 1, 11, '15');
+INSERT INTO `tbl_penjualan` (`id_penjualan`, `tgl_berangkat`, `id_jam`, `id_armada`, `id_trayek`, `id_layanan`, `jml_penumpang`, `load_factor`, `pendapatan`) VALUES
+(4, '2019-06-29', 1, 1, 1, 1, 12, '0.52173913043478', '2820000'),
+(5, '2019-06-29', 1, 8, 1, 1, 16, '0.69565217391304', '3760000'),
+(6, '2019-06-29', 1, 13, 1, 1, 20, '0.8695652173913', '4700000'),
+(7, '2019-06-29', 1, 18, 1, 1, 18, '0.78260869565217', '4230000'),
+(8, '2019-07-04', 3, 49, 3, 2, 29, '0.96666666666667', '5075000'),
+(9, '2019-07-04', 3, 26, 2, 2, 28, '0.93333333333333', '5740000'),
+(10, '2019-07-04', 1, 54, 3, 3, 38, '0.95', '6080000'),
+(11, '2019-07-04', 2, 22, 2, 2, 28, '0.93333333333333', '5740000'),
+(12, '2019-07-04', 1, 1, 1, 1, 23, '1', '5405000'),
+(13, '2019-07-04', 1, 8, 1, 1, 22, '0.95652173913043', '5170000'),
+(14, '2019-07-04', 1, 13, 1, 1, 20, '0.8695652173913', '4700000'),
+(15, '2019-07-04', 1, 18, 1, 1, 19, '0.82608695652174', '4465000'),
+(16, '2019-07-04', 1, 24, 2, 2, 23, '0.76666666666667', '4715000'),
+(17, '2019-07-04', 1, 28, 2, 2, 22, '0.73333333333333', '4510000'),
+(18, '2019-07-04', 5, 103, 12, 3, 39, '0.975', '8385000'),
+(19, '2019-07-04', 4, 74, 8, 1, 11, '0.47826086956522', '2915000'),
+(20, '2019-07-04', 6, 254, 43, 1, 20, '0.8695652173913', '6000000'),
+(21, '2019-07-04', 5, 263, 45, 2, 29, '0.96666666666667', '6670000'),
+(22, '2019-07-04', 3, 265, 45, 3, 11, '0.275', '2145000'),
+(23, '2019-07-04', 3, 270, 48, 2, 2, '0.066666666666667', '460000'),
+(24, '2019-07-04', 1, 91, 9, 2, 27, '0.9', '7830000'),
+(25, '2019-07-04', 6, 115, 22, 2, 26, '0.86666666666667', '6370000'),
+(26, '2019-07-04', 6, 52, 3, 2, 12, '0.4', '2100000'),
+(27, '2019-07-04', 5, 264, 46, 2, 17, '0.56666666666667', '3910000'),
+(28, '2019-07-04', 5, 103, 12, 3, 13, '0.325', '2795000'),
+(29, '2019-07-04', 4, 109, 19, 2, 19, '0.63333333333333', '3990000'),
+(30, '2019-07-04', 4, 110, 20, 2, 25, '0.83333333333333', '5250000');
 
 -- --------------------------------------------------------
 
@@ -1355,9 +1425,9 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `nik`, `nama`, `email`, `password`, `no_telp`, `id_divre`, `id_cabang`, `foto`, `alamat`, `id_level`) VALUES
-(1, 2015230014, 'Erma Noviana', 'erma.noviana@damri.co.id', '21232f297a57a5a743894a0e4a801fc3', '083893936774', 1, 1, '../assets/img/icon.png', 'holdaebak', 1),
-(2, 2147483647, 'Admin Cabang Bandar Lampung', 'admin.lampung@damri.co.id', '202cb962ac59075b964b07152d234b70', '768728176', 1, 3, '../assets/img/icon.png', 'alamat admin', 2),
-(3, 424324, 'General Manager Cabang Bandar Lampung', 'gm.lampung@damri.co.id', '202cb962ac59075b964b07152d234b70', '7878593302', 1, 3, '../assets/img/icon.png', 'alamat gm coabin', 3);
+(1, 2015230014, 'Erma Noviana', 'erma.noviana@damri.co.id', '202cb962ac59075b964b07152d234b70', '083893936774', 1, 1, '../assets/img/icon.png', 'Bekasi', 1),
+(2, 2147483647, 'Admin Cabang Bandar Lampung', 'admin.lampung@damri.co.id', 'd9b1d7db4cd6e70935368a1efb10e377', '768728176', 1, 3, '../assets/img/icon.png', 'Bandar Lampung', 2),
+(3, 424324, 'General Manager Cabang Bandar Lampung', 'gm.lampung@damri.co.id', 'd9b1d7db4cd6e70935368a1efb10e377', '7878593302', 1, 3, '../assets/img/icon.png', 'Bandar Lampung', 3);
 
 --
 -- Indexes for dumped tables
@@ -1468,7 +1538,7 @@ ALTER TABLE `tbl_cabang`
 -- AUTO_INCREMENT for table `tbl_count`
 --
 ALTER TABLE `tbl_count`
-  MODIFY `id_count` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_count` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tbl_divre`
@@ -1480,7 +1550,7 @@ ALTER TABLE `tbl_divre`
 -- AUTO_INCREMENT for table `tbl_helpdesk`
 --
 ALTER TABLE `tbl_helpdesk`
-  MODIFY `id_helpdesk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_helpdesk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_jadwal`
@@ -1510,7 +1580,7 @@ ALTER TABLE `tbl_level`
 -- AUTO_INCREMENT for table `tbl_penjualan`
 --
 ALTER TABLE `tbl_penjualan`
-  MODIFY `id_penjualan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_penjualan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tbl_pnp_promo`
