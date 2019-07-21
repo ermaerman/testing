@@ -163,15 +163,15 @@
                                             
                                           ?>
                                             <tr>
-                                              <td colspan="8"><b>Total Pendapatan</b></td>
-                                              <td>
+                                              <td colspan="7"><b>Total Pendapatan</b></td>
+                                              <td colspan="2" align="right">
                                               <b><?php 
                                                 $lquery   = "SELECT SUM(pendapatan) AS pendapatan FROM tbl_penjualan";
                                                 $query    = mysqli_query($konek,$lquery)or die(mysqli_error($konek));
                                                 $lshow    = mysqli_fetch_array($query);
                                                 $pendapatan = "Rp " . number_format($lshow['pendapatan'],2,',','.');
-                                                echo $pendapatan;
-                                               ?>,
+                                                echo $pendapatan; echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                                               ?>
                                               </b> 
                                               </td>
                                             </tr> 
@@ -198,7 +198,7 @@
                                       $jml_hal = ceil($jml / $batas);
                                       for ($i=1; $i <= $jml_hal; $i++) {
                                         if ($i != $hal) {
-                                          echo "<li><a href=\"index.php?content=laporan_penjualan&&hal=$i\">$i</a></li>";
+                                          echo "<li><a href=\"index.php?content=laporan_pendapatan&&hal=$i\">$i</a></li>";
                                         } else {
                                           echo "<li class=\"active\"><a>$i</a></li>";
                                         }

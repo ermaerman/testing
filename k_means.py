@@ -39,7 +39,7 @@ predicted = kmeans.predict(X_test)
 ##accuracy from calculate train and dataset
 label = len(y)
 predictsum = sum(predicted)
-acc = (label/predictsum) / 10
+acc = (predictsum/label) * 10
 
 print("accuracy : ", acc)
 
