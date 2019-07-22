@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2019 at 05:11 AM
+-- Generation Time: Jul 15, 2019 at 10:09 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -25,6 +25,1223 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dataset`
+--
+
+CREATE TABLE `dataset` (
+  `id_jam` int(10) DEFAULT NULL,
+  `id_trayek` int(10) DEFAULT NULL,
+  `id_layanan` int(10) DEFAULT NULL,
+  `jml_seat` int(10) DEFAULT NULL,
+  `jml_penumpang` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dataset`
+--
+
+INSERT INTO `dataset` (`id_jam`, `id_trayek`, `id_layanan`, `jml_seat`, `jml_penumpang`) VALUES
+(1, 1, 1, 23, 21),
+(2, 1, 2, 30, 20),
+(3, 1, 3, 40, 32),
+(4, 1, 1, 23, 20),
+(5, 1, 2, 30, 19),
+(6, 1, 3, 40, 34),
+(2, 1, 1, 23, 17),
+(1, 2, 1, 23, 10),
+(4, 2, 2, 30, 23),
+(5, 2, 3, 40, 31),
+(6, 2, 1, 23, 21),
+(3, 2, 2, 30, 21),
+(6, 2, 3, 40, 22),
+(3, 2, 2, 30, 16),
+(2, 3, 1, 23, 20),
+(1, 3, 2, 30, 27),
+(3, 3, 3, 40, 25),
+(5, 3, 1, 23, 12),
+(3, 3, 2, 30, 22),
+(6, 3, 3, 40, 29),
+(2, 3, 3, 40, 21),
+(4, 4, 1, 23, 10),
+(2, 4, 2, 30, 23),
+(3, 4, 3, 40, 20),
+(6, 4, 1, 23, 19),
+(4, 4, 2, 30, 26),
+(1, 4, 3, 40, 37),
+(1, 4, 1, 23, 17),
+(2, 5, 1, 23, 12),
+(5, 5, 2, 30, 25),
+(1, 5, 3, 40, 36),
+(4, 5, 1, 23, 22),
+(3, 5, 2, 30, 23),
+(5, 5, 3, 40, 34),
+(3, 5, 2, 30, 21),
+(1, 6, 1, 23, 21),
+(4, 6, 2, 30, 24),
+(4, 6, 3, 40, 12),
+(3, 6, 1, 23, 21),
+(2, 6, 2, 30, 23),
+(5, 6, 3, 40, 37),
+(1, 6, 3, 40, 32),
+(5, 7, 1, 23, 19),
+(6, 7, 2, 30, 22),
+(2, 7, 3, 40, 27),
+(3, 7, 1, 23, 20),
+(1, 7, 2, 30, 27),
+(5, 7, 3, 40, 25),
+(4, 7, 1, 23, 15),
+(2, 8, 1, 23, 16),
+(4, 8, 2, 30, 22),
+(6, 8, 3, 40, 24),
+(3, 8, 1, 23, 18),
+(6, 8, 2, 30, 23),
+(3, 8, 3, 40, 34),
+(1, 8, 2, 30, 21),
+(1, 9, 1, 23, 19),
+(2, 9, 2, 30, 24),
+(4, 9, 3, 40, 33),
+(3, 9, 1, 23, 21),
+(5, 9, 2, 30, 30),
+(3, 9, 3, 40, 39),
+(2, 9, 3, 40, 31),
+(6, 10, 1, 23, 20),
+(2, 10, 2, 30, 23),
+(3, 10, 3, 40, 34),
+(4, 10, 1, 23, 21),
+(3, 10, 2, 30, 23),
+(5, 10, 3, 40, 31),
+(6, 10, 1, 23, 22),
+(2, 11, 1, 23, 20),
+(1, 11, 2, 30, 23),
+(4, 11, 3, 40, 34),
+(3, 11, 1, 23, 12),
+(6, 11, 2, 30, 21),
+(1, 11, 3, 40, 28),
+(3, 11, 2, 30, 29),
+(2, 12, 1, 23, 12),
+(1, 12, 2, 30, 23),
+(4, 12, 3, 40, 29),
+(6, 12, 1, 23, 21),
+(5, 12, 2, 30, 26),
+(2, 12, 3, 40, 39),
+(3, 12, 3, 40, 21),
+(2, 11, 1, 23, 19),
+(5, 1, 2, 30, 27),
+(4, 12, 3, 40, 40),
+(1, 8, 1, 23, 22),
+(4, 8, 2, 30, 27),
+(4, 8, 3, 40, 35),
+(2, 2, 1, 23, 23),
+(1, 1, 1, 23, 20),
+(3, 4, 2, 30, 27),
+(2, 4, 3, 40, 39),
+(4, 4, 1, 23, 20),
+(6, 4, 2, 30, 23),
+(5, 4, 3, 40, 35),
+(4, 7, 2, 30, 11),
+(5, 7, 1, 23, 20),
+(2, 7, 2, 30, 28),
+(4, 7, 3, 40, 34),
+(1, 11, 1, 23, 21),
+(6, 8, 2, 30, 23),
+(3, 8, 3, 40, 36),
+(1, 8, 3, 40, 14),
+(1, 8, 1, 23, 20),
+(5, 8, 2, 30, 23),
+(2, 8, 3, 40, 35),
+(6, 9, 1, 23, 18),
+(4, 9, 2, 30, 21),
+(2, 9, 3, 40, 39),
+(3, 9, 1, 23, 18),
+(1, 28, 1, 23, 22),
+(2, 28, 2, 30, 29),
+(3, 28, 3, 40, 38),
+(4, 28, 1, 23, 21),
+(5, 28, 2, 30, 20),
+(6, 28, 3, 40, 37),
+(5, 29, 2, 30, 18),
+(1, 29, 1, 23, 21),
+(4, 29, 2, 30, 30),
+(5, 29, 3, 40, 34),
+(6, 29, 1, 23, 20),
+(3, 29, 2, 30, 20),
+(1, 29, 3, 40, 21),
+(3, 30, 3, 40, 11),
+(2, 19, 1, 23, 15),
+(1, 19, 2, 30, 12),
+(3, 19, 3, 40, 13),
+(5, 19, 1, 23, 19),
+(4, 19, 2, 30, 23),
+(6, 19, 3, 40, 28),
+(3, 19, 1, 23, 22),
+(1, 20, 1, 23, 10),
+(2, 20, 2, 30, 23),
+(3, 20, 3, 40, 20),
+(4, 20, 1, 23, 19),
+(5, 20, 2, 30, 26),
+(6, 20, 3, 40, 37),
+(5, 20, 2, 30, 17),
+(1, 21, 1, 23, 12),
+(4, 21, 2, 30, 21),
+(5, 21, 3, 40, 32),
+(6, 21, 1, 23, 22),
+(1, 21, 2, 30, 23),
+(4, 21, 3, 40, 34),
+(3, 21, 3, 40, 21),
+(2, 22, 1, 23, 18),
+(1, 22, 2, 30, 24),
+(3, 22, 3, 40, 12),
+(5, 22, 1, 23, 21),
+(3, 22, 2, 30, 29),
+(6, 22, 3, 40, 21),
+(5, 22, 1, 23, 27),
+(4, 23, 1, 23, 22),
+(2, 23, 2, 30, 28),
+(3, 23, 3, 40, 28),
+(6, 23, 1, 23, 20),
+(6, 23, 2, 30, 29),
+(2, 23, 3, 40, 21),
+(1, 23, 2, 30, 26),
+(1, 24, 1, 23, 22),
+(2, 24, 2, 30, 24),
+(3, 24, 3, 40, 21),
+(4, 24, 1, 23, 18),
+(5, 24, 2, 30, 28),
+(6, 24, 3, 40, 24),
+(4, 24, 3, 40, 22),
+(1, 25, 1, 23, 13),
+(4, 25, 2, 30, 21),
+(5, 25, 3, 40, 21),
+(6, 25, 1, 23, 22),
+(4, 25, 2, 30, 13),
+(2, 25, 3, 40, 15),
+(3, 25, 1, 23, 21),
+(2, 26, 1, 23, 11),
+(1, 26, 2, 30, 21),
+(3, 26, 3, 40, 32),
+(5, 26, 1, 23, 22),
+(4, 26, 2, 30, 12),
+(3, 26, 3, 40, 15),
+(5, 26, 2, 30, 28),
+(4, 27, 1, 23, 13),
+(2, 27, 2, 30, 19),
+(3, 27, 3, 40, 20),
+(6, 27, 1, 23, 13),
+(1, 27, 2, 30, 23),
+(5, 27, 3, 40, 35),
+(1, 27, 3, 40, 12),
+(1, 28, 1, 23, 19),
+(2, 28, 2, 30, 23),
+(3, 28, 3, 40, 32),
+(4, 28, 1, 23, 16),
+(5, 28, 2, 30, 23),
+(6, 28, 3, 40, 35),
+(3, 28, 1, 23, 21),
+(1, 29, 1, 23, 12),
+(4, 29, 2, 30, 21),
+(5, 29, 3, 40, 21),
+(6, 29, 1, 23, 15),
+(3, 29, 2, 30, 14),
+(5, 29, 3, 40, 21),
+(3, 29, 2, 30, 24),
+(2, 30, 1, 23, 15),
+(1, 30, 2, 30, 24),
+(3, 30, 3, 40, 22),
+(5, 30, 1, 23, 16),
+(3, 30, 2, 30, 23),
+(6, 30, 3, 40, 24),
+(1, 30, 3, 40, 14),
+(2, 31, 1, 23, 17),
+(1, 31, 2, 30, 23),
+(3, 31, 3, 40, 37),
+(5, 31, 1, 23, 21),
+(2, 31, 2, 30, 24),
+(6, 31, 3, 40, 26),
+(4, 31, 1, 23, 22),
+(4, 4, 3, 40, 20),
+(5, 10, 1, 23, 10),
+(2, 1, 2, 30, 27),
+(4, 12, 2, 30, 14),
+(6, 21, 2, 30, 13),
+(6, 21, 2, 30, 19),
+(2, 2, 2, 30, 20),
+(3, 6, 2, 30, 12),
+(2, 2, 2, 30, 21),
+(4, 3, 3, 40, 18),
+(3, 2, 2, 30, 13),
+(1, 1, 1, 23, 12),
+(1, 1, 1, 23, 16),
+(1, 1, 1, 23, 20),
+(1, 1, 1, 23, 18),
+(5, 4, 2, 30, 12),
+(2, 2, 2, 30, 11),
+(5, 1, 2, 30, 12),
+(3, 3, 2, 30, 29),
+(3, 2, 2, 30, 28),
+(1, 3, 3, 40, 38),
+(2, 2, 2, 30, 28),
+(1, 1, 1, 23, 23),
+(1, 1, 1, 23, 22),
+(1, 1, 1, 23, 20),
+(1, 1, 1, 23, 19),
+(1, 2, 2, 30, 23),
+(1, 2, 2, 30, 22),
+(5, 12, 3, 40, 39),
+(4, 8, 1, 23, 11),
+(6, 43, 1, 23, 20),
+(5, 45, 2, 30, 29),
+(3, 45, 3, 40, 11),
+(3, 48, 2, 30, 2),
+(1, 9, 2, 30, 27),
+(6, 22, 2, 30, 26),
+(6, 3, 2, 30, 12),
+(5, 46, 2, 30, 17),
+(5, 12, 3, 40, 13),
+(4, 19, 2, 30, 19),
+(4, 20, 2, 30, 25),
+(4, 44, 3, 40, 12),
+(5, 20, 3, 40, 11),
+(5, 46, 2, 30, 27),
+(4, 3, 3, 40, 25),
+(5, 9, 1, 23, 21),
+(1, 42, 1, 23, 18),
+(1, 1, 1, 23, 12),
+(1, 1, 1, 23, 21),
+(1, 1, 1, 23, 11),
+(1, 1, 1, 23, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_armada`
+--
+
+CREATE TABLE `tbl_armada` (
+  `id_armada` int(10) NOT NULL,
+  `id_divre` int(10) NOT NULL,
+  `id_cabang` int(10) NOT NULL,
+  `armada` int(20) NOT NULL,
+  `no_pol` varchar(20) NOT NULL,
+  `tahun` int(10) NOT NULL,
+  `merk_type` varchar(50) NOT NULL,
+  `no_rangka` varchar(50) NOT NULL,
+  `no_mesin` varchar(50) NOT NULL,
+  `segmen` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_armada`
+--
+
+INSERT INTO `tbl_armada` (`id_armada`, `id_divre`, `id_cabang`, `armada`, `no_pol`, `tahun`, `merk_type`, `no_rangka`, `no_mesin`, `segmen`) VALUES
+(1, 1, 3, 2987, 'BE 2137 CU', 1991, 'Merecedes benz', 'MHL 684 200 26 003 306', '386 951 60 070 861', 'ANTAR KOTA'),
+(2, 1, 3, 3628, 'BE 2230 CU', 2000, 'Merecedes benz', 'MHL 684 262 YJ 008 782', '386 981 60 371 873', 'ANTAR KOTA'),
+(3, 1, 3, 3645, 'BE 2844 BU', 2000, 'Merecedes benz', 'MHL 684 262 YJ 008 935', '386 981 60 380 534', 'ANTAR KOTA'),
+(4, 1, 3, 3647, 'BE 2523 CU', 2001, 'Merecedes benz', 'MHL 684 262 YJ 008 940', '386 981 60 380 770', 'ANTAR KOTA'),
+(5, 1, 3, 3824, 'BE 2346 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 984', '386 951 60 521 814', 'ANTAR KOTA'),
+(6, 1, 3, 3825, 'BE 2504 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 985', '386 951 60 521 815', 'ANTAR KOTA'),
+(7, 1, 3, 3826, 'BE 2296 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 986', '386 951 60 521 816', 'ANTAR KOTA'),
+(8, 1, 3, 3827, 'BE 2325 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 987', '386 951 60 521 817', 'ANTAR KOTA'),
+(9, 1, 3, 3828, 'BE 2473 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 988', '386 951 60 521 818', 'ANTAR KOTA'),
+(10, 1, 3, 3829, 'BE 2315 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 989', '386 951 60 521 819', 'ANTAR KOTA'),
+(11, 1, 3, 3830, 'BE 2342 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 990', '386 951 60 521 820', 'ANTAR KOTA'),
+(12, 1, 3, 3831, 'BE 2301 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 991', '386 951 60 521 821', 'ANTAR KOTA'),
+(13, 1, 3, 3832, 'BE 2914 AE', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 992', '386 951 60 521 822', 'ANTAR KOTA'),
+(14, 1, 3, 4499, 'BE 2583 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 171', '904 973 U0 801 554', 'ANTAR KOTA'),
+(15, 1, 3, 4500, 'BE 2591 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 174', '904 973 U0 801 572', 'ANTAR KOTA'),
+(16, 1, 3, 4501, 'BE 2592 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 175', '904 973 U0 802 800', 'ANTAR KOTA'),
+(17, 1, 3, 4502, 'BE 2593 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 176', '904 973 U0 793 321', 'ANTAR KOTA'),
+(18, 1, 3, 4503, 'BE 2590 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 177', '904 973 U0 802 758', 'ANTAR KOTA'),
+(19, 1, 3, 4504, 'BE 2602 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 178', '904 973 U0 802 768', 'ANTAR KOTA'),
+(20, 1, 3, 4505, 'BE 2582 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 179', '904 973 U0 802 780', 'ANTAR KOTA'),
+(21, 1, 3, 4506, 'BE 2581 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 180', '904 973 U0 811 690', 'ANTAR KOTA'),
+(22, 1, 3, 4507, 'BE 2580 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 181', '904 973 U0 804 555', 'ANTAR KOTA'),
+(23, 1, 3, 4508, 'BE 2604 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 182', '904 973 U0 804 329', 'ANTAR KOTA'),
+(24, 1, 3, 4509, 'BE 2605 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 190', '904 973 U0 804 541', 'ANTAR KOTA'),
+(25, 1, 3, 4510, 'BE 2612 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 189', '904 973 U0 804 786', 'ANTAR KOTA'),
+(26, 1, 3, 4511, 'BE 2614 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 191', '904 973 U0 804 310', 'ANTAR KOTA'),
+(27, 1, 3, 4512, 'BE 2615 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 192', '904 973 U0 8047 72', 'ANTAR KOTA'),
+(28, 1, 3, 4513, 'BE 2603 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 187', '904 973 U0 804 589', 'ANTAR KOTA'),
+(29, 1, 3, 4514, 'BE 2613 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 188', '904 973 U0 804 351', 'ANTAR KOTA'),
+(30, 1, 3, 4725, 'BE 2943 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 365', '904 973 UO 826 434', 'ANTAR KOTA'),
+(31, 1, 3, 4726, 'BE 2809 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 346', '904 973 UO 823 557', 'ANTAR KOTA'),
+(32, 1, 3, 4727, 'BE 2938 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 261', '904 973 UO 819 306', 'ANTAR KOTA'),
+(33, 1, 3, 4752, 'BE 2166 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 448', '906 918 U0 656 880', 'ANTAR KOTA'),
+(34, 1, 3, 4754, 'BE 2342 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 457', '906 918 U0 657 460', 'ANTAR KOTA'),
+(35, 1, 3, 4757, 'BE 2142 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 458', '906 918 U0 667 301', 'ANTAR KOTA'),
+(36, 1, 3, 4760, 'BE 7114 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 463', '906 918 U0 661 339', 'ANTAR KOTA'),
+(37, 1, 3, 4761, 'BE 2422 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 476', '906 918 U0 661 998', 'ANTAR KOTA'),
+(38, 1, 3, 4762, 'BE 2455 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 456', '906 918 U0 657 463', 'ANTAR KOTA'),
+(39, 1, 3, 4763, 'BE 2434 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 445', '906 918 U0 655 177', 'ANTAR KOTA'),
+(40, 1, 3, 4764, 'BE 2403 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 464', '906 918 U0 661 342', 'ANTAR KOTA'),
+(41, 1, 3, 4933, 'BE 2107 CU', 2012, 'Merecedes Benz', 'MHL 368 006 CJ 002 227', '906 998 U0 977 005', 'ANTAR KOTA'),
+(42, 1, 3, 4934, 'BE 2531 CU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 228', '906 998 U0 976 784', 'ANTAR KOTA'),
+(43, 1, 3, 4935, 'BE 2937 CU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 229', '906 998 U0 976 780', 'ANTAR KOTA'),
+(44, 1, 3, 4936, 'BE 2491 CU', 2012, 'Mercedez Benz', 'MHL 368 006 CJ 002 230', '906 998 U0 976 780', 'ANTAR KOTA'),
+(45, 1, 3, 4937, 'BE 2943 CU', 2012, 'Mercedez Benz', 'MHL 368 006 CJ 002 231', '906 998 U0 977 015', 'ANTAR KOTA'),
+(46, 1, 3, 4938, 'BE 2750 CU', 2012, 'Mercedez Benz', 'MHL 368 006 CJ 002 232', '906 998 U0 976 760', 'ANTAR KOTA'),
+(47, 1, 3, 4939, 'BE 2965 CU', 2012, 'Mercedez Benz', 'MHL 368 006 CJ 002 233', '906 998 U0 976 778', 'ANTAR KOTA'),
+(48, 1, 3, 5004, 'BE 7239 CU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 073', '906 998 U0 960 590', 'ANTAR KOTA'),
+(49, 1, 3, 5005, 'BE 7405 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 074', '906 998 U0 961 187', 'ANTAR KOTA'),
+(50, 1, 3, 5006, 'BE 7091 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 075', '906 998 U0 961 186', 'ANTAR KOTA'),
+(51, 1, 3, 5007, 'BE 7131 AU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 076', '906 998 U0 961 185', 'ANTAR KOTA'),
+(52, 1, 3, 5008, 'BE 7259 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 077', '906 998 U0 960 981', 'ANTAR KOTA'),
+(53, 1, 3, 5009, 'BE 7867 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 078', '906 998 U0 960 977', 'ANTAR KOTA'),
+(54, 1, 3, 5010, 'BE 7168 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 079', '906 998 U0 960 979', 'ANTAR KOTA'),
+(55, 1, 3, 5011, 'BE 7336 CU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 107', '906 998 U0 961 625', 'ANTAR KOTA'),
+(56, 1, 3, 5012, 'BE 7516 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 109', '906 998 U0 961 626', 'ANTAR KOTA'),
+(57, 1, 3, 5013, 'BE 7257 CU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 110', '906 998 U0 961 953', 'ANTAR KOTA'),
+(58, 1, 3, 5250, 'BE 2970 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 409', '906 998 U1 030 214', 'ANTAR KOTA'),
+(59, 1, 3, 5251, 'BE 2993 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 521', '906 998 U1 034 306', 'ANTAR KOTA'),
+(60, 1, 3, 5252, 'BE 2961 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 522', '906 998 U1 034 302', 'ANTAR KOTA'),
+(61, 1, 3, 5311, 'BE.2868 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 568', '906 998 UI 035 198', 'ANTAR KOTA'),
+(62, 1, 3, 5312, 'BE 2136 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 569', '906 998 UI 034 992', 'ANTAR KOTA'),
+(63, 1, 3, 5313, 'BE 2235 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 572', '906 998 UI 035 208', 'ANTAR KOTA'),
+(64, 1, 3, 5314, 'BE 2189 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 571', '906 998 UI 035 204', 'ANTAR KOTA'),
+(65, 1, 3, 5315, 'BE 2866 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 573', '906 998 UI 035 208', 'ANTAR KOTA'),
+(66, 1, 3, 5531, 'BE 2835 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 717', '906 998 U1 056 181', 'ANTAR KOTA'),
+(67, 1, 3, 5532, 'BE 2817 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 718', '906 998 U1 055 850', 'ANTAR KOTA'),
+(68, 1, 3, 5533, 'BE 2781 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 719', '906 998 U1 085 716', 'ANTAR KOTA'),
+(69, 1, 3, 5534, 'BE 2775 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 720', '906 998 U1 056 658', 'ANTAR KOTA'),
+(70, 1, 3, 5535, 'BE 2807 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 721', '906 998 U1 084 546', 'ANTAR KOTA'),
+(71, 1, 3, 5536, 'BE 2810 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 722', '906 998 U1 084 547', 'ANTAR KOTA'),
+(72, 1, 3, 5537, 'BE 2763 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 723', '906 998 U1 084 539', 'ANTAR KOTA'),
+(73, 1, 3, 5538, 'BE 2744  BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 724', '906 998 U1 084 548', 'ANTAR KOTA'),
+(74, 1, 3, 4933, 'BE 2107 CU', 2012, 'Merecedes Benz', 'MHL 368 006 CJ 002 227', '906 998 U0 977 005', 'ANTAR KOTA'),
+(75, 1, 3, 4934, 'BE 2531 CU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 228', '906 998 U0 976 784', 'ANTAR KOTA'),
+(76, 1, 3, 4935, 'BE 2937 CU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 229', '906 998 U0 976 780', 'ANTAR KOTA'),
+(77, 1, 3, 4936, 'BE 2491 CU', 2012, 'Mercedez Benz', 'MHL 368 006 CJ 002 230', '906 998 U0 976 780', 'ANTAR KOTA'),
+(78, 1, 3, 4937, 'BE 2943 CU', 2012, 'Mercedez Benz', 'MHL 368 006 CJ 002 231', '906 998 U0 977 015', 'ANTAR KOTA'),
+(79, 1, 3, 4938, 'BE 2750 CU', 2012, 'Mercedez Benz', 'MHL 368 006 CJ 002 232', '906 998 U0 976 760', 'ANTAR KOTA'),
+(80, 1, 3, 4939, 'BE 2965 CU', 2012, 'Mercedez Benz', 'MHL 368 006 CJ 002 233', '906 998 U0 976 778', 'ANTAR KOTA'),
+(81, 1, 3, 5004, 'BE 7239 CU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 073', '906 998 U0 960 590', 'ANTAR KOTA'),
+(82, 1, 3, 5005, 'BE 7405 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 074', '906 998 U0 961 187', 'ANTAR KOTA'),
+(83, 1, 3, 5006, 'BE 7091 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 075', '906 998 U0 961 186', 'ANTAR KOTA'),
+(84, 1, 3, 5008, 'BE 7259 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 077', '906 998 U0 960 981', 'ANTAR KOTA'),
+(85, 1, 3, 5006, 'BE 7091 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 075', '906 998 U0 961 186', 'ANTAR KOTA'),
+(86, 1, 3, 5009, 'BE 7867 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 078', '906 998 U0 960 977', 'ANTAR KOTA'),
+(87, 1, 3, 5008, 'BE 7259 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 077', '906 998 U0 960 981', 'ANTAR KOTA'),
+(88, 1, 3, 5010, 'BE 7168 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 079', '906 998 U0 960 979', 'ANTAR KOTA'),
+(89, 1, 3, 5009, 'BE 7867 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 078', '906 998 U0 960 977', 'ANTAR KOTA'),
+(90, 1, 3, 5011, 'BE 7336 CU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 107', '906 998 U0 961 625', 'ANTAR KOTA'),
+(91, 1, 3, 5010, 'BE 7168 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 079', '906 998 U0 960 979', 'ANTAR KOTA'),
+(92, 1, 3, 5012, 'BE 7516 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 109', '906 998 U0 961 626', 'ANTAR KOTA'),
+(93, 1, 3, 5013, 'BE 7257 CU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 110', '906 998 U0 961 953', 'ANTAR KOTA'),
+(94, 1, 3, 5011, 'BE 7336 CU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 107', '906 998 U0 961 625', 'ANTAR KOTA'),
+(95, 1, 3, 5250, 'BE 2970 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 409', '906 998 U1 030 214', 'ANTAR KOTA'),
+(96, 1, 3, 5012, 'BE 7516 AU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 109', '906 998 U0 961 626', 'ANTAR KOTA'),
+(97, 1, 3, 5251, 'BE 2993 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 521', '906 998 U1 034 306', 'ANTAR KOTA'),
+(98, 1, 3, 5013, 'BE 7257 CU', 2012, 'Merecedes benz', 'MHL 368 006 CJ 002 110', '906 998 U0 961 953', 'ANTAR KOTA'),
+(99, 1, 3, 5252, 'BE 2961 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 522', '906 998 U1 034 302', 'ANTAR KOTA'),
+(100, 1, 3, 4499, 'BE 2583 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 171', '904 973 U0 801 554', 'ANTAR KOTA'),
+(101, 1, 3, 5250, 'BE 2970 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 409', '906 998 U1 030 214', 'ANTAR KOTA'),
+(102, 1, 3, 4500, 'BE 2591 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 174', '904 973 U0 801 572', 'ANTAR KOTA'),
+(103, 1, 3, 5251, 'BE 2993 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 521', '906 998 U1 034 306', 'ANTAR KOTA'),
+(104, 1, 3, 5252, 'BE 2961 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 522', '906 998 U1 034 302', 'ANTAR KOTA'),
+(105, 1, 3, 4501, 'BE 2592 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 175', '904 973 U0 802 800', 'ANTAR KOTA'),
+(106, 1, 3, 4502, 'BE 2593 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 176', '904 973 U0 793 321', 'ANTAR KOTA'),
+(107, 1, 3, 4499, 'BE 2583 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 171', '904 973 U0 801 554', 'ANTAR KOTA'),
+(108, 1, 3, 4503, 'BE 2590 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 177', '904 973 U0 802 758', 'ANTAR KOTA'),
+(109, 1, 3, 4500, 'BE 2591 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 174', '904 973 U0 801 572', 'ANTAR KOTA'),
+(110, 1, 3, 4504, 'BE 2602 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 178', '904 973 U0 802 768', 'ANTAR KOTA'),
+(111, 1, 3, 4501, 'BE 2592 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 175', '904 973 U0 802 800', 'ANTAR KOTA'),
+(112, 1, 3, 4505, 'BE 2582 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 179', '904 973 U0 802 780', 'ANTAR KOTA'),
+(113, 1, 3, 4502, 'BE 2593 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 176', '904 973 U0 793 321', 'ANTAR KOTA'),
+(114, 1, 3, 4506, 'BE 2581 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 180', '904 973 U0 811 690', 'ANTAR KOTA'),
+(115, 1, 3, 5311, 'BE.2868 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 568', '906 998 UI 035 198', 'ANTAR KOTA'),
+(116, 1, 3, 4503, 'BE 2590 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 177', '904 973 U0 802 758', 'ANTAR KOTA'),
+(117, 1, 3, 5314, 'BE 2189 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 571', '906 998 UI 035 204', 'ANTAR KOTA'),
+(118, 1, 3, 4504, 'BE 2602 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 178', '904 973 U0 802 768', 'ANTAR KOTA'),
+(119, 1, 3, 4505, 'BE 2582 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 179', '904 973 U0 802 780', 'ANTAR KOTA'),
+(120, 1, 3, 5315, 'BE 2866 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 573', '906 998 UI 035 208', 'ANTAR KOTA'),
+(121, 1, 3, 4757, 'BE 2142 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 458', '906 918 U0 667 301', 'ANTAR KOTA'),
+(122, 1, 3, 4506, 'BE 2581 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 180', '904 973 U0 811 690', 'ANTAR KOTA'),
+(123, 1, 3, 5531, 'BE 2835 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 717', '906 998 U1 056 181', 'ANTAR KOTA'),
+(124, 1, 3, 5311, 'BE.2868 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 568', '906 998 UI 035 198', 'ANTAR KOTA'),
+(125, 1, 3, 5314, 'BE 2189 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 571', '906 998 UI 035 204', 'ANTAR KOTA'),
+(126, 1, 3, 5532, 'BE 2817 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 718', '906 998 U1 055 850', 'ANTAR KOTA'),
+(127, 1, 3, 5315, 'BE 2866 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 573', '906 998 UI 035 208', 'ANTAR KOTA'),
+(128, 1, 3, 4757, 'BE 2142 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 458', '906 918 U0 667 301', 'ANTAR KOTA'),
+(129, 1, 3, 5533, 'BE 2781 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 719', '906 998 U1 085 716', 'ANTAR KOTA'),
+(130, 1, 3, 5531, 'BE 2835 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 717', '906 998 U1 056 181', 'ANTAR KOTA'),
+(131, 1, 3, 5534, 'BE 2775 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 720', '906 998 U1 056 658', 'ANTAR KOTA'),
+(132, 1, 3, 5532, 'BE 2817 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 718', '906 998 U1 055 850', 'ANTAR KOTA'),
+(133, 1, 3, 5535, 'BE 2807 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 721', '906 998 U1 084 546', 'ANTAR KOTA'),
+(134, 1, 3, 5533, 'BE 2781 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 719', '906 998 U1 085 716', 'ANTAR KOTA'),
+(135, 1, 3, 5536, 'BE 2810 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 722', '906 998 U1 084 547', 'ANTAR KOTA'),
+(136, 1, 3, 5534, 'BE 2775 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 720', '906 998 U1 056 658', 'ANTAR KOTA'),
+(137, 1, 3, 5537, 'BE 2763 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 723', '906 998 U1 084 539', 'ANTAR KOTA'),
+(138, 1, 3, 5535, 'BE 2807 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 721', '906 998 U1 084 546', 'ANTAR KOTA'),
+(139, 1, 3, 5538, 'BE 2744  B', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 724', '906 998 U1 084 548', 'ANTAR KOTA'),
+(140, 1, 3, 5536, 'BE 2810 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 722', '906 998 U1 084 547', 'ANTAR KOTA'),
+(141, 1, 3, 5537, 'BE 2763 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 723', '906 998 U1 084 539', 'ANTAR KOTA'),
+(142, 1, 3, 5539, 'BE 2911 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 725', '906 998 U1 084 549', 'ANTAR KOTA'),
+(143, 1, 3, 5538, 'BE 2744  B', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 724', '906 998 U1 084 548', 'ANTAR KOTA'),
+(144, 1, 3, 5540, 'BE 2678  B', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 726', '906 998 U1 084 545', 'ANTAR KOTA'),
+(145, 1, 3, 5539, 'BE 2911 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 725', '906 998 U1 084 549', 'ANTAR KOTA'),
+(146, 1, 3, 5541, 'BE 2654 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 727', '906 998 U1 084 543', 'ANTAR KOTA'),
+(147, 1, 3, 5540, 'BE 2678  B', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 726', '906 998 U1 084 545', 'ANTAR KOTA'),
+(148, 1, 3, 5529, 'BE 2673 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 715', '906 998 U1 055 892', 'ANTAR KOTA'),
+(149, 1, 3, 5541, 'BE 2654 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 727', '906 998 U1 084 543', 'ANTAR KOTA'),
+(150, 1, 3, 5529, 'BE 2673 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 715', '906 998 U1 055 892', 'ANTAR KOTA'),
+(151, 1, 3, 5530, 'BE 2871 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 716', '906 998 U1 055 854', 'ANTAR KOTA'),
+(152, 1, 3, 5530, 'BE 2871 BU', 2014, 'Merecedes benz', 'MHL 368 100 EJ 000 716', '906 998 U1 055 854', 'ANTAR KOTA'),
+(153, 1, 3, 2987, 'BE 2137 CU', 1991, 'Merecedes benz', 'MHL 684 200 26 003 306', '386 951 60 070 861', 'ANTAR KOTA'),
+(154, 1, 3, 2987, 'BE 2137 CU', 1991, 'Merecedes benz', 'MHL 684 200 26 003 306', '386 951 60 070 861', 'ANTAR KOTA'),
+(155, 1, 3, 3628, 'BE.2230 CU', 2000, 'Merecedes benz', 'MHL 684 262 YJ 008 782', '386 981 60 371 873', 'ANTAR KOTA'),
+(156, 1, 3, 3628, 'BE.2230 CU', 2000, 'Merecedes benz', 'MHL 684 262 YJ 008 782', '386 981 60 371 873', 'ANTAR KOTA'),
+(157, 1, 3, 3645, 'BE 2844 BU', 2000, 'Merecedes benz', 'MHL 684 262 YJ 008 935', '386 981 60 380 534', 'ANTAR KOTA'),
+(158, 1, 3, 3645, 'BE 2844 BU', 2000, 'Merecedes benz', 'MHL 684 262 YJ 008 935', '386 981 60 380 534', 'ANTAR KOTA'),
+(159, 1, 3, 3647, 'BE 2523 CU', 2001, 'Merecedes benz', 'MHL 684 262 YJ 008 940', '386 981 60 380 770', 'ANTAR KOTA'),
+(160, 1, 3, 3647, 'BE 2523 CU', 2001, 'Merecedes benz', 'MHL 684 262 YJ 008 940', '386 981 60 380 770', 'ANTAR KOTA'),
+(161, 1, 3, 3824, 'BE 2346 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 984', '386 951 60 521 814', 'ANTAR KOTA'),
+(162, 1, 3, 3824, 'BE 2346 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 984', '386 951 60 521 814', 'ANTAR KOTA'),
+(163, 1, 3, 3825, 'BE 2504 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 985', '386 951 60 521 815', 'ANTAR KOTA'),
+(164, 1, 3, 3825, 'BE 2504 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 985', '386 951 60 521 815', 'ANTAR KOTA'),
+(165, 1, 3, 3826, 'BE 2296 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 986', '386 951 60 521 816', 'ANTAR KOTA'),
+(166, 1, 3, 3827, 'BE 2325 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 987', '386 951 60 521 817', 'ANTAR KOTA'),
+(167, 1, 3, 3826, 'BE 2296 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 986', '386 951 60 521 816', 'ANTAR KOTA'),
+(168, 1, 3, 3828, 'BE 2473 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 988', '386 951 60 521 818', 'ANTAR KOTA'),
+(169, 1, 3, 3827, 'BE 2325 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 987', '386 951 60 521 817', 'ANTAR KOTA'),
+(170, 1, 3, 3829, 'BE 2315 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 989', '386 951 60 521 819', 'ANTAR KOTA'),
+(171, 1, 3, 3830, 'BE 2342 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 990', '386 951 60 521 820', 'ANTAR KOTA'),
+(172, 1, 3, 3828, 'BE 2473 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 988', '386 951 60 521 818', 'ANTAR KOTA'),
+(173, 1, 3, 3829, 'BE 2315 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 989', '386 951 60 521 819', 'ANTAR KOTA'),
+(174, 1, 3, 3831, 'BE 2301 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 991', '386 951 60 521 821', 'ANTAR KOTA'),
+(175, 1, 3, 3830, 'BE 2342 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 990', '386 951 60 521 820', 'ANTAR KOTA'),
+(176, 1, 3, 3831, 'BE 2301 AH', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 991', '386 951 60 521 821', 'ANTAR KOTA'),
+(177, 1, 3, 3832, 'BE 2914 AE', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 992', '386 951 60 521 822', 'ANTAR KOTA'),
+(178, 1, 3, 3832, 'BE 2914 AE', 2002, 'Merecedes benz', 'MHL 684 201 2J 009 992', '386 951 60 521 822', 'ANTAR KOTA'),
+(179, 1, 3, 4507, 'BE 2580 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 181', '904 973 U0 804 555', 'ANTAR KOTA'),
+(180, 1, 3, 4507, 'BE 2580 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 181', '904 973 U0 804 555', 'ANTAR KOTA'),
+(181, 1, 3, 4508, 'BE 2604 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 182', '904 973 U0 804 329', 'ANTAR KOTA'),
+(182, 1, 3, 4508, 'BE 2604 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 182', '904 973 U0 804 329', 'ANTAR KOTA'),
+(183, 1, 3, 4509, 'BE 2605 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 190', '904 973 U0 804 541', 'ANTAR KOTA'),
+(184, 1, 3, 4509, 'BE 2605 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 190', '904 973 U0 804 541', 'ANTAR KOTA'),
+(185, 1, 3, 4510, 'BE 2612 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 189', '904 973 U0 804 786', 'ANTAR KOTA'),
+(186, 1, 3, 4510, 'BE 2612 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 189', '904 973 U0 804 786', 'ANTAR KOTA'),
+(187, 1, 3, 4511, 'BE 2614 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 191', '904 973 U0 804 310', 'ANTAR KOTA'),
+(188, 1, 3, 4511, 'BE 2614 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 191', '904 973 U0 804 310', 'ANTAR KOTA'),
+(189, 1, 3, 4512, 'BE 2615 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 192', '904 973 U0 8047 72', 'ANTAR KOTA'),
+(190, 1, 3, 4512, 'BE 2615 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 192', '904 973 U0 8047 72', 'ANTAR KOTA'),
+(191, 1, 3, 4513, 'BE 2603 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 187', '904 973 U0 804 589', 'ANTAR KOTA'),
+(192, 1, 3, 4513, 'BE 2603 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 187', '904 973 U0 804 589', 'ANTAR KOTA'),
+(193, 1, 3, 4514, 'BE 2613 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 188', '904 973 U0 804 351', 'ANTAR KOTA'),
+(194, 1, 3, 4514, 'BE 2613 CU', 2009, 'Merecedes benz', 'MHL 368 006 9J 000 188', '904 973 U0 804 351', 'ANTAR KOTA'),
+(195, 1, 3, 4752, 'BE 2166 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 448', '906 918 U0 656 880', 'ANTAR KOTA'),
+(196, 1, 3, 4752, 'BE 2166 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 448', '906 918 U0 656 880', 'ANTAR KOTA'),
+(197, 1, 3, 4754, 'BE 2342 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 457', '906 918 U0 657 460', 'ANTAR KOTA'),
+(198, 1, 3, 4754, 'BE 2342 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 457', '906 918 U0 657 460', 'ANTAR KOTA'),
+(199, 1, 3, 4760, 'BE 7114 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 463', '906 918 U0 661 339', 'ANTAR KOTA'),
+(200, 1, 3, 4760, 'BE 7114 CU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 463', '906 918 U0 661 339', 'ANTAR KOTA'),
+(201, 1, 3, 4761, 'BE 2422 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 476', '906 918 U0 661 998', 'ANTAR KOTA'),
+(202, 1, 3, 4761, 'BE 2422 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 476', '906 918 U0 661 998', 'ANTAR KOTA'),
+(203, 1, 3, 4762, 'BE 2455 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 456', '906 918 U0 657 463', 'ANTAR KOTA'),
+(204, 1, 3, 4762, 'BE 2455 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 456', '906 918 U0 657 463', 'ANTAR KOTA'),
+(205, 1, 3, 4763, 'BE 2434 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 445', '906 918 U0 655 177', 'ANTAR KOTA'),
+(206, 1, 3, 4763, 'BE 2434 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 445', '906 918 U0 655 177', 'ANTAR KOTA'),
+(207, 1, 3, 4764, 'BE 2403 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 464', '906 918 U0 661 342', 'ANTAR KOTA'),
+(208, 1, 3, 4764, 'BE 2403 AU', 2006, 'Merecedes benz', 'MHL 382 123 6J 011 464', '906 918 U0 661 342', 'ANTAR KOTA'),
+(209, 1, 3, 5312, 'BE 2136 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 569', '906 998 UI 034 992', 'ANTAR KOTA'),
+(210, 1, 3, 5312, 'BE 2136 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 569', '906 998 UI 034 992', 'ANTAR KOTA'),
+(211, 1, 3, 5313, 'BE 2235 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 572', '906 998 UI 035 208', 'ANTAR KOTA'),
+(212, 1, 3, 4725, 'BE 2943 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 365', '904 973 UO 826 434', 'ANTAR KOTA'),
+(213, 1, 3, 5313, 'BE 2235 CU', 2013, 'Merecedes benz', 'MHL 3681 006 DJ 000 572', '906 998 UI 035 208', 'ANTAR KOTA'),
+(214, 1, 3, 4725, 'BE 2943 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 365', '904 973 UO 826 434', 'ANTAR KOTA'),
+(215, 1, 3, 4726, 'BE 2809 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 346', '904 973 UO 823 557', 'ANTAR KOTA'),
+(216, 1, 3, 4726, 'BE 2809 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 346', '904 973 UO 823 557', 'ANTAR KOTA'),
+(217, 1, 3, 4727, 'BE 2938 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 261', '904 973 UO 819 306', 'ANTAR KOTA'),
+(218, 1, 3, 4727, 'BE 2938 BU', 2011, 'Merecedes benz', 'MHL 3681 006 AJ 000 261', '904 973 UO 819 306', 'ANTAR KOTA'),
+(219, 1, 3, 2967, 'BE.2171 CU', 1991, 'Merecedes benz', 'MHL 684 200 26 003 286', '386 951 60 069 840', 'ANTAR KOTA'),
+(220, 1, 3, 2967, 'BE.2171 CU', 1991, 'Merecedes benz', 'MHL 684 200 26 003 286', '386 951 60 069 840', 'ANTAR KOTA'),
+(221, 1, 3, 2990, 'BE 2896 BU', 1991, 'Merecedes benz', 'MHL 386 951 60 061 446', '684 200 26 003 063', 'ANTAR KOTA'),
+(222, 1, 3, 2941, 'BE.2316 CU', 1991, 'Merecedes benz', 'MHL 684 200 26 003 088', '386 951 60 061 885', 'ANTAR KOTA'),
+(223, 1, 3, 2990, 'BE 2896 BU', 1991, 'Merecedes benz', 'MHL 386 951 60 061 446', '684 200 26 003 063', 'ANTAR KOTA'),
+(224, 1, 3, 3399, 'BE 2759 CU', 1994, 'Merecedes benz', 'MHL 684 200 TL 005 525', '386 951 60 275 562', 'ANTAR KOTA'),
+(225, 1, 3, 2941, 'BE.2316 CU', 1991, 'Merecedes benz', 'MHL 684 200 26 003 088', '386 951 60 061 885', 'ANTAR KOTA'),
+(226, 1, 3, 4268, 'BE 2867 BS', 2007, 'Isuzu', 'B 007334', 'MHCNK71LY7J007334', 'ANTAR KOTA'),
+(227, 1, 3, 3399, 'BE 2759 CU', 1994, 'Merecedes benz', 'MHL 684 200 TL 005 525', '386 951 60 275 562', 'ANTAR KOTA'),
+(228, 1, 3, 4269, 'BE 2866 BS', 2007, 'Isuzu', 'B 007335', 'MHCNK71LY7J007335', 'ANTAR KOTA'),
+(229, 1, 3, 4270, 'BE 2865 BS', 2007, 'Isuzu', 'B 007336', 'MHCNK71LY7J007336', 'ANTAR KOTA'),
+(230, 1, 3, 4268, 'BE 2867 BS', 2007, 'Isuzu', 'B 007334', 'MHCNK71LY7J007334', 'ANTAR KOTA'),
+(231, 1, 3, 4273, 'BE 2862 BS', 2007, 'Isuzu', 'B 007339', 'MHCNK71LY7J007339', 'ANTAR KOTA'),
+(232, 1, 3, 4269, 'BE 2866 BS', 2007, 'Isuzu', 'B 007335', 'MHCNK71LY7J007335', 'ANTAR KOTA'),
+(233, 1, 3, 4274, 'BE 2861 BS', 2007, 'Isuzu', 'B 007340', 'MHCNK71LY7J007340', 'ANTAR KOTA'),
+(234, 1, 3, 4270, 'BE 2865 BS', 2007, 'Isuzu', 'B 007336', 'MHCNK71LY7J007336', 'ANTAR KOTA'),
+(235, 1, 3, 4275, 'BE 2859 BS', 2007, 'Isuzu', 'B 007341', 'MHCNK71LY7J007341', 'ANTAR KOTA'),
+(236, 1, 3, 4273, 'BE 2862 BS', 2007, 'Isuzu', 'B 007339', 'MHCNK71LY7J007339', 'ANTAR KOTA'),
+(237, 1, 3, 4276, 'BE 2860 BS', 2007, 'Isuzu', 'B 007342', 'MHCNK71LY7J007342', 'ANTAR KOTA'),
+(238, 1, 3, 4274, 'BE 2861 BS', 2007, 'Isuzu', 'B 007340', 'MHCNK71LY7J007340', 'ANTAR KOTA'),
+(239, 1, 3, 4278, 'BE 2857 BS', 2007, 'Isuzu', 'B 007344', 'MHCNK71LY7J007344', 'ANTAR KOTA'),
+(240, 1, 3, 4275, 'BE 2859 BS', 2007, 'Isuzu', 'B 007341', 'MHCNK71LY7J007341', 'ANTAR KOTA'),
+(241, 1, 3, 4279, 'BE 2856 BS', 2007, 'Isuzu', 'B 007381', 'MHCNK71LY7J007381', 'ANTAR KOTA'),
+(242, 1, 3, 4276, 'BE 2860 BS', 2007, 'Isuzu', 'B 007342', 'MHCNK71LY7J007342', 'ANTAR KOTA'),
+(243, 1, 3, 4280, 'BE 2855 BS', 2007, 'Isuzu', 'B 007382', 'MHCNK71LY7J007382', 'ANTAR KOTA'),
+(244, 1, 3, 4278, 'BE 2857 BS', 2007, 'Isuzu', 'B 007344', 'MHCNK71LY7J007344', 'ANTAR KOTA'),
+(245, 1, 3, 5414, 'BE 2398 CU', 2013, 'Hino 130MDBL', 'W04DIRJ-79520', 'MJEC1JG43ID50-80228', 'ANTAR KOTA'),
+(246, 1, 3, 4279, 'BE 2856 BS', 2007, 'Isuzu', 'B 007381', 'MHCNK71LY7J007381', 'ANTAR KOTA'),
+(247, 1, 3, 5490, 'BE 2855 BU', 2014, 'Hino 130MDBL', 'W04DT-RR-06785', 'MJE C1JG4 3E-5107519', 'ANTAR KOTA'),
+(248, 1, 3, 4280, 'BE 2855 BS', 2007, 'Isuzu', 'B 007382', 'MHCNK71LY7J007382', 'ANTAR KOTA'),
+(249, 1, 3, 5491, 'BE 2961 BU', 2014, 'Hino 130MDBL', 'W04DT-RR-06798', 'MJE C1JG4 3E-5107797', 'ANTAR KOTA'),
+(250, 1, 3, 5414, 'BE 2398 CU', 2013, 'Hino 130MDBL', 'W04DIRJ-79520', 'MJEC1JG43ID50-80228', 'ANTAR KOTA'),
+(251, 1, 3, 5490, 'BE 2855 BU', 2014, 'Hino 130MDBL', 'W04DT-RR-06785', 'MJE C1JG4 3E-5107519', 'ANTAR KOTA'),
+(252, 1, 3, 5769, 'BE 2245 CU', 2015, 'Cold Diesel', '4.D34T L70923', 'NHM FE84 B6J007148', 'ANTAR KOTA'),
+(253, 1, 3, 5491, 'BE 2961 BU', 2014, 'Hino 130MDBL', 'W04DT-RR-06798', 'MJE C1JG4 3E-5107797', 'ANTAR KOTA'),
+(254, 1, 3, 5769, 'BE 2245 CU', 2015, 'Cold Diesel', '4.D34T L70923', 'NHM FE84 B6J007148', 'ANTAR KOTA'),
+(255, 1, 3, 6184, 'BE 7099 BU', 2016, 'Cold Diesel', '4.D34T-P44762', 'NHM FE84 PBGJ007845', 'ANTAR KOTA'),
+(256, 1, 3, 6185, 'BE 7100 BU', 2016, 'Cold Diesel', '4.D34T-P44763', 'NHM FE84 PBGJ007846', 'ANTAR KOTA'),
+(257, 1, 3, 6184, 'BE 7099 BU', 2016, 'Cold Diesel', '4.D34T-P44762', 'NHM FE84 PBGJ007845', 'ANTAR KOTA'),
+(258, 1, 3, 6186, 'BE 7025 BU', 2016, 'Cold Diesel', '4.D34T-P44764', 'NHM FE84 PBGJ007847', 'ANTAR KOTA'),
+(259, 1, 3, 6185, 'BE 7100 BU', 2016, 'Cold Diesel', '4.D34T-P44763', 'NHM FE84 PBGJ007846', 'ANTAR KOTA'),
+(260, 1, 3, 6187, 'BE 7200 BU', 2016, 'Cold Diesel', '4.D34T-P44765', 'NHM FE84 PBGJ007848', 'ANTAR KOTA'),
+(261, 1, 3, 6186, 'BE 7025 BU', 2016, 'Cold Diesel', '4.D34T-P44764', 'NHM FE84 PBGJ007847', 'ANTAR KOTA'),
+(262, 1, 3, 6187, 'BE 7200 BU', 2016, 'Cold Diesel', '4.D34T-P44765', 'NHM FE84 PBGJ007848', 'ANTAR KOTA'),
+(263, 1, 3, 6188, 'BE 7071 BU', 2016, 'Cold Diesel', '4.D34T-P44770', 'NHM FE84 PBGJ007849', 'ANTAR KOTA'),
+(264, 1, 3, 6189, 'BE 7118 BU', 2016, 'Cold Diesel', '4.D34T-P44771', 'NHM FE84 PBGJ007850', 'ANTAR KOTA'),
+(265, 1, 3, 6188, 'BE 7071 BU', 2016, 'Cold Diesel', '4.D34T-P44770', 'NHM FE84 PBGJ007849', 'ANTAR KOTA'),
+(266, 1, 3, 6190, 'BE 7031 BU', 2016, 'Cold Diesel', '4.D34T-P44772', 'NHM FE84 PBGJ007851', 'ANTAR KOTA'),
+(267, 1, 3, 6189, 'BE 7118 BU', 2016, 'Cold Diesel', '4.D34T-P44771', 'NHM FE84 PBGJ007850', 'ANTAR KOTA'),
+(268, 1, 3, 6190, 'BE 7031 BU', 2016, 'Cold Diesel', '4.D34T-P44772', 'NHM FE84 PBGJ007851', 'ANTAR KOTA'),
+(269, 1, 3, 6191, 'BE 7088 BU', 2016, 'Cold Diesel', '4.D34T-P44773', 'NHM FE84 PBGJ007852', 'ANTAR KOTA'),
+(270, 1, 3, 6191, 'BE 7088 BU', 2016, 'Cold Diesel', '4.D34T-P44773', 'NHM FE84 PBGJ007852', 'ANTAR KOTA'),
+(271, 1, 3, 6024, 'BE 2712 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17827', 'JO8EUFJ.72845', 'ANTAR KOTA'),
+(272, 1, 3, 6024, 'BE 2712 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17827', 'JO8EUFJ.72845', 'ANTAR KOTA'),
+(273, 1, 3, 6025, 'BE 2897 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17828', 'JO8EUFJ.72846', 'ANTAR KOTA'),
+(274, 1, 3, 6025, 'BE 2897 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17828', 'JO8EUFJ.72846', 'ANTAR KOTA'),
+(275, 1, 3, 6035, 'BE 2831 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17837', 'JO8EUFJ.72862', 'ANTAR KOTA'),
+(276, 1, 3, 6035, 'BE 2831 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17837', 'JO8EUFJ.72862', 'ANTAR KOTA'),
+(277, 1, 3, 6036, 'BE 2947 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17839', 'JO8EUFJ.72863', 'ANTAR KOTA'),
+(278, 1, 3, 6036, 'BE 2947 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17839', 'JO8EUFJ.72863', 'ANTAR KOTA'),
+(279, 1, 3, 6037, 'BE 2839 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17840', 'JO8EUFJ.72864', 'ANTAR KOTA'),
+(280, 1, 3, 6037, 'BE 2839 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17840', 'JO8EUFJ.72864', 'ANTAR KOTA'),
+(281, 1, 3, 6040, 'BE 2769 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17845', 'JO8EUFJ.72869', 'ANTAR KOTA'),
+(282, 1, 3, 6040, 'BE 2769 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17845', 'JO8EUFJ.72869', 'ANTAR KOTA'),
+(283, 1, 3, 6044, 'BE 2706 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17849', 'JO8EUFJ.72855', 'ANTAR KOTA'),
+(284, 1, 3, 6044, 'BE 2706 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17849', 'JO8EUFJ.72855', 'ANTAR KOTA'),
+(285, 1, 3, 6045, 'BE 2748 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17850', 'JO8EUFJ.72886', 'ANTAR KOTA'),
+(286, 1, 3, 6045, 'BE 2748 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17850', 'JO8EUFJ.72886', 'ANTAR KOTA'),
+(287, 1, 3, 6046, 'BE 2821 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17851', 'JO8EUFJ.72887', 'ANTAR KOTA'),
+(288, 1, 3, 6046, 'BE 2821 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17851', 'JO8EUFJ.72887', 'ANTAR KOTA'),
+(289, 1, 3, 6047, 'BE 2823 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17852', 'JO8EUFJ.72888', 'ANTAR KOTA'),
+(290, 1, 3, 6047, 'BE 2823 BU', 2015, 'HINO RK8JSKA-NHJ/260', 'MJERK8JSKEJN 17852', 'JO8EUFJ.72888', 'ANTAR KOTA'),
+(291, 1, 3, 4267, 'BE 2868 BS', 2007, 'Isuzu', 'B 007333', 'MHCNK71LY7J007333', 'ANTAR KOTA'),
+(292, 1, 3, 4267, 'BE 2868 BS', 2007, 'Isuzu', 'B 007333', 'MHCNK71LY7J007333', 'ANTAR KOTA'),
+(293, 1, 3, 4271, 'BE 2864 BS', 2007, 'Isuzu', 'B 007337', 'MHCNK71LY7J007337', 'ANTAR KOTA'),
+(294, 1, 3, 4271, 'BE 2864 BS', 2007, 'Isuzu', 'B 007337', 'MHCNK71LY7J007337', 'ANTAR KOTA'),
+(295, 1, 3, 4272, 'BE 2863 BS', 2007, 'Isuzu', 'B 007338', 'MHCNK71LY7J007338', 'ANTAR KOTA'),
+(296, 1, 3, 4272, 'BE 2863 BS', 2007, 'Isuzu', 'B 007338', 'MHCNK71LY7J007338', 'ANTAR KOTA'),
+(297, 1, 3, 4277, 'BE 2858 BS', 2007, 'Isuzu', 'B 007343', 'MHCNK71LY7J007343', 'ANTAR KOTA'),
+(298, 1, 3, 4277, 'BE 2858 BS', 2007, 'Isuzu', 'B 007343', 'MHCNK71LY7J007343', 'ANTAR KOTA'),
+(299, 1, 3, 4281, 'BE 2854 BS', 2007, 'Isuzu', 'B 007383', 'MHCNK71LY7J007383', 'ANTAR KOTA'),
+(300, 1, 3, 4281, 'BE 2854 BS', 2007, 'Isuzu', 'B 007383', 'MHCNK71LY7J007383', 'ANTAR KOTA'),
+(301, 1, 3, 4384, 'BE 2981 CU', 2008, 'Hino Dutro', 'MJECIJG 44840-12605', 'W04DTNJ-19520', 'ANTAR KOTA'),
+(302, 1, 3, 4385, 'BE 2984 BU', 2008, 'Hino Dutro', 'MJECIJG 44840-12606', 'W04DTNJ-19633', 'ANTAR KOTA'),
+(303, 1, 3, 4384, 'BE 2981 CU', 2008, 'Hino Dutro', 'MJECIJG 44840-12605', 'W04DTNJ-19520', 'ANTAR KOTA'),
+(304, 1, 3, 4562, 'BE 2713 CU', 2009, 'Hyundai', 'D4DB8376972', 'MJTHP1DBR9J600116', 'ANTAR KOTA'),
+(305, 1, 3, 4385, 'BE 2984 BU', 2008, 'Hino Dutro', 'MJECIJG 44840-12606', 'W04DTNJ-19633', 'ANTAR KOTA'),
+(306, 1, 3, 4566, 'BE 2721 CU', 2009, 'Hyundai', 'D4DB8376971', 'MJTHP1DBR9J600117', 'ANTAR KOTA'),
+(307, 1, 3, 4628, 'BE 2811 CU', 2009, 'Hyundai', 'D4DB8359455', 'MJTHP1DBR4501027', 'ANTAR KOTA'),
+(308, 1, 3, 4562, 'BE 2713 CU', 2009, 'Hyundai', 'D4DB8376972', 'MJTHP1DBR9J600116', 'ANTAR KOTA'),
+(309, 1, 3, 4566, 'BE 2721 CU', 2009, 'Hyundai', 'D4DB8376971', 'MJTHP1DBR9J600117', 'ANTAR KOTA'),
+(310, 1, 3, 4777, 'BE 7649 AU', 2011, 'Isuzu', 'B022299', 'MHCNK71LYBJ022299', 'ANTAR KOTA'),
+(311, 1, 3, 4628, 'BE 2811 CU', 2009, 'Hyundai', 'D4DB8359455', 'MJTHP1DBR4501027', 'ANTAR KOTA'),
+(312, 1, 3, 4778, 'BE 7763 AU', 2011, 'Isuzu', 'B022300', 'MHCNK71LYBJ022300', 'ANTAR KOTA'),
+(313, 1, 3, 4955, 'BE 2610 BU', 2011, 'Isuzu', 'B035079', 'MHCNK71LYBJ035079', 'ANTAR KOTA'),
+(314, 1, 3, 4777, 'BE 7649 AU', 2011, 'Isuzu', 'B022299', 'MHCNK71LYBJ022299', 'ANTAR KOTA'),
+(315, 1, 3, 4956, 'BE 2599 BU', 2011, 'Isuzu', 'B035129', 'MHCNK71YBJ035129', 'ANTAR KOTA'),
+(316, 1, 3, 4778, 'BE 7763 AU', 2011, 'Isuzu', 'B022300', 'MHCNK71LYBJ022300', 'ANTAR KOTA'),
+(317, 1, 3, 5007, 'BE 7131 AU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 076', '906 998 U0 961 185', 'ANTAR KOTA'),
+(318, 1, 3, 4955, 'BE 2610 BU', 2011, 'Isuzu', 'B035079', 'MHCNK71LYBJ035079', 'ANTAR KOTA'),
+(319, 1, 3, 4956, 'BE 2599 BU', 2011, 'Isuzu', 'B035129', 'MHCNK71YBJ035129', 'ANTAR KOTA'),
+(320, 1, 3, 5007, 'BE 7131 AU', 2012, 'Mercedes Benz', 'MHL 368 006 CJ 002 076', '906 998 U0 961 185', 'ANTAR KOTA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_cabang`
+--
+
+CREATE TABLE `tbl_cabang` (
+  `id_cabang` int(10) NOT NULL,
+  `id_divre` int(10) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `provinsi` varchar(100) NOT NULL,
+  `kode_pos` int(10) NOT NULL,
+  `telp` varchar(15) NOT NULL,
+  `fax` varchar(15) NOT NULL,
+  `email_cabang` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_cabang`
+--
+
+INSERT INTO `tbl_cabang` (`id_cabang`, `id_divre`, `nama`, `alamat`, `provinsi`, `kode_pos`, `telp`, `fax`, `email_cabang`) VALUES
+(1, 1, 'Damri Pusat', '', '', 0, '', '', ''),
+(3, 1, 'Bandar Lampung', 'Jl.Kapt.Abd.Haq No.28', 'LAMPUNG', 35144, '0721-706532', '0721-706532', 'admin.lampung@damri.co.id');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_count`
+--
+
+CREATE TABLE `tbl_count` (
+  `id_count` int(10) NOT NULL,
+  `tgl_berangkat` varchar(15) DEFAULT NULL,
+  `id_jam` int(10) DEFAULT NULL,
+  `id_trayek` int(10) DEFAULT NULL,
+  `id_layanan` int(10) DEFAULT NULL,
+  `jml_penumpang` int(10) DEFAULT NULL,
+  `jml_seat` int(10) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `hasil_analisis` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_count`
+--
+
+INSERT INTO `tbl_count` (`id_count`, `tgl_berangkat`, `id_jam`, `id_trayek`, `id_layanan`, `jml_penumpang`, `jml_seat`, `status`, `hasil_analisis`) VALUES
+(6, '2019-06-29', 1, 1, 1, 66, 92, '1', 'Laris'),
+(7, '2019-07-04', 3, 3, 2, 29, 30, '1', 'Laris'),
+(8, '2019-07-04', 3, 2, 2, 28, 30, '1', 'Laris'),
+(9, '2019-07-04', 1, 3, 3, 38, 40, '1', 'Laris'),
+(10, '2019-07-04', 2, 2, 2, 1, 30, '1', 'Tidak Laris'),
+(11, '2019-07-04', 1, 1, 1, 84, 92, '1', 'Laris'),
+(12, '2019-07-04', 1, 2, 2, 45, 60, '1', 'Tidak Laris'),
+(14, '2019-07-04', 4, 8, 1, 3, 23, '1', 'Laris'),
+(15, '2019-07-04', 6, 43, 1, 20, 23, '1', 'Laris'),
+(16, '2019-07-04', 5, 45, 2, 29, 30, '1', 'Laris'),
+(17, '2019-07-04', 3, 45, 3, 11, 40, '1', 'Tidak Laris'),
+(18, '2019-07-04', 3, 48, 2, 28, 30, '1', 'Laris'),
+(19, '2019-07-04', 1, 9, 2, 27, 30, '1', 'Laris'),
+(20, '2019-07-04', 6, 22, 2, 3, 30, '1', 'Tidak Laris'),
+(21, '2019-07-04', 6, 3, 2, 12, 30, '1', 'Tidak Laris'),
+(22, '2019-07-04', 5, 46, 2, 17, 30, '1', 'Tidak Laris'),
+(23, '2019-07-04', 4, 19, 2, 19, 30, '1', 'Tidak Laris'),
+(24, '2019-07-04', 4, 20, 2, 25, 30, '1', 'Laris'),
+(25, '2019-07-04', 4, 44, 3, 12, 40, '1', 'Tidak Laris'),
+(26, '2019-07-05', 5, 20, 3, 39, 40, '1', 'Laris'),
+(27, '2019-07-05', 5, 46, 2, 27, 30, '1', 'Laris'),
+(28, '2019-07-05', 4, 3, 3, 25, 40, '1', 'Laris'),
+(29, '2019-07-05', 5, 9, 1, 21, 23, '1', 'Laris'),
+(30, '2019-07-05', 1, 42, 1, 18, 23, '1', 'Laris'),
+(31, '2019-07-05', 1, 1, 1, 54, 92, '1', 'Laris');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_divre`
+--
+
+CREATE TABLE `tbl_divre` (
+  `id_divre` int(10) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `kode_pos` int(10) NOT NULL,
+  `telp` varchar(15) NOT NULL,
+  `fax` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_divre`
+--
+
+INSERT INTO `tbl_divre` (`id_divre`, `nama`, `alamat`, `kode_pos`, `telp`, `fax`) VALUES
+(0, 'Damri Pusat', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802'),
+(1, 'Divre 1 Jakarta', 'Jl.Angkasa No.17B Kemayoran', 10610, '021-4246802', '021-4246802'),
+(2, 'Divre 2 Semarang', 'Jl.Mpu Tantular No.8 ', 50175, '024-3544712', '024-3586280'),
+(3, 'Divre 3 Surabaya', 'Jl.Raya Kalirungkrut No.7A', 60293, '031-8490118', '031-8490142'),
+(4, 'Divre 4 Jayapura', 'Jl.Pasifik Indah 17, Ex Bengkel PU Pasir II', 99117, '0967-5620177', '0967-5620177'),
+(5, 'Satuan Pengawasan Intern', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802'),
+(6, 'Direktorat Komersial & Pengembangan Usaha', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802'),
+(7, 'Direktorat Keselamatan & Pelayanan', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802'),
+(8, 'Direktorat Teknik', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802'),
+(9, 'Direktorat Keuangan', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802'),
+(10, 'Direktorat SDM & Adm. Umum', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802'),
+(11, 'Biro Renlitbang & Teknologi Informasi', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802'),
+(12, 'Biro Sekretariat Perusahaan', 'Jl. Matraman Jakarta Pusat', 10610, '021-4246802', '021-4246802');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_helpdesk`
+--
+
+CREATE TABLE `tbl_helpdesk` (
+  `id_helpdesk` int(10) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `inbox` varchar(255) DEFAULT NULL,
+  `outbox` varchar(255) DEFAULT NULL,
+  `tanggal` varchar(25) DEFAULT NULL,
+  `trash` int(10) DEFAULT NULL,
+  `status` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_helpdesk`
+--
+
+INSERT INTO `tbl_helpdesk` (`id_helpdesk`, `nama`, `email`, `inbox`, `outbox`, `tanggal`, `trash`, `status`) VALUES
+(1, 'Erma Noviana', 'ermafel@gmail.com', 'Apakah DAMRI banyak cabangnya?', '0', '30-06-2019:06:25:33', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_jadwal`
+--
+
+CREATE TABLE `tbl_jadwal` (
+  `id_jadwal` int(10) NOT NULL,
+  `id_divre` int(10) DEFAULT NULL,
+  `id_cabang` int(10) DEFAULT NULL,
+  `id_jam` int(10) DEFAULT NULL,
+  `id_armada` int(10) DEFAULT NULL,
+  `id_trayek` int(10) DEFAULT NULL,
+  `id_layanan` int(10) DEFAULT NULL,
+  `harga` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_jadwal`
+--
+
+INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_divre`, `id_cabang`, `id_jam`, `id_armada`, `id_trayek`, `id_layanan`, `harga`) VALUES
+(1, 1, 3, 1, 1, 1, 1, '235000'),
+(2, 1, 3, 5, 1, 2, 1, '235000'),
+(3, 1, 3, 5, 2, 1, 1, '235000'),
+(4, 1, 3, 1, 2, 2, 1, '235000'),
+(5, 1, 3, 2, 3, 1, 1, '235000'),
+(6, 1, 3, 6, 3, 2, 1, '235000'),
+(7, 1, 3, 6, 4, 1, 1, '235000'),
+(8, 1, 3, 2, 4, 2, 1, '235000'),
+(9, 1, 3, 2, 21, 1, 2, '205000'),
+(10, 1, 3, 6, 21, 2, 2, '205000'),
+(11, 1, 3, 3, 29, 1, 3, '160000'),
+(12, 1, 3, 6, 29, 2, 3, '160000'),
+(13, 1, 3, 3, 5, 1, 1, '235000'),
+(14, 1, 3, 5, 5, 2, 1, '235000'),
+(15, 1, 3, 5, 6, 1, 1, '235000'),
+(16, 1, 3, 3, 6, 2, 1, '235000'),
+(17, 1, 3, 6, 22, 1, 2, '205000'),
+(18, 1, 3, 2, 22, 2, 2, '205000'),
+(19, 1, 3, 6, 30, 1, 3, '160000'),
+(20, 1, 3, 3, 30, 2, 3, '160000'),
+(21, 1, 3, 6, 7, 1, 1, '235000'),
+(22, 1, 3, 1, 7, 2, 1, '235000'),
+(23, 1, 3, 1, 8, 1, 1, '235000'),
+(24, 1, 3, 6, 8, 2, 1, '235000'),
+(25, 1, 3, 1, 23, 1, 2, '205000'),
+(26, 1, 3, 5, 23, 2, 2, '205000'),
+(27, 1, 3, 2, 31, 1, 3, '160000'),
+(28, 1, 3, 5, 31, 2, 3, '160000'),
+(29, 1, 3, 2, 9, 1, 1, '235000'),
+(30, 1, 3, 5, 9, 2, 1, '235000'),
+(31, 1, 3, 5, 10, 1, 1, '235000'),
+(32, 1, 3, 2, 10, 2, 1, '235000'),
+(33, 1, 3, 3, 11, 1, 1, '235000'),
+(34, 1, 3, 6, 11, 2, 1, '235000'),
+(35, 1, 3, 6, 12, 1, 1, '235000'),
+(36, 1, 3, 5, 24, 1, 2, '205000'),
+(37, 1, 3, 1, 24, 2, 2, '205000'),
+(38, 1, 3, 2, 32, 1, 3, '160000'),
+(39, 1, 3, 5, 32, 2, 3, '160000'),
+(40, 1, 3, 1, 33, 1, 3, '160000'),
+(41, 1, 3, 5, 33, 2, 3, '160000'),
+(42, 1, 3, 3, 12, 2, 1, '235000'),
+(43, 1, 3, 1, 13, 1, 1, '235000'),
+(44, 1, 3, 4, 13, 2, 1, '235000'),
+(45, 1, 3, 4, 14, 1, 1, '235000'),
+(46, 1, 3, 1, 14, 2, 1, '235000'),
+(47, 1, 3, 3, 25, 1, 2, '205000'),
+(48, 1, 3, 6, 25, 2, 2, '205000'),
+(49, 1, 3, 5, 34, 1, 3, '160000'),
+(50, 1, 3, 1, 34, 2, 3, '160000'),
+(51, 1, 3, 1, 35, 1, 3, '160000'),
+(52, 1, 3, 4, 35, 2, 3, '160000'),
+(53, 1, 3, 4, 36, 1, 3, '160000'),
+(54, 1, 3, 3, 15, 1, 1, '235000'),
+(55, 1, 3, 6, 15, 2, 1, '235000'),
+(56, 1, 3, 6, 16, 1, 1, '235000'),
+(57, 1, 3, 3, 16, 2, 1, '235000'),
+(58, 1, 3, 6, 26, 1, 2, '205000'),
+(59, 1, 3, 3, 26, 2, 2, '205000'),
+(60, 1, 3, 1, 36, 2, 3, '160000'),
+(61, 1, 3, 3, 37, 1, 3, '160000'),
+(62, 1, 3, 6, 37, 2, 3, '160000'),
+(63, 1, 3, 4, 17, 1, 1, '235000'),
+(64, 1, 3, 1, 17, 2, 1, '235000'),
+(65, 1, 3, 1, 18, 1, 1, '235000'),
+(66, 1, 3, 4, 18, 2, 1, '235000'),
+(67, 1, 3, 1, 27, 1, 2, '205000'),
+(68, 1, 3, 6, 27, 2, 2, '205000'),
+(69, 1, 3, 6, 38, 1, 3, '160000'),
+(70, 1, 3, 3, 38, 2, 3, '160000'),
+(71, 1, 3, 2, 39, 1, 3, '160000'),
+(72, 1, 3, 5, 19, 1, 1, '235000'),
+(73, 1, 3, 3, 19, 2, 1, '235000'),
+(74, 1, 3, 3, 20, 1, 1, '235000'),
+(75, 1, 3, 5, 20, 2, 1, '235000'),
+(76, 1, 3, 6, 28, 1, 2, '205000'),
+(77, 1, 3, 1, 28, 2, 2, '205000'),
+(78, 1, 3, 6, 39, 2, 3, '160000'),
+(79, 1, 3, 6, 40, 1, 3, '160000'),
+(80, 1, 3, 2, 40, 2, 3, '160000'),
+(81, 1, 3, 1, 41, 3, 1, '185000'),
+(82, 1, 3, 4, 41, 4, 1, '185000'),
+(83, 1, 3, 4, 42, 3, 1, '185000'),
+(84, 1, 3, 1, 42, 4, 1, '185000'),
+(85, 1, 3, 2, 43, 3, 1, '185000'),
+(86, 1, 3, 6, 43, 4, 1, '185000'),
+(87, 1, 3, 6, 44, 3, 1, '185000'),
+(88, 1, 3, 2, 44, 4, 1, '185000'),
+(89, 1, 3, 3, 45, 3, 1, '185000'),
+(90, 1, 3, 5, 45, 4, 1, '185000'),
+(91, 1, 3, 5, 46, 3, 1, '185000'),
+(92, 1, 3, 3, 46, 4, 1, '185000'),
+(93, 1, 3, 1, 47, 3, 1, '185000'),
+(94, 1, 3, 6, 47, 4, 1, '185000'),
+(95, 1, 3, 6, 48, 3, 1, '185000'),
+(96, 1, 3, 2, 48, 4, 1, '185000'),
+(97, 1, 3, 3, 49, 3, 2, '175000'),
+(98, 1, 3, 5, 49, 4, 2, '175000'),
+(99, 1, 3, 5, 50, 3, 2, '175000'),
+(100, 1, 3, 3, 50, 4, 2, '175000'),
+(101, 1, 3, 1, 51, 3, 2, '175000'),
+(102, 1, 3, 6, 51, 4, 2, '175000'),
+(103, 1, 3, 6, 52, 3, 2, '175000'),
+(104, 1, 3, 2, 52, 4, 2, '175000'),
+(105, 1, 3, 4, 53, 3, 3, '160000'),
+(106, 1, 3, 1, 53, 4, 3, '160000'),
+(107, 1, 3, 1, 54, 3, 3, '160000'),
+(108, 1, 3, 4, 54, 4, 3, '160000'),
+(109, 1, 3, 1, 55, 5, 1, '255000'),
+(110, 1, 3, 5, 55, 6, 1, '255000'),
+(111, 1, 3, 5, 56, 5, 1, '255000'),
+(112, 1, 3, 1, 56, 6, 1, '255000'),
+(113, 1, 3, 2, 57, 5, 1, '255000'),
+(114, 1, 3, 6, 57, 6, 1, '255000'),
+(115, 1, 3, 6, 58, 5, 1, '255000'),
+(116, 1, 3, 2, 58, 6, 1, '255000'),
+(117, 1, 3, 4, 59, 5, 1, '255000'),
+(118, 1, 3, 1, 59, 6, 1, '255000'),
+(119, 1, 3, 1, 60, 5, 1, '255000'),
+(120, 1, 3, 4, 60, 6, 1, '255000'),
+(121, 1, 3, 3, 61, 5, 1, '255000'),
+(122, 1, 3, 5, 61, 6, 1, '255000'),
+(123, 1, 3, 5, 62, 5, 1, '255000'),
+(124, 1, 3, 3, 62, 6, 1, '255000'),
+(125, 1, 3, 4, 63, 5, 2, '220000'),
+(126, 1, 3, 1, 63, 6, 2, '220000'),
+(127, 1, 3, 1, 64, 5, 2, '220000'),
+(128, 1, 3, 4, 64, 6, 2, '220000'),
+(129, 1, 3, 3, 65, 5, 2, '220000'),
+(130, 1, 3, 5, 65, 6, 2, '220000'),
+(131, 1, 3, 5, 66, 5, 2, '220000'),
+(132, 1, 3, 3, 66, 6, 2, '220000'),
+(133, 1, 3, 4, 67, 5, 3, '195000'),
+(134, 1, 3, 1, 67, 6, 3, '195000'),
+(135, 1, 3, 1, 68, 5, 3, '195000'),
+(136, 1, 3, 4, 68, 6, 3, '195000'),
+(137, 1, 3, 1, 69, 5, 3, '195000'),
+(138, 1, 3, 6, 69, 6, 3, '195000'),
+(139, 1, 3, 6, 70, 5, 3, '195000'),
+(140, 1, 3, 1, 70, 6, 3, '195000'),
+(141, 1, 3, 3, 71, 5, 3, '195000'),
+(142, 1, 3, 6, 71, 6, 3, '195000'),
+(143, 1, 3, 6, 72, 5, 3, '195000'),
+(144, 1, 3, 3, 72, 6, 3, '195000'),
+(145, 1, 3, 4, 73, 7, 1, '265000'),
+(146, 1, 3, 1, 73, 8, 1, '265000'),
+(147, 1, 3, 1, 74, 7, 1, '265000'),
+(148, 1, 3, 4, 74, 8, 1, '265000'),
+(149, 1, 3, 3, 75, 7, 1, '265000'),
+(150, 1, 3, 5, 75, 8, 1, '265000'),
+(151, 1, 3, 5, 76, 7, 1, '265000'),
+(152, 1, 3, 3, 76, 8, 1, '265000'),
+(153, 1, 3, 4, 78, 7, 2, '220000'),
+(154, 1, 3, 1, 78, 8, 2, '220000'),
+(155, 1, 3, 1, 79, 7, 2, '220000'),
+(156, 1, 3, 4, 79, 8, 2, '220000'),
+(157, 1, 3, 1, 80, 7, 3, '195000'),
+(158, 1, 3, 6, 80, 8, 3, '195000'),
+(159, 1, 3, 6, 81, 7, 3, '195000'),
+(160, 1, 3, 1, 81, 8, 3, '195000'),
+(161, 1, 3, 3, 82, 7, 3, '195000'),
+(162, 1, 3, 6, 82, 8, 3, '195000'),
+(163, 1, 3, 6, 83, 7, 3, '195000'),
+(164, 1, 3, 3, 83, 8, 3, '195000'),
+(165, 1, 3, 3, 84, 7, 3, '195000'),
+(166, 1, 3, 5, 84, 8, 3, '195000'),
+(167, 1, 3, 5, 85, 7, 3, '195000'),
+(168, 1, 3, 3, 85, 8, 3, '195000'),
+(169, 1, 3, 1, 86, 7, 3, '195000'),
+(170, 1, 3, 6, 86, 8, 3, '195000'),
+(171, 1, 3, 6, 87, 7, 3, '195000'),
+(172, 1, 3, 1, 87, 8, 3, '195000'),
+(173, 1, 3, 3, 89, 9, 1, '300000'),
+(174, 1, 3, 5, 89, 10, 1, '300000'),
+(175, 1, 3, 5, 90, 9, 1, '300000'),
+(176, 1, 3, 3, 90, 10, 1, '300000'),
+(177, 1, 3, 1, 91, 9, 2, '290000'),
+(178, 1, 3, 6, 91, 10, 2, '290000'),
+(179, 1, 3, 6, 92, 9, 2, '290000'),
+(180, 1, 3, 1, 92, 10, 2, '290000'),
+(181, 1, 3, 2, 93, 9, 3, '280000'),
+(182, 1, 3, 6, 93, 10, 3, '280000'),
+(183, 1, 3, 6, 94, 9, 3, '280000'),
+(184, 1, 3, 2, 94, 10, 3, '280000'),
+(185, 1, 3, 1, 95, 11, 1, '240000'),
+(186, 1, 3, 6, 95, 12, 1, '240000'),
+(187, 1, 3, 6, 96, 11, 1, '240000'),
+(188, 1, 3, 1, 96, 12, 1, '240000'),
+(189, 1, 3, 2, 97, 11, 1, '240000'),
+(190, 1, 3, 6, 97, 12, 1, '240000'),
+(191, 1, 3, 6, 98, 11, 1, '240000'),
+(192, 1, 3, 2, 98, 12, 1, '240000'),
+(193, 1, 3, 4, 99, 11, 2, '220000'),
+(194, 1, 3, 1, 99, 12, 2, '220000'),
+(195, 1, 3, 1, 100, 11, 2, '220000'),
+(196, 1, 3, 4, 100, 12, 2, '220000'),
+(197, 1, 3, 1, 101, 11, 2, '220000'),
+(198, 1, 3, 6, 101, 12, 2, '220000'),
+(199, 1, 3, 6, 102, 11, 2, '220000'),
+(200, 1, 3, 1, 102, 12, 2, '220000'),
+(201, 1, 3, 3, 103, 11, 3, '215000'),
+(202, 1, 3, 5, 103, 12, 3, '215000'),
+(203, 1, 3, 5, 104, 11, 3, '215000'),
+(204, 1, 3, 3, 104, 12, 3, '215000'),
+(205, 1, 3, 1, 105, 19, 1, '255000'),
+(206, 1, 3, 6, 105, 20, 1, '255000'),
+(207, 1, 3, 6, 106, 19, 1, '255000'),
+(208, 1, 3, 1, 106, 20, 1, '255000'),
+(209, 1, 3, 2, 107, 19, 1, '255000'),
+(210, 1, 3, 6, 107, 20, 1, '255000'),
+(211, 1, 3, 6, 108, 19, 1, '255000'),
+(212, 1, 3, 2, 108, 20, 1, '255000'),
+(213, 1, 3, 4, 109, 19, 2, '210000'),
+(214, 1, 3, 1, 109, 20, 2, '210000'),
+(215, 1, 3, 1, 110, 19, 2, '210000'),
+(216, 1, 3, 4, 110, 20, 2, '210000'),
+(217, 1, 3, 3, 111, 19, 3, '180000'),
+(218, 1, 3, 5, 111, 20, 3, '180000'),
+(219, 1, 3, 5, 112, 19, 3, '180000'),
+(220, 1, 3, 3, 112, 20, 3, '180000'),
+(221, 1, 3, 1, 113, 21, 1, '300000'),
+(222, 1, 3, 6, 113, 22, 1, '300000'),
+(223, 1, 3, 6, 114, 21, 1, '300000'),
+(224, 1, 3, 1, 114, 22, 1, '300000'),
+(225, 1, 3, 2, 115, 21, 2, '245000'),
+(226, 1, 3, 6, 115, 22, 2, '245000'),
+(227, 1, 3, 6, 116, 21, 2, '245000'),
+(228, 1, 3, 2, 116, 22, 2, '245000'),
+(229, 1, 3, 1, 117, 21, 3, '180000'),
+(230, 1, 3, 2, 117, 22, 3, '180000'),
+(231, 1, 3, 2, 118, 21, 3, '180000'),
+(232, 1, 3, 1, 118, 22, 3, '180000'),
+(233, 1, 3, 3, 119, 21, 3, '180000'),
+(234, 1, 3, 1, 119, 22, 3, '180000'),
+(235, 1, 3, 1, 200, 21, 3, '180000'),
+(236, 1, 3, 3, 200, 22, 3, '180000'),
+(237, 1, 3, 3, 201, 23, 1, '275000'),
+(238, 1, 3, 2, 201, 24, 1, '275000'),
+(239, 1, 3, 2, 202, 23, 1, '275000'),
+(240, 1, 3, 3, 202, 24, 1, '275000'),
+(241, 1, 3, 6, 203, 23, 2, '220000'),
+(242, 1, 3, 4, 203, 24, 2, '220000'),
+(243, 1, 3, 4, 204, 23, 2, '220000'),
+(244, 1, 3, 6, 204, 24, 2, '220000'),
+(245, 1, 3, 3, 205, 23, 3, '180000'),
+(246, 1, 3, 1, 205, 24, 3, '180000'),
+(247, 1, 3, 1, 206, 23, 3, '180000'),
+(248, 1, 3, 3, 206, 24, 3, '180000'),
+(249, 1, 3, 6, 207, 23, 3, '180000'),
+(250, 1, 3, 3, 207, 24, 3, '180000'),
+(251, 1, 3, 3, 208, 23, 3, '180000'),
+(252, 1, 3, 6, 208, 24, 3, '180000'),
+(253, 1, 3, 1, 209, 25, 1, '290000'),
+(254, 1, 3, 5, 209, 26, 1, '290000'),
+(255, 1, 3, 5, 210, 25, 1, '290000'),
+(256, 1, 3, 1, 210, 26, 1, '290000'),
+(257, 1, 3, 6, 211, 25, 2, '250000'),
+(258, 1, 3, 2, 211, 26, 2, '250000'),
+(259, 1, 3, 2, 212, 25, 2, '250000'),
+(260, 1, 3, 6, 212, 26, 2, '250000'),
+(261, 1, 3, 5, 213, 25, 3, '200000'),
+(262, 1, 3, 1, 213, 26, 3, '200000'),
+(263, 1, 3, 1, 214, 25, 3, '200000'),
+(264, 1, 3, 5, 214, 26, 3, '200000'),
+(265, 1, 3, 2, 215, 27, 1, '270000'),
+(266, 1, 3, 6, 215, 28, 1, '270000'),
+(267, 1, 3, 6, 216, 27, 1, '270000'),
+(268, 1, 3, 2, 216, 28, 1, '270000'),
+(269, 1, 3, 3, 217, 27, 2, '220000'),
+(270, 1, 3, 1, 217, 28, 2, '220000'),
+(271, 1, 3, 1, 218, 27, 2, '220000'),
+(272, 1, 3, 3, 218, 28, 2, '220000'),
+(273, 1, 3, 4, 219, 27, 3, '180000'),
+(274, 1, 3, 1, 219, 28, 3, '180000'),
+(275, 1, 3, 1, 220, 27, 3, '180000'),
+(276, 1, 3, 4, 220, 28, 3, '180000'),
+(277, 1, 3, 1, 221, 33, 1, '280000'),
+(278, 1, 3, 6, 221, 34, 1, '280000'),
+(279, 1, 3, 6, 222, 33, 1, '280000'),
+(280, 1, 3, 1, 222, 34, 1, '280000'),
+(281, 1, 3, 5, 223, 33, 2, '230000'),
+(282, 1, 3, 3, 223, 34, 2, '230000'),
+(283, 1, 3, 3, 224, 33, 2, '230000'),
+(284, 1, 3, 5, 224, 34, 2, '230000'),
+(285, 1, 3, 2, 225, 33, 3, '170000'),
+(286, 1, 3, 1, 225, 34, 3, '170000'),
+(287, 1, 3, 1, 226, 33, 3, '170000'),
+(288, 1, 3, 2, 226, 34, 3, '170000'),
+(289, 1, 3, 5, 227, 35, 1, '280000'),
+(290, 1, 3, 2, 227, 36, 1, '280000'),
+(291, 1, 3, 2, 228, 35, 1, '280000'),
+(292, 1, 3, 5, 228, 36, 1, '280000'),
+(293, 1, 3, 6, 229, 35, 2, '245000'),
+(294, 1, 3, 2, 229, 36, 2, '245000'),
+(295, 1, 3, 2, 230, 35, 2, '245000'),
+(296, 1, 3, 6, 230, 36, 2, '245000'),
+(297, 1, 3, 4, 231, 35, 3, '190000'),
+(298, 1, 3, 1, 231, 36, 3, '190000'),
+(299, 1, 3, 1, 232, 35, 3, '190000'),
+(300, 1, 3, 4, 232, 36, 3, '190000'),
+(301, 1, 3, 3, 233, 35, 3, '190000'),
+(302, 1, 3, 1, 233, 36, 3, '190000'),
+(303, 1, 3, 1, 234, 35, 3, '190000'),
+(304, 1, 3, 3, 234, 36, 3, '190000'),
+(305, 1, 3, 1, 235, 37, 1, '270000'),
+(306, 1, 3, 6, 235, 38, 1, '270000'),
+(307, 1, 3, 6, 236, 37, 1, '270000'),
+(308, 1, 3, 1, 236, 38, 1, '270000'),
+(309, 1, 3, 3, 237, 37, 2, '220000'),
+(310, 1, 3, 1, 237, 38, 2, '220000'),
+(311, 1, 3, 1, 238, 37, 2, '220000'),
+(312, 1, 3, 3, 238, 38, 2, '220000'),
+(313, 1, 3, 5, 239, 37, 3, '185000'),
+(314, 1, 3, 2, 239, 38, 3, '185000'),
+(315, 1, 3, 2, 240, 37, 3, '185000'),
+(316, 1, 3, 5, 240, 38, 3, '185000'),
+(317, 1, 3, 4, 241, 39, 1, '290000'),
+(318, 1, 3, 2, 241, 40, 1, '290000'),
+(319, 1, 3, 2, 242, 39, 1, '290000'),
+(320, 1, 3, 4, 242, 40, 1, '290000'),
+(321, 1, 3, 5, 243, 39, 2, '250000'),
+(322, 1, 3, 2, 243, 40, 2, '250000'),
+(323, 1, 3, 2, 244, 39, 2, '250000'),
+(324, 1, 3, 5, 244, 40, 2, '250000'),
+(325, 1, 3, 1, 245, 39, 3, '190000'),
+(326, 1, 3, 6, 245, 40, 3, '190000'),
+(327, 1, 3, 6, 246, 39, 3, '190000'),
+(328, 1, 3, 1, 246, 40, 3, '190000'),
+(329, 1, 3, 1, 247, 41, 1, '280000'),
+(330, 1, 3, 6, 247, 42, 1, '280000'),
+(331, 1, 3, 6, 248, 41, 1, '280000'),
+(332, 1, 3, 1, 248, 42, 1, '280000'),
+(333, 1, 3, 3, 249, 41, 2, '240000'),
+(334, 1, 3, 1, 249, 42, 2, '240000'),
+(335, 1, 3, 1, 250, 41, 2, '240000'),
+(336, 1, 3, 3, 250, 42, 2, '240000'),
+(337, 1, 3, 6, 251, 41, 3, '180000'),
+(338, 1, 3, 3, 251, 42, 3, '180000'),
+(339, 1, 3, 3, 252, 41, 3, '180000'),
+(340, 1, 3, 6, 252, 42, 3, '180000'),
+(341, 1, 3, 1, 253, 43, 1, '300000'),
+(342, 1, 3, 6, 253, 44, 1, '300000'),
+(343, 1, 3, 6, 254, 43, 1, '300000'),
+(344, 1, 3, 1, 254, 44, 1, '300000'),
+(345, 1, 3, 2, 255, 43, 2, '260000'),
+(346, 1, 3, 6, 255, 44, 2, '260000'),
+(347, 1, 3, 6, 256, 43, 2, '260000'),
+(348, 1, 3, 2, 256, 44, 2, '260000'),
+(349, 1, 3, 4, 257, 43, 3, '200000'),
+(350, 1, 3, 1, 257, 44, 3, '200000'),
+(351, 1, 3, 1, 258, 43, 3, '200000'),
+(352, 1, 3, 4, 258, 44, 3, '200000'),
+(353, 1, 3, 3, 259, 43, 3, '200000'),
+(354, 1, 3, 1, 259, 44, 3, '200000'),
+(355, 1, 3, 1, 260, 43, 3, '200000'),
+(356, 1, 3, 3, 260, 44, 3, '200000'),
+(357, 1, 3, 2, 261, 45, 1, '285000'),
+(358, 1, 3, 6, 261, 46, 1, '285000'),
+(359, 1, 3, 6, 262, 45, 1, '285000'),
+(360, 1, 3, 2, 262, 46, 1, '285000'),
+(361, 1, 3, 5, 263, 45, 2, '230000'),
+(362, 1, 3, 2, 263, 46, 2, '230000'),
+(363, 1, 3, 2, 264, 45, 2, '230000'),
+(364, 1, 3, 5, 264, 46, 2, '230000'),
+(365, 1, 3, 3, 265, 45, 3, '195000'),
+(366, 1, 3, 1, 265, 46, 3, '195000'),
+(367, 1, 3, 1, 266, 45, 3, '195000'),
+(368, 1, 3, 3, 266, 46, 3, '195000'),
+(369, 1, 3, 2, 267, 47, 1, '275000'),
+(370, 1, 3, 1, 267, 48, 1, '275000'),
+(371, 1, 3, 1, 268, 47, 1, '275000'),
+(372, 1, 3, 2, 268, 48, 1, '275000'),
+(373, 1, 3, 3, 269, 47, 2, '230000'),
+(374, 1, 3, 1, 269, 48, 2, '230000'),
+(375, 1, 3, 1, 270, 47, 2, '230000'),
+(376, 1, 3, 3, 270, 48, 2, '230000'),
+(377, 1, 3, 5, 271, 47, 3, '190000'),
+(378, 1, 3, 2, 271, 48, 3, '190000'),
+(379, 1, 3, 2, 272, 47, 3, '190000'),
+(380, 1, 3, 5, 272, 48, 3, '190000'),
+(381, 1, 3, 6, 273, 47, 3, '190000'),
+(382, 1, 3, 3, 273, 48, 3, '190000'),
+(383, 1, 3, 3, 274, 47, 3, '190000'),
+(384, 1, 3, 6, 274, 48, 3, '190000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_jam`
+--
+
+CREATE TABLE `tbl_jam` (
+  `id_jam` int(10) NOT NULL,
+  `jam` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_jam`
+--
+
+INSERT INTO `tbl_jam` (`id_jam`, `jam`) VALUES
+(1, '08:00'),
+(2, '10:00'),
+(3, '14:00'),
+(4, '16:00'),
+(5, '20:00'),
+(6, '22:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_layanan`
+--
+
+CREATE TABLE `tbl_layanan` (
+  `id_layanan` int(10) NOT NULL,
+  `jenis_layanan` varchar(20) NOT NULL,
+  `jml_seat` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_layanan`
+--
+
+INSERT INTO `tbl_layanan` (`id_layanan`, `jenis_layanan`, `jml_seat`) VALUES
+(1, 'Royal', 23),
+(2, 'Eksekutif', 30),
+(3, 'Bisnis', 40);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_level`
 --
 
@@ -40,9 +1257,175 @@ CREATE TABLE `tbl_level` (
 INSERT INTO `tbl_level` (`id_level`, `level`) VALUES
 (1, 'superadmin'),
 (2, 'admin'),
-(3, 'direksi'),
-(4, 'general manager'),
-(5, 'kepala divisi');
+(3, 'gm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_penjualan`
+--
+
+CREATE TABLE `tbl_penjualan` (
+  `id_penjualan` int(10) NOT NULL,
+  `tgl_berangkat` date NOT NULL,
+  `id_jam` int(10) NOT NULL,
+  `id_armada` int(10) NOT NULL,
+  `id_trayek` int(10) NOT NULL,
+  `id_layanan` int(10) NOT NULL,
+  `jml_penumpang` int(10) NOT NULL,
+  `load_factor` varchar(50) NOT NULL,
+  `pendapatan` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_penjualan`
+--
+
+INSERT INTO `tbl_penjualan` (`id_penjualan`, `tgl_berangkat`, `id_jam`, `id_armada`, `id_trayek`, `id_layanan`, `jml_penumpang`, `load_factor`, `pendapatan`) VALUES
+(4, '2019-06-29', 1, 1, 1, 1, 12, '0.52173913043478', '2820000'),
+(5, '2019-06-29', 1, 8, 1, 1, 16, '0.69565217391304', '3760000'),
+(6, '2019-06-29', 1, 13, 1, 1, 20, '0.8695652173913', '4700000'),
+(7, '2019-06-29', 1, 18, 1, 1, 18, '0.78260869565217', '4230000'),
+(8, '2019-07-04', 3, 49, 3, 2, 29, '0.96666666666667', '5075000'),
+(9, '2019-07-04', 3, 26, 2, 2, 28, '0.93333333333333', '5740000'),
+(10, '2019-07-04', 1, 54, 3, 3, 38, '0.95', '6080000'),
+(11, '2019-07-04', 2, 22, 2, 2, 28, '0.93333333333333', '5740000'),
+(12, '2019-07-04', 1, 1, 1, 1, 23, '1', '5405000'),
+(13, '2019-07-04', 1, 8, 1, 1, 22, '0.95652173913043', '5170000'),
+(14, '2019-07-04', 1, 13, 1, 1, 20, '0.8695652173913', '4700000'),
+(15, '2019-07-04', 1, 18, 1, 1, 19, '0.82608695652174', '4465000'),
+(16, '2019-07-04', 1, 24, 2, 2, 23, '0.76666666666667', '4715000'),
+(17, '2019-07-04', 1, 28, 2, 2, 22, '0.73333333333333', '4510000'),
+(18, '2019-07-04', 5, 103, 12, 3, 39, '0.975', '8385000'),
+(19, '2019-07-04', 4, 74, 8, 1, 11, '0.47826086956522', '2915000'),
+(20, '2019-07-04', 6, 254, 43, 1, 20, '0.8695652173913', '6000000'),
+(21, '2019-07-04', 5, 263, 45, 2, 29, '0.96666666666667', '6670000'),
+(22, '2019-07-04', 3, 265, 45, 3, 11, '0.275', '2145000'),
+(23, '2019-07-04', 3, 270, 48, 2, 2, '0.066666666666667', '460000'),
+(24, '2019-07-04', 1, 91, 9, 2, 27, '0.9', '7830000'),
+(25, '2019-07-04', 6, 115, 22, 2, 26, '0.86666666666667', '6370000'),
+(26, '2019-07-04', 6, 52, 3, 2, 12, '0.4', '2100000'),
+(27, '2019-07-04', 5, 264, 46, 2, 17, '0.56666666666667', '3910000'),
+(28, '2019-07-04', 5, 103, 12, 3, 13, '0.325', '2795000'),
+(29, '2019-07-04', 4, 109, 19, 2, 19, '0.63333333333333', '3990000'),
+(30, '2019-07-04', 4, 110, 20, 2, 25, '0.83333333333333', '5250000'),
+(31, '2019-07-04', 4, 258, 44, 3, 12, '0.3', '2400000'),
+(32, '2019-07-05', 5, 111, 20, 3, 11, '0.275', '1980000'),
+(33, '2019-07-05', 5, 264, 46, 2, 27, '0.9', '6210000'),
+(34, '2019-07-05', 4, 53, 3, 3, 25, '0.625', '4000000'),
+(35, '2019-07-05', 5, 90, 9, 1, 21, '0.91304347826087', '6300000'),
+(36, '2019-07-05', 1, 248, 42, 1, 18, '0.78260869565217', '5040000'),
+(37, '2019-07-05', 1, 3, 1, 1, 12, '0.52173913043478', '2820000'),
+(38, '2019-07-05', 1, 8, 1, 1, 21, '0.91304347826087', '4935000'),
+(39, '2019-07-05', 1, 13, 1, 1, 11, '0.47826086956522', '2585000'),
+(40, '2019-07-05', 1, 18, 1, 1, 10, '0.43478260869565', '2350000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pnp_promo`
+--
+
+CREATE TABLE `tbl_pnp_promo` (
+  `id_pnp_promo` int(10) NOT NULL,
+  `tgl_berangkat` varchar(15) DEFAULT NULL,
+  `id_jam` int(10) DEFAULT NULL,
+  `id_armada` int(10) DEFAULT NULL,
+  `id_trayek` int(10) DEFAULT NULL,
+  `id_layanan` int(10) DEFAULT NULL,
+  `jml_penumpang` int(10) DEFAULT NULL,
+  `id_promo` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_pnp_promo`
+--
+
+INSERT INTO `tbl_pnp_promo` (`id_pnp_promo`, `tgl_berangkat`, `id_jam`, `id_armada`, `id_trayek`, `id_layanan`, `jml_penumpang`, `id_promo`) VALUES
+(1, '2019-01-21', 1, 1, 1, 1, 21, 1),
+(2, '2019-01-21', 2, 2, 1, 2, 20, 2),
+(3, '2019-01-21', 3, 3, 1, 3, 32, 3),
+(4, '2019-01-21', 4, 139, 1, 1, 20, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_promo`
+--
+
+CREATE TABLE `tbl_promo` (
+  `id_promo` int(10) NOT NULL,
+  `promo` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_promo`
+--
+
+INSERT INTO `tbl_promo` (`id_promo`, `promo`) VALUES
+(1, 'Mudik Gratis'),
+(2, 'LinkAja 10%'),
+(3, 'GoPay Cashback Rp.5000,-');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_trayek`
+--
+
+CREATE TABLE `tbl_trayek` (
+  `id_trayek` int(10) NOT NULL,
+  `id_divre` int(10) NOT NULL,
+  `asal` varchar(50) NOT NULL,
+  `tujuan` varchar(50) NOT NULL,
+  `jurusan` varchar(50) NOT NULL,
+  `segmen` varchar(50) NOT NULL,
+  `jarak` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_trayek`
+--
+
+INSERT INTO `tbl_trayek` (`id_trayek`, `id_divre`, `asal`, `tujuan`, `jurusan`, `segmen`, `jarak`) VALUES
+(1, 1, 'Bandar Lampung', 'Gambir', 'BDL - GBR', 'ANTAR KOTA', '460'),
+(2, 1, 'Gambir', 'Bandar Lampung', 'GBR - BDL', 'ANTAR KOTA', '460'),
+(3, 1, 'Bandar Lampung', 'Bekasi', 'BDL - BKS', 'ANTAR KOTA', '255'),
+(4, 1, 'Bekasi', 'Bandar Lampung', 'BKS - BDL', 'ANTAR KOTA', '255'),
+(5, 1, 'Bandar Lampung', 'Bogor', 'BDL - BGR', 'ANTAR KOTA', '560'),
+(6, 1, 'Bogor', 'Bandar Lampung', 'BGR - BDL', 'ANTAR KOTA', '560'),
+(7, 1, 'Bandar Lampung', 'Bandung', 'BDL - BDG', 'ANTAR KOTA', '750'),
+(8, 1, 'Bandung', 'Bandar Lampung', 'BDG - BDL', 'ANTAR KOTA', '750'),
+(9, 1, 'Bandar Lampung', 'Yogya', 'BDL - YGY', 'ANTAR KOTA', '1740'),
+(10, 1, 'Yogya', 'Bandar Lampung', 'YGY - BDL', 'ANTAR KOTA', '1740'),
+(11, 1, 'Bandar Lampung', 'Depok', 'BDL - DPK', 'ANTAR KOTA', '526'),
+(12, 1, 'Depok', 'Bandar Lampung', 'DPK - BDL', 'ANTAR KOTA', '526'),
+(19, 1, 'Bandarjaya', 'Gambir', 'BDJ - GBR', 'ANTAR KOTA', '590'),
+(20, 1, 'Gambir', 'Bandarjaya', 'GBR - BDJ', 'ANTAR KOTA', '590'),
+(21, 1, 'Bandung', 'Metro', 'BDG - MTR', 'ANTAR KOTA', '420'),
+(22, 1, 'Metro', 'Bandung', 'MTR - BDG', 'ANTAR KOTA', '420'),
+(23, 1, 'Bandung', 'Talang Padang', 'BDG - TLP', 'ANTAR KOTA', '890'),
+(24, 1, 'Talang Padang', 'Bandung', 'TLP - BDG', 'ANTAR KOTA', '890'),
+(25, 1, 'Bekasi', 'Metro', 'BKS - MTR', 'ANTAR KOTA', '300'),
+(26, 1, 'Metro', 'Bekasi', 'MTR - BKS', 'ANTAR KOTA', '300'),
+(27, 1, 'Bogor', 'Metro', 'BGR - MTR', 'ANTAR KOTA', '325'),
+(28, 1, 'Metro', 'Bogor', 'MTR - BGR', 'ANTAR KOTA', '325'),
+(33, 1, 'Daya Murni', 'Gambir', 'DYM - GBR', 'ANTAR KOTA', '700'),
+(34, 1, 'Gambir', 'Daya Murni', 'GBR - DYM', 'ANTAR KOTA', '700'),
+(35, 1, 'Gambir', 'Metro', 'GBR - MTR', 'ANTAR KOTA', '275'),
+(36, 1, 'Metro', 'Gambir', 'MTR - GBR', 'ANTAR KOTA', '275'),
+(37, 1, 'Gayabaru', 'Gambir', 'GYB - GBR', 'ANTAR KOTA', '344'),
+(38, 1, 'Gambir', 'Gayabaru', 'GBR - GYB', 'ANTAR KOTA', '344'),
+(39, 1, 'Gambir', 'Unit Dua', 'GBR - U2', 'ANTAR KOTA', '820'),
+(40, 1, 'Unit Dua', 'Gambir', 'U2 - GBR', 'ANTAR KOTA', '820'),
+(41, 1, 'Gambir', 'Kota Agung', 'GBR - KTA', 'ANTAR KOTA', '696'),
+(42, 1, 'Kota Agung', 'Gambir', 'KTA - GBR', 'ANTAR KOTA', '696'),
+(43, 1, 'Gambir', 'Talang Padang', 'GBR - TLP', 'ANTAR KOTA', '300'),
+(44, 1, 'Talang Padang', 'Gambir', 'TLP - GBR', 'ANTAR KOTA', '300'),
+(45, 1, 'Gambir', 'Pringsewu', 'GBR - PRS', 'ANTAR KOTA', '275'),
+(46, 1, 'Pringsewu', 'Gambir', 'PRS - GBR', 'ANTAR KOTA', '275'),
+(47, 1, 'Gambir', 'Kota Bumi', 'GBR - KB', 'ANTAR KOTA', '330'),
+(48, 1, 'Kota Bumi', 'Gambir', 'KB - GBR', 'ANTAR KOTA', '330');
 
 -- --------------------------------------------------------
 
@@ -52,10 +1435,15 @@ INSERT INTO `tbl_level` (`id_level`, `level`) VALUES
 
 CREATE TABLE `tbl_user` (
   `id_user` int(10) NOT NULL,
+  `nik` int(20) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `jabatan` varchar(50) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `password` varchar(100) NOT NULL,
+  `no_telp` varchar(15) NOT NULL,
+  `id_divre` int(10) NOT NULL,
+  `id_cabang` int(10) NOT NULL,
+  `foto` varchar(100) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
   `id_level` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -63,18 +1451,150 @@ CREATE TABLE `tbl_user` (
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`id_user`, `nama`, `jabatan`, `email`, `password`, `id_level`) VALUES
-(1, 'Erma Noviana', 'superadmin', 'erma.noviana@damri.co.id', '21232f297a57a5a743894a0e4a801fc3', 1);
+INSERT INTO `tbl_user` (`id_user`, `nik`, `nama`, `email`, `password`, `no_telp`, `id_divre`, `id_cabang`, `foto`, `alamat`, `id_level`) VALUES
+(1, 2015230014, 'Erma Noviana', 'erma.noviana@damri.co.id', '202cb962ac59075b964b07152d234b70', '083893936774', 1, 1, '../assets/img/icon.png', 'Bekasi', 1),
+(2, 2147483647, 'Admin Cabang Bandar Lampung', 'admin.lampung@damri.co.id', 'd9b1d7db4cd6e70935368a1efb10e377', '768728176', 1, 3, '../assets/img/icon.png', 'Bandar Lampung', 2),
+(3, 424324, 'General Manager Cabang Bandar Lampung', 'gm.lampung@damri.co.id', 'd9b1d7db4cd6e70935368a1efb10e377', '7878593302', 1, 3, '../assets/img/icon.png', 'Bandar Lampung', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uji`
+--
+
+CREATE TABLE `uji` (
+  `id_jam` int(10) DEFAULT NULL,
+  `id_trayek` int(10) DEFAULT NULL,
+  `id_layanan` int(10) DEFAULT NULL,
+  `jml_seat` int(10) DEFAULT NULL,
+  `jml_penumpang` int(10) DEFAULT NULL,
+  `label_uji` int(10) DEFAULT NULL,
+  `label_valid` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `uji`
+--
+
+INSERT INTO `uji` (`id_jam`, `id_trayek`, `id_layanan`, `jml_seat`, `jml_penumpang`, `label_uji`, `label_valid`) VALUES
+(1, 1, 1, 23, 21, 1, 1),
+(2, 1, 2, 30, 20, 1, 1),
+(3, 1, 3, 40, 32, NULL, NULL),
+(4, 1, 1, 23, 20, 1, 1),
+(5, 1, 2, 30, 19, 1, 0),
+(4, 2, 2, 30, 23, 1, 1),
+(6, 2, 1, 23, 21, 1, 1),
+(3, 2, 2, 30, 21, 1, 1),
+(6, 2, 3, 40, 22, 0, 0),
+(3, 2, 2, 30, 16, 1, 0),
+(2, 3, 1, 23, 20, 1, 1),
+(1, 3, 2, 30, 27, 1, 1),
+(3, 3, 3, 40, 25, 0, 0),
+(3, 3, 2, 30, 22, 1, 1),
+(6, 3, 3, 40, 29, 0, 0),
+(2, 3, 3, 40, 21, 0, 0),
+(3, 4, 3, 40, 20, 0, 0),
+(6, 4, 1, 23, 19, 1, 0),
+(4, 4, 2, 30, 26, 1, 1),
+(1, 4, 1, 23, 17, 1, 0),
+(5, 5, 2, 30, 25, 1, 1),
+(1, 5, 3, 40, 36, 0, 1),
+(4, 5, 1, 23, 22, 1, 1),
+(3, 5, 2, 30, 23, 1, 1),
+(3, 5, 2, 30, 21, 1, 1),
+(1, 6, 1, 23, 21, 1, 1),
+(4, 6, 2, 30, 24, 1, 1),
+(3, 6, 1, 23, 21, 1, 1),
+(2, 6, 2, 30, 23, 1, 1),
+(5, 7, 1, 23, 19, 1, 0),
+(6, 7, 2, 30, 22, 1, 1),
+(2, 7, 3, 40, 27, 0, 0),
+(3, 7, 1, 23, 20, 1, 1),
+(1, 7, 2, 30, 27, 1, 1),
+(5, 7, 3, 40, 25, 0, 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `tbl_armada`
+--
+ALTER TABLE `tbl_armada`
+  ADD PRIMARY KEY (`id_armada`),
+  ADD KEY `id_cabang` (`id_cabang`);
+
+--
+-- Indexes for table `tbl_cabang`
+--
+ALTER TABLE `tbl_cabang`
+  ADD PRIMARY KEY (`id_cabang`);
+
+--
+-- Indexes for table `tbl_count`
+--
+ALTER TABLE `tbl_count`
+  ADD PRIMARY KEY (`id_count`) USING BTREE;
+
+--
+-- Indexes for table `tbl_divre`
+--
+ALTER TABLE `tbl_divre`
+  ADD PRIMARY KEY (`id_divre`);
+
+--
+-- Indexes for table `tbl_helpdesk`
+--
+ALTER TABLE `tbl_helpdesk`
+  ADD PRIMARY KEY (`id_helpdesk`);
+
+--
+-- Indexes for table `tbl_jadwal`
+--
+ALTER TABLE `tbl_jadwal`
+  ADD PRIMARY KEY (`id_jadwal`);
+
+--
+-- Indexes for table `tbl_jam`
+--
+ALTER TABLE `tbl_jam`
+  ADD PRIMARY KEY (`id_jam`);
+
+--
+-- Indexes for table `tbl_layanan`
+--
+ALTER TABLE `tbl_layanan`
+  ADD PRIMARY KEY (`id_layanan`);
+
+--
 -- Indexes for table `tbl_level`
 --
 ALTER TABLE `tbl_level`
   ADD PRIMARY KEY (`id_level`);
+
+--
+-- Indexes for table `tbl_penjualan`
+--
+ALTER TABLE `tbl_penjualan`
+  ADD PRIMARY KEY (`id_penjualan`);
+
+--
+-- Indexes for table `tbl_pnp_promo`
+--
+ALTER TABLE `tbl_pnp_promo`
+  ADD PRIMARY KEY (`id_pnp_promo`);
+
+--
+-- Indexes for table `tbl_promo`
+--
+ALTER TABLE `tbl_promo`
+  ADD PRIMARY KEY (`id_promo`);
+
+--
+-- Indexes for table `tbl_trayek`
+--
+ALTER TABLE `tbl_trayek`
+  ADD PRIMARY KEY (`id_trayek`);
 
 --
 -- Indexes for table `tbl_user`
@@ -87,16 +1607,88 @@ ALTER TABLE `tbl_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_armada`
+--
+ALTER TABLE `tbl_armada`
+  MODIFY `id_armada` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
+
+--
+-- AUTO_INCREMENT for table `tbl_cabang`
+--
+ALTER TABLE `tbl_cabang`
+  MODIFY `id_cabang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_count`
+--
+ALTER TABLE `tbl_count`
+  MODIFY `id_count` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `tbl_divre`
+--
+ALTER TABLE `tbl_divre`
+  MODIFY `id_divre` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `tbl_helpdesk`
+--
+ALTER TABLE `tbl_helpdesk`
+  MODIFY `id_helpdesk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_jadwal`
+--
+ALTER TABLE `tbl_jadwal`
+  MODIFY `id_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=385;
+
+--
+-- AUTO_INCREMENT for table `tbl_jam`
+--
+ALTER TABLE `tbl_jam`
+  MODIFY `id_jam` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_layanan`
+--
+ALTER TABLE `tbl_layanan`
+  MODIFY `id_layanan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tbl_level`
 --
 ALTER TABLE `tbl_level`
-  MODIFY `id_level` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_level` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_penjualan`
+--
+ALTER TABLE `tbl_penjualan`
+  MODIFY `id_penjualan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `tbl_pnp_promo`
+--
+ALTER TABLE `tbl_pnp_promo`
+  MODIFY `id_pnp_promo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_promo`
+--
+ALTER TABLE `tbl_promo`
+  MODIFY `id_promo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_trayek`
+--
+ALTER TABLE `tbl_trayek`
+  MODIFY `id_trayek` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

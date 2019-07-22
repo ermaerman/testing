@@ -2,7 +2,7 @@
 
 	include "koneksi.php";
 
-	$email  = $_POST["email"];
+	$email     = $_POST["email"];
 	$password  = md5($_POST["password"]);
 
 	$query     ="SELECT * FROM tbl_user WHERE email='$email' AND password='$password'";
@@ -12,22 +12,26 @@
 
 	$data      = mysqli_fetch_array($login,MYSQLI_BOTH);
 
+	$id_user   = $data['id_user'];
 	$nama      = $data['nama'];
 	$jabatan   = $data['jabatan'];
 	$email     = $data['email'];
 	$password  = $data['password'];
+	$foto      = $data['foto'];
 	$id_level  = $data['id_level'];
 
 
 if($jlhrecord > 0){
 
 	session_start();
-	$_SESSION['id_user']=$id_user;
-	$_SESSION['nama']=$nama;
-	$_SESSION['jabatan']=$jabatan;
-	$_SESSION['email']=$email;
-	$_SESSION['password']=$password;
-	$_SESSION['id_level']=$id_level;
+
+	$_SESSION['id_user'] 	=$id_user;
+	$_SESSION['nama']		=$nama;
+	$_SESSION['jabatan']	=$jabatan;
+	$_SESSION['email']		=$email;
+	$_SESSION['foto']		=$foto;
+	$_SESSION['password']	=$password;
+	$_SESSION['id_level']	=$id_level;
 
 	//redirect level
 		if($id_level == 1){
@@ -37,12 +41,12 @@ if($jlhrecord > 0){
 			header('Location:../admin/index.php?content=index');
 		}
 		elseif($id_level == 3){
-			header('Location:');
+			header('Location:../general_manager/index.php?content=index');
 		}
 }
 
 else{
-	echo "<center><img  src='../assets/gif/loading.gif'><strong><center><i>Maaf anda gagal login. Mungkin Email atau Password yang anda masukkan salah.<br>Silahkan masukkan Email atau Password dengan benar!</center>";
+	echo "<center><img  src='../assets/gif/loadingp.gif'><strong><center><i>Maaf anda gagal login. Mungkin Email atau Password yang anda masukkan salah.<br>Silahkan masukkan Email atau Password dengan benar!</center>";
 	echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../index.php">';  
 }
 

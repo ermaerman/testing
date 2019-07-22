@@ -5,11 +5,17 @@
       <div class="content-center">
         <div class="row row-grid justify-content-between align-items-center text-left">
           <div class="col-lg-6 col-md-6">
-            <h1 class="text-white">Helpdesk —
+            <h1 class="text-white">Bantuan —
             </h1>
-            <p class="text-white mb-3">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am confused, and feel wanna ask question. And here i am.</p>
+            <p class="text-white mb-3">Jl. Matraman Raya No. 25 Jakarta Timur 13140
+            <br>
+            Telp : (021)8583131 (Hunting) Fax : (021)8583732, 8504876
+            <br>
+					  Contact Center Hello DAMRI 1500825
+					  <br>
+            <a href="https://www.damri.co.id">https://www.damri.co.id</a></p>
             <div class="btn-wrapper mb-3">
-              <p class="text-success d-inline">Let's check it up with scroll down</p>
+              <p class="text-success d-inline">Silahkan gulir kebawah</p>
               <a href="#blk" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-down"></i></a>
             </div>
             <div class="btn-wrapper">
@@ -31,52 +37,78 @@
     </div>
   </div>
   <div class="section section-tabs">
-        <div class="container">
-          <div class="title">
-            <h3 class="mb-3">Helpdesk Tabs</h3>
-          </div>
-          <div class="row">
-            <div class="col-md-12 ml-auto col-xl-12 mr-auto">
-              <div class="mb-3">
-                <small class="text-uppercase font-weight-bold">Frequently Answer Question</small>
-              </div>
-              <!-- Nav tabs -->
-              <div class="card">
-                <div class="card-header">
-                  <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist">
-                        <i class="tim-icons icon-paper"></i> Question
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#link2" role="tablist">
-                        <i class="tim-icons icon-pencil"></i> Answer
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="card-body">
-                  <!-- Tab panes -->
-                  <div class="tab-content tab-space">
-                    <div class="tab-pane active" id="link1">
-                      <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
-                        <br />
-                        <br/> Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-                    </div>
-                    <div class="tab-pane" id="link2">
-                      <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
-                        <br />
-                        <br/>Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
-                    </div>        
-                  </div>
-                </div>
-              </div>
-            </div>
-           </div>
+    <div class="container">
+      <div class="title">
+        <h3 class="mb-3">Bantuan Tabs</h3>
+         <a class="nav-link btn btn-default d-none d-lg-block" href="" data-toggle="modal" data-target="#myModal3">
+          <i class="tim-icons icon-pin"></i> Masukan Pertanyaan
+        </a>
       </div>
-      <!-- End Section Tabs -->
-   <!-- Form Modal -->
+      <div class="row">
+        <div class="col-md-12 ml-auto col-xl-12 mr-auto">
+          <div class="mb-3">
+            <small class="text-uppercase font-weight-bold">Frequently Asked Question</small>
+          </div>
+
+          <!-- Nav tabs -->
+           <form class="form-horizontal" method="POST">
+                <?php
+
+                  include 'config/koneksi.php';
+
+                  $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE trash='0' ORDER BY id_helpdesk DESC")or die(mysqli_error());
+                          if(mysqli_num_rows($query) == 0){ 
+                            echo '<tr><td colspan="4" align="center"><i>Belum ada pertanyaan / komentar!</i></td></tr>';    
+                          }
+                            else
+                          { 
+                            $no = 1;        
+                            while($data = mysqli_fetch_array($query)){ 
+                               echo '<div class="container">';
+                               echo '<table width="100%">';
+                               echo '<tr>';
+                               echo '<td><font color="white"><b>'.$data['nama'].'</b></font></td>';
+                               echo '<td align="right" colspan="2"><i>'.$data['tanggal'].'<?i></td>';
+                               echo '</tr>';
+                               echo '<tr>';
+                               echo '<td colspan="2">'.$data['inbox'].'</td>';
+                               echo '</tr>';
+                               echo '<tr>';
+                               echo '<td width=""><img src="assets/img/logo2.png" class="media-object" style="width:40px"></td>';
+                               ?>
+                               <td width="86%">
+                                <font color='white'>Balasan</font>
+                                <br>
+                                <i>
+                                 <?php
+                                    if ($data['outbox']!='0') {
+                                      echo $data['outbox'];
+                                    }
+                                    else {
+                                      echo "Menunggu Balasan"; 
+
+                                    }
+                                 ?>
+                                 </i>
+                               </td>
+                               <?php
+                               echo '</tr>';
+                               echo '</table>';
+                               echo '</div>';
+                               echo '<hr>';
+                            }
+                          }
+                      ?>
+
+          </form>
+          </div>
+        </div>
+       </div>
+      </div>
+
+<!-- End Section Tabs -->
+   
+<!-- Form Modal -->
       <div class="modal fade modal-black" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -86,7 +118,7 @@
                 <img width="250" src="./assets/img/logo1.png">
               </div>
               <div class="text-center text-muted mb-4 mt-3">
-                <small>Login with your email corporate please! <a href="#">Don't have an access?</a></small>
+               <small>Silahkan login menggunakan email corporate! <a href="index.php?content=helpdesk">Tidak mempunyai akses?</a></small>
               </div>
               <form role="form" action="config/proses_login.php" method="POST">
                 <div class="form-group mb-3">
@@ -109,15 +141,63 @@
                     <input class="form-control" placeholder="Password" type="password" name="password" required>
                   </div>
                 </div>
-                <div class="form-check mt-3">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" checked>
-                    <span class="form-check-sign"></span>
-                    Remember me!
-                  </label>
-                </div>
                 <div align="right">
-                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Login</button>
+                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Masuk</button>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--  End Modal -->
+
+      <!-- Form Modal -->
+      <div class="modal fade modal-black" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center"></div>
+            <div class="modal-body">
+              <div class="text-center">
+                <img width="250" src="./assets/img/logo1.png">
+              </div>
+              <div class="text-center text-muted mb-4 mt-3">
+                <small>Silahkan tulis pertanyaan pada form dibawah ini.</small>
+              </div>
+              <form action="config/tambah_pertanyaan.php" class="form-horizontal" method="POST">
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="tim-icons icon-planet"></i>
+                      </span>
+                    </div>
+                    <input class="form-control" placeholder="Nama" type="text" name="nama" required>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="tim-icons icon-email-85"></i>
+                      </span>
+                    </div>
+                    <input class="form-control" placeholder="Email" type="email" name="email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="tim-icons icon-pin"></i>
+                      </span>
+                    </div>
+                    <input class="form-control" placeholder="Pertanyaan" type="text" name="inbox" required>
+                  </div>
+                </div>
+                <input type="hidden" name="tanggal" value="<?php $tgl=date('d-m-Y:h:i:s'); echo $tgl; ?>">
+                <div align="right">
+                  <button type="submit" class="nav-link btn btn-default d-none d-lg-block">Tambah</button>
                 </div>
               </div>
               </form>

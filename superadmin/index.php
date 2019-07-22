@@ -1,23 +1,25 @@
-<?php
-  
-  
-  //menyambungkan koneksi
-  include '../config/koneksi.php';
-  session_start();
+<?php session_start();
 
-  if(isset($_GET['content'])) $content = $_GET['content']; 
-      else $content = "index";
+  if(isset($_SESSION['email']))
 
+    {
+    
+    include "../config/koneksi.php";
+
+
+    if(isset($_GET['content'])) $content = $_GET['content']; 
+      else $content = "home";
 ?>
 
-<!doctype html>
+
 <html class="no-js" lang="">
+
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="../assets/img/logo3.png">
-    <title>DAMRI ‣ Logistics System V 1.0.0</title>
+    <title>DAMRI ‣ Analysis System V 1.0.0</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Fonts
@@ -64,6 +66,14 @@
     <!-- responsive CSS
         ============================================ -->
     <link rel="stylesheet" href="../assets_be/css/responsive.css">
+    
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.j s"></script>
+    <script src="../assets_be/code/highcharts.js"></script>
+    <script src="../assets_be/code/modules/exporting.js"></script>
+    <script src="../assets_be/code/modules/export-data.js"></script>
+
     <!-- modernizr JS
         ============================================ -->
     <script src="../assets_be/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -216,7 +226,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="index.php?content=index"><img width="200" src="../assets/img/logo1.png"></span></a><font color="gray">Logistics System V 1.0.0</font>
+                        <a href="index.php?content=index"><img width="200" src="../assets/img/logo1.png"></span></a><font color="gray">Analysis System V 1.0.0</font>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -231,151 +241,66 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
+                             <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Helpdesk</h2>
+                                        <h2>Bantuan</h2>
                                     </div>
                                     <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/4.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                        
+                                                    <?php
+
+                                                      include '../config/koneksi.php';
+
+                                                      $query = mysqli_query($konek, "SELECT * FROM tbl_helpdesk WHERE outbox='0' AND trash='0' AND status='0' ORDER BY id_helpdesk DESC LIMIT 5")or die(mysqli_error());
+                                                      if(mysqli_num_rows($query) == 0){ 
+                                                        echo '<div"><p align="center"><i>Tidak ada pemberitahuan</i></p></div>';    
+                                                      }
+                                                        else
+                                                      { 
+                                                       $no = 1;        
+                                                       while($data = mysqli_fetch_array($query)){
+                                                        echo '<a href="index.php?content=belum_dibalas">';
+                                                        echo '<div class="hd-message-sn">';
+                                                        echo '<div class="hd-mg-ctn">';
+                                                        echo '<h3 align="left">'.$data['nama'].'</h3>';
+                                                        echo '<p align="left">'.$data['inbox'].'</p>';
+                                                        echo '</div>';
+                                                        echo '</div>';
+                                                        echo '</a>';
+                                                          }
+                                                        }
+                                                    ?>
+                                        
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="index.php?content=belum_dibalas">Lihat Semua</a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
-                                <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Notification</h2>
-                                    </div>
-                                    <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/4.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="hd-mg-va">
-                                        <a href="#">View All</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn">
+                                <span>
+                                    <?php 
+                                    $qhelp      = "SELECT COUNT(*) AS COUNT FROM tbl_helpdesk WHERE outbox=0 AND trash=0 AND status=0";
+                                    $query      = mysqli_query($konek, $qhelp)or die(mysqli_error($konek));
+                                    $result     = mysqli_fetch_assoc($query);
+                                    $count      = $result['COUNT'];
+                                    
+                                    echo $count;
+                                ?>
+                                </span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>User Account</h2>
+                                        <h2>Akun Pengguna</h2>
                                     </div>
                                     <div class="hd-message-info">
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
-                                                    <a href="index.php?content=account"><img src="../assets/img/icon.png" alt="" /></a>
+                                                    <?php
+
+                                                        echo '<a data-toggle="tooltip" data-placement="left" title="Lihat akun pengguna" href=index.php?content=account&&id_user='.$_SESSION['id_user'].'><img src='.$_SESSION['foto'].'></a>';
+                                                    ?>
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>
@@ -384,16 +309,15 @@
                                                     <?php
                                                         $level      = $_SESSION['id_level'];
 
-                                                        $qlevel 	= "SELECT * FROM tbl_level WHERE id_level='$level'";
+                                                        $qlevel     = "SELECT * FROM tbl_level WHERE id_level='$level'";
                                                         $record     = mysqli_query($konek, $qlevel)or die(mysqli_error($konek));
                                                         $show       = mysqli_fetch_array($record);
                                                     
                                                     ?>
-                                                    <p>You are login as <?php echo $show['level']; ?> now. </p>
+                                                    <p>Anda telah login sebagai <?php echo $show['level']; ?>.</p>
                                                 </div>
                                             </div>
                                         </a>
-                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-mg-ctn">
                                                     <h3>Last Login</h3>
@@ -403,12 +327,11 @@
                                                 ?></p>
                                                 </div>
                                             </div>
-                                        </a>
                                         <hr>
                                          <a href="../config/proses_logout.php">
                                             <div class="" align="right">
                                                 <div class="hd-mg-ctn">
-                                                     <button class="btn notika-btn-indigo btn-reco-mg btn-button-mg">Logout</button> &nbsp;&nbsp;
+                                                     <button class="btn notika-btn-indigo btn-reco-mg btn-button-mg">Keluar</button> &nbsp;&nbsp;
                                                 </div>
                                             </div>
                                         </a>
@@ -428,19 +351,19 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Helpdesk</a>
+                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> Penjualan</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
+                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Laporan</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
+                        <li><a data-toggle="tab" href="#Data"><i class="notika-icon notika-file"></i> Data</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
+                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Analisis</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
+                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Grafik</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
+                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Bantuan</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
+                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Manajemen User</a>
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
@@ -448,103 +371,83 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.php?content=index">Dashboard</a>
                                 </li>
-                                <li><a href="index.php?content=analytics">Analytics</a>
+                                <li><a href="index.php?content=info">Info</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="inbox.html">Inbox</a>
+                                <!-- <li><a href="index.php?content=list_masuk">Pertanyaan Masuk</a>
+                                </li> -->
+                                <li><a href="index.php?content=belum_dibalas">Belum Dibalas</a>
                                 </li>
-                                <li><a href="view-email.html">View Email</a>
+                                <li><a href="index.php?content=sudah_dibalas">Sudah Dibalas</a>
                                 </li>
-                                <li><a href="compose-email.html">Compose Email</a>
+                                <li><a href="index.php?content=trash">Trash</a>
                                 </li>
+                                <!-- <li><a href="compose-email.html">Compose Email</a>
+                                </li> -->
                             </ul>
                         </div>
                         <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="animations.html">Animations</a>
+                                <li><a href="index.php?content=analisis">Lakukan Analisis</a>
                                 </li>
-                                <li><a href="google-map.html">Google Map</a>
-                                </li>
-                                <li><a href="data-map.html">Data Maps</a>
-                                </li>
-                                <li><a href="code-editor.html">Code Editor</a>
-                                </li>
-                                <li><a href="image-cropper.html">Images Cropper</a>
-                                </li>
-                                <li><a href="wizard.html">Wizard</a>
+                                <li><a href="index.php?content=hasil_analisis">Hasil Analisis</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="flot-charts.html">Flot Charts</a>
+                                <li><a href="index.php?content=grafik_penjualan">Grafik Penjualan</a>
                                 </li>
-                                <li><a href="bar-charts.html">Bar Charts</a>
-                                </li>
-                                <li><a href="line-charts.html">Line Charts</a>
-                                </li>
-                                <li><a href="area-charts.html">Area Charts</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href="normal-table.html">Normal Table</a>
-                                </li>
-                                <li><a href="data-table.html">Data Table</a>
+                                <li><a href="index.php?content=grafik_k_means">Grafik Analisis</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="form-elements.html">Form Elements</a>
+                                <li><a href="index.php?content=laporan_penjualan">Laporan Penjualan</a>
                                 </li>
-                                <li><a href="form-components.html">Form Components</a>
+                                <li><a href="index.php?content=laporan_analisis">Laporan Analisis</a>
                                 </li>
-                                <li><a href="form-examples.html">Form Examples</a>
+                                <li><a href="index.php?content=laporan_data_promo">Laporan Data Promo</a>
+                                </li>
+                                <li><a href="index.php?content=laporan_pendapatan">Laporan Pendapatan</a>
+                                </li>
+                            </ul>
+                        </div>
+                         <div id="Data" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="index.php?content=data_training">Data Training</a>
+                                </li>
+                                <li><a href="index.php?content=data_trayek">Data Trayek / Rute</a>
+                                </li>
+                                <li><a href="index.php?content=data_harga">Data Harga</a>
+                                </li>
+                                <li><a href="index.php?content=data_layanan">Data Layanan</a>
+                                </li>
+                                <li><a href="index.php?content=data_armada">Data Armada</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="notification.html">Notifications</a>
+                                <li><a href="index.php?content=data_penjualan">Data Penjualan</a>
                                 </li>
-                                <li><a href="alert.html">Alerts</a>
+                                <li><a href="index.php?content=tambah_data_penjualan">Tambah Data Penjualan</a>
                                 </li>
-                                <li><a href="modals.html">Modals</a>
+                                <li><a href="index.php?content=data_promo">Data Promo</a>
                                 </li>
-                                <li><a href="buttons.html">Buttons</a>
-                                </li>
-                                <li><a href="tabs.html">Tabs</a>
-                                </li>
-                                <li><a href="accordion.html">Accordion</a>
-                                </li>
-                                <li><a href="dialog.html">Dialogs</a>
-                                </li>
-                                <li><a href="popovers.html">Popovers</a>
-                                </li>
-                                <li><a href="tooltips.html">Tooltips</a>
-                                </li>
-                                <li><a href="dropdown.html">Dropdowns</a>
+                                <li><a href="index.php?content=tambah_data_promo">Tambah Data Promo</a>
                                 </li>
                             </ul>
                         </div>
                         <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="contact.html">Contact</a>
+                                <li><a href="index.php?content=data_user">Data User</a>
                                 </li>
-                                <li><a href="invoice.html">Invoice</a>
-                                </li>
-                                <li><a href="typography.html">Typography</a>
-                                </li>
-                                <li><a href="color.html">Color</a>
-                                </li>
-                                <li><a href="login-register.html">Login Register</a>
-                                </li>
-                                <li><a href="404.html">404 Page</a>
+                                <li><a href="index.php?content=tambah_user">Tambah User</a>
                                 </li>
                             </ul>
                         </div>
@@ -553,14 +456,99 @@
             </div>
         </div>
     </div>
-    <!-- Main Menu area End-->
 
+
+    <!-- Main Menu area End-->
         <?php
-                    if ($content=='index')
-                      include 'home.php';
-                    elseif ($content=='account')
-                      include 'account.php';
+
+            // Home
+            if ($content=='index')
+              include 'home.php';
+            elseif ($content=='info')
+              include 'info.php';
+
+
+            // Notifikasi Bar
+            elseif ($content=='pemberitahuan')
+              include 'pemberitahuan.php';
+            elseif ($content=='account')
+              include 'account.php';/*
+            elseif ($content=='edit_account')
+              include 'edit_account.php';*/
+
+            // Penjualan
+            elseif ($content=='data_penjualan')
+              include 'data_penjualan.php';
+            elseif ($content=='tambah_data_penjualan')
+              include 'tambah_data_penjualan.php';
+            elseif ($content=='edit_penjualan')
+              include 'edit_penjualan.php';
+            elseif ($content=='data_promo')
+              include 'data_promo.php';
+            elseif ($content=='tambah_data_promo')
+              include 'tambah_data_promo.php';
+
+            // Laporan 
+            elseif ($content=='laporan_penjualan')
+              include 'laporan_penjualan.php';
+            elseif ($content=='laporan_analisis')
+              include 'laporan_analisis.php';
+            elseif ($content=='laporan_data_promo')
+              include 'laporan_data_promo.php';
+            elseif ($content=='laporan_pendapatan')
+              include 'laporan_pendapatan.php';
+
+            // Data 
+            elseif ($content=='data_training')
+              include 'data_training.php';
+            elseif ($content=='data_trayek')
+              include 'data_trayek.php';
+            elseif ($content=='data_harga')
+              include 'data_harga.php';
+            elseif ($content=='data_layanan')
+              include 'data_layanan.php';
+            elseif ($content=='data_armada')
+              include 'data_armada.php';
+
+            // Analisis 
+            elseif ($content=='analisis')
+              include 'analisis.php';
+            elseif ($content=='hasil_analisis')
+              include 'hasil_analisis.php';
+            elseif ($content=='analisis_predict')
+              include 'analisis_predict.php';
+            elseif ($content=='solusi')
+              include 'solusi.php';
+
+            // Grafik 
+            elseif ($content=='grafik_penjualan')
+              include 'grafik_penjualan.php';
+            elseif ($content=='grafik_k_means')
+              include 'grafik_k_means.php';
+
+            // Bantuan
+            elseif ($content=='list_masuk')
+              include 'list_masuk.php';
+            elseif ($content=='belum_dibalas') 
+              include 'belum_dibalas.php';
+            elseif ($content=='sudah_dibalas') 
+              include 'sudah_dibalas.php';
+            elseif ($content=='trash') 
+              include 'trash.php'; 
+            elseif ($content=='balas') 
+              include 'balas.php';  
+
+            // Manajemen User
+            elseif ($content=='data_user')
+              include 'data_user.php';
+            elseif ($content=='tambah_user')
+              include 'tambah_user.php';
+            elseif ($content=='edit_user')
+              include 'edit_user.php';
+
         ?>
+
+
     <!-- Start Footer area-->
     <div class="footer-copyright-area">
         <div class="container">
@@ -573,6 +561,8 @@
         </div>
     </div>
     <!-- End Footer area-->
+
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
     <!-- jquery
         ============================================ -->
     <script src="../assets_be/js/vendor/jquery-1.12.4.min.js"></script>
@@ -645,3 +635,11 @@
 </body>
 
 </html>
+
+<?php
+}
+else
+  {
+    header("location:../index.php");
+  }
+?>

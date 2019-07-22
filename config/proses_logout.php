@@ -3,7 +3,7 @@
 session_start();
 $out=session_destroy();
 if($out)
-{	echo "<br><br><br><br><br><center><img src='../assets/gif/loading.gif'><br></center>";
+{	echo "<br><br><center><img src='../assets/gif/loadingp.gif'><br></center>";
 }
 ?>
 
