@@ -1,6 +1,6 @@
 
 <!-- Breadcomb area Start-->
-    <div class="breadcomb-area">
+<div class="breadcomb-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -36,84 +36,8 @@
                                 $level = $_SESSION['id_level'];
                             ?>
                             <input type="hidden" name="id_level" value="<?php echo $level?>">
-                            <!-- <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                                        <label class="hrzn-fm">Tanggal Keberangkatan</label>
-                                    </div>
-                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                        <div class="nk-int-st">
-                                            <input type="date" name="tgl_berangkat" class="form-control input-sm" placeholder="Tanggal Keberangkatan" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
-                        <div class="form-example-int form-horizental mg-t-15">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                                        <label class="hrzn-fm">Jam Berangkat</label>
-                                    </div>
-                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                        <div class="nk-int-st">
-                                           <select name="id_jam" class="form-control">
-                                                <option>-- Pilih Jam Berangkat --</option>
-                                                <?php
-                                                    $query  = "SELECT * FROM tbl_jam";
-                                                    $jam = mysqli_query($konek,$query);
-                                                    while ($tampil = mysqli_fetch_array($jam)) {
-                                                ?>
-                                                    <option value="<?php echo $tampil['id_jam'] ?>"><?php echo $tampil['jam'] ?></option>
-                                                <?php 
-                                                    }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  <div class="form-example-int form-horizental">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                                        <label class="hrzn-fm">Jam Sampai</label>
-                                    </div>
-                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                        <div class="nk-int-st"> -->
-                                           <!--  <input type="hidden" name="jam_sampai" class="form-control input-sm" placeholder="Jam Sampai" required> -->
-                                        <!-- </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                         <div class="form-example-int form-horizental">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                                        <label class="hrzn-fm">Armada</label>
-                                    </div>
-                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                        <div class="nk-int-st">
-                                            <select name="id_armada" class="form-control">
-                                                <option>-- Pilih Armada --</option>
-                                                <?php
-                                                    $query  = "SELECT * FROM tbl_armada";
-                                                    $armada = mysqli_query($konek,$query);
-                                                    while ($tampil = mysqli_fetch_array($armada)) {
-                                                ?>
-                                                    <option value="<?php echo $tampil['id_armada'] ?>"><?php echo $tampil['armada'] ?></option>
-                                                <?php 
-                                                    }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="form-example-int form-horizental">
+                        <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
@@ -121,7 +45,7 @@
                                     </div>
                                     <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
                                         <div class="nk-int-st">
-                                            <select name="id_trayek" class="form-control">
+                                            <select name="id_trayek" id="trayek" class="form-control" data-live-search="true">
                                                 <option>-- Pilih Trayek --</option>
                                                 <?php 
                                                     $query  = "SELECT * FROM tbl_trayek";
@@ -138,31 +62,65 @@
                                 </div>
                             </div>
                         </div>
-                     <div class="form-example-int form-horizental">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-                                    <label class="hrzn-fm">Jenis Layanan</label>
-                                </div>
-                                <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
-                                    <div class="nk-int-st">
-                                        <select name="id_layanan" id="layanan" class="form-control">
-                                            <option>-- Pilih Jenis Layanan --</option>
-                                            <?php 
-                                                $query      = "SELECT * FROM tbl_layanan";
-                                                $layanan    = mysqli_query($konek, $query);
-                                                while ($tampilLayanan = mysqli_fetch_array($layanan)){
-                                            ?>
-                                                <option value="<?php echo $tampilLayanan['id_layanan'] ?>"><?php echo $tampilLayanan['jenis_layanan'] ?></option>
-                                            <?php
-                                                }
-                                            ?>
-                                        </select>
+                        <div class="form-example-int form-horizental">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                        <label class="hrzn-fm">Jenis Layanan</label>
+                                    </div>
+                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="nk-int-st">
+                                            <select name="id_layanan" id="layanan" class="form-control">
+                                                <option>-- Pilih Jenis Layanan --</option>
+                                                
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="form-example-int form-horizental mg-t-15">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                        <label class="hrzn-fm">Jam Berangkat</label>
+                                    </div>
+                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="nk-int-st">
+                                           <select name="id_jam" id="jam" class="form-control">
+                                                <option>-- Pilih Jam Berangkat --</option>
+                                                <?php
+                                                    $query  = "SELECT * FROM tbl_jam";
+                                                    $jam = mysqli_query($konek,$query);
+                                                    while ($tampil = mysqli_fetch_array($jam)) {
+                                                ?>
+                                                    <option value="<?php echo $tampil['id_jam'] ?>"><?php echo $tampil['jam'] ?></option>
+                                                <?php 
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="form-example-int form-horizental">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                        <label class="hrzn-fm">Armada</label>
+                                    </div>
+                                    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="nk-int-st">
+                                            <select name="id_armada" id="armada" class="form-control">
+                                                <option>-- Pilih Armada --</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                          <div class="form-example-int form-horizental">
                             <div class="form-group">
                                 <div class="row">
@@ -232,3 +190,41 @@
     </div>
     <!-- Form Element area End-->
    
+    <script type="text/javascript">
+        $( "#trayek" ).change(function() {
+          var id_trayek = $("#trayek").val();
+          console.log(id_trayek);
+          $.ajax({
+            url: "./ajax_layanan.php?id_trayek=" + id_trayek,
+            success: function(result){
+              $("#layanan").html(result);
+            }
+          });
+        });
+
+        $( "#layanan" ).change(function() {
+            var id_layanan = $("#layanan").val();
+            var id_trayek  = $("#trayek").val(); 
+            console.log(id_layanan);
+            $.ajax({
+                url: './ajax_berangkat.php?id_trayek=' + id_trayek + '&id_layanan=' + id_layanan,
+                success: function(result){
+                  $("#jam").html(result);
+                }           
+            });
+        });
+
+
+        $( "#jam" ).change(function() {
+            var id_layanan = $("#layanan").val();
+            var id_trayek  = $("#trayek").val(); 
+            var id_jam     = $("#jam").val(); 
+            console.log(id_jam);
+            $.ajax({
+                url: './ajax_armada.php?id_trayek=' + id_trayek + '&id_layanan=' + id_layanan + '&id_jam=' + id_jam,
+                success: function(result){
+                  $("#armada").html(result);
+                }           
+            });
+        });
+    </script>
